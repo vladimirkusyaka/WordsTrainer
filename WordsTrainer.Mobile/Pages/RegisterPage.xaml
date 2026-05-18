@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WordsTrainer.Mobile.Pages.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Register">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <Label
+                Text="Create account"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Placeholder="Email"
+                Keyboard="Email"
+                Text="{Binding Email}" />
+
+            <Entry
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding Password}" />
+
+            <Entry
+                Placeholder="Confirm password"
+                IsPassword="True"
+                Text="{Binding ConfirmPassword}" />
+
+            <Picker
+    Title="Native language"
+    ItemsSource="{Binding Languages}"
+    ItemDisplayBinding="{Binding NativeName}"
+    SelectedItem="{Binding SelectedNativeLanguage}" />
+
+            <Picker
+    Title="Target language"
+    ItemsSource="{Binding Languages}"
+    ItemDisplayBinding="{Binding NativeName}"
+    SelectedItem="{Binding SelectedTargetLanguage}" />
+
+            <Picker
+    Title="Level"
+    ItemsSource="{Binding Levels}"
+    ItemDisplayBinding="{Binding Code}"
+    SelectedItem="{Binding SelectedLevel}" />
+
+            <Button
+                Text="Register"
+                Command="{Binding RegisterCommand}" />
+
+            <Button
+                Text="Already have account? Login"
+                Command="{Binding GoToLoginCommand}" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}" />
+
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="Red"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WordsTrainer.Mobile.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login">
+
+    <Grid Padding="24" RowDefinitions="*,Auto,*">
+
+        <VerticalStackLayout Grid.Row="1" Spacing="18">
+
+            <Label
+                Text="WordsTrainer"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Placeholder="Email"
+                Keyboard="Email"
+                Text="{Binding Email}" />
+
+            <Entry
+                Placeholder="Password"
+                IsPassword="True"
+                Text="{Binding Password}" />
+
+            <Button
+                Text="Login"
+                Command="{Binding LoginCommand}" />
+			
+			<Button
+                Text="Create account"
+                Command="{Binding GoToRegisterCommand}" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}" />
+
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="Red"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,4502 @@
+[
+  {
+    "key": "hello_phrase",
+    "level": "A1",
+    "partOfSpeech": "Expression",
+    "description": "hello / greeting",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Hallo"
+      },
+      {
+        "languageCode": "ru",
+        "text": "привет"
+      },
+      {
+        "languageCode": "uk",
+        "text": "привіт"
+      },
+      {
+        "languageCode": "en",
+        "text": "hello"
+      },
+      {
+        "languageCode": "tr",
+        "text": "merhaba"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہیلو"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سلام"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سلام"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Приветствие при встрече."
+      },
+      {
+        "languageCode": "en",
+        "text": "Hello / greeting."
+      }
+    ]
+  },
+  {
+    "key": "goodbye_phrase",
+    "level": "A1",
+    "partOfSpeech": "Expression",
+    "description": "goodbye",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tschüss"
+      },
+      {
+        "languageCode": "ru",
+        "text": "пока"
+      },
+      {
+        "languageCode": "uk",
+        "text": "бувай"
+      },
+      {
+        "languageCode": "en",
+        "text": "goodbye"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hoşça kal"
+      },
+      {
+        "languageCode": "ur",
+        "text": "خدا حافظ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خدای پامان"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خداحافظ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Прощание."
+      },
+      {
+        "languageCode": "en",
+        "text": "Goodbye."
+      }
+    ]
+  },
+  {
+    "key": "please_phrase",
+    "level": "A1",
+    "partOfSpeech": "Expression",
+    "description": "please",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bitte"
+      },
+      {
+        "languageCode": "ru",
+        "text": "пожалуйста"
+      },
+      {
+        "languageCode": "uk",
+        "text": "будь ласка"
+      },
+      {
+        "languageCode": "en",
+        "text": "please"
+      },
+      {
+        "languageCode": "tr",
+        "text": "lütfen"
+      },
+      {
+        "languageCode": "ur",
+        "text": "براہ کرم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مهرباني وکړئ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "لطفاً"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Вежливая просьба."
+      },
+      {
+        "languageCode": "en",
+        "text": "Please."
+      }
+    ]
+  },
+  {
+    "key": "thank_you_phrase",
+    "level": "A1",
+    "partOfSpeech": "Expression",
+    "description": "thank you",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "danke"
+      },
+      {
+        "languageCode": "ru",
+        "text": "спасибо"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дякую"
+      },
+      {
+        "languageCode": "en",
+        "text": "thank you"
+      },
+      {
+        "languageCode": "tr",
+        "text": "teşekkürler"
+      },
+      {
+        "languageCode": "ur",
+        "text": "شکریہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مننه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "تشکر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Благодарность."
+      },
+      {
+        "languageCode": "en",
+        "text": "Thank you."
+      }
+    ]
+  },
+  {
+    "key": "yes_word",
+    "level": "A1",
+    "partOfSpeech": "Adverb",
+    "description": "yes",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "ja"
+      },
+      {
+        "languageCode": "ru",
+        "text": "да"
+      },
+      {
+        "languageCode": "uk",
+        "text": "так"
+      },
+      {
+        "languageCode": "en",
+        "text": "yes"
+      },
+      {
+        "languageCode": "tr",
+        "text": "evet"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہاں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "هو"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بلی"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Утвердительный ответ."
+      },
+      {
+        "languageCode": "en",
+        "text": "Yes."
+      }
+    ]
+  },
+  {
+    "key": "no_word",
+    "level": "A1",
+    "partOfSpeech": "Adverb",
+    "description": "no",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "nein"
+      },
+      {
+        "languageCode": "ru",
+        "text": "нет"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ні"
+      },
+      {
+        "languageCode": "en",
+        "text": "no"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hayır"
+      },
+      {
+        "languageCode": "ur",
+        "text": "نہیں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "نه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Отрицательный ответ."
+      },
+      {
+        "languageCode": "en",
+        "text": "No."
+      }
+    ]
+  },
+  {
+    "key": "person_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "person",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Person"
+      },
+      {
+        "languageCode": "ru",
+        "text": "человек"
+      },
+      {
+        "languageCode": "uk",
+        "text": "людина"
+      },
+      {
+        "languageCode": "en",
+        "text": "person"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kişi"
+      },
+      {
+        "languageCode": "ur",
+        "text": "شخص"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کس"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شخص"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Отдельный человек."
+      },
+      {
+        "languageCode": "en",
+        "text": "Person."
+      }
+    ]
+  },
+  {
+    "key": "man_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "man",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Mann"
+      },
+      {
+        "languageCode": "ru",
+        "text": "мужчина"
+      },
+      {
+        "languageCode": "uk",
+        "text": "чоловік"
+      },
+      {
+        "languageCode": "en",
+        "text": "man"
+      },
+      {
+        "languageCode": "tr",
+        "text": "erkek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "آدمی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سړی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "مرد"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Взрослый мужчина."
+      },
+      {
+        "languageCode": "en",
+        "text": "Man."
+      }
+    ]
+  },
+  {
+    "key": "woman_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "woman",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Frau"
+      },
+      {
+        "languageCode": "ru",
+        "text": "женщина"
+      },
+      {
+        "languageCode": "uk",
+        "text": "жінка"
+      },
+      {
+        "languageCode": "en",
+        "text": "woman"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kadın"
+      },
+      {
+        "languageCode": "ur",
+        "text": "عورت"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښځه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "زن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Взрослая женщина."
+      },
+      {
+        "languageCode": "en",
+        "text": "Woman."
+      }
+    ]
+  },
+  {
+    "key": "child_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "child",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Kind"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ребёнок"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дитина"
+      },
+      {
+        "languageCode": "en",
+        "text": "child"
+      },
+      {
+        "languageCode": "tr",
+        "text": "çocuk"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بچہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ماشوم"
+      },
+      {
+        "languageCode": "fa",
+        "text": "طفل"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Ребёнок."
+      },
+      {
+        "languageCode": "en",
+        "text": "Child."
+      }
+    ]
+  },
+  {
+    "key": "family_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "family",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Familie"
+      },
+      {
+        "languageCode": "ru",
+        "text": "семья"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сім'я"
+      },
+      {
+        "languageCode": "en",
+        "text": "family"
+      },
+      {
+        "languageCode": "tr",
+        "text": "aile"
+      },
+      {
+        "languageCode": "ur",
+        "text": "خاندان"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کورنۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خانواده"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Родные люди."
+      },
+      {
+        "languageCode": "en",
+        "text": "Family."
+      }
+    ]
+  },
+  {
+    "key": "mother_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "mother",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Mutter"
+      },
+      {
+        "languageCode": "ru",
+        "text": "мать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "мати"
+      },
+      {
+        "languageCode": "en",
+        "text": "mother"
+      },
+      {
+        "languageCode": "tr",
+        "text": "anne"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ماں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مور"
+      },
+      {
+        "languageCode": "fa",
+        "text": "مادر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Мама."
+      },
+      {
+        "languageCode": "en",
+        "text": "Mother."
+      }
+    ]
+  },
+  {
+    "key": "father_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "father",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Vater"
+      },
+      {
+        "languageCode": "ru",
+        "text": "отец"
+      },
+      {
+        "languageCode": "uk",
+        "text": "батько"
+      },
+      {
+        "languageCode": "en",
+        "text": "father"
+      },
+      {
+        "languageCode": "tr",
+        "text": "baba"
+      },
+      {
+        "languageCode": "ur",
+        "text": "باپ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پلار"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پدر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Папа."
+      },
+      {
+        "languageCode": "en",
+        "text": "Father."
+      }
+    ]
+  },
+  {
+    "key": "friend_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "friend",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Freund"
+      },
+      {
+        "languageCode": "ru",
+        "text": "друг"
+      },
+      {
+        "languageCode": "uk",
+        "text": "друг"
+      },
+      {
+        "languageCode": "en",
+        "text": "friend"
+      },
+      {
+        "languageCode": "tr",
+        "text": "arkadaş"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دوست"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ملګری"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دوست"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Близкий знакомый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Friend."
+      }
+    ]
+  },
+  {
+    "key": "i_pronoun",
+    "level": "A1",
+    "partOfSpeech": "Pronoun",
+    "description": "I",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "ich"
+      },
+      {
+        "languageCode": "ru",
+        "text": "я"
+      },
+      {
+        "languageCode": "uk",
+        "text": "я"
+      },
+      {
+        "languageCode": "en",
+        "text": "I"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ben"
+      },
+      {
+        "languageCode": "ur",
+        "text": "میں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "زه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "من"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Говорящий о себе."
+      },
+      {
+        "languageCode": "en",
+        "text": "I."
+      }
+    ]
+  },
+  {
+    "key": "you_pronoun",
+    "level": "A1",
+    "partOfSpeech": "Pronoun",
+    "description": "you",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "du"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ты"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ти"
+      },
+      {
+        "languageCode": "en",
+        "text": "you"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sen"
+      },
+      {
+        "languageCode": "ur",
+        "text": "تم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ته"
+      },
+      {
+        "languageCode": "fa",
+        "text": "تو"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Обращение к одному человеку."
+      },
+      {
+        "languageCode": "en",
+        "text": "You."
+      }
+    ]
+  },
+  {
+    "key": "we_pronoun",
+    "level": "A1",
+    "partOfSpeech": "Pronoun",
+    "description": "we",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "wir"
+      },
+      {
+        "languageCode": "ru",
+        "text": "мы"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ми"
+      },
+      {
+        "languageCode": "en",
+        "text": "we"
+      },
+      {
+        "languageCode": "tr",
+        "text": "biz"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "موږ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "ما"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Группа вместе с говорящим."
+      },
+      {
+        "languageCode": "en",
+        "text": "We."
+      }
+    ]
+  },
+  {
+    "key": "be_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to be",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "sein"
+      },
+      {
+        "languageCode": "ru",
+        "text": "быть"
+      },
+      {
+        "languageCode": "uk",
+        "text": "бути"
+      },
+      {
+        "languageCode": "en",
+        "text": "be"
+      },
+      {
+        "languageCode": "tr",
+        "text": "olmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہونا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کېدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بودن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Существовать или находиться в состоянии."
+      },
+      {
+        "languageCode": "en",
+        "text": "To be."
+      }
+    ]
+  },
+  {
+    "key": "have_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to have",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "haben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "иметь"
+      },
+      {
+        "languageCode": "uk",
+        "text": "мати"
+      },
+      {
+        "languageCode": "en",
+        "text": "have"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sahip olmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "رکھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لرل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "داشتن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Обладать чем-то."
+      },
+      {
+        "languageCode": "en",
+        "text": "To have."
+      }
+    ]
+  },
+  {
+    "key": "go_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to go",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "идти"
+      },
+      {
+        "languageCode": "uk",
+        "text": "йти"
+      },
+      {
+        "languageCode": "en",
+        "text": "go"
+      },
+      {
+        "languageCode": "tr",
+        "text": "gitmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "جانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "تلل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "رفتن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Двигаться куда-то."
+      },
+      {
+        "languageCode": "en",
+        "text": "To go."
+      }
+    ]
+  },
+  {
+    "key": "come_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to come",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kommen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "приходить"
+      },
+      {
+        "languageCode": "uk",
+        "text": "приходити"
+      },
+      {
+        "languageCode": "en",
+        "text": "come"
+      },
+      {
+        "languageCode": "tr",
+        "text": "gelmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "آنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "راتلل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "آمدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Двигаться сюда."
+      },
+      {
+        "languageCode": "en",
+        "text": "To come."
+      }
+    ]
+  },
+  {
+    "key": "eat_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to eat",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "essen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "есть"
+      },
+      {
+        "languageCode": "uk",
+        "text": "їсти"
+      },
+      {
+        "languageCode": "en",
+        "text": "eat"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yemek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کھانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خوړل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خوردن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Принимать пищу."
+      },
+      {
+        "languageCode": "en",
+        "text": "To eat."
+      }
+    ]
+  },
+  {
+    "key": "drink_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to drink",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "trinken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "пить"
+      },
+      {
+        "languageCode": "uk",
+        "text": "пити"
+      },
+      {
+        "languageCode": "en",
+        "text": "drink"
+      },
+      {
+        "languageCode": "tr",
+        "text": "içmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پینا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "څښل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نوشیدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Употреблять жидкость."
+      },
+      {
+        "languageCode": "en",
+        "text": "To drink."
+      }
+    ]
+  },
+  {
+    "key": "sleep_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to sleep",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schlafen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "спать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "спати"
+      },
+      {
+        "languageCode": "en",
+        "text": "sleep"
+      },
+      {
+        "languageCode": "tr",
+        "text": "uyumak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سونا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ویده کېدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خوابیدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Находиться во сне."
+      },
+      {
+        "languageCode": "en",
+        "text": "To sleep."
+      }
+    ]
+  },
+  {
+    "key": "read_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to read",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "lesen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "читать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "читати"
+      },
+      {
+        "languageCode": "en",
+        "text": "read"
+      },
+      {
+        "languageCode": "tr",
+        "text": "okumak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پڑھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لوستل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خواندن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Воспринимать письменный текст."
+      },
+      {
+        "languageCode": "en",
+        "text": "To read."
+      }
+    ]
+  },
+  {
+    "key": "write_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to write",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schreiben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "писать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "писати"
+      },
+      {
+        "languageCode": "en",
+        "text": "write"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yazmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "لکھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لیکل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نوشتن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Создавать текст."
+      },
+      {
+        "languageCode": "en",
+        "text": "To write."
+      }
+    ]
+  },
+  {
+    "key": "speak_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to speak",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "sprechen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "говорить"
+      },
+      {
+        "languageCode": "uk",
+        "text": "говорити"
+      },
+      {
+        "languageCode": "en",
+        "text": "speak"
+      },
+      {
+        "languageCode": "tr",
+        "text": "konuşmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بولنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خبرې کول"
+      },
+      {
+        "languageCode": "fa",
+        "text": "صحبت کردن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Использовать речь."
+      },
+      {
+        "languageCode": "en",
+        "text": "To speak."
+      }
+    ]
+  },
+  {
+    "key": "learn_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to learn",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "lernen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "учить"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вчити"
+      },
+      {
+        "languageCode": "en",
+        "text": "learn"
+      },
+      {
+        "languageCode": "tr",
+        "text": "öğrenmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سیکھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "زده کول"
+      },
+      {
+        "languageCode": "fa",
+        "text": "یاد گرفتن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Получать знания."
+      },
+      {
+        "languageCode": "en",
+        "text": "To learn."
+      }
+    ]
+  },
+  {
+    "key": "work_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to work",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "arbeiten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "работать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "працювати"
+      },
+      {
+        "languageCode": "en",
+        "text": "work"
+      },
+      {
+        "languageCode": "tr",
+        "text": "çalışmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کام کرنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کار کول"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کار کردن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Выполнять работу."
+      },
+      {
+        "languageCode": "en",
+        "text": "To work."
+      }
+    ]
+  },
+  {
+    "key": "buy_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to buy",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kaufen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "покупать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "купувати"
+      },
+      {
+        "languageCode": "en",
+        "text": "buy"
+      },
+      {
+        "languageCode": "tr",
+        "text": "satın almak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "خریدنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اخیستل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خریدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Получать товар за деньги."
+      },
+      {
+        "languageCode": "en",
+        "text": "To buy."
+      }
+    ]
+  },
+  {
+    "key": "pay_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to pay",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bezahlen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "платить"
+      },
+      {
+        "languageCode": "uk",
+        "text": "платити"
+      },
+      {
+        "languageCode": "en",
+        "text": "pay"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ödemek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ادا کرنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پیسې ورکول"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پرداخت کردن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Отдавать деньги за что-то."
+      },
+      {
+        "languageCode": "en",
+        "text": "To pay."
+      }
+    ]
+  },
+  {
+    "key": "want_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to want",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "wollen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "хотеть"
+      },
+      {
+        "languageCode": "uk",
+        "text": "хотіти"
+      },
+      {
+        "languageCode": "en",
+        "text": "want"
+      },
+      {
+        "languageCode": "tr",
+        "text": "istemek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چاہنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "غوښتل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خواستن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Желать чего-то."
+      },
+      {
+        "languageCode": "en",
+        "text": "To want."
+      }
+    ]
+  },
+  {
+    "key": "need_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to need",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "brauchen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "нуждаться"
+      },
+      {
+        "languageCode": "uk",
+        "text": "потребувати"
+      },
+      {
+        "languageCode": "en",
+        "text": "need"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ihtiyacı olmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ضرورت ہونا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اړتیا لرل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نیاز داشتن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Иметь необходимость."
+      },
+      {
+        "languageCode": "en",
+        "text": "To need."
+      }
+    ]
+  },
+  {
+    "key": "understand_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to understand",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "verstehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "понимать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "розуміти"
+      },
+      {
+        "languageCode": "en",
+        "text": "understand"
+      },
+      {
+        "languageCode": "tr",
+        "text": "anlamak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سمجھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پوهېدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "فهمیدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Осознавать смысл."
+      },
+      {
+        "languageCode": "en",
+        "text": "To understand."
+      }
+    ]
+  },
+  {
+    "key": "know_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to know",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "wissen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "знать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "знати"
+      },
+      {
+        "languageCode": "en",
+        "text": "know"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bilmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "جاننا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پوهېدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دانستن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Иметь информацию."
+      },
+      {
+        "languageCode": "en",
+        "text": "To know."
+      }
+    ]
+  },
+  {
+    "key": "make_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to make/do",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "machen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "делать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "робити"
+      },
+      {
+        "languageCode": "en",
+        "text": "make"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yapmak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کرنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کول"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کردن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Выполнять действие или создавать что-то."
+      },
+      {
+        "languageCode": "en",
+        "text": "To make/do."
+      }
+    ]
+  },
+  {
+    "key": "see_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to see",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "sehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "видеть"
+      },
+      {
+        "languageCode": "uk",
+        "text": "бачити"
+      },
+      {
+        "languageCode": "en",
+        "text": "see"
+      },
+      {
+        "languageCode": "tr",
+        "text": "görmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دیکھنا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لیدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دیدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Воспринимать глазами."
+      },
+      {
+        "languageCode": "en",
+        "text": "To see."
+      }
+    ]
+  },
+  {
+    "key": "hear_verb",
+    "level": "A1",
+    "partOfSpeech": "Verb",
+    "description": "to hear",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "hören"
+      },
+      {
+        "languageCode": "ru",
+        "text": "слышать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "чути"
+      },
+      {
+        "languageCode": "en",
+        "text": "hear"
+      },
+      {
+        "languageCode": "tr",
+        "text": "duymak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سننا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اورېدل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شنیدن"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Воспринимать звук."
+      },
+      {
+        "languageCode": "en",
+        "text": "To hear."
+      }
+    ]
+  },
+  {
+    "key": "bread_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "bread",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Brot"
+      },
+      {
+        "languageCode": "ru",
+        "text": "хлеб"
+      },
+      {
+        "languageCode": "uk",
+        "text": "хліб"
+      },
+      {
+        "languageCode": "en",
+        "text": "bread"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ekmek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "روٹی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ډوډۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Основной продукт из муки."
+      },
+      {
+        "languageCode": "en",
+        "text": "Bread."
+      }
+    ]
+  },
+  {
+    "key": "water_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "water",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Wasser"
+      },
+      {
+        "languageCode": "ru",
+        "text": "вода"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вода"
+      },
+      {
+        "languageCode": "en",
+        "text": "water"
+      },
+      {
+        "languageCode": "tr",
+        "text": "su"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پانی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اوبه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "آب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Жидкость для питья."
+      },
+      {
+        "languageCode": "en",
+        "text": "Water."
+      }
+    ]
+  },
+  {
+    "key": "coffee_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "coffee",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Kaffee"
+      },
+      {
+        "languageCode": "ru",
+        "text": "кофе"
+      },
+      {
+        "languageCode": "uk",
+        "text": "кава"
+      },
+      {
+        "languageCode": "en",
+        "text": "coffee"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kahve"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کافی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کافي"
+      },
+      {
+        "languageCode": "fa",
+        "text": "قهوه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Горячий напиток из кофейных зёрен."
+      },
+      {
+        "languageCode": "en",
+        "text": "Coffee."
+      }
+    ]
+  },
+  {
+    "key": "tea_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "tea",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tee"
+      },
+      {
+        "languageCode": "ru",
+        "text": "чай"
+      },
+      {
+        "languageCode": "uk",
+        "text": "чай"
+      },
+      {
+        "languageCode": "en",
+        "text": "tea"
+      },
+      {
+        "languageCode": "tr",
+        "text": "çay"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چائے"
+      },
+      {
+        "languageCode": "ps",
+        "text": "چای"
+      },
+      {
+        "languageCode": "fa",
+        "text": "چای"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Горячий напиток из листьев чая."
+      },
+      {
+        "languageCode": "en",
+        "text": "Tea."
+      }
+    ]
+  },
+  {
+    "key": "milk_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "milk",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Milch"
+      },
+      {
+        "languageCode": "ru",
+        "text": "молоко"
+      },
+      {
+        "languageCode": "uk",
+        "text": "молоко"
+      },
+      {
+        "languageCode": "en",
+        "text": "milk"
+      },
+      {
+        "languageCode": "tr",
+        "text": "süt"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دودھ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "شیدې"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شیر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Белый напиток животного происхождения."
+      },
+      {
+        "languageCode": "en",
+        "text": "Milk."
+      }
+    ]
+  },
+  {
+    "key": "apple_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "apple",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Apfel"
+      },
+      {
+        "languageCode": "ru",
+        "text": "яблоко"
+      },
+      {
+        "languageCode": "uk",
+        "text": "яблуко"
+      },
+      {
+        "languageCode": "en",
+        "text": "apple"
+      },
+      {
+        "languageCode": "tr",
+        "text": "elma"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سیب"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مڼه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سیب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Фрукт."
+      },
+      {
+        "languageCode": "en",
+        "text": "Apple."
+      }
+    ]
+  },
+  {
+    "key": "rice_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "rice",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Reis"
+      },
+      {
+        "languageCode": "ru",
+        "text": "рис"
+      },
+      {
+        "languageCode": "uk",
+        "text": "рис"
+      },
+      {
+        "languageCode": "en",
+        "text": "rice"
+      },
+      {
+        "languageCode": "tr",
+        "text": "pirinç"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چاول"
+      },
+      {
+        "languageCode": "ps",
+        "text": "وریجې"
+      },
+      {
+        "languageCode": "fa",
+        "text": "برنج"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Зерновой продукт."
+      },
+      {
+        "languageCode": "en",
+        "text": "Rice."
+      }
+    ]
+  },
+  {
+    "key": "meat_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "meat",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Fleisch"
+      },
+      {
+        "languageCode": "ru",
+        "text": "мясо"
+      },
+      {
+        "languageCode": "uk",
+        "text": "м'ясо"
+      },
+      {
+        "languageCode": "en",
+        "text": "meat"
+      },
+      {
+        "languageCode": "tr",
+        "text": "et"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گوشت"
+      },
+      {
+        "languageCode": "ps",
+        "text": "غوښه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "گوشت"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Пища животного происхождения."
+      },
+      {
+        "languageCode": "en",
+        "text": "Meat."
+      }
+    ]
+  },
+  {
+    "key": "house_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "house",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Haus"
+      },
+      {
+        "languageCode": "ru",
+        "text": "дом"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дім"
+      },
+      {
+        "languageCode": "en",
+        "text": "house"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ev"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گھر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کور"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خانه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Здание для проживания."
+      },
+      {
+        "languageCode": "en",
+        "text": "House."
+      }
+    ]
+  },
+  {
+    "key": "room_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "room",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Zimmer"
+      },
+      {
+        "languageCode": "ru",
+        "text": "комната"
+      },
+      {
+        "languageCode": "uk",
+        "text": "кімната"
+      },
+      {
+        "languageCode": "en",
+        "text": "room"
+      },
+      {
+        "languageCode": "tr",
+        "text": "oda"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کمرہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کوټه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "اتاق"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Отдельное помещение."
+      },
+      {
+        "languageCode": "en",
+        "text": "Room."
+      }
+    ]
+  },
+  {
+    "key": "door_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "door",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tür"
+      },
+      {
+        "languageCode": "ru",
+        "text": "дверь"
+      },
+      {
+        "languageCode": "uk",
+        "text": "двері"
+      },
+      {
+        "languageCode": "en",
+        "text": "door"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kapı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دروازہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "دروازه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دروازه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Вход, который открывается и закрывается."
+      },
+      {
+        "languageCode": "en",
+        "text": "Door."
+      }
+    ]
+  },
+  {
+    "key": "window_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "window",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Fenster"
+      },
+      {
+        "languageCode": "ru",
+        "text": "окно"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вікно"
+      },
+      {
+        "languageCode": "en",
+        "text": "window"
+      },
+      {
+        "languageCode": "tr",
+        "text": "pencere"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کھڑکی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کړکۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کلکین"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Проём со стеклом в стене."
+      },
+      {
+        "languageCode": "en",
+        "text": "Window."
+      }
+    ]
+  },
+  {
+    "key": "table_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "table",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tisch"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стол"
+      },
+      {
+        "languageCode": "uk",
+        "text": "стіл"
+      },
+      {
+        "languageCode": "en",
+        "text": "table"
+      },
+      {
+        "languageCode": "tr",
+        "text": "masa"
+      },
+      {
+        "languageCode": "ur",
+        "text": "میز"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مېز"
+      },
+      {
+        "languageCode": "fa",
+        "text": "میز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Мебель с плоской поверхностью."
+      },
+      {
+        "languageCode": "en",
+        "text": "Table."
+      }
+    ]
+  },
+  {
+    "key": "chair_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "chair",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Stuhl"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стул"
+      },
+      {
+        "languageCode": "uk",
+        "text": "стілець"
+      },
+      {
+        "languageCode": "en",
+        "text": "chair"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sandalye"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کرسی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "چوکۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "چوکی"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Мебель для сидения."
+      },
+      {
+        "languageCode": "en",
+        "text": "Chair."
+      }
+    ]
+  },
+  {
+    "key": "bed_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "bed",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Bett"
+      },
+      {
+        "languageCode": "ru",
+        "text": "кровать"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ліжко"
+      },
+      {
+        "languageCode": "en",
+        "text": "bed"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yatak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بستر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کټ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "تخت"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Место для сна."
+      },
+      {
+        "languageCode": "en",
+        "text": "Bed."
+      }
+    ]
+  },
+  {
+    "key": "city_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "city",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Stadt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "город"
+      },
+      {
+        "languageCode": "uk",
+        "text": "місто"
+      },
+      {
+        "languageCode": "en",
+        "text": "city"
+      },
+      {
+        "languageCode": "tr",
+        "text": "şehir"
+      },
+      {
+        "languageCode": "ur",
+        "text": "شہر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښار"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شهر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Большой населённый пункт."
+      },
+      {
+        "languageCode": "en",
+        "text": "City."
+      }
+    ]
+  },
+  {
+    "key": "street_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "street",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Straße"
+      },
+      {
+        "languageCode": "ru",
+        "text": "улица"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вулиця"
+      },
+      {
+        "languageCode": "en",
+        "text": "street"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sokak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گلی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کوڅه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سرک"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Дорога в городе."
+      },
+      {
+        "languageCode": "en",
+        "text": "Street."
+      }
+    ]
+  },
+  {
+    "key": "shop_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "shop",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Geschäft"
+      },
+      {
+        "languageCode": "ru",
+        "text": "магазин"
+      },
+      {
+        "languageCode": "uk",
+        "text": "магазин"
+      },
+      {
+        "languageCode": "en",
+        "text": "shop"
+      },
+      {
+        "languageCode": "tr",
+        "text": "mağaza"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دکان"
+      },
+      {
+        "languageCode": "ps",
+        "text": "دوکان"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دکان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Место, где покупают товары."
+      },
+      {
+        "languageCode": "en",
+        "text": "Shop."
+      }
+    ]
+  },
+  {
+    "key": "school_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "school",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Schule"
+      },
+      {
+        "languageCode": "ru",
+        "text": "школа"
+      },
+      {
+        "languageCode": "uk",
+        "text": "школа"
+      },
+      {
+        "languageCode": "en",
+        "text": "school"
+      },
+      {
+        "languageCode": "tr",
+        "text": "okul"
+      },
+      {
+        "languageCode": "ur",
+        "text": "اسکول"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښوونځی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "مکتب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Место обучения."
+      },
+      {
+        "languageCode": "en",
+        "text": "School."
+      }
+    ]
+  },
+  {
+    "key": "hospital_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "hospital",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Krankenhaus"
+      },
+      {
+        "languageCode": "ru",
+        "text": "больница"
+      },
+      {
+        "languageCode": "uk",
+        "text": "лікарня"
+      },
+      {
+        "languageCode": "en",
+        "text": "hospital"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hastane"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہسپتال"
+      },
+      {
+        "languageCode": "ps",
+        "text": "روغتون"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شفاخانه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Место лечения."
+      },
+      {
+        "languageCode": "en",
+        "text": "Hospital."
+      }
+    ]
+  },
+  {
+    "key": "car_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "car",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Auto"
+      },
+      {
+        "languageCode": "ru",
+        "text": "машина"
+      },
+      {
+        "languageCode": "uk",
+        "text": "машина"
+      },
+      {
+        "languageCode": "en",
+        "text": "car"
+      },
+      {
+        "languageCode": "tr",
+        "text": "araba"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گاڑی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "موټر"
+      },
+      {
+        "languageCode": "fa",
+        "text": "موتر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Личный транспорт."
+      },
+      {
+        "languageCode": "en",
+        "text": "Car."
+      }
+    ]
+  },
+  {
+    "key": "bus_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "bus",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Bus"
+      },
+      {
+        "languageCode": "ru",
+        "text": "автобус"
+      },
+      {
+        "languageCode": "uk",
+        "text": "автобус"
+      },
+      {
+        "languageCode": "en",
+        "text": "bus"
+      },
+      {
+        "languageCode": "tr",
+        "text": "otobüs"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بس"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بس"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بس"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Общественный транспорт."
+      },
+      {
+        "languageCode": "en",
+        "text": "Bus."
+      }
+    ]
+  },
+  {
+    "key": "train_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "train",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Zug"
+      },
+      {
+        "languageCode": "ru",
+        "text": "поезд"
+      },
+      {
+        "languageCode": "uk",
+        "text": "поїзд"
+      },
+      {
+        "languageCode": "en",
+        "text": "train"
+      },
+      {
+        "languageCode": "tr",
+        "text": "tren"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ٹرین"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ریل ګاډی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "قطار"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Транспорт по рельсам."
+      },
+      {
+        "languageCode": "en",
+        "text": "Train."
+      }
+    ]
+  },
+  {
+    "key": "ticket_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "ticket",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Ticket"
+      },
+      {
+        "languageCode": "ru",
+        "text": "билет"
+      },
+      {
+        "languageCode": "uk",
+        "text": "квиток"
+      },
+      {
+        "languageCode": "en",
+        "text": "ticket"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bilet"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ٹکٹ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ټکټ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "تکت"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Документ для поездки или входа."
+      },
+      {
+        "languageCode": "en",
+        "text": "Ticket."
+      }
+    ]
+  },
+  {
+    "key": "today_adv",
+    "level": "A1",
+    "partOfSpeech": "Adverb",
+    "description": "today",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heute"
+      },
+      {
+        "languageCode": "ru",
+        "text": "сегодня"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сьогодні"
+      },
+      {
+        "languageCode": "en",
+        "text": "today"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bugün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "آج"
+      },
+      {
+        "languageCode": "ps",
+        "text": "نن"
+      },
+      {
+        "languageCode": "fa",
+        "text": "امروز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Этот день."
+      },
+      {
+        "languageCode": "en",
+        "text": "Today."
+      }
+    ]
+  },
+  {
+    "key": "tomorrow_adv",
+    "level": "A1",
+    "partOfSpeech": "Adverb",
+    "description": "tomorrow",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "morgen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "завтра"
+      },
+      {
+        "languageCode": "uk",
+        "text": "завтра"
+      },
+      {
+        "languageCode": "en",
+        "text": "tomorrow"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yarın"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کل"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سبا"
+      },
+      {
+        "languageCode": "fa",
+        "text": "فردا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Следующий день."
+      },
+      {
+        "languageCode": "en",
+        "text": "Tomorrow."
+      }
+    ]
+  },
+  {
+    "key": "day_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "day",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tag"
+      },
+      {
+        "languageCode": "ru",
+        "text": "день"
+      },
+      {
+        "languageCode": "uk",
+        "text": "день"
+      },
+      {
+        "languageCode": "en",
+        "text": "day"
+      },
+      {
+        "languageCode": "tr",
+        "text": "gün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دن"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ورځ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "روز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Промежуток времени от утра до ночи."
+      },
+      {
+        "languageCode": "en",
+        "text": "Day."
+      }
+    ]
+  },
+  {
+    "key": "week_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "week",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Woche"
+      },
+      {
+        "languageCode": "ru",
+        "text": "неделя"
+      },
+      {
+        "languageCode": "uk",
+        "text": "тиждень"
+      },
+      {
+        "languageCode": "en",
+        "text": "week"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hafta"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہفتہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اونۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "هفته"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Семь дней."
+      },
+      {
+        "languageCode": "en",
+        "text": "Week."
+      }
+    ]
+  },
+  {
+    "key": "month_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "month",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Monat"
+      },
+      {
+        "languageCode": "ru",
+        "text": "месяц"
+      },
+      {
+        "languageCode": "uk",
+        "text": "місяць"
+      },
+      {
+        "languageCode": "en",
+        "text": "month"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ay"
+      },
+      {
+        "languageCode": "ur",
+        "text": "مہینہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "میاشت"
+      },
+      {
+        "languageCode": "fa",
+        "text": "ماه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Часть года."
+      },
+      {
+        "languageCode": "en",
+        "text": "Month."
+      }
+    ]
+  },
+  {
+    "key": "year_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "year",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Jahr"
+      },
+      {
+        "languageCode": "ru",
+        "text": "год"
+      },
+      {
+        "languageCode": "uk",
+        "text": "рік"
+      },
+      {
+        "languageCode": "en",
+        "text": "year"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yıl"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سال"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کال"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سال"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Двенадцать месяцев."
+      },
+      {
+        "languageCode": "en",
+        "text": "Year."
+      }
+    ]
+  },
+  {
+    "key": "big_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "big",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "groß"
+      },
+      {
+        "languageCode": "ru",
+        "text": "большой"
+      },
+      {
+        "languageCode": "uk",
+        "text": "великий"
+      },
+      {
+        "languageCode": "en",
+        "text": "big"
+      },
+      {
+        "languageCode": "tr",
+        "text": "büyük"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بڑا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لوی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بزرگ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Большого размера."
+      },
+      {
+        "languageCode": "en",
+        "text": "Big."
+      }
+    ]
+  },
+  {
+    "key": "small_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "small",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "klein"
+      },
+      {
+        "languageCode": "ru",
+        "text": "маленький"
+      },
+      {
+        "languageCode": "uk",
+        "text": "малий"
+      },
+      {
+        "languageCode": "en",
+        "text": "small"
+      },
+      {
+        "languageCode": "tr",
+        "text": "küçük"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چھوٹا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کوچنی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کوچک"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Небольшого размера."
+      },
+      {
+        "languageCode": "en",
+        "text": "Small."
+      }
+    ]
+  },
+  {
+    "key": "good_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "good",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gut"
+      },
+      {
+        "languageCode": "ru",
+        "text": "хороший"
+      },
+      {
+        "languageCode": "uk",
+        "text": "добрий"
+      },
+      {
+        "languageCode": "en",
+        "text": "good"
+      },
+      {
+        "languageCode": "tr",
+        "text": "iyi"
+      },
+      {
+        "languageCode": "ur",
+        "text": "اچھا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خوب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Положительного качества."
+      },
+      {
+        "languageCode": "en",
+        "text": "Good."
+      }
+    ]
+  },
+  {
+    "key": "bad_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "bad",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schlecht"
+      },
+      {
+        "languageCode": "ru",
+        "text": "плохой"
+      },
+      {
+        "languageCode": "uk",
+        "text": "поганий"
+      },
+      {
+        "languageCode": "en",
+        "text": "bad"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kötü"
+      },
+      {
+        "languageCode": "ur",
+        "text": "برا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بد"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بد"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Негативного качества."
+      },
+      {
+        "languageCode": "en",
+        "text": "Bad."
+      }
+    ]
+  },
+  {
+    "key": "new_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "new",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "neu"
+      },
+      {
+        "languageCode": "ru",
+        "text": "новый"
+      },
+      {
+        "languageCode": "uk",
+        "text": "новий"
+      },
+      {
+        "languageCode": "en",
+        "text": "new"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yeni"
+      },
+      {
+        "languageCode": "ur",
+        "text": "نیا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "نوی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "نو"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Недавно появившийся."
+      },
+      {
+        "languageCode": "en",
+        "text": "New."
+      }
+    ]
+  },
+  {
+    "key": "old_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "old",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "alt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "старый"
+      },
+      {
+        "languageCode": "uk",
+        "text": "старий"
+      },
+      {
+        "languageCode": "en",
+        "text": "old"
+      },
+      {
+        "languageCode": "tr",
+        "text": "eski"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پرانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "زوړ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کهنه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Давно существующий."
+      },
+      {
+        "languageCode": "en",
+        "text": "Old."
+      }
+    ]
+  },
+  {
+    "key": "hot_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "hot",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heiß"
+      },
+      {
+        "languageCode": "ru",
+        "text": "горячий"
+      },
+      {
+        "languageCode": "uk",
+        "text": "гарячий"
+      },
+      {
+        "languageCode": "en",
+        "text": "hot"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sıcak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گرم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ګرم"
+      },
+      {
+        "languageCode": "fa",
+        "text": "گرم"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "С высокой температурой."
+      },
+      {
+        "languageCode": "en",
+        "text": "Hot."
+      }
+    ]
+  },
+  {
+    "key": "cold_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "cold",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kalt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "холодный"
+      },
+      {
+        "languageCode": "uk",
+        "text": "холодний"
+      },
+      {
+        "languageCode": "en",
+        "text": "cold"
+      },
+      {
+        "languageCode": "tr",
+        "text": "soğuk"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ٹھنڈا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "یخ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سرد"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "С низкой температурой."
+      },
+      {
+        "languageCode": "en",
+        "text": "Cold."
+      }
+    ]
+  },
+  {
+    "key": "one_num",
+    "level": "A1",
+    "partOfSpeech": "Number",
+    "description": "one",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "eins"
+      },
+      {
+        "languageCode": "ru",
+        "text": "один"
+      },
+      {
+        "languageCode": "uk",
+        "text": "один"
+      },
+      {
+        "languageCode": "en",
+        "text": "one"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bir"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ایک"
+      },
+      {
+        "languageCode": "ps",
+        "text": "یو"
+      },
+      {
+        "languageCode": "fa",
+        "text": "یک"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Число 1."
+      },
+      {
+        "languageCode": "en",
+        "text": "One."
+      }
+    ]
+  },
+  {
+    "key": "two_num",
+    "level": "A1",
+    "partOfSpeech": "Number",
+    "description": "two",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "zwei"
+      },
+      {
+        "languageCode": "ru",
+        "text": "два"
+      },
+      {
+        "languageCode": "uk",
+        "text": "два"
+      },
+      {
+        "languageCode": "en",
+        "text": "two"
+      },
+      {
+        "languageCode": "tr",
+        "text": "iki"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دو"
+      },
+      {
+        "languageCode": "ps",
+        "text": "دوه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دو"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Число 2."
+      },
+      {
+        "languageCode": "en",
+        "text": "Two."
+      }
+    ]
+  },
+  {
+    "key": "three_num",
+    "level": "A1",
+    "partOfSpeech": "Number",
+    "description": "three",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "drei"
+      },
+      {
+        "languageCode": "ru",
+        "text": "три"
+      },
+      {
+        "languageCode": "uk",
+        "text": "три"
+      },
+      {
+        "languageCode": "en",
+        "text": "three"
+      },
+      {
+        "languageCode": "tr",
+        "text": "üç"
+      },
+      {
+        "languageCode": "ur",
+        "text": "تین"
+      },
+      {
+        "languageCode": "ps",
+        "text": "درې"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Число 3."
+      },
+      {
+        "languageCode": "en",
+        "text": "Three."
+      }
+    ]
+  },
+  {
+    "key": "red_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "red",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "rot"
+      },
+      {
+        "languageCode": "ru",
+        "text": "красный"
+      },
+      {
+        "languageCode": "uk",
+        "text": "червоний"
+      },
+      {
+        "languageCode": "en",
+        "text": "red"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kırmızı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "لال"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سور"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سرخ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Красный цвет."
+      },
+      {
+        "languageCode": "en",
+        "text": "Red."
+      }
+    ]
+  },
+  {
+    "key": "blue_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "blue",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "blau"
+      },
+      {
+        "languageCode": "ru",
+        "text": "синий"
+      },
+      {
+        "languageCode": "uk",
+        "text": "синій"
+      },
+      {
+        "languageCode": "en",
+        "text": "blue"
+      },
+      {
+        "languageCode": "tr",
+        "text": "mavi"
+      },
+      {
+        "languageCode": "ur",
+        "text": "نیلا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "آبي"
+      },
+      {
+        "languageCode": "fa",
+        "text": "آبی"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Синий цвет."
+      },
+      {
+        "languageCode": "en",
+        "text": "Blue."
+      }
+    ]
+  },
+  {
+    "key": "green_adj",
+    "level": "A1",
+    "partOfSpeech": "Adjective",
+    "description": "green",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "grün"
+      },
+      {
+        "languageCode": "ru",
+        "text": "зелёный"
+      },
+      {
+        "languageCode": "uk",
+        "text": "зелений"
+      },
+      {
+        "languageCode": "en",
+        "text": "green"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yeşil"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سبز"
+      },
+      {
+        "languageCode": "ps",
+        "text": "شنه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سبز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Зелёный цвет."
+      },
+      {
+        "languageCode": "en",
+        "text": "Green."
+      }
+    ]
+  },
+  {
+    "key": "work_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "work",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Arbeit"
+      },
+      {
+        "languageCode": "ru",
+        "text": "работа"
+      },
+      {
+        "languageCode": "uk",
+        "text": "робота"
+      },
+      {
+        "languageCode": "en",
+        "text": "work"
+      },
+      {
+        "languageCode": "tr",
+        "text": "iş"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کام"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کار"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کار"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Занятие или профессия."
+      },
+      {
+        "languageCode": "en",
+        "text": "Work."
+      }
+    ]
+  },
+  {
+    "key": "money_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "money",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Geld"
+      },
+      {
+        "languageCode": "ru",
+        "text": "деньги"
+      },
+      {
+        "languageCode": "uk",
+        "text": "гроші"
+      },
+      {
+        "languageCode": "en",
+        "text": "money"
+      },
+      {
+        "languageCode": "tr",
+        "text": "para"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پیسہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پیسې"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پول"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Средство оплаты."
+      },
+      {
+        "languageCode": "en",
+        "text": "Money."
+      }
+    ]
+  },
+  {
+    "key": "price_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "price",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Preis"
+      },
+      {
+        "languageCode": "ru",
+        "text": "цена"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ціна"
+      },
+      {
+        "languageCode": "en",
+        "text": "price"
+      },
+      {
+        "languageCode": "tr",
+        "text": "fiyat"
+      },
+      {
+        "languageCode": "ur",
+        "text": "قیمت"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بیه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "قیمت"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Сколько стоит товар."
+      },
+      {
+        "languageCode": "en",
+        "text": "Price."
+      }
+    ]
+  },
+  {
+    "key": "doctor_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "doctor",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Arzt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "врач"
+      },
+      {
+        "languageCode": "uk",
+        "text": "лікар"
+      },
+      {
+        "languageCode": "en",
+        "text": "doctor"
+      },
+      {
+        "languageCode": "tr",
+        "text": "doktor"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ڈاکٹر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ډاکټر"
+      },
+      {
+        "languageCode": "fa",
+        "text": "داکتر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Специалист, который лечит людей."
+      },
+      {
+        "languageCode": "en",
+        "text": "Doctor."
+      }
+    ]
+  },
+  {
+    "key": "medicine_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "medicine",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Medizin"
+      },
+      {
+        "languageCode": "ru",
+        "text": "лекарство"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ліки"
+      },
+      {
+        "languageCode": "en",
+        "text": "medicine"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ilaç"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دوا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "درمل"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دوا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Средство для лечения."
+      },
+      {
+        "languageCode": "en",
+        "text": "Medicine."
+      }
+    ]
+  },
+  {
+    "key": "sun_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "sun",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Sonne"
+      },
+      {
+        "languageCode": "ru",
+        "text": "солнце"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сонце"
+      },
+      {
+        "languageCode": "en",
+        "text": "sun"
+      },
+      {
+        "languageCode": "tr",
+        "text": "güneş"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سورج"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لمر"
+      },
+      {
+        "languageCode": "fa",
+        "text": "آفتاب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Звезда, дающая свет и тепло."
+      },
+      {
+        "languageCode": "en",
+        "text": "Sun."
+      }
+    ]
+  },
+  {
+    "key": "rain_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "rain",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Regen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "дождь"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дощ"
+      },
+      {
+        "languageCode": "en",
+        "text": "rain"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yağmur"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بارش"
+      },
+      {
+        "languageCode": "ps",
+        "text": "باران"
+      },
+      {
+        "languageCode": "fa",
+        "text": "باران"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Вода, падающая с неба."
+      },
+      {
+        "languageCode": "en",
+        "text": "Rain."
+      }
+    ]
+  },
+  {
+    "key": "weather_noun",
+    "level": "A1",
+    "partOfSpeech": "Noun",
+    "description": "weather",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Wetter"
+      },
+      {
+        "languageCode": "ru",
+        "text": "погода"
+      },
+      {
+        "languageCode": "uk",
+        "text": "погода"
+      },
+      {
+        "languageCode": "en",
+        "text": "weather"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hava"
+      },
+      {
+        "languageCode": "ur",
+        "text": "موسم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "هوا"
+      },
+      {
+        "languageCode": "fa",
+        "text": "هوا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Состояние воздуха на улице."
+      },
+      {
+        "languageCode": "en",
+        "text": "Weather."
+      }
+    ]
+  }
+]

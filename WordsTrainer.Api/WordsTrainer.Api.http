@@ -1,0 +1,6 @@
+@WordsTrainer.Api_HostAddress = http://localhost:5261
+
+GET {{WordsTrainer.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

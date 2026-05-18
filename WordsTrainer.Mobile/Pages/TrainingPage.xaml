@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="WordsTrainer.Mobile.Pages.TrainingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Training">
+
+    <Grid
+        Padding="24"
+        RowDefinitions="Auto,Auto,*">
+
+        <!-- STATS PANEL -->
+
+        <HorizontalStackLayout
+    Grid.Row="0"
+    Spacing="16"
+    HorizontalOptions="Center"
+    Padding="0,0,0,16">
+
+            <VerticalStackLayout WidthRequest="70">
+                <Label Text="Today" FontSize="12" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding AnsweredToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout WidthRequest="70">
+                <Label Text="Correct" FontSize="12" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding CorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout WidthRequest="70">
+                <Label Text="New" FontSize="12" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding NewCorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout WidthRequest="70">
+                <Label Text="Learned" FontSize="12" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding LearnedTotal}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout WidthRequest="70">
+                <Label Text="Level" FontSize="12" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding LevelCode}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+        <!-- MESSAGE + LOGOUT -->
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*,Auto"
+            Margin="0,0,0,16">
+
+            <Label
+                Grid.Column="0"
+                Text="{Binding Message}"
+                FontSize="16"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Button
+                Text="Logout"
+                Command="{Binding LogoutCommand}" />
+
+        </Grid>
+
+        <!-- CONTENT -->
+
+        <Grid Grid.Row="2">
+
+            <!-- NO QUESTION STATE -->
+
+            <VerticalStackLayout
+                IsVisible="{Binding HasNoQuestion}"
+                Spacing="16"
+                VerticalOptions="Center">
+
+                <Label
+                    Text="No question available"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="{Binding Message}"
+                    FontSize="18"
+                    TextColor="Gray"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+            <!-- QUESTION STATE -->
+
+            <VerticalStackLayout
+                IsVisible="{Binding HasQuestion}"
+                Spacing="24"
+                VerticalOptions="Center">
+
+                <Border
+                    Padding="24"
+                    StrokeShape="RoundRectangle 18">
+
+                    <Label
+                        Text="{Binding QuestionText}"
+                        FontSize="36"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center" />
+
+                </Border>
+
+                <CollectionView
+                    ItemsSource="{Binding Options}"
+                    SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Button
+                                    Margin="0,6"
+                                    Text="{Binding Text}"
+                                    Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                    CommandParameter="{Binding .}" />
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+                <Button
+                        Text="I don't know this word"
+                        Command="{Binding ShowExplanationCommand}" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

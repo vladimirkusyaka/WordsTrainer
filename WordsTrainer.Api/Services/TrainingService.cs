@@ -1,0 +1,884 @@
+﻿using Microsoft.EntityFrameworkCore;
+using WordsTrainer.Contracts.Training;
+using WordsTrainer.Core.Entities;
+using WordsTrainer.Infrastructure.Data;
+using WordsTrainer.Core.Enums;
+
+namespace WordsTrainer.Api.Services
+{
+    public class TrainingService
+    {
+        private readonly AppDbContext _db;
+        private const int DailyNewConceptLimit = 10;
+        private const int DailyReviewLimit = 40;
+
+        private sealed record TrainingCandidate(
+        Concept Concept,
+        UserConcept? UserConcept,
+        int Priority);
+
+        public TrainingService(AppDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<TrainingNextResponse> GetNextAsync(Guid userId)
+        {
+            var user = await _db.Users
+                .Include(x => x.NativeLanguage)
+                .Include(x => x.TargetLanguage)
+                .FirstOrDefaultAsync(x => x.Id == userId);
+
+            if (user == null)
+            {
+                return new TrainingNextResponse
+                {
+                    Status = TrainingNextStatus.NoWordsAvailable,
+                    Message = "User not found."
+                };
+            }
+
+            var session = await GetActiveSessionAsync(userId);
+
+            if (session == null)
+            {
+                session = new TrainingSession
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = userId,
+                    StartedAtUtc = DateTime.UtcNow,
+                    NewConceptLimit = DailyNewConceptLimit,
+                    ReviewLimit = DailyReviewLimit
+                };
+
+                _db.TrainingSessions.Add(session);
+                await _db.SaveChangesAsync();
+            }
+
+            if (IsSessionCompleted(session))
+            {
+                return new TrainingNextResponse
+                {
+                    Status = TrainingNextStatus.SessionCompleted,
+                    Message = "Training session limits reached."
+                };
+            }
+
+            var now = DateTime.UtcNow;
+
+            var dueReviews = await GetDueReviewConceptsAsync(userId, user, now, session);
+            var newConcepts = await GetNewConceptsAsync(userId, user, session);
+            var futureReviews = await GetFutureReviewConceptsAsync(userId, user, session);
+
+            var selected = SelectNextCandidate(dueReviews, newConcepts, futureReviews);
+
+            if (selected == null)
+            {
+                return new TrainingNextResponse
+                {
+                    Status = TrainingNextStatus.NoWordsAvailable,
+                    Message = "No words available for training."
+                };
+            }
+
+            var question = await BuildQuestionAsync(user, session, selected.Concept, selected.UserConcept);
+
+            return new TrainingNextResponse
+            {
+                Status = TrainingNextStatus.Available,
+                Question = question
+            };
+        }
+
+        public async Task<SubmitTrainingAnswerResponse?> SubmitAnswerAsync(
+                                                                Guid userId,
+                                                                SubmitTrainingAnswerRequest request)
+        {
+            var user = await _db.Users
+                .Include(x => x.NativeLanguage)
+                .Include(x => x.TargetLanguage)
+                .FirstOrDefaultAsync(x => x.Id == userId);
+
+            if (user == null)
+                return null;
+
+            var attempt = await _db.TrainingQuestionAttempts
+                .Include(x => x.Options)
+                .FirstOrDefaultAsync(x =>
+                    x.Id == request.AttemptId &&
+                    x.UserId == userId &&
+                    !x.IsAnswered);
+
+            if (attempt == null)
+                return null;
+
+            var selectedOption = attempt.Options
+                .FirstOrDefault(x => x.WordId == request.SelectedWordId);
+
+            if (selectedOption == null)
+                return null;
+
+            var concept = await _db.Concepts
+                .Include(x => x.ConceptWords)
+                    .ThenInclude(x => x.Word)
+                .FirstOrDefaultAsync(x => x.Id == attempt.ConceptId);
+
+            var correctWord = await _db.Words
+                .FirstOrDefaultAsync(x => x.Id == attempt.CorrectWordId);
+
+            var selectedWord = await _db.Words
+                .FirstOrDefaultAsync(x => x.Id == request.SelectedWordId);
+
+            var questionWord = await _db.Words
+                .FirstOrDefaultAsync(x => x.Id == attempt.QuestionWordId);
+
+            if (concept == null || correctWord == null || questionWord == null)
+                return null;
+
+            var isCorrect = selectedOption.IsCorrect;
+
+            var session = await GetActiveSessionAsync(userId);
+
+            var userConcept = await _db.UserConcepts
+                .FirstOrDefaultAsync(x =>
+                    x.UserId == userId &&
+                    x.ConceptId == attempt.ConceptId);
+
+            var isNewConcept = userConcept == null;
+
+            if (userConcept == null)
+            {
+                userConcept = new UserConcept
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = userId,
+                    ConceptId = attempt.ConceptId,
+                    EaseFactor = 2.5,
+                    IntervalDays = 0,
+                    FirstShownAtUtc = DateTime.UtcNow
+                };
+
+                _db.UserConcepts.Add(userConcept);
+            }
+
+            var scoreBefore = userConcept.Score;
+
+            var quality = DetermineAnswerQuality(
+                isCorrect,
+                request.TranslationViewed,
+                request.DurationMs);
+
+            var scoreDelta = CalculateScoreDelta(quality);
+
+            userConcept.Score += scoreDelta;
+
+            userConcept.TotalReviews++;
+
+            userConcept.LastShownAtUtc = DateTime.UtcNow;
+
+            if (isCorrect)
+            {
+                userConcept.CorrectCount++;
+                userConcept.CorrectStreak++;
+                userConcept.LastCorrectAtUtc = DateTime.UtcNow;
+            }
+            else
+            {
+                userConcept.WrongCount++;
+                userConcept.CorrectStreak = 0;
+                userConcept.LastWrongAtUtc = DateTime.UtcNow;
+            }
+
+            if (request.TranslationViewed)
+            {
+                userConcept.TranslationViewCount++;
+            }
+
+            UpdateScheduling(userConcept, quality);
+
+            userConcept.IsLearned =
+                userConcept.Score >= 10 &&
+                userConcept.IntervalDays >= 21;
+
+            if (userConcept.IsLearned &&
+                userConcept.LearnedAtUtc == null)
+            {
+                userConcept.LearnedAtUtc = DateTime.UtcNow;
+            }
+
+            var scoreAfter = userConcept.Score;
+
+            _db.TrainingAnswers.Add(new TrainingAnswer
+            {
+                Id = Guid.NewGuid(),
+                UserId = userId,
+                ConceptId = attempt.ConceptId,
+                TrainingSessionId = attempt.TrainingSessionId,
+                TrainingQuestionAttemptId = attempt.Id,
+
+                IsCorrect = isCorrect,
+                TranslationViewed = request.TranslationViewed,
+                Quality = quality,
+
+                ScoreDelta = scoreDelta,
+                ScoreBefore = scoreBefore,
+                ScoreAfter = scoreAfter,
+
+                QuestionText = questionWord.Text,
+                CorrectAnswer = correctWord.Text,
+                SelectedAnswer = selectedOption.TextSnapshot,
+
+                DurationMs = request.DurationMs,
+                WasNewConcept = isNewConcept,
+                AnsweredAtUtc = DateTime.UtcNow
+            });
+
+            attempt.IsAnswered = true;
+            attempt.AnsweredAtUtc = DateTime.UtcNow;
+
+            await _db.SaveChangesAsync();
+
+            return new SubmitTrainingAnswerResponse
+            {
+                IsCorrect = isCorrect,
+                CorrectWordId = correctWord.Id,
+                CorrectAnswer = correctWord.Text,
+                ScoreBefore = scoreBefore,
+                ScoreAfter = scoreAfter,
+                ScoreDelta = scoreDelta,
+                IsLearned = userConcept.IsLearned,
+                NextReviewAtUtc = userConcept.NextReviewAtUtc
+            };
+        }
+
+        public async Task<TrainingExplanationResponse?> GetExplanationByAttemptAsync(
+            Guid userId,
+            Guid attemptId)
+        {
+            var user = await _db.Users
+                .Include(x => x.NativeLanguage)
+                .Include(x => x.TargetLanguage)
+                .FirstOrDefaultAsync(x => x.Id == userId);
+
+            if (user == null)
+                return null;
+
+            var attempt = await _db.TrainingQuestionAttempts
+                .FirstOrDefaultAsync(x =>
+                    x.Id == attemptId &&
+                    x.UserId == userId);
+
+            if (attempt == null)
+                return null;
+
+            var concept = await _db.Concepts
+                .Include(x => x.ConceptWords)
+                    .ThenInclude(x => x.Word)
+                        .ThenInclude(x => x.Language)
+                .Include(x => x.Explanations)
+                    .ThenInclude(x => x.Language)
+                .FirstOrDefaultAsync(x => x.Id == attempt.ConceptId);
+
+            if (concept == null)
+                return null;
+
+            var targetWord = concept.ConceptWords
+                .Select(x => x.Word)
+                .FirstOrDefault(x => x.Id == attempt.QuestionWordId);
+
+            var nativeWord = concept.ConceptWords
+                .Select(x => x.Word)
+                .FirstOrDefault(x => x.Id == attempt.CorrectWordId);
+
+            if (targetWord == null || nativeWord == null)
+                return null;
+
+            var explanation = concept.Explanations
+                .FirstOrDefault(x => x.LanguageId == user.NativeLanguageId);
+
+            return new TrainingExplanationResponse
+            {
+                AttemptId = attempt.Id,
+                ConceptId = concept.Id,
+                TargetWord = targetWord.Text,
+                NativeTranslation = nativeWord.Text,
+                Explanation = explanation?.Text ?? concept.Description ?? string.Empty,
+                TargetLanguageCode = user.TargetLanguage.Code,
+                NativeLanguageCode = user.NativeLanguage.Code,
+                AudioUrl = targetWord.AudioUrl
+            };
+        }
+
+        public async Task<TrainingStatsResponse> GetStatsAsync(Guid userId)
+        {
+            var (todayStart, todayEnd) = GetTodayRangeUtc();
+
+            var todayAnswers = _db.TrainingAnswers
+                .Where(x =>
+                    x.UserId == userId &&
+                    x.AnsweredAtUtc >= todayStart &&
+                    x.AnsweredAtUtc < todayEnd);
+
+            var answeredToday = await todayAnswers.CountAsync();
+
+            var correctToday = await todayAnswers
+                .CountAsync(x => x.IsCorrect);
+
+            var learnedTotal = await _db.UserConcepts
+                .CountAsync(x =>
+                    x.UserId == userId &&
+                    x.IsLearned);
+
+            var newCorrectToday = await todayAnswers
+                .Where(x => x.IsCorrect && x.WasNewConcept)
+                .Select(x => x.ConceptId)
+                .Distinct()
+                .CountAsync();
+
+            var newConceptsToday = await todayAnswers
+                .Where(x => x.WasNewConcept)
+                .Select(x => x.ConceptId)
+                .Distinct()
+                .CountAsync();
+
+            var reviewsToday = await todayAnswers
+                .CountAsync(x => !x.WasNewConcept);
+
+            return new TrainingStatsResponse
+            {
+                AnsweredToday = answeredToday,
+                CorrectToday = correctToday,
+                NewCorrectToday = newCorrectToday,
+                LearnedTotal = learnedTotal,
+
+                NewConceptsToday = newConceptsToday,
+                ReviewsToday = reviewsToday,
+
+                NewConceptLimit = DailyNewConceptLimit,
+                ReviewLimit = DailyReviewLimit
+            };
+        }
+
+        public async Task<TrainingSessionResponse> StartSessionAsync(Guid userId)
+        {
+            var activeSession = await _db.TrainingSessions
+                .Include(x => x.Answers)
+                .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+                .OrderByDescending(x => x.StartedAtUtc)
+                .FirstOrDefaultAsync();
+
+            if (activeSession != null)
+                return MapSession(activeSession);
+
+            var session = new TrainingSession
+            {
+                Id = Guid.NewGuid(),
+                UserId = userId,
+                StartedAtUtc = DateTime.UtcNow,
+                NewConceptLimit = DailyNewConceptLimit,
+                ReviewLimit = DailyReviewLimit
+            };
+
+            _db.TrainingSessions.Add(session);
+            await _db.SaveChangesAsync();
+
+            return MapSession(session);
+        }
+
+        public async Task<TrainingSessionResponse?> GetCurrentSessionAsync(Guid userId)
+        {
+            var session = await _db.TrainingSessions
+                .Include(x => x.Answers)
+                .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+                .OrderByDescending(x => x.StartedAtUtc)
+                .FirstOrDefaultAsync();
+
+            return session == null ? null : MapSession(session);
+        }
+
+        public async Task<TrainingSessionResponse?> FinishSessionAsync(Guid userId)
+        {
+            var session = await _db.TrainingSessions
+                .Include(x => x.Answers)
+                .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+                .OrderByDescending(x => x.StartedAtUtc)
+                .FirstOrDefaultAsync();
+
+            if (session == null)
+                return null;
+
+            session.FinishedAtUtc = DateTime.UtcNow;
+
+            await _db.SaveChangesAsync();
+
+            return MapSession(session);
+        }
+
+        private async Task<TrainingSession?> GetActiveSessionAsync(Guid userId)
+        {
+            return await _db.TrainingSessions
+                .Include(x => x.Answers)
+                .Include(x => x.Attempts)
+                .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+                .OrderByDescending(x => x.StartedAtUtc)
+                .FirstOrDefaultAsync();
+        }
+
+        private static TrainingSessionResponse MapSession(TrainingSession session)
+        {
+            return new TrainingSessionResponse
+            {
+                Id = session.Id,
+                StartedAtUtc = session.StartedAtUtc,
+                FinishedAtUtc = session.FinishedAtUtc,
+                NewConceptLimit = session.NewConceptLimit,
+                ReviewLimit = session.ReviewLimit,
+                AnsweredCount = session.Answers.Count,
+                CorrectCount = session.Answers.Count(x => x.IsCorrect)
+            };
+        }
+
+        private static int CalculateScoreDelta(bool isCorrect, bool translationViewed)
+        {
+            if (translationViewed)
+                return -3;
+
+            return isCorrect ? 1 : -1;
+        }
+
+        private static DateTime CalculateNextReviewAt(int score)
+        {
+            var now = DateTime.UtcNow;
+
+            return score switch
+            {
+                <= 0 => now.AddMinutes(10),
+                <= 2 => now.AddHours(6),
+                <= 4 => now.AddDays(1),
+                <= 6 => now.AddDays(3),
+                <= 8 => now.AddDays(7),
+                _ => now.AddDays(30)
+            };
+        }
+
+        private async Task<List<TrainingCandidate>> GetDueReviewConceptsAsync(
+            Guid userId,
+            AppUser user,
+            DateTime now,
+            TrainingSession session)
+        {
+            var (todayStart, todayEnd) = GetTodayRangeUtc();
+
+            var reviewsInSession = session.Answers
+                .Count(x => !x.WasNewConcept);
+
+            if (reviewsInSession >= session.ReviewLimit)
+                return [];
+
+            var items = await _db.UserConcepts
+                .Include(x => x.Concept)
+                    .ThenInclude(x => x.ConceptWords)
+                        .ThenInclude(x => x.Word)
+                            .ThenInclude(x => x.Language)
+                .Where(x =>
+                    x.UserId == userId &&
+                    !x.IsLearned &&
+                    x.NextReviewAtUtc != null &&
+                    x.NextReviewAtUtc <= now)
+                .ToListAsync();
+
+            return items
+                .Where(x => HasUserLanguages(x.Concept, user))
+                .Where(x => !WasRecentlyShownInSession(session, x.ConceptId))
+                .Select(x =>
+                {
+                    var overdueDays = x.NextReviewAtUtc == null
+                        ? 0
+                        : Math.Max(0, (int)(now - x.NextReviewAtUtc.Value).TotalDays);
+
+                    var priority =
+                        100 +
+                        overdueDays * 10 +
+                        x.WrongCount * 3 -
+                        x.CorrectStreak * 2;
+
+                    return new TrainingCandidate(x.Concept, x, priority);
+                })
+                .OrderByDescending(x => x.Priority)
+                .Take(30)
+                .ToList();
+        }
+
+        private async Task<List<TrainingCandidate>> GetNewConceptsAsync(
+            Guid userId,
+            AppUser user,
+            TrainingSession session)
+        {
+            var (todayStart, todayEnd) = GetTodayRangeUtc();
+
+            var newConceptsInSession = session.Answers
+                .Where(x => x.WasNewConcept)
+                .Select(x => x.ConceptId)
+                .Distinct()
+                .Count();
+
+            if (newConceptsInSession >= session.NewConceptLimit)
+                return [];
+
+            var concepts = await _db.Concepts
+                .Include(x => x.ConceptWords)
+                    .ThenInclude(x => x.Word)
+                        .ThenInclude(x => x.Language)
+                .Where(concept =>
+                    !_db.UserConcepts.Any(uc =>
+                        uc.UserId == userId &&
+                        uc.ConceptId == concept.Id))
+                .Take(50)
+                .ToListAsync();
+
+            return concepts
+                .Where(x => HasUserLanguages(x, user))
+                .Where(x => !WasRecentlyShownInSession(session, x.Id))
+                .Select(x => new TrainingCandidate(x, null, 50))
+                .ToList();
+        }
+
+        private async Task<List<TrainingCandidate>> GetFutureReviewConceptsAsync(
+            Guid userId,
+            AppUser user,
+            TrainingSession session)
+        {
+            var reviewsInSession = session.Answers
+                .Count(x => !x.WasNewConcept);
+
+            if (reviewsInSession >= session.ReviewLimit)
+                return [];
+
+            var items = await _db.UserConcepts
+                .Include(x => x.Concept)
+                    .ThenInclude(x => x.ConceptWords)
+                        .ThenInclude(x => x.Word)
+                            .ThenInclude(x => x.Language)
+                .Where(x =>
+                    x.UserId == userId &&
+                    !x.IsLearned &&
+                    x.NextReviewAtUtc != null)
+                .OrderBy(x => x.NextReviewAtUtc)
+                .Take(20)
+                .ToListAsync();
+
+            return items
+                .Where(x => HasUserLanguages(x.Concept, user))
+                .Where(x => !WasRecentlyShownInSession(session, x.ConceptId))
+                .Select(x => new TrainingCandidate(x.Concept, x, 10))
+                .ToList();
+        }
+
+        private async Task<TrainingQuestionResponse> BuildQuestionAsync(
+            AppUser user,
+            TrainingSession session,
+            Concept concept,
+            UserConcept? userConcept)
+        {
+            var questionWord = GetWordForLanguage(concept, user.TargetLanguageId);
+            var correctAnswer = GetWordForLanguage(concept, user.NativeLanguageId);
+
+            var wrongOptions = await GetDistractorsAsync(
+                correctAnswer,
+                concept.Id,
+                user.NativeLanguageId);
+
+            var optionWords = wrongOptions
+                .Append(correctAnswer)
+                .OrderBy(_ => Random.Shared.Next())
+                .ToList();
+
+            var attempt = new TrainingQuestionAttempt
+            {
+                Id = Guid.NewGuid(),
+                UserId = user.Id,
+                TrainingSessionId = session.Id,
+                ConceptId = concept.Id,
+                QuestionWordId = questionWord.Id,
+                CorrectWordId = correctAnswer.Id,
+                CreatedAtUtc = DateTime.UtcNow,
+                IsAnswered = false
+            };
+
+            _db.TrainingQuestionAttempts.Add(attempt);
+
+            foreach (var optionWord in optionWords)
+            {
+                _db.TrainingQuestionAttemptOptions.Add(new TrainingQuestionAttemptOption
+                {
+                    Id = Guid.NewGuid(),
+                    AttemptId = attempt.Id,
+                    WordId = optionWord.Id,
+                    TextSnapshot = optionWord.Text,
+                    IsCorrect = optionWord.Id == correctAnswer.Id
+                });
+            }
+
+            await _db.SaveChangesAsync();
+
+            var options = optionWords
+                .Select(x => new TrainingOptionDto
+                {
+                    WordId = x.Id,
+                    Text = x.Text
+                })
+                .ToList();
+
+            return new TrainingQuestionResponse
+            {
+                AttemptId = attempt.Id,
+                ConceptId = concept.Id,
+                QuestionWordId = questionWord.Id,
+                Question = questionWord.Text,
+                Options = options,
+                TargetLanguageCode = user.TargetLanguage.Code,
+                NativeLanguageCode = user.NativeLanguage.Code,
+                IsReview = userConcept != null,
+                CurrentScore = userConcept?.Score,
+                NextReviewAtUtc = userConcept?.NextReviewAtUtc
+            };
+        }
+
+        private async Task<List<Word>> GetDistractorsAsync(
+            Word correctAnswer,
+            Guid conceptId,
+            Guid nativeLanguageId)
+        {
+            var query = _db.Words
+                .Include(x => x.ConceptWords)
+                .Where(x =>
+                    x.LanguageId == nativeLanguageId &&
+                    x.Id != correctAnswer.Id &&
+                    !x.ConceptWords.Any(cw => cw.ConceptId == conceptId));
+
+            if (!string.IsNullOrWhiteSpace(correctAnswer.PartOfSpeech))
+                query = query.Where(x => x.PartOfSpeech == correctAnswer.PartOfSpeech);
+
+            var candidates = await query
+                .Take(100)
+                .ToListAsync();
+
+            if (candidates.Count < 3)
+            {
+                candidates = await _db.Words
+                    .Include(x => x.ConceptWords)
+                    .Where(x =>
+                        x.LanguageId == nativeLanguageId &&
+                        x.Id != correctAnswer.Id &&
+                        !x.ConceptWords.Any(cw => cw.ConceptId == conceptId))
+                    .Take(100)
+                    .ToListAsync();
+            }
+
+            return candidates
+                .OrderBy(x => Math.Abs(x.Text.Length - correctAnswer.Text.Length))
+                .ThenBy(_ => Random.Shared.Next())
+                .Take(3)
+                .ToList();
+        }
+
+        private static T PickRandom<T>(IReadOnlyList<T> items)
+        {
+            return items[Random.Shared.Next(items.Count)];
+        }
+
+        private static TrainingCandidate? SelectNextCandidate(
+            List<TrainingCandidate> dueReviews,
+            List<TrainingCandidate> newConcepts,
+            List<TrainingCandidate> futureReviews)
+        {
+            if (dueReviews.Count > 0 && newConcepts.Count > 0)
+            {
+                return Random.Shared.Next(100) < 75
+                    ? PickWeighted(dueReviews)
+                    : PickWeighted(newConcepts);
+            }
+
+            if (dueReviews.Count > 0)
+                return PickWeighted(dueReviews);
+
+            if (newConcepts.Count > 0)
+                return PickWeighted(newConcepts);
+
+            if (futureReviews.Count > 0)
+                return PickWeighted(futureReviews);
+
+            return null;
+        }
+
+        private static TrainingCandidate PickWeighted(List<TrainingCandidate> items)
+        {
+            var total = items.Sum(x => Math.Max(1, x.Priority));
+            var roll = Random.Shared.Next(1, total + 1);
+
+            var current = 0;
+
+            foreach (var item in items)
+            {
+                current += Math.Max(1, item.Priority);
+
+                if (roll <= current)
+                    return item;
+            }
+
+            return items[^1];
+        }
+
+        private static bool HasUserLanguages(Concept concept, AppUser user)
+        {
+            return concept.ConceptWords.Any(x => x.Word.LanguageId == user.TargetLanguageId) &&
+                   concept.ConceptWords.Any(x => x.Word.LanguageId == user.NativeLanguageId);
+        }
+
+        private static Word GetWordForLanguage(Concept concept, Guid languageId)
+        {
+            return concept.ConceptWords
+                .Select(x => x.Word)
+                .First(x => x.LanguageId == languageId);
+        }
+
+        private static AnswerQuality DetermineAnswerQuality(
+            bool isCorrect,
+            bool translationViewed,
+            int durationMs)
+        {
+            if (translationViewed)
+                return AnswerQuality.Again;
+
+            if (!isCorrect)
+                return AnswerQuality.Again;
+
+            if (durationMs > 12000)
+                return AnswerQuality.Hard;
+
+            if (durationMs < 2500)
+                return AnswerQuality.Easy;
+
+            return AnswerQuality.Good;
+        }
+
+        private static int CalculateScoreDelta(
+            AnswerQuality quality)
+        {
+            return quality switch
+            {
+                AnswerQuality.Again => -2,
+                AnswerQuality.Hard => 1,
+                AnswerQuality.Good => 2,
+                AnswerQuality.Easy => 3,
+                _ => 0
+            };
+        }
+
+        private static void UpdateScheduling(
+            UserConcept userConcept,
+            AnswerQuality quality)
+        {
+            var now = DateTime.UtcNow;
+
+            switch (quality)
+            {
+                case AnswerQuality.Again:
+
+                    userConcept.IntervalDays = 0;
+
+                    userConcept.EaseFactor =
+                        Math.Max(1.3, userConcept.EaseFactor - 0.2);
+
+                    userConcept.NextReviewAtUtc =
+                        now.AddMinutes(10);
+
+                    break;
+
+                case AnswerQuality.Hard:
+
+                    userConcept.IntervalDays =
+                        Math.Max(1,
+                            (int)Math.Round(
+                                userConcept.IntervalDays * 1.2));
+
+                    userConcept.EaseFactor =
+                        Math.Max(1.3,
+                            userConcept.EaseFactor - 0.05);
+
+                    userConcept.NextReviewAtUtc =
+                        now.AddDays(userConcept.IntervalDays);
+
+                    break;
+
+                case AnswerQuality.Good:
+
+                    userConcept.IntervalDays =
+                        userConcept.IntervalDays switch
+                        {
+                            0 => 1,
+                            1 => 3,
+                            _ => (int)Math.Round(
+                                userConcept.IntervalDays *
+                                userConcept.EaseFactor)
+                        };
+
+                    userConcept.NextReviewAtUtc =
+                        now.AddDays(userConcept.IntervalDays);
+
+                    break;
+
+                case AnswerQuality.Easy:
+
+                    userConcept.EaseFactor += 0.15;
+
+                    userConcept.IntervalDays =
+                        userConcept.IntervalDays switch
+                        {
+                            0 => 3,
+                            1 => 7,
+                            _ => (int)Math.Round(
+                                userConcept.IntervalDays *
+                                (userConcept.EaseFactor + 0.3))
+                        };
+
+                    userConcept.NextReviewAtUtc =
+                        now.AddDays(userConcept.IntervalDays);
+
+                    break;
+            }
+        }
+
+        private static (DateTime Start, DateTime End) GetTodayRangeUtc()
+        {
+            var start = DateTime.UtcNow.Date;
+            return (start, start.AddDays(1));
+        }
+
+        private static bool IsSessionCompleted(TrainingSession session)
+        {
+            var newConceptsCount = session.Answers
+                .Where(x => x.WasNewConcept)
+                .Select(x => x.ConceptId)
+                .Distinct()
+                .Count();
+
+            var reviewCount = session.Answers
+                .Count(x => !x.WasNewConcept);
+
+            return newConceptsCount >= session.NewConceptLimit &&
+                   reviewCount >= session.ReviewLimit;
+        }
+
+        private static bool WasRecentlyShownInSession(
+            TrainingSession session,
+            Guid conceptId,
+            int lastItemsCount = 5)
+        {
+            return session.Attempts
+                .OrderByDescending(x => x.CreatedAtUtc)
+                .Take(lastItemsCount)
+                .Any(x => x.ConceptId == conceptId);
+        }
+    }
+}

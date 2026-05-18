@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="WordsTrainer.Api/WordsTrainer.Api.csproj" />
+  <Project Path="WordsTrainer.Contracts/WordsTrainer.Contracts.csproj" Id="77777451-38aa-4d08-bf8c-a3a76cdeae03" />
+  <Project Path="WordsTrainer.Core/WordsTrainer.Core.csproj" />
+  <Project Path="WordsTrainer.Infrastructure/WordsTrainer.Infrastructure.csproj" />
+  <Project Path="WordsTrainer.Mobile/WordsTrainer.Mobile.csproj" />
+</Solution>

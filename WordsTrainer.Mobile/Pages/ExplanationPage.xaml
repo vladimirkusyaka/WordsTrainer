@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="WordsTrainer.Mobile.Pages.ExplanationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F5F7FA"
+    Title="Explanation">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- TOP BAR -->
+
+        <Grid
+            Grid.Row="0"
+            Padding="20,16"
+            ColumnDefinitions="Auto,*">
+
+            <Button
+                Grid.Column="0"
+                Text="←"
+                FontSize="22"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="25"
+                BackgroundColor="White"
+                Clicked="BackClicked" />
+
+            <Label
+                Grid.Column="1"
+                Text="Word explanation"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="22"
+                FontAttributes="Bold" />
+
+        </Grid>
+
+        <!-- CONTENT -->
+
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="24"
+                Spacing="20">
+
+                <!-- LOADING -->
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}" />
+
+                <!-- WORD -->
+
+                <Border
+                    Padding="28"
+                    BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 24">
+
+                    <VerticalStackLayout Spacing="18">
+
+                        <Label
+                            Text="{Binding TargetWord}"
+                            FontSize="42"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#111827" />
+
+                        <Button
+                            Text="🔊 Listen pronunciation"
+                            Command="{Binding PlayAudioCommand}"
+                            FontSize="18"
+                            HeightRequest="56"
+                            CornerRadius="18"
+                            BackgroundColor="#2563EB"
+                            TextColor="White" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <!-- TRANSLATION -->
+
+                <Border
+                    Padding="20"
+                    BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 20">
+
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label
+                            Text="Translation"
+                            FontSize="14"
+                            TextColor="#6B7280" />
+
+                        <Label
+                            Text="{Binding NativeTranslation}"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <!-- EXPLANATION -->
+
+                <Border
+                    Padding="20"
+                    BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 20">
+
+                    <VerticalStackLayout Spacing="12">
+
+                        <Label
+                            Text="Meaning"
+                            FontSize="14"
+                            TextColor="#6B7280" />
+
+                        <Label
+                            Text="{Binding Explanation}"
+                            FontSize="20"
+                            LineBreakMode="WordWrap"
+                            TextColor="#111827" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <!-- MESSAGE -->
+
+                <Label
+                    Text="{Binding Message}"
+                    FontSize="14"
+                    TextColor="#6B7280"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>
