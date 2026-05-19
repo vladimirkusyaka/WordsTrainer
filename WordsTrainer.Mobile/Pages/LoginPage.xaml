@@ -1,48 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     x:Class="WordsTrainer.Mobile.Pages.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F5F7FA"
     Title="Login">
 
-    <Grid Padding="24" RowDefinitions="*,Auto,*">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+    </ContentPage.Resources>
 
-        <VerticalStackLayout Grid.Row="1" Spacing="18">
+    <Grid Padding="24">
 
-            <Label
-                Text="WordsTrainer"
-                FontSize="32"
-                FontAttributes="Bold"
-                HorizontalOptions="Center" />
+        <ScrollView>
+            <VerticalStackLayout
+                MaximumWidthRequest="420"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="22">
 
-            <Entry
-                Placeholder="Email"
-                Keyboard="Email"
-                Text="{Binding Email}" />
+                <!-- HEADER -->
 
-            <Entry
-                Placeholder="Password"
-                IsPassword="True"
-                Text="{Binding Password}" />
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="WordsTrainer"
+                        FontSize="36"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource WtForeground}"
+                        HorizontalTextAlignment="Center" />
 
-            <Button
-                Text="Login"
-                Command="{Binding LoginCommand}" />
-			
-			<Button
-                Text="Create account"
-                Command="{Binding GoToRegisterCommand}" />
+                    <Label
+                        Text="Train your vocabulary every day"
+                        FontSize="17"
+                        TextColor="{StaticResource WtMutedText}"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-            <ActivityIndicator
-                IsRunning="{Binding IsBusy}"
-                IsVisible="{Binding IsBusy}" />
+                <!-- CARD -->
 
-            <Label
-                Text="{Binding ErrorMessage}"
-                TextColor="Red"
-                HorizontalTextAlignment="Center" />
+                <Border
+                    BackgroundColor="{StaticResource WtCard}"
+                    Stroke="{StaticResource WtBorder}"
+                    StrokeThickness="1"
+                    Padding="22"
+                    StrokeShape="RoundRectangle 28">
 
-        </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="16">
+
+                        <Label
+                            Text="Welcome back"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource WtForeground}" />
+
+                        <Label
+                            Text="Log in to continue your training"
+                            FontSize="15"
+                            TextColor="{StaticResource WtMutedText}" />
+
+                        <Entry
+                            Placeholder="Email"
+                            Keyboard="Email"
+                            Text="{Binding Email}"
+                            HeightRequest="54"
+                            FontSize="16"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Entry
+                            Placeholder="Password"
+                            IsPassword="True"
+                            Text="{Binding Password}"
+                            HeightRequest="54"
+                            FontSize="16"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Button
+                            Text="Login"
+                            Style="{StaticResource WtPrimaryButton}"
+                            Command="{Binding LoginCommand}" />
+
+                        <Button
+                            Text="Create account"
+                            Style="{StaticResource WtSecondaryButton}"
+                            Command="{Binding GoToRegisterCommand}" />
+
+                        <Label
+                            Text="{Binding ErrorMessage}"
+                            FontSize="14"
+                            TextColor="{StaticResource WtError}"
+                            HorizontalTextAlignment="Center" />
+
+                        <ActivityIndicator
+                            IsRunning="{Binding IsBusy}"
+                            IsVisible="{Binding IsBusy}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
 
     </Grid>
+
 </ContentPage>
