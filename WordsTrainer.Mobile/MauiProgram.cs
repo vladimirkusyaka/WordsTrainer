@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using WordsTrainer.Mobile.Services;
+using WordsTrainer.Mobile.Configuration;
 using WordsTrainer.Mobile.Pages;
+using WordsTrainer.Mobile.Services;
 using WordsTrainer.Mobile.ViewModels;
 
 namespace WordsTrainer.Mobile;
@@ -22,7 +23,7 @@ public static class MauiProgram
 
         builder.Services.AddHttpClient<ApiClient>(client =>
         {
-            client.BaseAddress = new Uri("http://localhost:5261");
+            client.BaseAddress = new Uri(AppConfig.ApiBaseUrl);
         });
 
         builder.Services.AddTransient<RegisterPage>();
