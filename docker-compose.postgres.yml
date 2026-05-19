@@ -1,0 +1,16 @@
+services:
+  wordstrainer-postgres:
+    image: postgres:16
+    container_name: wordstrainer-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: WordsTrainerDb
+      POSTGRES_USER: wordstrainer
+      POSTGRES_PASSWORD: wordstrainer_password_123
+    ports:
+      - "5433:5432"
+    volumes:
+      - wordstrainer_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  wordstrainer_postgres_data:

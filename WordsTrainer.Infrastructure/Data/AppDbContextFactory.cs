@@ -9,8 +9,8 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
-        optionsBuilder.UseSqlServer(
-            "Server=localhost,1433;Database=WordsTrainerDb;User Id=sa;Password=Your_strong_password_123;TrustServerCertificate=True;");
+        optionsBuilder.UseNpgsql(
+            "Host=localhost;Port=5433;Database=WordsTrainerDb;Username=wordstrainer;Password=wordstrainer_password_123");
 
         return new AppDbContext(optionsBuilder.Options);
     }
