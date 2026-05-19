@@ -1,69 +1,148 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     x:Class="WordsTrainer.Mobile.Pages.RegisterPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Register">
+    BackgroundColor="#F5F7FA"
+    NavigationPage.HasNavigationBar="False">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="16">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+    </ContentPage.Resources>
 
-            <Label
-                Text="Create account"
-                FontSize="32"
-                FontAttributes="Bold"
-                HorizontalOptions="Center" />
+    <Grid Padding="20">
 
-            <Entry
-                Placeholder="Email"
-                Keyboard="Email"
-                Text="{Binding Email}" />
+        <ScrollView>
+            <VerticalStackLayout
+                MaximumWidthRequest="500"
+                HorizontalOptions="Center"
+                Spacing="12"
+                Padding="0,4">
 
-            <Entry
-                Placeholder="Password"
-                IsPassword="True"
-                Text="{Binding Password}" />
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        Text="Create account"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource WtForeground}"
+                        HorizontalTextAlignment="Center" />
 
-            <Entry
-                Placeholder="Confirm password"
-                IsPassword="True"
-                Text="{Binding ConfirmPassword}" />
+                    <Label
+                        Text="Choose your languages and start learning"
+                        FontSize="16"
+                        TextColor="{StaticResource WtMutedText}"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-            <Picker
-    Title="Native language"
-    ItemsSource="{Binding Languages}"
-    ItemDisplayBinding="{Binding NativeName}"
-    SelectedItem="{Binding SelectedNativeLanguage}" />
+                <Border
+                    BackgroundColor="{StaticResource WtCard}"
+                    Stroke="{StaticResource WtBorder}"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 28"
+                    WidthRequest="380"
+                    Padding="18">
 
-            <Picker
-    Title="Target language"
-    ItemsSource="{Binding Languages}"
-    ItemDisplayBinding="{Binding NativeName}"
-    SelectedItem="{Binding SelectedTargetLanguage}" />
+                    <VerticalStackLayout Spacing="7">
 
-            <Picker
-    Title="Level"
-    ItemsSource="{Binding Levels}"
-    ItemDisplayBinding="{Binding Code}"
-    SelectedItem="{Binding SelectedLevel}" />
+                        <Entry
+                            Placeholder="Email"
+                            Keyboard="Email"
+                            Text="{Binding Email}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
 
-            <Button
-                Text="Register"
-                Command="{Binding RegisterCommand}" />
+                        <Entry
+                            Placeholder="Password"
+                            IsPassword="True"
+                            Text="{Binding Password}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
 
-            <Button
-                Text="Already have account? Login"
-                Command="{Binding GoToLoginCommand}" />
+                        <Entry
+                            Placeholder="Confirm password"
+                            IsPassword="True"
+                            Text="{Binding ConfirmPassword}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
 
-            <ActivityIndicator
-                IsRunning="{Binding IsBusy}"
-                IsVisible="{Binding IsBusy}" />
+                        <Label
+                            Margin="0,2,0,0"
+                            Text="Native language"
+                            FontSize="12"
+                            TextColor="{StaticResource WtMutedText}" />
 
-            <Label
-                Text="{Binding ErrorMessage}"
-                TextColor="Red"
-                HorizontalTextAlignment="Center" />
+                        <Picker
+                            ItemsSource="{Binding Languages}"
+                            ItemDisplayBinding="{Binding NativeName}"
+                            SelectedItem="{Binding SelectedNativeLanguage}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
 
-        </VerticalStackLayout>
-    </ScrollView>
+                        <Label
+                            Margin="0,2,0,0"
+                            Text="Target language"
+                            FontSize="12"
+                            TextColor="{StaticResource WtMutedText}" />
+
+                        <Picker
+                            ItemsSource="{Binding Languages}"
+                            ItemDisplayBinding="{Binding NativeName}"
+                            SelectedItem="{Binding SelectedTargetLanguage}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Label
+                            Margin="0,2,0,0"
+                            Text="Level"
+                            FontSize="12"
+                            TextColor="{StaticResource WtMutedText}" />
+
+                        <Picker
+                            ItemsSource="{Binding Levels}"
+                            ItemDisplayBinding="{Binding Code}"
+                            SelectedItem="{Binding SelectedLevel}"
+                            HeightRequest="40"
+                            FontSize="14"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Button
+                            Margin="0,10,0,0"
+                            Text="Register"
+                            HeightRequest="44"
+                            CornerRadius="16"
+                            Style="{StaticResource WtPrimaryButton}"
+                            Command="{Binding RegisterCommand}" />
+
+                        <Button
+                            Text="Already have account? Login"
+                            HeightRequest="44"
+                            CornerRadius="16"
+                            Style="{StaticResource WtSecondaryButton}"
+                            Command="{Binding GoToLoginCommand}" />
+
+                        <ActivityIndicator
+                            IsRunning="{Binding IsBusy}"
+                            IsVisible="{Binding IsBusy}" />
+
+                        <Label
+                            Text="{Binding ErrorMessage}"
+                            FontSize="12"
+                            TextColor="{StaticResource WtError}"
+                            HorizontalTextAlignment="Center" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
 </ContentPage>
