@@ -4,6 +4,8 @@ using System.Windows.Input;
 using WordsTrainer.Contracts.Training;
 using WordsTrainer.Mobile.Pages;
 using WordsTrainer.Mobile.Services;
+using static System.Net.Mime.MediaTypeNames;
+using Application = Microsoft.Maui.Controls.Application;
 
 namespace WordsTrainer.Mobile.ViewModels;
 
@@ -11,6 +13,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 {
     private readonly ApiClient _apiClient;
     private readonly TokenStorage _tokenStorage;
+    private readonly UiTextService _texts;
 
     private TrainingQuestionResponse? _currentQuestion;
 
@@ -25,10 +28,23 @@ public class TrainingViewModel : INotifyPropertyChanged
     private int _newCorrectToday;
     private int _learnedTotal;
 
-    public TrainingViewModel(ApiClient apiClient, TokenStorage tokenStorage)
+    public string AppTitle => _texts.T("app.title");
+    public string AppSubtitle => _texts.T("app.subtitle");
+    public string LogoutText => _texts.T("logout");
+    public string TodayText => _texts.T("today");
+    public string CorrectText => _texts.T("correct");
+    public string NewText => _texts.T("new");
+    public string LearnedText => _texts.T("learned");
+    public string TranslateWordText => _texts.T("translate.word");
+    public string DontKnowText => _texts.T("dont.know");
+    public string TrainingCompleteText => _texts.T("training.complete");
+
+    public TrainingViewModel(ApiClient apiClient, TokenStorage tokenStorage,
+    UiTextService texts)
     {
         _apiClient = apiClient;
         _tokenStorage = tokenStorage;
+        _texts = texts;
 
         AnswerCommand = new Command<TrainingOptionDto>(
             async option => await AnswerAsync(option),
@@ -199,8 +215,8 @@ public class TrainingViewModel : INotifyPropertyChanged
             }
 
             Message = response.IsCorrect
-                ? "✅ Correct!"
-                : $"❌ Correct answer: {response.CorrectAnswer}";
+                    ? _texts.T("correct.answer")
+                    : string.Format(_texts.T("wrong.answer"), response.CorrectAnswer);
 
             await LoadStatsAsync();
         }
@@ -304,24 +320,27 @@ public class TrainingViewModel : INotifyPropertyChanged
         if (me == null)
             return;
 
-        LevelCode = me.LanguageLevelCode;
+        _texts.SetLanguage(me.NativeLanguageCode);
+
+        OnPropertyChanged(nameof(AppTitle));
+        OnPropertyChanged(nameof(AppSubtitle));
+        OnPropertyChanged(nameof(LogoutText));
+        OnPropertyChanged(nameof(TodayText));
+        OnPropertyChanged(nameof(CorrectText));
+        OnPropertyChanged(nameof(NewText));
+        OnPropertyChanged(nameof(LearnedText));
+        OnPropertyChanged(nameof(TranslateWordText));
+        OnPropertyChanged(nameof(DontKnowText));
+        OnPropertyChanged(nameof(TrainingCompleteText));
     }
 
     private string GetFriendlyMessage(TrainingNextStatus status, string? backendMessage)
     {
         return status switch
         {
-            TrainingNextStatus.SessionCompleted =>
-                "🎉 Great job! You completed today's training.",
-
-            TrainingNextStatus.NoWordsAvailable =>
-                "📚 No words available for your current language pair yet.",
-
-            TrainingNextStatus.DailyLimitReached =>
-                "✅ You reached today's learning limit.",
-
-            _ =>
-                backendMessage ?? "Something went wrong."
+            TrainingNextStatus.SessionCompleted => _texts.T("session.complete"),
+            TrainingNextStatus.NoWordsAvailable => _texts.T("no.words"),
+            _ => backendMessage ?? _texts.T("no.words")
         };
     }
 }

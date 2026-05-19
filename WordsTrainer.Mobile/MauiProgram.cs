@@ -38,6 +38,8 @@ public static class MauiProgram
         builder.Services.AddTransient<ExplanationViewModel>();
 
         builder.Services.AddSingleton<StartupService>();
+
+        builder.Services.AddSingleton<UiTextService>();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
