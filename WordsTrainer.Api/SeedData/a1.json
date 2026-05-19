@@ -1,2309 +1,9 @@
 [
   {
-    "key": "hello_phrase",
+    "key": "house",
     "level": "A1",
-    "partOfSpeech": "Expression",
-    "description": "hello / greeting",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Hallo"
-      },
-      {
-        "languageCode": "ru",
-        "text": "привет"
-      },
-      {
-        "languageCode": "uk",
-        "text": "привіт"
-      },
-      {
-        "languageCode": "en",
-        "text": "hello"
-      },
-      {
-        "languageCode": "tr",
-        "text": "merhaba"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ہیلو"
-      },
-      {
-        "languageCode": "ps",
-        "text": "سلام"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سلام"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Приветствие при встрече."
-      },
-      {
-        "languageCode": "en",
-        "text": "Hello / greeting."
-      }
-    ]
-  },
-  {
-    "key": "goodbye_phrase",
-    "level": "A1",
-    "partOfSpeech": "Expression",
-    "description": "goodbye",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Tschüss"
-      },
-      {
-        "languageCode": "ru",
-        "text": "пока"
-      },
-      {
-        "languageCode": "uk",
-        "text": "бувай"
-      },
-      {
-        "languageCode": "en",
-        "text": "goodbye"
-      },
-      {
-        "languageCode": "tr",
-        "text": "hoşça kal"
-      },
-      {
-        "languageCode": "ur",
-        "text": "خدا حافظ"
-      },
-      {
-        "languageCode": "ps",
-        "text": "خدای پامان"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خداحافظ"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Прощание."
-      },
-      {
-        "languageCode": "en",
-        "text": "Goodbye."
-      }
-    ]
-  },
-  {
-    "key": "please_phrase",
-    "level": "A1",
-    "partOfSpeech": "Expression",
-    "description": "please",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "bitte"
-      },
-      {
-        "languageCode": "ru",
-        "text": "пожалуйста"
-      },
-      {
-        "languageCode": "uk",
-        "text": "будь ласка"
-      },
-      {
-        "languageCode": "en",
-        "text": "please"
-      },
-      {
-        "languageCode": "tr",
-        "text": "lütfen"
-      },
-      {
-        "languageCode": "ur",
-        "text": "براہ کرم"
-      },
-      {
-        "languageCode": "ps",
-        "text": "مهرباني وکړئ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "لطفاً"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Вежливая просьба."
-      },
-      {
-        "languageCode": "en",
-        "text": "Please."
-      }
-    ]
-  },
-  {
-    "key": "thank_you_phrase",
-    "level": "A1",
-    "partOfSpeech": "Expression",
-    "description": "thank you",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "danke"
-      },
-      {
-        "languageCode": "ru",
-        "text": "спасибо"
-      },
-      {
-        "languageCode": "uk",
-        "text": "дякую"
-      },
-      {
-        "languageCode": "en",
-        "text": "thank you"
-      },
-      {
-        "languageCode": "tr",
-        "text": "teşekkürler"
-      },
-      {
-        "languageCode": "ur",
-        "text": "شکریہ"
-      },
-      {
-        "languageCode": "ps",
-        "text": "مننه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "تشکر"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Благодарность."
-      },
-      {
-        "languageCode": "en",
-        "text": "Thank you."
-      }
-    ]
-  },
-  {
-    "key": "yes_word",
-    "level": "A1",
-    "partOfSpeech": "Adverb",
-    "description": "yes",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "ja"
-      },
-      {
-        "languageCode": "ru",
-        "text": "да"
-      },
-      {
-        "languageCode": "uk",
-        "text": "так"
-      },
-      {
-        "languageCode": "en",
-        "text": "yes"
-      },
-      {
-        "languageCode": "tr",
-        "text": "evet"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ہاں"
-      },
-      {
-        "languageCode": "ps",
-        "text": "هو"
-      },
-      {
-        "languageCode": "fa",
-        "text": "بلی"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Утвердительный ответ."
-      },
-      {
-        "languageCode": "en",
-        "text": "Yes."
-      }
-    ]
-  },
-  {
-    "key": "no_word",
-    "level": "A1",
-    "partOfSpeech": "Adverb",
-    "description": "no",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "nein"
-      },
-      {
-        "languageCode": "ru",
-        "text": "нет"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ні"
-      },
-      {
-        "languageCode": "en",
-        "text": "no"
-      },
-      {
-        "languageCode": "tr",
-        "text": "hayır"
-      },
-      {
-        "languageCode": "ur",
-        "text": "نہیں"
-      },
-      {
-        "languageCode": "ps",
-        "text": "نه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نه"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Отрицательный ответ."
-      },
-      {
-        "languageCode": "en",
-        "text": "No."
-      }
-    ]
-  },
-  {
-    "key": "person_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "person",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Person"
-      },
-      {
-        "languageCode": "ru",
-        "text": "человек"
-      },
-      {
-        "languageCode": "uk",
-        "text": "людина"
-      },
-      {
-        "languageCode": "en",
-        "text": "person"
-      },
-      {
-        "languageCode": "tr",
-        "text": "kişi"
-      },
-      {
-        "languageCode": "ur",
-        "text": "شخص"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کس"
-      },
-      {
-        "languageCode": "fa",
-        "text": "شخص"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Отдельный человек."
-      },
-      {
-        "languageCode": "en",
-        "text": "Person."
-      }
-    ]
-  },
-  {
-    "key": "man_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "man",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Mann"
-      },
-      {
-        "languageCode": "ru",
-        "text": "мужчина"
-      },
-      {
-        "languageCode": "uk",
-        "text": "чоловік"
-      },
-      {
-        "languageCode": "en",
-        "text": "man"
-      },
-      {
-        "languageCode": "tr",
-        "text": "erkek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "آدمی"
-      },
-      {
-        "languageCode": "ps",
-        "text": "سړی"
-      },
-      {
-        "languageCode": "fa",
-        "text": "مرد"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Взрослый мужчина."
-      },
-      {
-        "languageCode": "en",
-        "text": "Man."
-      }
-    ]
-  },
-  {
-    "key": "woman_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "woman",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Frau"
-      },
-      {
-        "languageCode": "ru",
-        "text": "женщина"
-      },
-      {
-        "languageCode": "uk",
-        "text": "жінка"
-      },
-      {
-        "languageCode": "en",
-        "text": "woman"
-      },
-      {
-        "languageCode": "tr",
-        "text": "kadın"
-      },
-      {
-        "languageCode": "ur",
-        "text": "عورت"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ښځه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "زن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Взрослая женщина."
-      },
-      {
-        "languageCode": "en",
-        "text": "Woman."
-      }
-    ]
-  },
-  {
-    "key": "child_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "child",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Kind"
-      },
-      {
-        "languageCode": "ru",
-        "text": "ребёнок"
-      },
-      {
-        "languageCode": "uk",
-        "text": "дитина"
-      },
-      {
-        "languageCode": "en",
-        "text": "child"
-      },
-      {
-        "languageCode": "tr",
-        "text": "çocuk"
-      },
-      {
-        "languageCode": "ur",
-        "text": "بچہ"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ماشوم"
-      },
-      {
-        "languageCode": "fa",
-        "text": "طفل"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Ребёнок."
-      },
-      {
-        "languageCode": "en",
-        "text": "Child."
-      }
-    ]
-  },
-  {
-    "key": "family_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "family",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Familie"
-      },
-      {
-        "languageCode": "ru",
-        "text": "семья"
-      },
-      {
-        "languageCode": "uk",
-        "text": "сім'я"
-      },
-      {
-        "languageCode": "en",
-        "text": "family"
-      },
-      {
-        "languageCode": "tr",
-        "text": "aile"
-      },
-      {
-        "languageCode": "ur",
-        "text": "خاندان"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کورنۍ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خانواده"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Родные люди."
-      },
-      {
-        "languageCode": "en",
-        "text": "Family."
-      }
-    ]
-  },
-  {
-    "key": "mother_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "mother",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Mutter"
-      },
-      {
-        "languageCode": "ru",
-        "text": "мать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "мати"
-      },
-      {
-        "languageCode": "en",
-        "text": "mother"
-      },
-      {
-        "languageCode": "tr",
-        "text": "anne"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ماں"
-      },
-      {
-        "languageCode": "ps",
-        "text": "مور"
-      },
-      {
-        "languageCode": "fa",
-        "text": "مادر"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Мама."
-      },
-      {
-        "languageCode": "en",
-        "text": "Mother."
-      }
-    ]
-  },
-  {
-    "key": "father_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "father",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Vater"
-      },
-      {
-        "languageCode": "ru",
-        "text": "отец"
-      },
-      {
-        "languageCode": "uk",
-        "text": "батько"
-      },
-      {
-        "languageCode": "en",
-        "text": "father"
-      },
-      {
-        "languageCode": "tr",
-        "text": "baba"
-      },
-      {
-        "languageCode": "ur",
-        "text": "باپ"
-      },
-      {
-        "languageCode": "ps",
-        "text": "پلار"
-      },
-      {
-        "languageCode": "fa",
-        "text": "پدر"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Папа."
-      },
-      {
-        "languageCode": "en",
-        "text": "Father."
-      }
-    ]
-  },
-  {
-    "key": "friend_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "friend",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Freund"
-      },
-      {
-        "languageCode": "ru",
-        "text": "друг"
-      },
-      {
-        "languageCode": "uk",
-        "text": "друг"
-      },
-      {
-        "languageCode": "en",
-        "text": "friend"
-      },
-      {
-        "languageCode": "tr",
-        "text": "arkadaş"
-      },
-      {
-        "languageCode": "ur",
-        "text": "دوست"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ملګری"
-      },
-      {
-        "languageCode": "fa",
-        "text": "دوست"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Близкий знакомый."
-      },
-      {
-        "languageCode": "en",
-        "text": "Friend."
-      }
-    ]
-  },
-  {
-    "key": "i_pronoun",
-    "level": "A1",
-    "partOfSpeech": "Pronoun",
-    "description": "I",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "ich"
-      },
-      {
-        "languageCode": "ru",
-        "text": "я"
-      },
-      {
-        "languageCode": "uk",
-        "text": "я"
-      },
-      {
-        "languageCode": "en",
-        "text": "I"
-      },
-      {
-        "languageCode": "tr",
-        "text": "ben"
-      },
-      {
-        "languageCode": "ur",
-        "text": "میں"
-      },
-      {
-        "languageCode": "ps",
-        "text": "زه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "من"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Говорящий о себе."
-      },
-      {
-        "languageCode": "en",
-        "text": "I."
-      }
-    ]
-  },
-  {
-    "key": "you_pronoun",
-    "level": "A1",
-    "partOfSpeech": "Pronoun",
-    "description": "you",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "du"
-      },
-      {
-        "languageCode": "ru",
-        "text": "ты"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ти"
-      },
-      {
-        "languageCode": "en",
-        "text": "you"
-      },
-      {
-        "languageCode": "tr",
-        "text": "sen"
-      },
-      {
-        "languageCode": "ur",
-        "text": "تم"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ته"
-      },
-      {
-        "languageCode": "fa",
-        "text": "تو"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Обращение к одному человеку."
-      },
-      {
-        "languageCode": "en",
-        "text": "You."
-      }
-    ]
-  },
-  {
-    "key": "we_pronoun",
-    "level": "A1",
-    "partOfSpeech": "Pronoun",
-    "description": "we",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "wir"
-      },
-      {
-        "languageCode": "ru",
-        "text": "мы"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ми"
-      },
-      {
-        "languageCode": "en",
-        "text": "we"
-      },
-      {
-        "languageCode": "tr",
-        "text": "biz"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ہم"
-      },
-      {
-        "languageCode": "ps",
-        "text": "موږ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "ما"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Группа вместе с говорящим."
-      },
-      {
-        "languageCode": "en",
-        "text": "We."
-      }
-    ]
-  },
-  {
-    "key": "be_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to be",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "sein"
-      },
-      {
-        "languageCode": "ru",
-        "text": "быть"
-      },
-      {
-        "languageCode": "uk",
-        "text": "бути"
-      },
-      {
-        "languageCode": "en",
-        "text": "be"
-      },
-      {
-        "languageCode": "tr",
-        "text": "olmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ہونا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کېدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "بودن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Существовать или находиться в состоянии."
-      },
-      {
-        "languageCode": "en",
-        "text": "To be."
-      }
-    ]
-  },
-  {
-    "key": "have_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to have",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "haben"
-      },
-      {
-        "languageCode": "ru",
-        "text": "иметь"
-      },
-      {
-        "languageCode": "uk",
-        "text": "мати"
-      },
-      {
-        "languageCode": "en",
-        "text": "have"
-      },
-      {
-        "languageCode": "tr",
-        "text": "sahip olmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "رکھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "لرل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "داشتن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Обладать чем-то."
-      },
-      {
-        "languageCode": "en",
-        "text": "To have."
-      }
-    ]
-  },
-  {
-    "key": "go_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to go",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "gehen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "идти"
-      },
-      {
-        "languageCode": "uk",
-        "text": "йти"
-      },
-      {
-        "languageCode": "en",
-        "text": "go"
-      },
-      {
-        "languageCode": "tr",
-        "text": "gitmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "جانا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "تلل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "رفتن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Двигаться куда-то."
-      },
-      {
-        "languageCode": "en",
-        "text": "To go."
-      }
-    ]
-  },
-  {
-    "key": "come_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to come",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "kommen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "приходить"
-      },
-      {
-        "languageCode": "uk",
-        "text": "приходити"
-      },
-      {
-        "languageCode": "en",
-        "text": "come"
-      },
-      {
-        "languageCode": "tr",
-        "text": "gelmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "آنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "راتلل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "آمدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Двигаться сюда."
-      },
-      {
-        "languageCode": "en",
-        "text": "To come."
-      }
-    ]
-  },
-  {
-    "key": "eat_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to eat",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "essen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "есть"
-      },
-      {
-        "languageCode": "uk",
-        "text": "їсти"
-      },
-      {
-        "languageCode": "en",
-        "text": "eat"
-      },
-      {
-        "languageCode": "tr",
-        "text": "yemek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "کھانا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "خوړل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خوردن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Принимать пищу."
-      },
-      {
-        "languageCode": "en",
-        "text": "To eat."
-      }
-    ]
-  },
-  {
-    "key": "drink_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to drink",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "trinken"
-      },
-      {
-        "languageCode": "ru",
-        "text": "пить"
-      },
-      {
-        "languageCode": "uk",
-        "text": "пити"
-      },
-      {
-        "languageCode": "en",
-        "text": "drink"
-      },
-      {
-        "languageCode": "tr",
-        "text": "içmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "پینا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "څښل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نوشیدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Употреблять жидкость."
-      },
-      {
-        "languageCode": "en",
-        "text": "To drink."
-      }
-    ]
-  },
-  {
-    "key": "sleep_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to sleep",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "schlafen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "спать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "спати"
-      },
-      {
-        "languageCode": "en",
-        "text": "sleep"
-      },
-      {
-        "languageCode": "tr",
-        "text": "uyumak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سونا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ویده کېدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خوابیدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Находиться во сне."
-      },
-      {
-        "languageCode": "en",
-        "text": "To sleep."
-      }
-    ]
-  },
-  {
-    "key": "read_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to read",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "lesen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "читать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "читати"
-      },
-      {
-        "languageCode": "en",
-        "text": "read"
-      },
-      {
-        "languageCode": "tr",
-        "text": "okumak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "پڑھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "لوستل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خواندن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Воспринимать письменный текст."
-      },
-      {
-        "languageCode": "en",
-        "text": "To read."
-      }
-    ]
-  },
-  {
-    "key": "write_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to write",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "schreiben"
-      },
-      {
-        "languageCode": "ru",
-        "text": "писать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "писати"
-      },
-      {
-        "languageCode": "en",
-        "text": "write"
-      },
-      {
-        "languageCode": "tr",
-        "text": "yazmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "لکھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "لیکل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نوشتن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Создавать текст."
-      },
-      {
-        "languageCode": "en",
-        "text": "To write."
-      }
-    ]
-  },
-  {
-    "key": "speak_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to speak",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "sprechen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "говорить"
-      },
-      {
-        "languageCode": "uk",
-        "text": "говорити"
-      },
-      {
-        "languageCode": "en",
-        "text": "speak"
-      },
-      {
-        "languageCode": "tr",
-        "text": "konuşmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "بولنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "خبرې کول"
-      },
-      {
-        "languageCode": "fa",
-        "text": "صحبت کردن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Использовать речь."
-      },
-      {
-        "languageCode": "en",
-        "text": "To speak."
-      }
-    ]
-  },
-  {
-    "key": "learn_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to learn",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "lernen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "учить"
-      },
-      {
-        "languageCode": "uk",
-        "text": "вчити"
-      },
-      {
-        "languageCode": "en",
-        "text": "learn"
-      },
-      {
-        "languageCode": "tr",
-        "text": "öğrenmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سیکھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "زده کول"
-      },
-      {
-        "languageCode": "fa",
-        "text": "یاد گرفتن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Получать знания."
-      },
-      {
-        "languageCode": "en",
-        "text": "To learn."
-      }
-    ]
-  },
-  {
-    "key": "work_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to work",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "arbeiten"
-      },
-      {
-        "languageCode": "ru",
-        "text": "работать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "працювати"
-      },
-      {
-        "languageCode": "en",
-        "text": "work"
-      },
-      {
-        "languageCode": "tr",
-        "text": "çalışmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "کام کرنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کار کول"
-      },
-      {
-        "languageCode": "fa",
-        "text": "کار کردن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Выполнять работу."
-      },
-      {
-        "languageCode": "en",
-        "text": "To work."
-      }
-    ]
-  },
-  {
-    "key": "buy_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to buy",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "kaufen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "покупать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "купувати"
-      },
-      {
-        "languageCode": "en",
-        "text": "buy"
-      },
-      {
-        "languageCode": "tr",
-        "text": "satın almak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "خریدنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "اخیستل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خریدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Получать товар за деньги."
-      },
-      {
-        "languageCode": "en",
-        "text": "To buy."
-      }
-    ]
-  },
-  {
-    "key": "pay_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to pay",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "bezahlen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "платить"
-      },
-      {
-        "languageCode": "uk",
-        "text": "платити"
-      },
-      {
-        "languageCode": "en",
-        "text": "pay"
-      },
-      {
-        "languageCode": "tr",
-        "text": "ödemek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ادا کرنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "پیسې ورکول"
-      },
-      {
-        "languageCode": "fa",
-        "text": "پرداخت کردن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Отдавать деньги за что-то."
-      },
-      {
-        "languageCode": "en",
-        "text": "To pay."
-      }
-    ]
-  },
-  {
-    "key": "want_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to want",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "wollen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "хотеть"
-      },
-      {
-        "languageCode": "uk",
-        "text": "хотіти"
-      },
-      {
-        "languageCode": "en",
-        "text": "want"
-      },
-      {
-        "languageCode": "tr",
-        "text": "istemek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "چاہنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "غوښتل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "خواستن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Желать чего-то."
-      },
-      {
-        "languageCode": "en",
-        "text": "To want."
-      }
-    ]
-  },
-  {
-    "key": "need_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to need",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "brauchen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "нуждаться"
-      },
-      {
-        "languageCode": "uk",
-        "text": "потребувати"
-      },
-      {
-        "languageCode": "en",
-        "text": "need"
-      },
-      {
-        "languageCode": "tr",
-        "text": "ihtiyacı olmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ضرورت ہونا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "اړتیا لرل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نیاز داشتن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Иметь необходимость."
-      },
-      {
-        "languageCode": "en",
-        "text": "To need."
-      }
-    ]
-  },
-  {
-    "key": "understand_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to understand",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "verstehen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "понимать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "розуміти"
-      },
-      {
-        "languageCode": "en",
-        "text": "understand"
-      },
-      {
-        "languageCode": "tr",
-        "text": "anlamak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سمجھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "پوهېدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "فهمیدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Осознавать смысл."
-      },
-      {
-        "languageCode": "en",
-        "text": "To understand."
-      }
-    ]
-  },
-  {
-    "key": "know_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to know",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "wissen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "знать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "знати"
-      },
-      {
-        "languageCode": "en",
-        "text": "know"
-      },
-      {
-        "languageCode": "tr",
-        "text": "bilmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "جاننا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "پوهېدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "دانستن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Иметь информацию."
-      },
-      {
-        "languageCode": "en",
-        "text": "To know."
-      }
-    ]
-  },
-  {
-    "key": "make_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to make/do",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "machen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "делать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "робити"
-      },
-      {
-        "languageCode": "en",
-        "text": "make"
-      },
-      {
-        "languageCode": "tr",
-        "text": "yapmak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "کرنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کول"
-      },
-      {
-        "languageCode": "fa",
-        "text": "کردن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Выполнять действие или создавать что-то."
-      },
-      {
-        "languageCode": "en",
-        "text": "To make/do."
-      }
-    ]
-  },
-  {
-    "key": "see_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to see",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "sehen"
-      },
-      {
-        "languageCode": "ru",
-        "text": "видеть"
-      },
-      {
-        "languageCode": "uk",
-        "text": "бачити"
-      },
-      {
-        "languageCode": "en",
-        "text": "see"
-      },
-      {
-        "languageCode": "tr",
-        "text": "görmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "دیکھنا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "لیدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "دیدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Воспринимать глазами."
-      },
-      {
-        "languageCode": "en",
-        "text": "To see."
-      }
-    ]
-  },
-  {
-    "key": "hear_verb",
-    "level": "A1",
-    "partOfSpeech": "Verb",
-    "description": "to hear",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "hören"
-      },
-      {
-        "languageCode": "ru",
-        "text": "слышать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "чути"
-      },
-      {
-        "languageCode": "en",
-        "text": "hear"
-      },
-      {
-        "languageCode": "tr",
-        "text": "duymak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سننا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "اورېدل"
-      },
-      {
-        "languageCode": "fa",
-        "text": "شنیدن"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Воспринимать звук."
-      },
-      {
-        "languageCode": "en",
-        "text": "To hear."
-      }
-    ]
-  },
-  {
-    "key": "bread_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "bread",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Brot"
-      },
-      {
-        "languageCode": "ru",
-        "text": "хлеб"
-      },
-      {
-        "languageCode": "uk",
-        "text": "хліб"
-      },
-      {
-        "languageCode": "en",
-        "text": "bread"
-      },
-      {
-        "languageCode": "tr",
-        "text": "ekmek"
-      },
-      {
-        "languageCode": "ur",
-        "text": "روٹی"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ډوډۍ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نان"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Основной продукт из муки."
-      },
-      {
-        "languageCode": "en",
-        "text": "Bread."
-      }
-    ]
-  },
-  {
-    "key": "water_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "water",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Wasser"
-      },
-      {
-        "languageCode": "ru",
-        "text": "вода"
-      },
-      {
-        "languageCode": "uk",
-        "text": "вода"
-      },
-      {
-        "languageCode": "en",
-        "text": "water"
-      },
-      {
-        "languageCode": "tr",
-        "text": "su"
-      },
-      {
-        "languageCode": "ur",
-        "text": "پانی"
-      },
-      {
-        "languageCode": "ps",
-        "text": "اوبه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "آب"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Жидкость для питья."
-      },
-      {
-        "languageCode": "en",
-        "text": "Water."
-      }
-    ]
-  },
-  {
-    "key": "coffee_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "coffee",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Kaffee"
-      },
-      {
-        "languageCode": "ru",
-        "text": "кофе"
-      },
-      {
-        "languageCode": "uk",
-        "text": "кава"
-      },
-      {
-        "languageCode": "en",
-        "text": "coffee"
-      },
-      {
-        "languageCode": "tr",
-        "text": "kahve"
-      },
-      {
-        "languageCode": "ur",
-        "text": "کافی"
-      },
-      {
-        "languageCode": "ps",
-        "text": "کافي"
-      },
-      {
-        "languageCode": "fa",
-        "text": "قهوه"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Горячий напиток из кофейных зёрен."
-      },
-      {
-        "languageCode": "en",
-        "text": "Coffee."
-      }
-    ]
-  },
-  {
-    "key": "tea_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "tea",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Tee"
-      },
-      {
-        "languageCode": "ru",
-        "text": "чай"
-      },
-      {
-        "languageCode": "uk",
-        "text": "чай"
-      },
-      {
-        "languageCode": "en",
-        "text": "tea"
-      },
-      {
-        "languageCode": "tr",
-        "text": "çay"
-      },
-      {
-        "languageCode": "ur",
-        "text": "چائے"
-      },
-      {
-        "languageCode": "ps",
-        "text": "چای"
-      },
-      {
-        "languageCode": "fa",
-        "text": "چای"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Горячий напиток из листьев чая."
-      },
-      {
-        "languageCode": "en",
-        "text": "Tea."
-      }
-    ]
-  },
-  {
-    "key": "milk_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "milk",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Milch"
-      },
-      {
-        "languageCode": "ru",
-        "text": "молоко"
-      },
-      {
-        "languageCode": "uk",
-        "text": "молоко"
-      },
-      {
-        "languageCode": "en",
-        "text": "milk"
-      },
-      {
-        "languageCode": "tr",
-        "text": "süt"
-      },
-      {
-        "languageCode": "ur",
-        "text": "دودھ"
-      },
-      {
-        "languageCode": "ps",
-        "text": "شیدې"
-      },
-      {
-        "languageCode": "fa",
-        "text": "شیر"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Белый напиток животного происхождения."
-      },
-      {
-        "languageCode": "en",
-        "text": "Milk."
-      }
-    ]
-  },
-  {
-    "key": "apple_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "apple",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Apfel"
-      },
-      {
-        "languageCode": "ru",
-        "text": "яблоко"
-      },
-      {
-        "languageCode": "uk",
-        "text": "яблуко"
-      },
-      {
-        "languageCode": "en",
-        "text": "apple"
-      },
-      {
-        "languageCode": "tr",
-        "text": "elma"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سیب"
-      },
-      {
-        "languageCode": "ps",
-        "text": "مڼه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سیب"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Фрукт."
-      },
-      {
-        "languageCode": "en",
-        "text": "Apple."
-      }
-    ]
-  },
-  {
-    "key": "rice_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "rice",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Reis"
-      },
-      {
-        "languageCode": "ru",
-        "text": "рис"
-      },
-      {
-        "languageCode": "uk",
-        "text": "рис"
-      },
-      {
-        "languageCode": "en",
-        "text": "rice"
-      },
-      {
-        "languageCode": "tr",
-        "text": "pirinç"
-      },
-      {
-        "languageCode": "ur",
-        "text": "چاول"
-      },
-      {
-        "languageCode": "ps",
-        "text": "وریجې"
-      },
-      {
-        "languageCode": "fa",
-        "text": "برنج"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Зерновой продукт."
-      },
-      {
-        "languageCode": "en",
-        "text": "Rice."
-      }
-    ]
-  },
-  {
-    "key": "meat_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "meat",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "Fleisch"
-      },
-      {
-        "languageCode": "ru",
-        "text": "мясо"
-      },
-      {
-        "languageCode": "uk",
-        "text": "м'ясо"
-      },
-      {
-        "languageCode": "en",
-        "text": "meat"
-      },
-      {
-        "languageCode": "tr",
-        "text": "et"
-      },
-      {
-        "languageCode": "ur",
-        "text": "گوشت"
-      },
-      {
-        "languageCode": "ps",
-        "text": "غوښه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "گوشت"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Пища животного происхождения."
-      },
-      {
-        "languageCode": "en",
-        "text": "Meat."
-      }
-    ]
-  },
-  {
-    "key": "house_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "house",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: house.",
     "words": [
       {
         "languageCode": "de",
@@ -2314,12 +14,12 @@
         "text": "дом"
       },
       {
-        "languageCode": "uk",
-        "text": "дім"
-      },
-      {
         "languageCode": "en",
         "text": "house"
+      },
+      {
+        "languageCode": "uk",
+        "text": "будинок"
       },
       {
         "languageCode": "tr",
@@ -2341,469 +41,509 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Здание для проживания."
+        "text": "Базовое слово уровня A1: дом."
       },
       {
         "languageCode": "en",
-        "text": "House."
+        "text": "Basic A1 word: house."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Haus."
       }
     ]
   },
   {
-    "key": "room_noun",
+    "key": "apartment",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "room",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: apartment.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Zimmer"
+        "text": "Wohnung"
       },
       {
         "languageCode": "ru",
-        "text": "комната"
-      },
-      {
-        "languageCode": "uk",
-        "text": "кімната"
+        "text": "квартира"
       },
       {
         "languageCode": "en",
-        "text": "room"
+        "text": "apartment"
+      },
+      {
+        "languageCode": "uk",
+        "text": "квартира"
       },
       {
         "languageCode": "tr",
-        "text": "oda"
+        "text": "daire"
       },
       {
         "languageCode": "ur",
-        "text": "کمرہ"
+        "text": "اپارٹمنٹ"
       },
       {
         "languageCode": "ps",
-        "text": "کوټه"
+        "text": "اپارتمان"
       },
       {
         "languageCode": "fa",
-        "text": "اتاق"
+        "text": "آپارتمان"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Отдельное помещение."
+        "text": "Базовое слово уровня A1: квартира."
       },
       {
         "languageCode": "en",
-        "text": "Room."
+        "text": "Basic A1 word: apartment."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Wohnung."
       }
     ]
   },
   {
-    "key": "door_noun",
+    "key": "water",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "door",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: water.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Tür"
+        "text": "Wasser"
       },
       {
         "languageCode": "ru",
-        "text": "дверь"
-      },
-      {
-        "languageCode": "uk",
-        "text": "двері"
+        "text": "вода"
       },
       {
         "languageCode": "en",
-        "text": "door"
+        "text": "water"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вода"
       },
       {
         "languageCode": "tr",
-        "text": "kapı"
+        "text": "su"
       },
       {
         "languageCode": "ur",
-        "text": "دروازہ"
+        "text": "پانی"
       },
       {
         "languageCode": "ps",
-        "text": "دروازه"
+        "text": "اوبه"
       },
       {
         "languageCode": "fa",
-        "text": "دروازه"
+        "text": "آب"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Вход, который открывается и закрывается."
+        "text": "Базовое слово уровня A1: вода."
       },
       {
         "languageCode": "en",
-        "text": "Door."
+        "text": "Basic A1 word: water."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Wasser."
       }
     ]
   },
   {
-    "key": "window_noun",
+    "key": "bread",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "window",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: bread.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Fenster"
+        "text": "Brot"
       },
       {
         "languageCode": "ru",
-        "text": "окно"
-      },
-      {
-        "languageCode": "uk",
-        "text": "вікно"
+        "text": "хлеб"
       },
       {
         "languageCode": "en",
-        "text": "window"
+        "text": "bread"
+      },
+      {
+        "languageCode": "uk",
+        "text": "хліб"
       },
       {
         "languageCode": "tr",
-        "text": "pencere"
+        "text": "ekmek"
       },
       {
         "languageCode": "ur",
-        "text": "کھڑکی"
+        "text": "روٹی"
       },
       {
         "languageCode": "ps",
-        "text": "کړکۍ"
+        "text": "ډوډۍ"
       },
       {
         "languageCode": "fa",
-        "text": "کلکین"
+        "text": "نان"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Проём со стеклом в стене."
+        "text": "Базовое слово уровня A1: хлеб."
       },
       {
         "languageCode": "en",
-        "text": "Window."
+        "text": "Basic A1 word: bread."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Brot."
       }
     ]
   },
   {
-    "key": "table_noun",
+    "key": "milk",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "table",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: milk.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Tisch"
+        "text": "Milch"
       },
       {
         "languageCode": "ru",
-        "text": "стол"
-      },
-      {
-        "languageCode": "uk",
-        "text": "стіл"
+        "text": "молоко"
       },
       {
         "languageCode": "en",
-        "text": "table"
+        "text": "milk"
+      },
+      {
+        "languageCode": "uk",
+        "text": "молоко"
       },
       {
         "languageCode": "tr",
-        "text": "masa"
+        "text": "süt"
       },
       {
         "languageCode": "ur",
-        "text": "میز"
+        "text": "دودھ"
       },
       {
         "languageCode": "ps",
-        "text": "مېز"
+        "text": "شیدې"
       },
       {
         "languageCode": "fa",
-        "text": "میز"
+        "text": "شیر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Мебель с плоской поверхностью."
+        "text": "Базовое слово уровня A1: молоко."
       },
       {
         "languageCode": "en",
-        "text": "Table."
+        "text": "Basic A1 word: milk."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Milch."
       }
     ]
   },
   {
-    "key": "chair_noun",
+    "key": "coffee",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "chair",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: coffee.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Stuhl"
+        "text": "Kaffee"
       },
       {
         "languageCode": "ru",
-        "text": "стул"
-      },
-      {
-        "languageCode": "uk",
-        "text": "стілець"
+        "text": "кофе"
       },
       {
         "languageCode": "en",
-        "text": "chair"
+        "text": "coffee"
+      },
+      {
+        "languageCode": "uk",
+        "text": "кава"
       },
       {
         "languageCode": "tr",
-        "text": "sandalye"
+        "text": "kahve"
       },
       {
         "languageCode": "ur",
-        "text": "کرسی"
+        "text": "کافی"
       },
       {
         "languageCode": "ps",
-        "text": "چوکۍ"
+        "text": "قهوه"
       },
       {
         "languageCode": "fa",
-        "text": "چوکی"
+        "text": "قهوه"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Мебель для сидения."
+        "text": "Базовое слово уровня A1: кофе."
       },
       {
         "languageCode": "en",
-        "text": "Chair."
+        "text": "Basic A1 word: coffee."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Kaffee."
       }
     ]
   },
   {
-    "key": "bed_noun",
+    "key": "tea",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "bed",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: tea.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Bett"
+        "text": "Tee"
       },
       {
         "languageCode": "ru",
-        "text": "кровать"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ліжко"
+        "text": "чай"
       },
       {
         "languageCode": "en",
-        "text": "bed"
+        "text": "tea"
+      },
+      {
+        "languageCode": "uk",
+        "text": "чай"
       },
       {
         "languageCode": "tr",
-        "text": "yatak"
+        "text": "çay"
       },
       {
         "languageCode": "ur",
-        "text": "بستر"
+        "text": "چائے"
       },
       {
         "languageCode": "ps",
-        "text": "کټ"
+        "text": "چای"
       },
       {
         "languageCode": "fa",
-        "text": "تخت"
+        "text": "چای"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Место для сна."
+        "text": "Базовое слово уровня A1: чай."
       },
       {
         "languageCode": "en",
-        "text": "Bed."
+        "text": "Basic A1 word: tea."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Tee."
       }
     ]
   },
   {
-    "key": "city_noun",
+    "key": "apple",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "city",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: apple.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Stadt"
+        "text": "Apfel"
       },
       {
         "languageCode": "ru",
-        "text": "город"
-      },
-      {
-        "languageCode": "uk",
-        "text": "місто"
+        "text": "яблоко"
       },
       {
         "languageCode": "en",
-        "text": "city"
+        "text": "apple"
+      },
+      {
+        "languageCode": "uk",
+        "text": "яблуко"
       },
       {
         "languageCode": "tr",
-        "text": "şehir"
+        "text": "elma"
       },
       {
         "languageCode": "ur",
-        "text": "شہر"
+        "text": "سیب"
       },
       {
         "languageCode": "ps",
-        "text": "ښار"
+        "text": "مڼه"
       },
       {
         "languageCode": "fa",
-        "text": "شهر"
+        "text": "سیب"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Большой населённый пункт."
+        "text": "Базовое слово уровня A1: яблоко."
       },
       {
         "languageCode": "en",
-        "text": "City."
+        "text": "Basic A1 word: apple."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Apfel."
       }
     ]
   },
   {
-    "key": "street_noun",
+    "key": "banana",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "street",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: banana.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Straße"
+        "text": "Banane"
       },
       {
         "languageCode": "ru",
-        "text": "улица"
-      },
-      {
-        "languageCode": "uk",
-        "text": "вулиця"
+        "text": "банан"
       },
       {
         "languageCode": "en",
-        "text": "street"
+        "text": "banana"
+      },
+      {
+        "languageCode": "uk",
+        "text": "банан"
       },
       {
         "languageCode": "tr",
-        "text": "sokak"
+        "text": "muz"
       },
       {
         "languageCode": "ur",
-        "text": "گلی"
+        "text": "کیلا"
       },
       {
         "languageCode": "ps",
-        "text": "کوڅه"
+        "text": "کېله"
       },
       {
         "languageCode": "fa",
-        "text": "سرک"
+        "text": "موز"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Дорога в городе."
+        "text": "Базовое слово уровня A1: банан."
       },
       {
         "languageCode": "en",
-        "text": "Street."
+        "text": "Basic A1 word: banana."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Banane."
       }
     ]
   },
   {
-    "key": "shop_noun",
+    "key": "cheese",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "shop",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: cheese.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Geschäft"
+        "text": "Käse"
       },
       {
         "languageCode": "ru",
-        "text": "магазин"
-      },
-      {
-        "languageCode": "uk",
-        "text": "магазин"
+        "text": "сыр"
       },
       {
         "languageCode": "en",
-        "text": "shop"
+        "text": "cheese"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сир"
       },
       {
         "languageCode": "tr",
-        "text": "mağaza"
+        "text": "peynir"
       },
       {
         "languageCode": "ur",
-        "text": "دکان"
+        "text": "پنیر"
       },
       {
         "languageCode": "ps",
-        "text": "دوکان"
+        "text": "پنیر"
       },
       {
         "languageCode": "fa",
-        "text": "دکان"
+        "text": "پنیر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Место, где покупают товары."
+        "text": "Базовое слово уровня A1: сыр."
       },
       {
         "languageCode": "en",
-        "text": "Shop."
+        "text": "Basic A1 word: cheese."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Käse."
       }
     ]
   },
   {
-    "key": "school_noun",
+    "key": "school",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "school",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: school.",
     "words": [
       {
         "languageCode": "de",
@@ -2814,12 +554,12 @@
         "text": "школа"
       },
       {
-        "languageCode": "uk",
-        "text": "школа"
-      },
-      {
         "languageCode": "en",
         "text": "school"
+      },
+      {
+        "languageCode": "uk",
+        "text": "школа"
       },
       {
         "languageCode": "tr",
@@ -2841,69 +581,509 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Место обучения."
+        "text": "Базовое слово уровня A1: школа."
       },
       {
         "languageCode": "en",
-        "text": "School."
+        "text": "Basic A1 word: school."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Schule."
       }
     ]
   },
   {
-    "key": "hospital_noun",
+    "key": "university",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "hospital",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: university.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Krankenhaus"
+        "text": "Universität"
       },
       {
         "languageCode": "ru",
-        "text": "больница"
-      },
-      {
-        "languageCode": "uk",
-        "text": "лікарня"
+        "text": "университет"
       },
       {
         "languageCode": "en",
-        "text": "hospital"
+        "text": "university"
+      },
+      {
+        "languageCode": "uk",
+        "text": "університет"
       },
       {
         "languageCode": "tr",
-        "text": "hastane"
+        "text": "üniversite"
       },
       {
         "languageCode": "ur",
-        "text": "ہسپتال"
+        "text": "یونیورسٹی"
       },
       {
         "languageCode": "ps",
-        "text": "روغتون"
+        "text": "پوهنتون"
       },
       {
         "languageCode": "fa",
-        "text": "شفاخانه"
+        "text": "دانشگاه"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Место лечения."
+        "text": "Базовое слово уровня A1: университет."
       },
       {
         "languageCode": "en",
-        "text": "Hospital."
+        "text": "Basic A1 word: university."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Universität."
       }
     ]
   },
   {
-    "key": "car_noun",
+    "key": "teacher",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "car",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: teacher.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Lehrer"
+      },
+      {
+        "languageCode": "ru",
+        "text": "учитель"
+      },
+      {
+        "languageCode": "en",
+        "text": "teacher"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вчитель"
+      },
+      {
+        "languageCode": "tr",
+        "text": "öğretmen"
+      },
+      {
+        "languageCode": "ur",
+        "text": "استاد"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښوونکی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "معلم"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: учитель."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: teacher."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Lehrer."
+      }
+    ]
+  },
+  {
+    "key": "student",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: student.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Student"
+      },
+      {
+        "languageCode": "ru",
+        "text": "студент"
+      },
+      {
+        "languageCode": "en",
+        "text": "student"
+      },
+      {
+        "languageCode": "uk",
+        "text": "студент"
+      },
+      {
+        "languageCode": "tr",
+        "text": "öğrenci"
+      },
+      {
+        "languageCode": "ur",
+        "text": "طالب علم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "زده کوونکی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دانشجو"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: студент."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: student."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Student."
+      }
+    ]
+  },
+  {
+    "key": "book",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: book.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Buch"
+      },
+      {
+        "languageCode": "ru",
+        "text": "книга"
+      },
+      {
+        "languageCode": "en",
+        "text": "book"
+      },
+      {
+        "languageCode": "uk",
+        "text": "книга"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kitap"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کتاب"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کتاب"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کتاب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: книга."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: book."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Buch."
+      }
+    ]
+  },
+  {
+    "key": "pen",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: pen.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Stift"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ручка"
+      },
+      {
+        "languageCode": "en",
+        "text": "pen"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ручка"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kalem"
+      },
+      {
+        "languageCode": "ur",
+        "text": "قلم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "قلم"
+      },
+      {
+        "languageCode": "fa",
+        "text": "قلم"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: ручка."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: pen."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Stift."
+      }
+    ]
+  },
+  {
+    "key": "table",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: table.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tisch"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стол"
+      },
+      {
+        "languageCode": "en",
+        "text": "table"
+      },
+      {
+        "languageCode": "uk",
+        "text": "стіл"
+      },
+      {
+        "languageCode": "tr",
+        "text": "masa"
+      },
+      {
+        "languageCode": "ur",
+        "text": "میز"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مېز"
+      },
+      {
+        "languageCode": "fa",
+        "text": "میز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: стол."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: table."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Tisch."
+      }
+    ]
+  },
+  {
+    "key": "chair",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: chair.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Stuhl"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стул"
+      },
+      {
+        "languageCode": "en",
+        "text": "chair"
+      },
+      {
+        "languageCode": "uk",
+        "text": "стілець"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sandalye"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کرسی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "چوکۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "صندلی"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: стул."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: chair."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Stuhl."
+      }
+    ]
+  },
+  {
+    "key": "window",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: window.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Fenster"
+      },
+      {
+        "languageCode": "ru",
+        "text": "окно"
+      },
+      {
+        "languageCode": "en",
+        "text": "window"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вікно"
+      },
+      {
+        "languageCode": "tr",
+        "text": "pencere"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کھڑکی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کړکۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پنجره"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: окно."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: window."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Fenster."
+      }
+    ]
+  },
+  {
+    "key": "door",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: door.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tür"
+      },
+      {
+        "languageCode": "ru",
+        "text": "дверь"
+      },
+      {
+        "languageCode": "en",
+        "text": "door"
+      },
+      {
+        "languageCode": "uk",
+        "text": "двері"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kapı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دروازہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "دروازه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "در"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: дверь."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: door."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Tür."
+      }
+    ]
+  },
+  {
+    "key": "car",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: car.",
     "words": [
       {
         "languageCode": "de",
@@ -2914,12 +1094,12 @@
         "text": "машина"
       },
       {
-        "languageCode": "uk",
-        "text": "машина"
-      },
-      {
         "languageCode": "en",
         "text": "car"
+      },
+      {
+        "languageCode": "uk",
+        "text": "машина"
       },
       {
         "languageCode": "tr",
@@ -2935,25 +1115,29 @@
       },
       {
         "languageCode": "fa",
-        "text": "موتر"
+        "text": "ماشین"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Личный транспорт."
+        "text": "Базовое слово уровня A1: машина."
       },
       {
         "languageCode": "en",
-        "text": "Car."
+        "text": "Basic A1 word: car."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Auto."
       }
     ]
   },
   {
-    "key": "bus_noun",
+    "key": "bus",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "bus",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: bus.",
     "words": [
       {
         "languageCode": "de",
@@ -2964,12 +1148,12 @@
         "text": "автобус"
       },
       {
-        "languageCode": "uk",
-        "text": "автобус"
-      },
-      {
         "languageCode": "en",
         "text": "bus"
+      },
+      {
+        "languageCode": "uk",
+        "text": "автобус"
       },
       {
         "languageCode": "tr",
@@ -2985,25 +1169,29 @@
       },
       {
         "languageCode": "fa",
-        "text": "بس"
+        "text": "اتوبوس"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Общественный транспорт."
+        "text": "Базовое слово уровня A1: автобус."
       },
       {
         "languageCode": "en",
-        "text": "Bus."
+        "text": "Basic A1 word: bus."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Bus."
       }
     ]
   },
   {
-    "key": "train_noun",
+    "key": "train",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "train",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: train.",
     "words": [
       {
         "languageCode": "de",
@@ -3014,12 +1202,12 @@
         "text": "поезд"
       },
       {
-        "languageCode": "uk",
-        "text": "поїзд"
-      },
-      {
         "languageCode": "en",
         "text": "train"
+      },
+      {
+        "languageCode": "uk",
+        "text": "потяг"
       },
       {
         "languageCode": "tr",
@@ -3031,7 +1219,7 @@
       },
       {
         "languageCode": "ps",
-        "text": "ریل ګاډی"
+        "text": "اورګاډی"
       },
       {
         "languageCode": "fa",
@@ -3041,1069 +1229,617 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Транспорт по рельсам."
+        "text": "Базовое слово уровня A1: поезд."
       },
       {
         "languageCode": "en",
-        "text": "Train."
+        "text": "Basic A1 word: train."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Zug."
       }
     ]
   },
   {
-    "key": "ticket_noun",
+    "key": "bicycle",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "ticket",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: bicycle.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Ticket"
+        "text": "Fahrrad"
       },
       {
         "languageCode": "ru",
-        "text": "билет"
-      },
-      {
-        "languageCode": "uk",
-        "text": "квиток"
+        "text": "велосипед"
       },
       {
         "languageCode": "en",
-        "text": "ticket"
+        "text": "bicycle"
+      },
+      {
+        "languageCode": "uk",
+        "text": "велосипед"
       },
       {
         "languageCode": "tr",
-        "text": "bilet"
+        "text": "bisiklet"
       },
       {
         "languageCode": "ur",
-        "text": "ٹکٹ"
+        "text": "سائیکل"
       },
       {
         "languageCode": "ps",
-        "text": "ټکټ"
+        "text": "بایسکل"
       },
       {
         "languageCode": "fa",
-        "text": "تکت"
+        "text": "دوچرخه"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Документ для поездки или входа."
+        "text": "Базовое слово уровня A1: велосипед."
       },
       {
         "languageCode": "en",
-        "text": "Ticket."
+        "text": "Basic A1 word: bicycle."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Fahrrad."
       }
     ]
   },
   {
-    "key": "today_adv",
+    "key": "street",
     "level": "A1",
-    "partOfSpeech": "Adverb",
-    "description": "today",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: street.",
     "words": [
       {
         "languageCode": "de",
-        "text": "heute"
+        "text": "Straße"
       },
       {
         "languageCode": "ru",
-        "text": "сегодня"
-      },
-      {
-        "languageCode": "uk",
-        "text": "сьогодні"
+        "text": "улица"
       },
       {
         "languageCode": "en",
-        "text": "today"
+        "text": "street"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вулиця"
       },
       {
         "languageCode": "tr",
-        "text": "bugün"
+        "text": "sokak"
       },
       {
         "languageCode": "ur",
-        "text": "آج"
+        "text": "گلی"
       },
       {
         "languageCode": "ps",
-        "text": "نن"
+        "text": "سړک"
       },
       {
         "languageCode": "fa",
-        "text": "امروز"
+        "text": "خیابان"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Этот день."
+        "text": "Базовое слово уровня A1: улица."
       },
       {
         "languageCode": "en",
-        "text": "Today."
+        "text": "Basic A1 word: street."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Straße."
       }
     ]
   },
   {
-    "key": "tomorrow_adv",
+    "key": "city",
     "level": "A1",
-    "partOfSpeech": "Adverb",
-    "description": "tomorrow",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: city.",
     "words": [
       {
         "languageCode": "de",
-        "text": "morgen"
+        "text": "Stadt"
       },
       {
         "languageCode": "ru",
-        "text": "завтра"
-      },
-      {
-        "languageCode": "uk",
-        "text": "завтра"
+        "text": "город"
       },
       {
         "languageCode": "en",
-        "text": "tomorrow"
+        "text": "city"
+      },
+      {
+        "languageCode": "uk",
+        "text": "місто"
       },
       {
         "languageCode": "tr",
-        "text": "yarın"
+        "text": "şehir"
       },
       {
         "languageCode": "ur",
-        "text": "کل"
+        "text": "شہر"
       },
       {
         "languageCode": "ps",
-        "text": "سبا"
+        "text": "ښار"
       },
       {
         "languageCode": "fa",
-        "text": "فردا"
+        "text": "شهر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Следующий день."
+        "text": "Базовое слово уровня A1: город."
       },
       {
         "languageCode": "en",
-        "text": "Tomorrow."
+        "text": "Basic A1 word: city."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Stadt."
       }
     ]
   },
   {
-    "key": "day_noun",
+    "key": "village",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "day",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: village.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Tag"
+        "text": "Dorf"
       },
       {
         "languageCode": "ru",
-        "text": "день"
-      },
-      {
-        "languageCode": "uk",
-        "text": "день"
+        "text": "деревня"
       },
       {
         "languageCode": "en",
-        "text": "day"
+        "text": "village"
+      },
+      {
+        "languageCode": "uk",
+        "text": "село"
       },
       {
         "languageCode": "tr",
-        "text": "gün"
+        "text": "köy"
       },
       {
         "languageCode": "ur",
-        "text": "دن"
+        "text": "گاؤں"
       },
       {
         "languageCode": "ps",
-        "text": "ورځ"
+        "text": "کلی"
       },
       {
         "languageCode": "fa",
-        "text": "روز"
+        "text": "دهکده"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Промежуток времени от утра до ночи."
+        "text": "Базовое слово уровня A1: деревня."
       },
       {
         "languageCode": "en",
-        "text": "Day."
+        "text": "Basic A1 word: village."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Dorf."
       }
     ]
   },
   {
-    "key": "week_noun",
+    "key": "friend",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "week",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: friend.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Woche"
+        "text": "Freund"
       },
       {
         "languageCode": "ru",
-        "text": "неделя"
-      },
-      {
-        "languageCode": "uk",
-        "text": "тиждень"
+        "text": "друг"
       },
       {
         "languageCode": "en",
-        "text": "week"
+        "text": "friend"
+      },
+      {
+        "languageCode": "uk",
+        "text": "друг"
       },
       {
         "languageCode": "tr",
-        "text": "hafta"
+        "text": "arkadaş"
       },
       {
         "languageCode": "ur",
-        "text": "ہفتہ"
+        "text": "دوست"
       },
       {
         "languageCode": "ps",
-        "text": "اونۍ"
+        "text": "ملګری"
       },
       {
         "languageCode": "fa",
-        "text": "هفته"
+        "text": "دوست"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Семь дней."
+        "text": "Базовое слово уровня A1: друг."
       },
       {
         "languageCode": "en",
-        "text": "Week."
+        "text": "Basic A1 word: friend."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Freund."
       }
     ]
   },
   {
-    "key": "month_noun",
+    "key": "family",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "month",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: family.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Monat"
+        "text": "Familie"
       },
       {
         "languageCode": "ru",
-        "text": "месяц"
-      },
-      {
-        "languageCode": "uk",
-        "text": "місяць"
+        "text": "семья"
       },
       {
         "languageCode": "en",
-        "text": "month"
+        "text": "family"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сім'я"
       },
       {
         "languageCode": "tr",
-        "text": "ay"
+        "text": "aile"
       },
       {
         "languageCode": "ur",
-        "text": "مہینہ"
+        "text": "خاندان"
       },
       {
         "languageCode": "ps",
-        "text": "میاشت"
+        "text": "کورنۍ"
       },
       {
         "languageCode": "fa",
-        "text": "ماه"
+        "text": "خانواده"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Часть года."
+        "text": "Базовое слово уровня A1: семья."
       },
       {
         "languageCode": "en",
-        "text": "Month."
+        "text": "Basic A1 word: family."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Familie."
       }
     ]
   },
   {
-    "key": "year_noun",
+    "key": "mother",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "year",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: mother.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Jahr"
+        "text": "Mutter"
       },
       {
         "languageCode": "ru",
-        "text": "год"
-      },
-      {
-        "languageCode": "uk",
-        "text": "рік"
+        "text": "мать"
       },
       {
         "languageCode": "en",
-        "text": "year"
+        "text": "mother"
+      },
+      {
+        "languageCode": "uk",
+        "text": "мати"
       },
       {
         "languageCode": "tr",
-        "text": "yıl"
+        "text": "anne"
       },
       {
         "languageCode": "ur",
-        "text": "سال"
+        "text": "ماں"
       },
       {
         "languageCode": "ps",
-        "text": "کال"
+        "text": "مور"
       },
       {
         "languageCode": "fa",
-        "text": "سال"
+        "text": "مادر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Двенадцать месяцев."
+        "text": "Базовое слово уровня A1: мать."
       },
       {
         "languageCode": "en",
-        "text": "Year."
+        "text": "Basic A1 word: mother."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Mutter."
       }
     ]
   },
   {
-    "key": "big_adj",
+    "key": "father",
     "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "big",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: father.",
     "words": [
       {
         "languageCode": "de",
-        "text": "groß"
+        "text": "Vater"
       },
       {
         "languageCode": "ru",
-        "text": "большой"
-      },
-      {
-        "languageCode": "uk",
-        "text": "великий"
+        "text": "отец"
       },
       {
         "languageCode": "en",
-        "text": "big"
+        "text": "father"
+      },
+      {
+        "languageCode": "uk",
+        "text": "батько"
       },
       {
         "languageCode": "tr",
-        "text": "büyük"
+        "text": "baba"
       },
       {
         "languageCode": "ur",
-        "text": "بڑا"
+        "text": "والد"
       },
       {
         "languageCode": "ps",
-        "text": "لوی"
+        "text": "پلار"
       },
       {
         "languageCode": "fa",
-        "text": "بزرگ"
+        "text": "پدر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Большого размера."
+        "text": "Базовое слово уровня A1: отец."
       },
       {
         "languageCode": "en",
-        "text": "Big."
+        "text": "Basic A1 word: father."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Vater."
       }
     ]
   },
   {
-    "key": "small_adj",
+    "key": "brother",
     "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "small",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: brother.",
     "words": [
       {
         "languageCode": "de",
-        "text": "klein"
+        "text": "Bruder"
       },
       {
         "languageCode": "ru",
-        "text": "маленький"
-      },
-      {
-        "languageCode": "uk",
-        "text": "малий"
+        "text": "брат"
       },
       {
         "languageCode": "en",
-        "text": "small"
+        "text": "brother"
+      },
+      {
+        "languageCode": "uk",
+        "text": "брат"
       },
       {
         "languageCode": "tr",
-        "text": "küçük"
+        "text": "erkek kardeş"
       },
       {
         "languageCode": "ur",
-        "text": "چھوٹا"
+        "text": "بھائی"
       },
       {
         "languageCode": "ps",
-        "text": "کوچنی"
+        "text": "ورور"
       },
       {
         "languageCode": "fa",
-        "text": "کوچک"
+        "text": "برادر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Небольшого размера."
+        "text": "Базовое слово уровня A1: брат."
       },
       {
         "languageCode": "en",
-        "text": "Small."
+        "text": "Basic A1 word: brother."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Bruder."
       }
     ]
   },
   {
-    "key": "good_adj",
+    "key": "sister",
     "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "good",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: sister.",
     "words": [
       {
         "languageCode": "de",
-        "text": "gut"
+        "text": "Schwester"
       },
       {
         "languageCode": "ru",
-        "text": "хороший"
-      },
-      {
-        "languageCode": "uk",
-        "text": "добрий"
+        "text": "сестра"
       },
       {
         "languageCode": "en",
-        "text": "good"
+        "text": "sister"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сестра"
       },
       {
         "languageCode": "tr",
-        "text": "iyi"
+        "text": "kız kardeş"
       },
       {
         "languageCode": "ur",
-        "text": "اچھا"
+        "text": "بہن"
       },
       {
         "languageCode": "ps",
-        "text": "ښه"
+        "text": "خور"
       },
       {
         "languageCode": "fa",
-        "text": "خوب"
+        "text": "خواهر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Положительного качества."
+        "text": "Базовое слово уровня A1: сестра."
       },
       {
         "languageCode": "en",
-        "text": "Good."
+        "text": "Basic A1 word: sister."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Schwester."
       }
     ]
   },
   {
-    "key": "bad_adj",
+    "key": "child",
     "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "bad",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: child.",
     "words": [
       {
         "languageCode": "de",
-        "text": "schlecht"
+        "text": "Kind"
       },
       {
         "languageCode": "ru",
-        "text": "плохой"
-      },
-      {
-        "languageCode": "uk",
-        "text": "поганий"
+        "text": "ребёнок"
       },
       {
         "languageCode": "en",
-        "text": "bad"
+        "text": "child"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дитина"
       },
       {
         "languageCode": "tr",
-        "text": "kötü"
+        "text": "çocuk"
       },
       {
         "languageCode": "ur",
-        "text": "برا"
+        "text": "بچہ"
       },
       {
         "languageCode": "ps",
-        "text": "بد"
+        "text": "ماشوم"
       },
       {
         "languageCode": "fa",
-        "text": "بد"
+        "text": "کودک"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Негативного качества."
+        "text": "Базовое слово уровня A1: ребёнок."
       },
       {
         "languageCode": "en",
-        "text": "Bad."
-      }
-    ]
-  },
-  {
-    "key": "new_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "new",
-    "words": [
+        "text": "Basic A1 word: child."
+      },
       {
         "languageCode": "de",
-        "text": "neu"
-      },
-      {
-        "languageCode": "ru",
-        "text": "новый"
-      },
-      {
-        "languageCode": "uk",
-        "text": "новий"
-      },
-      {
-        "languageCode": "en",
-        "text": "new"
-      },
-      {
-        "languageCode": "tr",
-        "text": "yeni"
-      },
-      {
-        "languageCode": "ur",
-        "text": "نیا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "نوی"
-      },
-      {
-        "languageCode": "fa",
-        "text": "نو"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Недавно появившийся."
-      },
-      {
-        "languageCode": "en",
-        "text": "New."
+        "text": "Ein grundlegendes Wort auf Niveau A1: Kind."
       }
     ]
   },
   {
-    "key": "old_adj",
+    "key": "work",
     "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "old",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "alt"
-      },
-      {
-        "languageCode": "ru",
-        "text": "старый"
-      },
-      {
-        "languageCode": "uk",
-        "text": "старий"
-      },
-      {
-        "languageCode": "en",
-        "text": "old"
-      },
-      {
-        "languageCode": "tr",
-        "text": "eski"
-      },
-      {
-        "languageCode": "ur",
-        "text": "پرانا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "زوړ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "کهنه"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Давно существующий."
-      },
-      {
-        "languageCode": "en",
-        "text": "Old."
-      }
-    ]
-  },
-  {
-    "key": "hot_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "hot",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "heiß"
-      },
-      {
-        "languageCode": "ru",
-        "text": "горячий"
-      },
-      {
-        "languageCode": "uk",
-        "text": "гарячий"
-      },
-      {
-        "languageCode": "en",
-        "text": "hot"
-      },
-      {
-        "languageCode": "tr",
-        "text": "sıcak"
-      },
-      {
-        "languageCode": "ur",
-        "text": "گرم"
-      },
-      {
-        "languageCode": "ps",
-        "text": "ګرم"
-      },
-      {
-        "languageCode": "fa",
-        "text": "گرم"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "С высокой температурой."
-      },
-      {
-        "languageCode": "en",
-        "text": "Hot."
-      }
-    ]
-  },
-  {
-    "key": "cold_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "cold",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "kalt"
-      },
-      {
-        "languageCode": "ru",
-        "text": "холодный"
-      },
-      {
-        "languageCode": "uk",
-        "text": "холодний"
-      },
-      {
-        "languageCode": "en",
-        "text": "cold"
-      },
-      {
-        "languageCode": "tr",
-        "text": "soğuk"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ٹھنڈا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "یخ"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سرد"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "С низкой температурой."
-      },
-      {
-        "languageCode": "en",
-        "text": "Cold."
-      }
-    ]
-  },
-  {
-    "key": "one_num",
-    "level": "A1",
-    "partOfSpeech": "Number",
-    "description": "one",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "eins"
-      },
-      {
-        "languageCode": "ru",
-        "text": "один"
-      },
-      {
-        "languageCode": "uk",
-        "text": "один"
-      },
-      {
-        "languageCode": "en",
-        "text": "one"
-      },
-      {
-        "languageCode": "tr",
-        "text": "bir"
-      },
-      {
-        "languageCode": "ur",
-        "text": "ایک"
-      },
-      {
-        "languageCode": "ps",
-        "text": "یو"
-      },
-      {
-        "languageCode": "fa",
-        "text": "یک"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Число 1."
-      },
-      {
-        "languageCode": "en",
-        "text": "One."
-      }
-    ]
-  },
-  {
-    "key": "two_num",
-    "level": "A1",
-    "partOfSpeech": "Number",
-    "description": "two",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "zwei"
-      },
-      {
-        "languageCode": "ru",
-        "text": "два"
-      },
-      {
-        "languageCode": "uk",
-        "text": "два"
-      },
-      {
-        "languageCode": "en",
-        "text": "two"
-      },
-      {
-        "languageCode": "tr",
-        "text": "iki"
-      },
-      {
-        "languageCode": "ur",
-        "text": "دو"
-      },
-      {
-        "languageCode": "ps",
-        "text": "دوه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "دو"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Число 2."
-      },
-      {
-        "languageCode": "en",
-        "text": "Two."
-      }
-    ]
-  },
-  {
-    "key": "three_num",
-    "level": "A1",
-    "partOfSpeech": "Number",
-    "description": "three",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "drei"
-      },
-      {
-        "languageCode": "ru",
-        "text": "три"
-      },
-      {
-        "languageCode": "uk",
-        "text": "три"
-      },
-      {
-        "languageCode": "en",
-        "text": "three"
-      },
-      {
-        "languageCode": "tr",
-        "text": "üç"
-      },
-      {
-        "languageCode": "ur",
-        "text": "تین"
-      },
-      {
-        "languageCode": "ps",
-        "text": "درې"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سه"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Число 3."
-      },
-      {
-        "languageCode": "en",
-        "text": "Three."
-      }
-    ]
-  },
-  {
-    "key": "red_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "red",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "rot"
-      },
-      {
-        "languageCode": "ru",
-        "text": "красный"
-      },
-      {
-        "languageCode": "uk",
-        "text": "червоний"
-      },
-      {
-        "languageCode": "en",
-        "text": "red"
-      },
-      {
-        "languageCode": "tr",
-        "text": "kırmızı"
-      },
-      {
-        "languageCode": "ur",
-        "text": "لال"
-      },
-      {
-        "languageCode": "ps",
-        "text": "سور"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سرخ"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Красный цвет."
-      },
-      {
-        "languageCode": "en",
-        "text": "Red."
-      }
-    ]
-  },
-  {
-    "key": "blue_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "blue",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "blau"
-      },
-      {
-        "languageCode": "ru",
-        "text": "синий"
-      },
-      {
-        "languageCode": "uk",
-        "text": "синій"
-      },
-      {
-        "languageCode": "en",
-        "text": "blue"
-      },
-      {
-        "languageCode": "tr",
-        "text": "mavi"
-      },
-      {
-        "languageCode": "ur",
-        "text": "نیلا"
-      },
-      {
-        "languageCode": "ps",
-        "text": "آبي"
-      },
-      {
-        "languageCode": "fa",
-        "text": "آبی"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Синий цвет."
-      },
-      {
-        "languageCode": "en",
-        "text": "Blue."
-      }
-    ]
-  },
-  {
-    "key": "green_adj",
-    "level": "A1",
-    "partOfSpeech": "Adjective",
-    "description": "green",
-    "words": [
-      {
-        "languageCode": "de",
-        "text": "grün"
-      },
-      {
-        "languageCode": "ru",
-        "text": "зелёный"
-      },
-      {
-        "languageCode": "uk",
-        "text": "зелений"
-      },
-      {
-        "languageCode": "en",
-        "text": "green"
-      },
-      {
-        "languageCode": "tr",
-        "text": "yeşil"
-      },
-      {
-        "languageCode": "ur",
-        "text": "سبز"
-      },
-      {
-        "languageCode": "ps",
-        "text": "شنه"
-      },
-      {
-        "languageCode": "fa",
-        "text": "سبز"
-      }
-    ],
-    "explanations": [
-      {
-        "languageCode": "ru",
-        "text": "Зелёный цвет."
-      },
-      {
-        "languageCode": "en",
-        "text": "Green."
-      }
-    ]
-  },
-  {
-    "key": "work_noun",
-    "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "work",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: work.",
     "words": [
       {
         "languageCode": "de",
@@ -4114,12 +1850,12 @@
         "text": "работа"
       },
       {
-        "languageCode": "uk",
-        "text": "робота"
-      },
-      {
         "languageCode": "en",
         "text": "work"
+      },
+      {
+        "languageCode": "uk",
+        "text": "робота"
       },
       {
         "languageCode": "tr",
@@ -4141,19 +1877,77 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Занятие или профессия."
+        "text": "Базовое слово уровня A1: работа."
       },
       {
         "languageCode": "en",
-        "text": "Work."
+        "text": "Basic A1 word: work."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Arbeit."
       }
     ]
   },
   {
-    "key": "money_noun",
+    "key": "office",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "money",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: office.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Büro"
+      },
+      {
+        "languageCode": "ru",
+        "text": "офис"
+      },
+      {
+        "languageCode": "en",
+        "text": "office"
+      },
+      {
+        "languageCode": "uk",
+        "text": "офіс"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ofis"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دفتر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "دفتر"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دفتر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: офис."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: office."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Büro."
+      }
+    ]
+  },
+  {
+    "key": "money",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: money.",
     "words": [
       {
         "languageCode": "de",
@@ -4164,12 +1958,12 @@
         "text": "деньги"
       },
       {
-        "languageCode": "uk",
-        "text": "гроші"
-      },
-      {
         "languageCode": "en",
         "text": "money"
+      },
+      {
+        "languageCode": "uk",
+        "text": "гроші"
       },
       {
         "languageCode": "tr",
@@ -4191,69 +1985,185 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Средство оплаты."
+        "text": "Базовое слово уровня A1: деньги."
       },
       {
         "languageCode": "en",
-        "text": "Money."
+        "text": "Basic A1 word: money."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Geld."
       }
     ]
   },
   {
-    "key": "price_noun",
+    "key": "shop",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "price",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: shop.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Preis"
+        "text": "Geschäft"
       },
       {
         "languageCode": "ru",
-        "text": "цена"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ціна"
+        "text": "магазин"
       },
       {
         "languageCode": "en",
-        "text": "price"
+        "text": "shop"
+      },
+      {
+        "languageCode": "uk",
+        "text": "магазин"
       },
       {
         "languageCode": "tr",
-        "text": "fiyat"
+        "text": "mağaza"
       },
       {
         "languageCode": "ur",
-        "text": "قیمت"
+        "text": "دکان"
       },
       {
         "languageCode": "ps",
-        "text": "بیه"
+        "text": "هټۍ"
       },
       {
         "languageCode": "fa",
-        "text": "قیمت"
+        "text": "فروشگاه"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Сколько стоит товар."
+        "text": "Базовое слово уровня A1: магазин."
       },
       {
         "languageCode": "en",
-        "text": "Price."
+        "text": "Basic A1 word: shop."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Geschäft."
       }
     ]
   },
   {
-    "key": "doctor_noun",
+    "key": "market",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "doctor",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: market.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Markt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "рынок"
+      },
+      {
+        "languageCode": "en",
+        "text": "market"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ринок"
+      },
+      {
+        "languageCode": "tr",
+        "text": "pazar"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بازار"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بازار"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بازار"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: рынок."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: market."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Markt."
+      }
+    ]
+  },
+  {
+    "key": "hospital",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: hospital.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Krankenhaus"
+      },
+      {
+        "languageCode": "ru",
+        "text": "больница"
+      },
+      {
+        "languageCode": "en",
+        "text": "hospital"
+      },
+      {
+        "languageCode": "uk",
+        "text": "лікарня"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hastane"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ہسپتال"
+      },
+      {
+        "languageCode": "ps",
+        "text": "روغتون"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بیمارستان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: больница."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: hospital."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Krankenhaus."
+      }
+    ]
+  },
+  {
+    "key": "doctor",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: doctor.",
     "words": [
       {
         "languageCode": "de",
@@ -4264,12 +2174,12 @@
         "text": "врач"
       },
       {
-        "languageCode": "uk",
-        "text": "лікар"
-      },
-      {
         "languageCode": "en",
         "text": "doctor"
+      },
+      {
+        "languageCode": "uk",
+        "text": "лікар"
       },
       {
         "languageCode": "tr",
@@ -4285,75 +2195,461 @@
       },
       {
         "languageCode": "fa",
-        "text": "داکتر"
+        "text": "دکتر"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Специалист, который лечит людей."
+        "text": "Базовое слово уровня A1: врач."
       },
       {
         "languageCode": "en",
-        "text": "Doctor."
+        "text": "Basic A1 word: doctor."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Arzt."
       }
     ]
   },
   {
-    "key": "medicine_noun",
+    "key": "phone",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "medicine",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: phone.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Medizin"
+        "text": "Telefon"
       },
       {
         "languageCode": "ru",
-        "text": "лекарство"
-      },
-      {
-        "languageCode": "uk",
-        "text": "ліки"
+        "text": "телефон"
       },
       {
         "languageCode": "en",
-        "text": "medicine"
+        "text": "phone"
+      },
+      {
+        "languageCode": "uk",
+        "text": "телефон"
       },
       {
         "languageCode": "tr",
-        "text": "ilaç"
+        "text": "telefon"
       },
       {
         "languageCode": "ur",
-        "text": "دوا"
+        "text": "فون"
       },
       {
         "languageCode": "ps",
-        "text": "درمل"
+        "text": "تلیفون"
       },
       {
         "languageCode": "fa",
-        "text": "دوا"
+        "text": "تلفن"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Средство для лечения."
+        "text": "Базовое слово уровня A1: телефон."
       },
       {
         "languageCode": "en",
-        "text": "Medicine."
+        "text": "Basic A1 word: phone."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Telefon."
       }
     ]
   },
   {
-    "key": "sun_noun",
+    "key": "computer",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "sun",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: computer.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Computer"
+      },
+      {
+        "languageCode": "ru",
+        "text": "компьютер"
+      },
+      {
+        "languageCode": "en",
+        "text": "computer"
+      },
+      {
+        "languageCode": "uk",
+        "text": "комп'ютер"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bilgisayar"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کمپیوٹر"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کمپیوټر"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کامپیوتر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: компьютер."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: computer."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Computer."
+      }
+    ]
+  },
+  {
+    "key": "internet",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: internet.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Internet"
+      },
+      {
+        "languageCode": "ru",
+        "text": "интернет"
+      },
+      {
+        "languageCode": "en",
+        "text": "internet"
+      },
+      {
+        "languageCode": "uk",
+        "text": "інтернет"
+      },
+      {
+        "languageCode": "tr",
+        "text": "internet"
+      },
+      {
+        "languageCode": "ur",
+        "text": "انٹرنیٹ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "انټرنېټ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "اینترنت"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: интернет."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: internet."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Internet."
+      }
+    ]
+  },
+  {
+    "key": "music",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: music.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Musik"
+      },
+      {
+        "languageCode": "ru",
+        "text": "музыка"
+      },
+      {
+        "languageCode": "en",
+        "text": "music"
+      },
+      {
+        "languageCode": "uk",
+        "text": "музика"
+      },
+      {
+        "languageCode": "tr",
+        "text": "müzik"
+      },
+      {
+        "languageCode": "ur",
+        "text": "موسیقی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "موسیقي"
+      },
+      {
+        "languageCode": "fa",
+        "text": "موسیقی"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: музыка."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: music."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Musik."
+      }
+    ]
+  },
+  {
+    "key": "movie",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: movie.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Film"
+      },
+      {
+        "languageCode": "ru",
+        "text": "фильм"
+      },
+      {
+        "languageCode": "en",
+        "text": "movie"
+      },
+      {
+        "languageCode": "uk",
+        "text": "фільм"
+      },
+      {
+        "languageCode": "tr",
+        "text": "film"
+      },
+      {
+        "languageCode": "ur",
+        "text": "فلم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "فلم"
+      },
+      {
+        "languageCode": "fa",
+        "text": "فیلم"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: фильм."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: movie."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Film."
+      }
+    ]
+  },
+  {
+    "key": "dog",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: dog.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Hund"
+      },
+      {
+        "languageCode": "ru",
+        "text": "собака"
+      },
+      {
+        "languageCode": "en",
+        "text": "dog"
+      },
+      {
+        "languageCode": "uk",
+        "text": "собака"
+      },
+      {
+        "languageCode": "tr",
+        "text": "köpek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کتا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سپی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سگ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: собака."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: dog."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Hund."
+      }
+    ]
+  },
+  {
+    "key": "cat",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: cat.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Katze"
+      },
+      {
+        "languageCode": "ru",
+        "text": "кошка"
+      },
+      {
+        "languageCode": "en",
+        "text": "cat"
+      },
+      {
+        "languageCode": "uk",
+        "text": "кіт"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kedi"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بلی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پیشو"
+      },
+      {
+        "languageCode": "fa",
+        "text": "گربه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: кошка."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: cat."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Katze."
+      }
+    ]
+  },
+  {
+    "key": "bird",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: bird.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Vogel"
+      },
+      {
+        "languageCode": "ru",
+        "text": "птица"
+      },
+      {
+        "languageCode": "en",
+        "text": "bird"
+      },
+      {
+        "languageCode": "uk",
+        "text": "птах"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kuş"
+      },
+      {
+        "languageCode": "ur",
+        "text": "پرندہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "مرغه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پرنده"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: птица."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: bird."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Vogel."
+      }
+    ]
+  },
+  {
+    "key": "sun",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: sun.",
     "words": [
       {
         "languageCode": "de",
@@ -4364,12 +2660,12 @@
         "text": "солнце"
       },
       {
-        "languageCode": "uk",
-        "text": "сонце"
-      },
-      {
         "languageCode": "en",
         "text": "sun"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сонце"
       },
       {
         "languageCode": "tr",
@@ -4385,25 +2681,83 @@
       },
       {
         "languageCode": "fa",
-        "text": "آفتاب"
+        "text": "خورشید"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Звезда, дающая свет и тепло."
+        "text": "Базовое слово уровня A1: солнце."
       },
       {
         "languageCode": "en",
-        "text": "Sun."
+        "text": "Basic A1 word: sun."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Sonne."
       }
     ]
   },
   {
-    "key": "rain_noun",
+    "key": "moon",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "rain",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: moon.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Mond"
+      },
+      {
+        "languageCode": "ru",
+        "text": "луна"
+      },
+      {
+        "languageCode": "en",
+        "text": "moon"
+      },
+      {
+        "languageCode": "uk",
+        "text": "місяць"
+      },
+      {
+        "languageCode": "tr",
+        "text": "ay"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چاند"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سپوږمۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "ماه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: луна."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: moon."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Mond."
+      }
+    ]
+  },
+  {
+    "key": "rain",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: rain.",
     "words": [
       {
         "languageCode": "de",
@@ -4414,12 +2768,12 @@
         "text": "дождь"
       },
       {
-        "languageCode": "uk",
-        "text": "дощ"
-      },
-      {
         "languageCode": "en",
         "text": "rain"
+      },
+      {
+        "languageCode": "uk",
+        "text": "дощ"
       },
       {
         "languageCode": "tr",
@@ -4441,61 +2795,1689 @@
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Вода, падающая с неба."
+        "text": "Базовое слово уровня A1: дождь."
       },
       {
         "languageCode": "en",
-        "text": "Rain."
+        "text": "Basic A1 word: rain."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Regen."
       }
     ]
   },
   {
-    "key": "weather_noun",
+    "key": "snow",
     "level": "A1",
-    "partOfSpeech": "Noun",
-    "description": "weather",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: snow.",
     "words": [
       {
         "languageCode": "de",
-        "text": "Wetter"
+        "text": "Schnee"
       },
       {
         "languageCode": "ru",
-        "text": "погода"
-      },
-      {
-        "languageCode": "uk",
-        "text": "погода"
+        "text": "снег"
       },
       {
         "languageCode": "en",
-        "text": "weather"
+        "text": "snow"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сніг"
       },
       {
         "languageCode": "tr",
-        "text": "hava"
+        "text": "kar"
       },
       {
         "languageCode": "ur",
-        "text": "موسم"
+        "text": "برف"
       },
       {
         "languageCode": "ps",
-        "text": "هوا"
+        "text": "واوره"
       },
       {
         "languageCode": "fa",
-        "text": "هوا"
+        "text": "برف"
       }
     ],
     "explanations": [
       {
         "languageCode": "ru",
-        "text": "Состояние воздуха на улице."
+        "text": "Базовое слово уровня A1: снег."
       },
       {
         "languageCode": "en",
-        "text": "Weather."
+        "text": "Basic A1 word: snow."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Schnee."
+      }
+    ]
+  },
+  {
+    "key": "summer",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: summer.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Sommer"
+      },
+      {
+        "languageCode": "ru",
+        "text": "лето"
+      },
+      {
+        "languageCode": "en",
+        "text": "summer"
+      },
+      {
+        "languageCode": "uk",
+        "text": "літо"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yaz"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گرمی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "اوړی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "تابستان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: лето."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: summer."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Sommer."
+      }
+    ]
+  },
+  {
+    "key": "winter",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: winter.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Winter"
+      },
+      {
+        "languageCode": "ru",
+        "text": "зима"
+      },
+      {
+        "languageCode": "en",
+        "text": "winter"
+      },
+      {
+        "languageCode": "uk",
+        "text": "зима"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kış"
+      },
+      {
+        "languageCode": "ur",
+        "text": "سردی"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ژمی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "زمستان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: зима."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: winter."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Winter."
+      }
+    ]
+  },
+  {
+    "key": "day",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: day.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Tag"
+      },
+      {
+        "languageCode": "ru",
+        "text": "день"
+      },
+      {
+        "languageCode": "en",
+        "text": "day"
+      },
+      {
+        "languageCode": "uk",
+        "text": "день"
+      },
+      {
+        "languageCode": "tr",
+        "text": "gün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دن"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ورځ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "روز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: день."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: day."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Tag."
+      }
+    ]
+  },
+  {
+    "key": "night",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: night.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Nacht"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ночь"
+      },
+      {
+        "languageCode": "en",
+        "text": "night"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ніч"
+      },
+      {
+        "languageCode": "tr",
+        "text": "gece"
+      },
+      {
+        "languageCode": "ur",
+        "text": "رات"
+      },
+      {
+        "languageCode": "ps",
+        "text": "شپه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: ночь."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: night."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Nacht."
+      }
+    ]
+  },
+  {
+    "key": "morning",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: morning.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Morgen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "утро"
+      },
+      {
+        "languageCode": "en",
+        "text": "morning"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ранок"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sabah"
+      },
+      {
+        "languageCode": "ur",
+        "text": "صبح"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سهار"
+      },
+      {
+        "languageCode": "fa",
+        "text": "صبح"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: утро."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: morning."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Morgen."
+      }
+    ]
+  },
+  {
+    "key": "evening",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: evening.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Abend"
+      },
+      {
+        "languageCode": "ru",
+        "text": "вечер"
+      },
+      {
+        "languageCode": "en",
+        "text": "evening"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вечір"
+      },
+      {
+        "languageCode": "tr",
+        "text": "akşam"
+      },
+      {
+        "languageCode": "ur",
+        "text": "شام"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ماښام"
+      },
+      {
+        "languageCode": "fa",
+        "text": "عصر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: вечер."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: evening."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Abend."
+      }
+    ]
+  },
+  {
+    "key": "food",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: food.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Essen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "еда"
+      },
+      {
+        "languageCode": "en",
+        "text": "food"
+      },
+      {
+        "languageCode": "uk",
+        "text": "їжа"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yemek"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کھانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خواړه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "غذا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: еда."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: food."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Essen."
+      }
+    ]
+  },
+  {
+    "key": "breakfast",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: breakfast.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Frühstück"
+      },
+      {
+        "languageCode": "ru",
+        "text": "завтрак"
+      },
+      {
+        "languageCode": "en",
+        "text": "breakfast"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сніданок"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kahvaltı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ناشتہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سهارنۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "صبحانه"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: завтрак."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: breakfast."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Frühstück."
+      }
+    ]
+  },
+  {
+    "key": "lunch",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: lunch.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Mittagessen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "обед"
+      },
+      {
+        "languageCode": "en",
+        "text": "lunch"
+      },
+      {
+        "languageCode": "uk",
+        "text": "обід"
+      },
+      {
+        "languageCode": "tr",
+        "text": "öğle yemeği"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دوپہر کا کھانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "غرمنۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "ناهار"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: обед."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: lunch."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Mittagessen."
+      }
+    ]
+  },
+  {
+    "key": "dinner",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: dinner.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "Abendessen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ужин"
+      },
+      {
+        "languageCode": "en",
+        "text": "dinner"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вечеря"
+      },
+      {
+        "languageCode": "tr",
+        "text": "akşam yemeği"
+      },
+      {
+        "languageCode": "ur",
+        "text": "رات کا کھانا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ماښامنۍ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "شام"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: ужин."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: dinner."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: Abendessen."
+      }
+    ]
+  },
+  {
+    "key": "happy",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: happy.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "glücklich"
+      },
+      {
+        "languageCode": "ru",
+        "text": "счастливый"
+      },
+      {
+        "languageCode": "en",
+        "text": "happy"
+      },
+      {
+        "languageCode": "uk",
+        "text": "щасливий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "mutlu"
+      },
+      {
+        "languageCode": "ur",
+        "text": "خوش"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خوشحاله"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خوشحال"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: счастливый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: happy."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: glücklich."
+      }
+    ]
+  },
+  {
+    "key": "sad",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: sad.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "traurig"
+      },
+      {
+        "languageCode": "ru",
+        "text": "грустный"
+      },
+      {
+        "languageCode": "en",
+        "text": "sad"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сумний"
+      },
+      {
+        "languageCode": "tr",
+        "text": "üzgün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "اداس"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خفه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "غمگین"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: грустный."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: sad."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: traurig."
+      }
+    ]
+  },
+  {
+    "key": "big",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: big.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "groß"
+      },
+      {
+        "languageCode": "ru",
+        "text": "большой"
+      },
+      {
+        "languageCode": "en",
+        "text": "big"
+      },
+      {
+        "languageCode": "uk",
+        "text": "великий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "büyük"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بڑا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "لوی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بزرگ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: большой."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: big."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: groß."
+      }
+    ]
+  },
+  {
+    "key": "small",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: small.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "klein"
+      },
+      {
+        "languageCode": "ru",
+        "text": "маленький"
+      },
+      {
+        "languageCode": "en",
+        "text": "small"
+      },
+      {
+        "languageCode": "uk",
+        "text": "маленький"
+      },
+      {
+        "languageCode": "tr",
+        "text": "küçük"
+      },
+      {
+        "languageCode": "ur",
+        "text": "چھوٹا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "کوچنی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "کوچک"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: маленький."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: small."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: klein."
+      }
+    ]
+  },
+  {
+    "key": "good",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: good.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gut"
+      },
+      {
+        "languageCode": "ru",
+        "text": "хороший"
+      },
+      {
+        "languageCode": "en",
+        "text": "good"
+      },
+      {
+        "languageCode": "uk",
+        "text": "добрий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "iyi"
+      },
+      {
+        "languageCode": "ur",
+        "text": "اچھا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښه"
+      },
+      {
+        "languageCode": "fa",
+        "text": "خوب"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: хороший."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: good."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: gut."
+      }
+    ]
+  },
+  {
+    "key": "bad",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: bad.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schlecht"
+      },
+      {
+        "languageCode": "ru",
+        "text": "плохой"
+      },
+      {
+        "languageCode": "en",
+        "text": "bad"
+      },
+      {
+        "languageCode": "uk",
+        "text": "поганий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kötü"
+      },
+      {
+        "languageCode": "ur",
+        "text": "برا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بد"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بد"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: плохой."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: bad."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: schlecht."
+      }
+    ]
+  },
+  {
+    "key": "hot",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: hot.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heiß"
+      },
+      {
+        "languageCode": "ru",
+        "text": "горячий"
+      },
+      {
+        "languageCode": "en",
+        "text": "hot"
+      },
+      {
+        "languageCode": "uk",
+        "text": "гарячий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sıcak"
+      },
+      {
+        "languageCode": "ur",
+        "text": "گرم"
+      },
+      {
+        "languageCode": "ps",
+        "text": "تود"
+      },
+      {
+        "languageCode": "fa",
+        "text": "داغ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: горячий."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: hot."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: heiß."
+      }
+    ]
+  },
+  {
+    "key": "cold",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: cold.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kalt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "холодный"
+      },
+      {
+        "languageCode": "en",
+        "text": "cold"
+      },
+      {
+        "languageCode": "uk",
+        "text": "холодний"
+      },
+      {
+        "languageCode": "tr",
+        "text": "soğuk"
+      },
+      {
+        "languageCode": "ur",
+        "text": "ٹھنڈا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "یخ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سرد"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: холодный."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: cold."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: kalt."
+      }
+    ]
+  },
+  {
+    "key": "young",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: young.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "jung"
+      },
+      {
+        "languageCode": "ru",
+        "text": "молодой"
+      },
+      {
+        "languageCode": "en",
+        "text": "young"
+      },
+      {
+        "languageCode": "uk",
+        "text": "молодий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "genç"
+      },
+      {
+        "languageCode": "ur",
+        "text": "جوان"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ځوان"
+      },
+      {
+        "languageCode": "fa",
+        "text": "جوان"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: молодой."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: young."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: jung."
+      }
+    ]
+  },
+  {
+    "key": "old",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: old.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "alt"
+      },
+      {
+        "languageCode": "ru",
+        "text": "старый"
+      },
+      {
+        "languageCode": "en",
+        "text": "old"
+      },
+      {
+        "languageCode": "uk",
+        "text": "старий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yaşlı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بوڑھا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "زوړ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "پیر"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: старый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: old."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: alt."
+      }
+    ]
+  },
+  {
+    "key": "beautiful",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: beautiful.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schön"
+      },
+      {
+        "languageCode": "ru",
+        "text": "красивый"
+      },
+      {
+        "languageCode": "en",
+        "text": "beautiful"
+      },
+      {
+        "languageCode": "uk",
+        "text": "гарний"
+      },
+      {
+        "languageCode": "tr",
+        "text": "güzel"
+      },
+      {
+        "languageCode": "ur",
+        "text": "خوبصورت"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښکلی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "زیبا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: красивый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: beautiful."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: schön."
+      }
+    ]
+  },
+  {
+    "key": "fast",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: fast.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schnell"
+      },
+      {
+        "languageCode": "ru",
+        "text": "быстрый"
+      },
+      {
+        "languageCode": "en",
+        "text": "fast"
+      },
+      {
+        "languageCode": "uk",
+        "text": "швидкий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "hızlı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "تیز"
+      },
+      {
+        "languageCode": "ps",
+        "text": "چټک"
+      },
+      {
+        "languageCode": "fa",
+        "text": "سریع"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: быстрый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: fast."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: schnell."
+      }
+    ]
+  },
+  {
+    "key": "slow",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: slow.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "langsam"
+      },
+      {
+        "languageCode": "ru",
+        "text": "медленный"
+      },
+      {
+        "languageCode": "en",
+        "text": "slow"
+      },
+      {
+        "languageCode": "uk",
+        "text": "повільний"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yavaş"
+      },
+      {
+        "languageCode": "ur",
+        "text": "آہستہ"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ورو"
+      },
+      {
+        "languageCode": "fa",
+        "text": "آهسته"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: медленный."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: slow."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: langsam."
+      }
+    ]
+  },
+  {
+    "key": "open",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: open.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "offen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "открытый"
+      },
+      {
+        "languageCode": "en",
+        "text": "open"
+      },
+      {
+        "languageCode": "uk",
+        "text": "відкритий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "açık"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کھلا"
+      },
+      {
+        "languageCode": "ps",
+        "text": "خلاص"
+      },
+      {
+        "languageCode": "fa",
+        "text": "باز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: открытый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: open."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: offen."
+      }
+    ]
+  },
+  {
+    "key": "closed",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: closed.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "geschlossen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "закрытый"
+      },
+      {
+        "languageCode": "en",
+        "text": "closed"
+      },
+      {
+        "languageCode": "uk",
+        "text": "закритий"
+      },
+      {
+        "languageCode": "tr",
+        "text": "kapalı"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بند"
+      },
+      {
+        "languageCode": "ps",
+        "text": "بند"
+      },
+      {
+        "languageCode": "fa",
+        "text": "بسته"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: закрытый."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: closed."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: geschlossen."
+      }
+    ]
+  },
+  {
+    "key": "left",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: left.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "links"
+      },
+      {
+        "languageCode": "ru",
+        "text": "лево"
+      },
+      {
+        "languageCode": "en",
+        "text": "left"
+      },
+      {
+        "languageCode": "uk",
+        "text": "ліворуч"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sol"
+      },
+      {
+        "languageCode": "ur",
+        "text": "بائیں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "چپ"
+      },
+      {
+        "languageCode": "fa",
+        "text": "چپ"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: лево."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: left."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: links."
+      }
+    ]
+  },
+  {
+    "key": "right",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: right.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "rechts"
+      },
+      {
+        "languageCode": "ru",
+        "text": "право"
+      },
+      {
+        "languageCode": "en",
+        "text": "right"
+      },
+      {
+        "languageCode": "uk",
+        "text": "праворуч"
+      },
+      {
+        "languageCode": "tr",
+        "text": "sağ"
+      },
+      {
+        "languageCode": "ur",
+        "text": "دائیں"
+      },
+      {
+        "languageCode": "ps",
+        "text": "ښی"
+      },
+      {
+        "languageCode": "fa",
+        "text": "راست"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: право."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: right."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: rechts."
+      }
+    ]
+  },
+  {
+    "key": "today",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: today.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heute"
+      },
+      {
+        "languageCode": "ru",
+        "text": "сегодня"
+      },
+      {
+        "languageCode": "en",
+        "text": "today"
+      },
+      {
+        "languageCode": "uk",
+        "text": "сьогодні"
+      },
+      {
+        "languageCode": "tr",
+        "text": "bugün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "آج"
+      },
+      {
+        "languageCode": "ps",
+        "text": "نن"
+      },
+      {
+        "languageCode": "fa",
+        "text": "امروز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: сегодня."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: today."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: heute."
+      }
+    ]
+  },
+  {
+    "key": "tomorrow",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: tomorrow.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "morgen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "завтра"
+      },
+      {
+        "languageCode": "en",
+        "text": "tomorrow"
+      },
+      {
+        "languageCode": "uk",
+        "text": "завтра"
+      },
+      {
+        "languageCode": "tr",
+        "text": "yarın"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کل"
+      },
+      {
+        "languageCode": "ps",
+        "text": "سبا"
+      },
+      {
+        "languageCode": "fa",
+        "text": "فردا"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: завтра."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: tomorrow."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: morgen."
+      }
+    ]
+  },
+  {
+    "key": "yesterday",
+    "level": "A1",
+    "partOfSpeech": "General",
+    "description": "Core A1 concept: yesterday.",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gestern"
+      },
+      {
+        "languageCode": "ru",
+        "text": "вчера"
+      },
+      {
+        "languageCode": "en",
+        "text": "yesterday"
+      },
+      {
+        "languageCode": "uk",
+        "text": "вчора"
+      },
+      {
+        "languageCode": "tr",
+        "text": "dün"
+      },
+      {
+        "languageCode": "ur",
+        "text": "کل"
+      },
+      {
+        "languageCode": "ps",
+        "text": "پرون"
+      },
+      {
+        "languageCode": "fa",
+        "text": "دیروز"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Базовое слово уровня A1: вчера."
+      },
+      {
+        "languageCode": "en",
+        "text": "Basic A1 word: yesterday."
+      },
+      {
+        "languageCode": "de",
+        "text": "Ein grundlegendes Wort auf Niveau A1: gestern."
       }
     ]
   }

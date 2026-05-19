@@ -6,133 +6,139 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Training">
 
-    <Grid
-        Padding="24"
-        RowDefinitions="Auto,Auto,*">
+    <Grid Padding="24" RowDefinitions="Auto,*">
+        <VerticalStackLayout
+        Grid.Row="0"
+        MaximumWidthRequest="420"
+        HorizontalOptions="Center"
+        Spacing="16">
 
-        <!-- STATS PANEL -->
+            <!-- STATS PANEL -->
 
-        <HorizontalStackLayout
+            <HorizontalStackLayout
     Grid.Row="0"
     Spacing="16"
     HorizontalOptions="Center"
     Padding="0,0,0,16">
 
-            <VerticalStackLayout WidthRequest="70">
-                <Label Text="Today" FontSize="12" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding AnsweredToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>
+                <VerticalStackLayout WidthRequest="70">
+                    <Label Text="Today" FontSize="12" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding AnsweredToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-            <VerticalStackLayout WidthRequest="70">
-                <Label Text="Correct" FontSize="12" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding CorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>
+                <VerticalStackLayout WidthRequest="70">
+                    <Label Text="Correct" FontSize="12" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding CorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-            <VerticalStackLayout WidthRequest="70">
-                <Label Text="New" FontSize="12" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding NewCorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>
+                <VerticalStackLayout WidthRequest="70">
+                    <Label Text="New" FontSize="12" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding NewCorrectToday}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-            <VerticalStackLayout WidthRequest="70">
-                <Label Text="Learned" FontSize="12" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding LearnedTotal}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>
-            
-            <VerticalStackLayout WidthRequest="70">
-                <Label Text="Level" FontSize="12" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding LevelCode}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            </VerticalStackLayout>
+                <VerticalStackLayout WidthRequest="70">
+                    <Label Text="Learned" FontSize="12" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding LearnedTotal}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-        </HorizontalStackLayout>
-        <!-- MESSAGE + LOGOUT -->
+                <VerticalStackLayout WidthRequest="70">
+                    <Label Text="Level" FontSize="12" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding LevelCode}" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
 
-        <Grid
-            Grid.Row="1"
-            ColumnDefinitions="*,Auto"
-            Margin="0,0,0,16">
+            </HorizontalStackLayout>
+            <!-- MESSAGE + LOGOUT -->
 
-            <Label
-                Grid.Column="0"
-                Text="{Binding Message}"
-                FontSize="16"
-                VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center" />
+            <Grid ColumnDefinitions="*,Auto">
 
-            <Button
-                Text="Logout"
-                Command="{Binding LogoutCommand}" />
+                <Label
+                    Grid.Column="0"
+                    Text="Training"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center" />
 
-        </Grid>
+                <Button
+                    Grid.Column="1"
+                    Text="Logout"
+                    Padding="12,0"
+                    HeightRequest="34"
+                    WidthRequest="74"
+                    FontSize="12"
+                    CornerRadius="10"
+                    Command="{Binding LogoutCommand}" />
+            </Grid>
 
-        <!-- CONTENT -->
+            <!-- CONTENT -->
 
-        <Grid Grid.Row="2">
+            <Grid Grid.Row="2">
 
-            <!-- NO QUESTION STATE -->
+                <!-- NO QUESTION STATE -->
 
-            <VerticalStackLayout
+                <VerticalStackLayout
                 IsVisible="{Binding HasNoQuestion}"
                 Spacing="16"
                 VerticalOptions="Center">
 
-                <Label
-                    Text="No question available"
-                    FontSize="28"
-                    FontAttributes="Bold"
+                    <Label
+                    Text="🎉"
+                    FontSize="72"
                     HorizontalTextAlignment="Center" />
 
-                <Label
+                    <Label
                     Text="{Binding Message}"
-                    FontSize="18"
-                    TextColor="Gray"
+                    FontSize="22"
                     HorizontalTextAlignment="Center" />
 
-            </VerticalStackLayout>
+                </VerticalStackLayout>
 
-            <!-- QUESTION STATE -->
+                <!-- QUESTION STATE -->
 
-            <VerticalStackLayout
+                <VerticalStackLayout
                 IsVisible="{Binding HasQuestion}"
                 Spacing="24"
                 VerticalOptions="Center">
 
-                <Border
-                    Padding="24"
-                    StrokeShape="RoundRectangle 18">
+                    <Border
+                        WidthRequest="360"
+                        Padding="24,18"
+                        MinimumHeightRequest="120"
+                        HorizontalOptions="Center"
+                        StrokeShape="RoundRectangle 24"
+                        BackgroundColor="White">
 
-                    <Label
-                        Text="{Binding QuestionText}"
-                        FontSize="36"
-                        FontAttributes="Bold"
-                        HorizontalTextAlignment="Center" />
+                        <Label
+                            Text="{Binding QuestionText}"
+                            FontSize="40"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center" />
+                    </Border>
 
-                </Border>
-
-                <CollectionView
+                    <CollectionView
                     ItemsSource="{Binding Options}"
                     SelectionMode="None">
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
 
-                            <Button
+                                <Button
                                     Margin="0,6"
                                     Text="{Binding Text}"
                                     Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
-                                    CommandParameter="{Binding .}" />
+                                    CommandParameter="{Binding .}"
+                                 />
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
 
-                </CollectionView>
+                    </CollectionView>
 
-                <Button
+                    <Button
                         Text="I don't know this word"
                         Command="{Binding ShowExplanationCommand}" />
-            </VerticalStackLayout>
+                </VerticalStackLayout>
 
-        </Grid>
-
+            </Grid>
+        </VerticalStackLayout>
     </Grid>
-
 </ContentPage>

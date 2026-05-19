@@ -8,6 +8,7 @@ namespace WordsTrainer.Contracts.Training
     {
         Available = 1,
         SessionCompleted = 2,
-        NoWordsAvailable = 3
+        NoWordsAvailable = 3,
+        DailyLimitReached = 4
     }
 }

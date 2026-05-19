@@ -150,7 +150,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (next.Status != TrainingNextStatus.Available || next.Question == null)
             {
-                ClearQuestion(next.Message ?? "На сегодня всё.");
+                ClearQuestion(GetFriendlyMessage(next.Status, next.Message));
                 return;
             }
 
@@ -164,7 +164,7 @@ public class TrainingViewModel : INotifyPropertyChanged
         }
         catch (Exception ex)
         {
-            ClearQuestion($"Ошибка загрузки: {ex.Message}");
+            ClearQuestion($"⚠ Unable to load next question.");
         }
         finally
         {
@@ -175,6 +175,9 @@ public class TrainingViewModel : INotifyPropertyChanged
     private async Task AnswerAsync(TrainingOptionDto? option)
     {
         if (option == null || _currentQuestion == null || IsBusy)
+            return;
+
+        if (IsBusy)
             return;
 
         try
@@ -196,8 +199,8 @@ public class TrainingViewModel : INotifyPropertyChanged
             }
 
             Message = response.IsCorrect
-                ? "Правильно!"
-                : $"Неправильно. Правильный ответ: {response.CorrectAnswer}";
+                ? "✅ Correct!"
+                : $"❌ Correct answer: {response.CorrectAnswer}";
 
             await LoadStatsAsync();
         }
@@ -302,5 +305,23 @@ public class TrainingViewModel : INotifyPropertyChanged
             return;
 
         LevelCode = me.LanguageLevelCode;
+    }
+
+    private string GetFriendlyMessage(TrainingNextStatus status, string? backendMessage)
+    {
+        return status switch
+        {
+            TrainingNextStatus.SessionCompleted =>
+                "🎉 Great job! You completed today's training.",
+
+            TrainingNextStatus.NoWordsAvailable =>
+                "📚 No words available for your current language pair yet.",
+
+            TrainingNextStatus.DailyLimitReached =>
+                "✅ You reached today's learning limit.",
+
+            _ =>
+                backendMessage ?? "Something went wrong."
+        };
     }
 }
