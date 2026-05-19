@@ -78,4 +78,10 @@
 	  <ProjectReference Include="..\WordsTrainer.Contracts\WordsTrainer.Contracts.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\WordsTrainerTheme.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
