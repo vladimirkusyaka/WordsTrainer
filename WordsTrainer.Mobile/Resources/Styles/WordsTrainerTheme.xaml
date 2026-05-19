@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="WtBackground">#F5F7FA</Color>
+    <Color x:Key="WtForeground">#111827</Color>
+    <Color x:Key="WtCard">#FFFFFF</Color>
+    <Color x:Key="WtPrimary">#2563EB</Color>
+    <Color x:Key="WtAccent">#EEF2FF</Color>
+    <Color x:Key="WtMuted">#F1F5F9</Color>
+    <Color x:Key="WtMutedText">#6B7280</Color>
+    <Color x:Key="WtBorder">#E5E7EB</Color>
+    <Color x:Key="WtSuccess">#16A34A</Color>
+    <Color x:Key="WtError">#DC2626</Color>
+    <Color x:Key="WtWarning">#F59E0B</Color>
+
+    <Style x:Key="WtPage" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{StaticResource WtBackground}" />
+    </Style>
+
+    <Style x:Key="WtTitleLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="WtSubtitleLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource WtMutedText}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <Style x:Key="WtSmallMutedLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource WtMutedText}" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="WtStatValueLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="WtPrimaryButton" TargetType="Button">
+        <Setter Property="HeightRequest" Value="46" />
+        <Setter Property="CornerRadius" Value="14" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="{StaticResource WtPrimary}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Padding" Value="14,0" />
+    </Style>
+
+    <Style x:Key="WtSecondaryButton" TargetType="Button">
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="CornerRadius" Value="14" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+        <Setter Property="TextColor" Value="{StaticResource WtPrimary}" />
+        <Setter Property="BorderColor" Value="{StaticResource WtBorder}" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+
+    <Style x:Key="WtAnswerButton" TargetType="Button">
+        <Setter Property="HeightRequest" Value="58" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="BorderColor" Value="{StaticResource WtBorder}" />
+        <Setter Property="BorderWidth" Value="1" />
+    </Style>
+
+    <Style x:Key="WtCardBorder" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+        <Setter Property="Stroke" Value="{StaticResource WtBorder}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="StrokeShape">
+            <Setter.Value>
+                <RoundRectangle CornerRadius="24" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WtEntry" TargetType="Entry">
+        <Setter Property="HeightRequest" Value="54" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource WtMutedText}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+    </Style>
+
+    <Style x:Key="WtPicker" TargetType="Picker">
+        <Setter Property="HeightRequest" Value="54" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+    </Style>
+
+</ResourceDictionary>
