@@ -27,9 +27,9 @@ namespace WordsTrainer.Mobile.ViewModels
 
             LoginCommand = new Command(async () => await LoginAsync(), () => !IsBusy);
             GoToRegisterCommand = new Command(async () => await GoToRegisterAsync(), () => !IsBusy);
+            BackCommand = new Command(async () => await BackAsync(), () => !IsBusy);
         }
 
-        public ICommand GoToRegisterCommand { get; }
 
         public string Email
         {
@@ -62,7 +62,9 @@ namespace WordsTrainer.Mobile.ViewModels
             }
         }
 
+        public ICommand GoToRegisterCommand { get; }
         public ICommand LoginCommand { get; }
+        public ICommand BackCommand { get; }
 
         private async Task LoginAsync()
         {
@@ -131,6 +133,17 @@ namespace WordsTrainer.Mobile.ViewModels
             Application.Current.Windows[0].Page = new NavigationPage(registerPage);
 
             await Task.CompletedTask;
+        }
+
+        private async Task BackAsync()
+        {
+            var welcomePage = Application.Current!.Handler!.MauiContext!.Services
+                .GetRequiredService<WelcomePage>();
+
+            Application.Current.Windows[0].Page = new NavigationPage(welcomePage);
+
+            await Task.CompletedTask;
+
         }
     }
 }

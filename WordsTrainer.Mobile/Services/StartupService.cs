@@ -10,18 +10,21 @@ namespace WordsTrainer.Mobile.Services
         private readonly TokenStorage _tokenStorage;
         private readonly ApiClient _apiClient;
 
+        private readonly WelcomePage _welcomePage;
         private readonly LoginPage _loginPage;
         private readonly TrainingPage _trainingPage;
 
         public StartupService(
             TokenStorage tokenStorage,
             ApiClient apiClient,
+            WelcomePage welcomePage,
             LoginPage loginPage,
             TrainingPage trainingPage)
         {
             _tokenStorage = tokenStorage;
             _apiClient = apiClient;
 
+            _welcomePage = welcomePage;
             _loginPage = loginPage;
             _trainingPage = trainingPage;
 
@@ -33,7 +36,7 @@ namespace WordsTrainer.Mobile.Services
             var token = await _tokenStorage.GetAccessTokenAsync();
 
             if (string.IsNullOrWhiteSpace(token))
-                return new NavigationPage(_loginPage);
+                return new NavigationPage(_welcomePage);
 
             var me = await _apiClient.GetMeAsync();
 

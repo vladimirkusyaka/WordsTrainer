@@ -7,9 +7,9 @@ namespace WordsTrainer.Mobile.Configuration
     public static class AppConfig
     {
 #if DEBUG
-        public const string ApiBaseUrl = "http://localhost:5261";
+        public const string ApiBaseUrl = "https://wordstrainer-production.up.railway.app";
 #else
-    public const string ApiBaseUrl = "https://YOUR-AZURE-APP.azurewebsites.net";
+    public const string ApiBaseUrl = "https://wordstrainer-production.up.railway.app";
 #endif
     }
 }

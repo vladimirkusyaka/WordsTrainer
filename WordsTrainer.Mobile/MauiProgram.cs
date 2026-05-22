@@ -3,6 +3,7 @@ using WordsTrainer.Mobile.Configuration;
 using WordsTrainer.Mobile.Pages;
 using WordsTrainer.Mobile.Services;
 using WordsTrainer.Mobile.ViewModels;
+using CommunityToolkit.Maui;
 
 namespace WordsTrainer.Mobile;
 
@@ -18,6 +19,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+        builder.UseMauiCommunityToolkit();
 
         builder.Services.AddSingleton<TokenStorage>();
 
@@ -41,6 +44,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<StartupService>();
 
         builder.Services.AddSingleton<UiTextService>();
+
+        builder.Services.AddTransient<WelcomePage>();
+        builder.Services.AddTransient<WelcomeViewModel>();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

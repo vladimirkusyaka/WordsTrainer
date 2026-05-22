@@ -4,6 +4,7 @@
     x:Class="WordsTrainer.Mobile.Pages.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     BackgroundColor="#F5F7FA"
     NavigationPage.HasNavigationBar="False">
 
@@ -11,91 +12,226 @@
         <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
     </ContentPage.Resources>
 
-    <Grid Padding="24">
+    <Grid Padding="28,26">
 
         <VerticalStackLayout
-            MaximumWidthRequest="500"
+            MaximumWidthRequest="430"
             HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Spacing="18">
+            VerticalOptions="Fill"
+            Spacing="0">
 
-            <VerticalStackLayout Spacing="8">
-                <Label
-                    Text="WordsTrainer"
-                    FontSize="38"
-                    FontAttributes="Bold"
-                    TextColor="{StaticResource WtForeground}"
-                    HorizontalTextAlignment="Center" />
+            <!-- Back -->
 
-                <Label
-                    Text="Train your vocabulary every day"
-                    FontSize="17"
+            <HorizontalStackLayout Spacing="8">
+                <Image
+                        Source="arrow_left.svg"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                    </Image.Behaviors>
+
+                </Image>
+
+                <Button
+                    Text="Back"
+                    BackgroundColor="Transparent"
                     TextColor="{StaticResource WtMutedText}"
-                    HorizontalTextAlignment="Center" />
+                    FontSize="15"
+                    Padding="0"
+                    HeightRequest="36"
+                    Command="{Binding BackCommand}" />
+            </HorizontalStackLayout>
+
+            <!-- Header -->
+
+            <VerticalStackLayout
+                Spacing="8"
+                Margin="0,34,0,0">
+
+                <Label
+                    Text="Welcome back"
+                    FontSize="32"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource WtForeground}" />
+
+                <Label
+                    Text="Sign in to continue your learning journey"
+                    FontSize="17"
+                    TextColor="{StaticResource WtMutedText}" />
+
             </VerticalStackLayout>
 
-            <Border
-                WidthRequest="380"
-                BackgroundColor="{StaticResource WtCard}"
-                Stroke="{StaticResource WtBorder}"
-                StrokeThickness="1"
-                Padding="22"
-                StrokeShape="RoundRectangle 28">
+            <!-- Form -->
 
-                <VerticalStackLayout Spacing="18">
+            <VerticalStackLayout
+                Spacing="20"
+                Margin="0,44,0,0">
 
-                    <VerticalStackLayout Spacing="4">
-                        <Label
-                            Text="Welcome back"
-                            FontSize="26"
-                            FontAttributes="Bold"
-                            TextColor="{StaticResource WtForeground}" />
-
-                        <Label
-                            Text="Log in to continue"
-                            FontSize="15"
-                            TextColor="{StaticResource WtMutedText}" />
-                    </VerticalStackLayout>
-
-                    <Entry
-                        Placeholder="Email"
-                        Keyboard="Email"
-                        Text="{Binding Email}"
-                        HeightRequest="44"
-                        FontSize="16"
-                        BackgroundColor="#F9FAFB" />
-
-                    <Entry
-                        Placeholder="Password"
-                        IsPassword="True"
-                        Text="{Binding Password}"
-                        HeightRequest="44"
-                        FontSize="16"
-                        BackgroundColor="#F9FAFB" />
-
-                    <Button
-                        Text="Login"
-                        Style="{StaticResource WtPrimaryButton}"
-                        Command="{Binding LoginCommand}" />
-
-                    <Button
-                        Text="Create account"
-                        Style="{StaticResource WtSecondaryButton}"
-                        Command="{Binding GoToRegisterCommand}" />
-
+                <VerticalStackLayout Spacing="8">
                     <Label
-                        Text="{Binding ErrorMessage}"
-                        FontSize="14"
-                        TextColor="{StaticResource WtError}"
-                        HorizontalTextAlignment="Center" />
+                        Text="Email"
+                        FontSize="15"
+                        TextColor="{StaticResource WtForeground}" />
 
-                    <ActivityIndicator
-                        IsRunning="{Binding IsBusy}"
-                        IsVisible="{Binding IsBusy}" />
+                    <Border
+                        HeightRequest="58"
+                        BackgroundColor="{StaticResource WtCard}"
+                        Stroke="{StaticResource WtBorder}"
+                        StrokeThickness="1"
+                        Padding="16,0"
+                        StrokeShape="RoundRectangle 28">
 
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+
+                            <Image
+                                Source="mail.svg"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
+                            </Image>
+
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="your@email.com"
+                                Keyboard="Email"
+                                Text="{Binding Email}"
+                                FontSize="16"
+                                TextColor="{StaticResource WtForeground}"
+                                PlaceholderColor="{StaticResource WtMutedText}"
+                                VerticalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                ClearButtonVisibility="Never"/>
+
+                        </Grid>
+
+                    </Border>
                 </VerticalStackLayout>
 
-            </Border>
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Password"
+                        FontSize="15"
+                        TextColor="{StaticResource WtForeground}" />
+
+                    <Border
+                        HeightRequest="58"
+                        BackgroundColor="{StaticResource WtCard}"
+                        Stroke="{StaticResource WtBorder}"
+                        StrokeThickness="1"
+                        Padding="16,0"
+                        StrokeShape="RoundRectangle 28">
+
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+
+                            <Image
+                                Source="lock.svg"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
+                            </Image>
+
+                            <Entry
+                                x:Name="PasswordEntry"
+                                Grid.Column="1"
+                                Placeholder="Enter your password"
+                                IsPassword="True"
+                                Text="{Binding Password}"
+                                FontSize="16"
+                                TextColor="{StaticResource WtForeground}"
+                                PlaceholderColor="{StaticResource WtMutedText}"
+                                BackgroundColor="Transparent"
+                                ClearButtonVisibility="Never"
+                                VerticalOptions="Center" />
+
+                            <ImageButton
+                                Grid.Column="2"
+                                Source="eye.svg"
+                                WidthRequest="22"
+                                HeightRequest="22"
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                Clicked="TogglePasswordClicked"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                    </Border>
+                </VerticalStackLayout>
+
+                <Button
+                    Text="Forgot password?"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource WtPrimary}"
+                    FontSize="15"
+                    HorizontalOptions="End"
+                    HeightRequest="36"
+                    Padding="0" />
+
+                <Label
+                    Text="{Binding ErrorMessage}"
+                    FontSize="14"
+                    TextColor="{StaticResource WtError}"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap" />
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}" />
+
+            </VerticalStackLayout>
+
+            <!-- Bottom actions -->
+
+            <VerticalStackLayout
+                Spacing="14"
+                VerticalOptions="EndAndExpand"
+                Margin="0,40,0,0">
+
+                <Button
+                    Text="Sign In"
+                    Style="{StaticResource WtPrimaryButton}"
+                    HeightRequest="58"
+                    CornerRadius="28"
+                    FontSize="18"
+                    Command="{Binding LoginCommand}" />
+
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="4">
+
+                    <Label
+                        Text="Don't have an account?"
+                        FontSize="16"
+                        TextColor="{StaticResource WtMutedText}"
+                        VerticalTextAlignment="Center" />
+
+                    <Button
+                        Text="Sign up"
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource WtPrimary}"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        Padding="0"
+                        HeightRequest="34"
+                        Command="{Binding GoToRegisterCommand}" />
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
 

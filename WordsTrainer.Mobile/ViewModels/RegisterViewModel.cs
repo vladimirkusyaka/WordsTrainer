@@ -14,6 +14,8 @@ namespace WordsTrainer.Mobile.ViewModels
 {
     public class RegisterViewModel : INotifyPropertyChanged
     {
+        private int _step = 1;
+
         private readonly ApiClient _apiClient;
         private readonly TokenStorage _tokenStorage;
 
@@ -116,6 +118,59 @@ namespace WordsTrainer.Mobile.ViewModels
             }
         }
 
+        public int Step
+        {
+            get => _step;
+            set
+            {
+                if (_step == value) return;
+                _step = value;
+                StepPropertyChanged();
+            }
+        }
+
+        public bool IsStep1 => Step == 1;
+        public bool IsStep2 => Step == 2;
+        public bool IsStep3 => Step == 3;
+
+        public string StepTitle => Step switch
+        {
+            1 => "Create account",
+            2 => "Your learning setup",
+            3 => "Confirm details",
+            _ => "Create account"
+        };
+
+        public string StepSubtitle => Step switch
+        {
+            1 => "Enter your login details",
+            2 => "Choose your languages and level",
+            3 => "Review and start learning",
+            _ => ""
+        };
+
+        public Color Step1Color => Step == 1
+                ? (Color)Application.Current!.Resources["WtPrimary"]
+                : Color.FromArgb("#DDE3EF");
+        public Color Step2Color => Step == 2
+                ? (Color)Application.Current!.Resources["WtPrimary"]
+                : Color.FromArgb("#DDE3EF");
+        public Color Step3Color => Step == 3
+                ? (Color)Application.Current!.Resources["WtPrimary"]
+                : Color.FromArgb("#DDE3EF");
+
+        public ICommand NextStepCommand => new Command(() =>
+        {
+            if (Step < 3)
+                Step++;
+        });
+
+        public ICommand PreviousStepCommand => new Command(() =>
+        {
+            if (Step > 1)
+                Step--;
+        });
+
         private async Task RegisterAsync()
         {
             ErrorMessage = "";
@@ -213,6 +268,19 @@ namespace WordsTrainer.Mobile.ViewModels
         private void OnPropertyChanged([CallerMemberName] string? name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void StepPropertyChanged()
+        {
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(IsStep1));
+            OnPropertyChanged(nameof(IsStep2));
+            OnPropertyChanged(nameof(IsStep3));
+            OnPropertyChanged(nameof(StepTitle));
+            OnPropertyChanged(nameof(StepSubtitle));
+            OnPropertyChanged(nameof(Step1Color));
+            OnPropertyChanged(nameof(Step2Color));
+            OnPropertyChanged(nameof(Step3Color));
         }
     }
 }

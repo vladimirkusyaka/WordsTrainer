@@ -4,6 +4,7 @@
     x:Class="WordsTrainer.Mobile.Pages.RegisterPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     BackgroundColor="#F5F7FA"
     NavigationPage.HasNavigationBar="False">
 
@@ -11,137 +12,323 @@
         <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
     </ContentPage.Resources>
 
-    <Grid Padding="20">
+    <Grid Padding="28,26">
 
-        <ScrollView>
+        <VerticalStackLayout
+            MaximumWidthRequest="430"
+            HorizontalOptions="Center"
+            VerticalOptions="Fill"
+            Spacing="0">
+
+            <!-- Back -->
+            <HorizontalStackLayout Spacing="8">
+                <Image
+                        Source="arrow_left.svg"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                    </Image.Behaviors>
+
+                </Image>
+                <Button
+                    Text="Back"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource WtMutedText}"
+                    FontSize="15"
+                    Padding="0"
+                    HeightRequest="36"
+                    Command="{Binding PreviousStepCommand}" />
+            </HorizontalStackLayout>
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="8" Margin="0,34,0,0">
+                <Label
+                    Text="{Binding StepTitle}"
+                    FontSize="32"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource WtForeground}" />
+
+                <Label
+                    Text="{Binding StepSubtitle}"
+                    FontSize="17"
+                    TextColor="{StaticResource WtMutedText}" />
+            </VerticalStackLayout>
+
+            <!-- Progress -->
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8" Margin="0,28,0,0">
+                <BoxView Grid.Column="0" HeightRequest="5" CornerRadius="3" Color= "{Binding Step1Color}" />
+                <BoxView Grid.Column="1" HeightRequest="5" CornerRadius="3" Color= "{Binding Step2Color}" />
+                <BoxView Grid.Column="2" HeightRequest="5" CornerRadius="3" Color= "{Binding Step3Color}" />
+            </Grid>
+
+            <!-- STEP 1 -->
             <VerticalStackLayout
-                MaximumWidthRequest="500"
-                HorizontalOptions="Center"
-                Spacing="12"
-                Padding="0,4">
+                IsVisible="{Binding IsStep1}"
+                Spacing="8"
+                Margin="0,36,0,0">
 
-                <VerticalStackLayout Spacing="6">
+                <VerticalStackLayout Spacing="8">
                     <Label
-                        Text="Create account"
-                        FontSize="32"
-                        FontAttributes="Bold"
-                        TextColor="{StaticResource WtForeground}"
-                        HorizontalTextAlignment="Center" />
+                        Text="Email"
+                        FontSize="15"
+                        TextColor="{StaticResource WtForeground}" />
 
-                    <Label
-                        Text="Choose your languages and start learning"
-                        FontSize="16"
-                        TextColor="{StaticResource WtMutedText}"
-                        HorizontalTextAlignment="Center" />
+                    <Border
+                        HeightRequest="58"
+                        BackgroundColor="{StaticResource WtCard}"
+                        Stroke="{StaticResource WtBorder}"
+                        StrokeThickness="1"
+                        Padding="16,0"
+                        StrokeShape="RoundRectangle 28">
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                            <Image
+                                Source="mail.svg"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
+                            </Image>
+
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="your@email.com"
+                                Keyboard="Email"
+                                Text="{Binding Email}"
+                                FontSize="16"
+                                TextColor="{StaticResource WtForeground}"
+                                PlaceholderColor="{StaticResource WtMutedText}"
+                                VerticalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                ClearButtonVisibility="Never"/>
+                        </Grid>
+                    </Border>
                 </VerticalStackLayout>
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Password"
+                        FontSize="15"
+                        TextColor="{StaticResource WtForeground}" />
+
+                    <Border
+                        HeightRequest="58"
+                        BackgroundColor="{StaticResource WtCard}"
+                        Stroke="{StaticResource WtBorder}"
+                        StrokeThickness="1"
+                        Padding="16,0"
+                        StrokeShape="RoundRectangle 28">
+
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+
+                            <Image
+                                Source="lock.svg"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
+                            </Image>
+
+                            <Entry
+                                x:Name="PasswordEntry"
+                                Grid.Column="1"
+                                Placeholder="Enter your password"
+                                IsPassword="True"
+                                Text="{Binding Password}"
+                                FontSize="16"
+                                TextColor="{StaticResource WtForeground}"
+                                PlaceholderColor="{StaticResource WtMutedText}"
+                                BackgroundColor="Transparent"
+                                ClearButtonVisibility="Never"
+                                VerticalOptions="Center" />
+
+                            <ImageButton
+                                Grid.Column="2"
+                                Source="eye.svg"
+                                WidthRequest="22"
+                                HeightRequest="22"
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                Clicked="TogglePasswordClicked"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Password"
+                        FontSize="15"
+                        TextColor="{StaticResource WtForeground}" />
+
+                    <Border
+                        HeightRequest="58"
+                        BackgroundColor="{StaticResource WtCard}"
+                        Stroke="{StaticResource WtBorder}"
+                        StrokeThickness="1"
+                        Padding="16,0"
+                        StrokeShape="RoundRectangle 28">
+
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+
+                            <Image
+                                Source="lock.svg"
+                                WidthRequest="20"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
+                            </Image>
+
+                            <Entry
+                                x:Name="ConfirmPasswordEntry"
+                                Grid.Column="1"
+                                Placeholder="Confirm password"
+                                IsPassword="True"
+                                Text="{Binding ConfirmPassword}"
+                                FontSize="16"
+                                TextColor="{StaticResource WtForeground}"
+                                PlaceholderColor="{StaticResource WtMutedText}"
+                                BackgroundColor="Transparent"
+                                ClearButtonVisibility="Never"
+                                VerticalOptions="Center" />
+
+                            <ImageButton
+                                Grid.Column="2"
+                                Source="eye.svg"
+                                WidthRequest="22"
+                                HeightRequest="22"
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                Clicked="ToggleConfirmPasswordClicked"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <!-- STEP 2 -->
+            <VerticalStackLayout
+                IsVisible="{Binding IsStep2}"
+                Spacing="8"
+                Margin="0,36,0,0">
+
+                <Label Text="Native language" FontSize="15" TextColor="{StaticResource WtForeground}" />
+
+                <Picker
+                    ItemsSource="{Binding Languages}"
+                    ItemDisplayBinding="{Binding NativeName}"
+                    SelectedItem="{Binding SelectedNativeLanguage}" />
+
+                <Label Text="Target language" FontSize="15" TextColor="{StaticResource WtForeground}" />
+
+                <Picker
+                    ItemsSource="{Binding Languages}"
+                    ItemDisplayBinding="{Binding NativeName}"
+                    SelectedItem="{Binding SelectedTargetLanguage}" />
+
+                <Label Text="Level" FontSize="15" TextColor="{StaticResource WtForeground}" />
+
+                <Picker
+                    ItemsSource="{Binding Levels}"
+                    ItemDisplayBinding="{Binding Code}"
+                    SelectedItem="{Binding SelectedLevel}" />
+
+            </VerticalStackLayout>
+
+            <!-- STEP 3 -->
+            <VerticalStackLayout
+                IsVisible="{Binding IsStep3}"
+                Spacing="8"
+                Margin="0,36,0,0">
 
                 <Border
                     BackgroundColor="{StaticResource WtCard}"
                     Stroke="{StaticResource WtBorder}"
                     StrokeThickness="1"
-                    StrokeShape="RoundRectangle 28"
-                    WidthRequest="380"
-                    Padding="18">
+                    Padding="20"
+                    StrokeShape="RoundRectangle 24">
 
-                    <VerticalStackLayout Spacing="7">
+                    <VerticalStackLayout Spacing="12">
 
-                        <Entry
-                            Placeholder="Email"
-                            Keyboard="Email"
-                            Text="{Binding Email}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
+                        <Label Text="Summary" FontSize="22" FontAttributes="Bold" />
 
-                        <Entry
-                            Placeholder="Password"
-                            IsPassword="True"
-                            Text="{Binding Password}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
-
-                        <Entry
-                            Placeholder="Confirm password"
-                            IsPassword="True"
-                            Text="{Binding ConfirmPassword}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
-
-                        <Label
-                            Margin="0,2,0,0"
-                            Text="Native language"
-                            FontSize="12"
-                            TextColor="{StaticResource WtMutedText}" />
-
-                        <Picker
-                            ItemsSource="{Binding Languages}"
-                            ItemDisplayBinding="{Binding NativeName}"
-                            SelectedItem="{Binding SelectedNativeLanguage}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
-
-                        <Label
-                            Margin="0,2,0,0"
-                            Text="Target language"
-                            FontSize="12"
-                            TextColor="{StaticResource WtMutedText}" />
-
-                        <Picker
-                            ItemsSource="{Binding Languages}"
-                            ItemDisplayBinding="{Binding NativeName}"
-                            SelectedItem="{Binding SelectedTargetLanguage}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
-
-                        <Label
-                            Margin="0,2,0,0"
-                            Text="Level"
-                            FontSize="12"
-                            TextColor="{StaticResource WtMutedText}" />
-
-                        <Picker
-                            ItemsSource="{Binding Levels}"
-                            ItemDisplayBinding="{Binding Code}"
-                            SelectedItem="{Binding SelectedLevel}"
-                            HeightRequest="40"
-                            FontSize="14"
-                            BackgroundColor="#F9FAFB" />
-
-                        <Button
-                            Margin="0,10,0,0"
-                            Text="Register"
-                            HeightRequest="44"
-                            CornerRadius="16"
-                            Style="{StaticResource WtPrimaryButton}"
-                            Command="{Binding RegisterCommand}" />
-
-                        <Button
-                            Text="Already have account? Login"
-                            HeightRequest="44"
-                            CornerRadius="16"
-                            Style="{StaticResource WtSecondaryButton}"
-                            Command="{Binding GoToLoginCommand}" />
-
-                        <ActivityIndicator
-                            IsRunning="{Binding IsBusy}"
-                            IsVisible="{Binding IsBusy}" />
-
-                        <Label
-                            Text="{Binding ErrorMessage}"
-                            FontSize="12"
-                            TextColor="{StaticResource WtError}"
-                            HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Email}" FontSize="16" />
+                        <Label Text="{Binding SelectedNativeLanguage.NativeName, StringFormat='Native: {0}'}" FontSize="16" />
+                        <Label Text="{Binding SelectedTargetLanguage.NativeName, StringFormat='Target: {0}'}" FontSize="16" />
+                        <Label Text="{Binding SelectedLevel.Code, StringFormat='Level: {0}'}" FontSize="16" />
 
                     </VerticalStackLayout>
 
                 </Border>
 
             </VerticalStackLayout>
-        </ScrollView>
+
+            <Label
+                Text="{Binding ErrorMessage}"
+                FontSize="14"
+                TextColor="{StaticResource WtError}"
+                HorizontalTextAlignment="Center"
+                Margin="0,20,0,0" />
+
+            <!-- Bottom actions -->
+            <VerticalStackLayout
+                Spacing="14"
+                VerticalOptions="EndAndExpand"
+                Margin="0,40,0,0">
+
+                <Button
+                    Text="Continue"
+                    IsVisible="{Binding IsStep1}"
+                    Style="{StaticResource WtPrimaryButton}"
+                    HeightRequest="58"
+                    CornerRadius="28"
+                    Command="{Binding NextStepCommand}" />
+
+                <Button
+                    Text="Continue"
+                    IsVisible="{Binding IsStep2}"
+                    Style="{StaticResource WtPrimaryButton}"
+                    HeightRequest="58"
+                    CornerRadius="28"
+                    Command="{Binding NextStepCommand}" />
+
+                <Button
+                    Text="Create account"
+                    IsVisible="{Binding IsStep3}"
+                    Style="{StaticResource WtPrimaryButton}"
+                    HeightRequest="58"
+                    CornerRadius="28"
+                    Command="{Binding RegisterCommand}" />
+
+                <Button
+                    Text="I already have an account"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource WtMutedText}"
+                    FontSize="16"
+                    Command="{Binding GoToLoginCommand}" />
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
 
     </Grid>
 
