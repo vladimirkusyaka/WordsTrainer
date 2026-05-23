@@ -228,29 +228,140 @@
             <!-- STEP 2 -->
             <VerticalStackLayout
                 IsVisible="{Binding IsStep2}"
-                Spacing="8"
+                Spacing="22"
                 Margin="0,36,0,0">
 
-                <Label Text="Native language" FontSize="15" TextColor="{StaticResource WtForeground}" />
+                <!-- Native language -->
 
-                <Picker
-                    ItemsSource="{Binding Languages}"
-                    ItemDisplayBinding="{Binding NativeName}"
-                    SelectedItem="{Binding SelectedNativeLanguage}" />
+                <VerticalStackLayout Spacing="10">
 
-                <Label Text="Target language" FontSize="15" TextColor="{StaticResource WtForeground}" />
+                    <HorizontalStackLayout Spacing="8">
 
-                <Picker
-                    ItemsSource="{Binding Languages}"
-                    ItemDisplayBinding="{Binding NativeName}"
-                    SelectedItem="{Binding SelectedTargetLanguage}" />
+                        <Image
+                            Source="globe.svg"
+                            WidthRequest="18"
+                            HeightRequest="18" />
 
-                <Label Text="Level" FontSize="15" TextColor="{StaticResource WtForeground}" />
+                        <Label
+                            Text="Native Language"
+                            Style="{StaticResource WtSectionLabelStyle}" />
 
-                <Picker
-                    ItemsSource="{Binding Levels}"
-                    ItemDisplayBinding="{Binding Code}"
-                    SelectedItem="{Binding SelectedLevel}" />
+                    </HorizontalStackLayout>
+
+                    <Border Style="{StaticResource WtPickerBorderStyle}">
+
+                        <Grid ColumnDefinitions="*,Auto">
+
+                            <Picker
+                                Grid.Column="0"
+                                Style="{StaticResource WtPickerStyle}"
+                                Title="Select your native language"
+                                ItemsSource="{Binding Languages}"
+                                ItemDisplayBinding="{Binding NativeName}"
+                                SelectedItem="{Binding SelectedNativeLanguage}" />
+
+                            <Image
+                                Grid.Column="1"
+                                Source="chevron_down.svg"
+                                WidthRequest="18"
+                                HeightRequest="18"
+                                Margin="0,0,6,0"
+                                VerticalOptions="Center"
+                                Opacity="0.6" />
+
+                        </Grid>
+
+                    </Border>
+
+                </VerticalStackLayout>
+
+                <!-- Target language -->
+
+                <VerticalStackLayout Spacing="10">
+
+                    <HorizontalStackLayout Spacing="8">
+
+                        <Image
+                            Source="globe.svg"
+                            WidthRequest="18"
+                            HeightRequest="18" />
+
+                        <Label
+                            Text="I want to learn"
+                            Style="{StaticResource WtSectionLabelStyle}" />
+
+                    </HorizontalStackLayout>
+
+                    <Border Style="{StaticResource WtPickerBorderStyle}">
+
+                        <Grid ColumnDefinitions="*,Auto">
+
+                            <Picker
+                                Grid.Column="0"
+                                Style="{StaticResource WtPickerStyle}"
+                                Title="Select language to learn"
+                                ItemsSource="{Binding Languages}"
+                                ItemDisplayBinding="{Binding NativeName}"
+                                SelectedItem="{Binding SelectedTargetLanguage}" />
+
+                            <Image
+                                Grid.Column="1"
+                                Source="chevron_down.svg"
+                                WidthRequest="18"
+                                HeightRequest="18"
+                                Margin="0,0,6,0"
+                                VerticalOptions="Center"
+                                Opacity="0.6" />
+
+                        </Grid>
+
+                    </Border>
+
+                </VerticalStackLayout>
+
+                <!-- Level -->
+
+                <VerticalStackLayout Spacing="10">
+
+                    <HorizontalStackLayout Spacing="8">
+
+                        <Image
+                            Source="chart_column.svg"
+                            WidthRequest="18"
+                            HeightRequest="18" />
+
+                        <Label
+                            Text="Current Level"
+                            Style="{StaticResource WtSectionLabelStyle}" />
+
+                    </HorizontalStackLayout>
+
+                    <Border Style="{StaticResource WtPickerBorderStyle}">
+
+                        <Grid ColumnDefinitions="*,Auto">
+
+                            <Picker
+                                Grid.Column="0"
+                                Style="{StaticResource WtPickerStyle}"
+                                Title="Select your level"
+                                ItemsSource="{Binding Levels}"
+                                ItemDisplayBinding="{Binding Code}"
+                                SelectedItem="{Binding SelectedLevel}" />
+
+                            <Image
+                                Grid.Column="1"
+                                Source="chevron_down.svg"
+                                WidthRequest="18"
+                                HeightRequest="18"
+                                Margin="0,0,6,0"
+                                VerticalOptions="Center"
+                                Opacity="0.6" />
+
+                        </Grid>
+
+                    </Border>
+
+                </VerticalStackLayout>
 
             </VerticalStackLayout>
 

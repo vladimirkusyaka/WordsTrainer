@@ -99,4 +99,36 @@
         <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
     </Style>
 
+    <Style x:Key="WtPickerBorderStyle" TargetType="Border">
+
+        <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+        <Setter Property="Stroke" Value="{StaticResource WtBorder}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Padding" Value="18,0" />
+        <Setter Property="HeightRequest" Value="58" />
+        <Setter Property="StrokeShape">
+            <RoundRectangle CornerRadius="28" />
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="WtPickerStyle" TargetType="Picker">
+
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+        <Setter Property="TitleColor" Value="{StaticResource WtMutedText}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="58" />
+
+    </Style>
+
+    <Style x:Key="WtSectionLabelStyle" TargetType="Label">
+
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+
+    </Style>
+
+
 </ResourceDictionary>

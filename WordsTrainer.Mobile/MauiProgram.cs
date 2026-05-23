@@ -4,6 +4,7 @@ using WordsTrainer.Mobile.Pages;
 using WordsTrainer.Mobile.Services;
 using WordsTrainer.Mobile.ViewModels;
 using CommunityToolkit.Maui;
+using Microsoft.Maui.Handlers;
 
 namespace WordsTrainer.Mobile;
 
@@ -47,6 +48,16 @@ public static class MauiProgram
 
         builder.Services.AddTransient<WelcomePage>();
         builder.Services.AddTransient<WelcomeViewModel>();
+
+        PickerHandler.Mapper.AppendToMapping("NoArrow", (handler, view) =>
+        {
+#if ANDROID
+            handler.PlatformView.BackgroundTintList =
+                Android.Content.Res.ColorStateList.ValueOf(
+                    Android.Graphics.Color.Transparent);
+#endif
+        });
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
