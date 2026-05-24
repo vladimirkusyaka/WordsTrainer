@@ -4,251 +4,479 @@
     x:Class="WordsTrainer.Mobile.Pages.TrainingPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     BackgroundColor="#F5F7FA"
     NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
-        <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="StatValueStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="19" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="StatCaptionStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource WtMutedText}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="StatIconLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid Padding="20">
+    <Grid Padding="18,12,18,10">
 
-        <ScrollView>
-            <VerticalStackLayout
-                MaximumWidthRequest="420"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Spacing="16">
+        <Grid
+            MaximumWidthRequest="430"
+            HorizontalOptions="Center"
+            VerticalOptions="Fill">
 
-                <!-- TOP BAR -->
+            <ScrollView>
 
-                <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout
+                    HorizontalOptions="Fill"
+                    Spacing="0">
 
-                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                    <!-- Header -->
+                    <Grid
+                        ColumnDefinitions="*,Auto"
+                        HorizontalOptions="Fill">
 
                         <Label
-                            Text="{Binding AppTitle}"
-                            FontSize="26"
+                            Grid.Column="0"
+                            Text="Training"
+                            FontSize="24"
                             FontAttributes="Bold"
-                            TextColor="{StaticResource WtForeground}" />
+                            TextColor="{StaticResource WtForeground}"
+                            VerticalTextAlignment="Center" />
 
-                        <Label
-                            Text="{Binding AppSubtitle}"
-                            FontSize="14"
-                            TextColor="{StaticResource WtMutedText}" />
+                        <HorizontalStackLayout
+                            Grid.Column="1"
+                            Spacing="6"
+                            HeightRequest="36"
+                            VerticalOptions="Center">
 
-                    </VerticalStackLayout>
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LogoutCommand}" />
+                            </HorizontalStackLayout.GestureRecognizers>
 
-                    <Button
-                        Grid.Column="1"
-                        Text="{Binding LogoutText}"
-                        FontSize="12"
-                        HeightRequest="34"
-                        WidthRequest="78"
-                        Padding="8,0"
-                        CornerRadius="10"
-                        BackgroundColor="{StaticResource WtCard}"
-                        TextColor="{StaticResource WtMutedText}"
-                        BorderColor="{StaticResource WtBorder}"
-                        BorderWidth="1"
-                        Command="{Binding LogoutCommand}" />
+                            <Image
+                                Source="arrow_left.svg"
+                                WidthRequest="16"
+                                HeightRequest="16"
+                                Rotation="180"
+                                VerticalOptions="Center">
 
-                </Grid>
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                </Image.Behaviors>
 
-                <!-- STATS CARD -->
-
-                <Border
-                    BackgroundColor="{StaticResource WtCard}"
-                    Stroke="{StaticResource WtBorder}"
-                    StrokeThickness="1"
-                    Padding="14"
-                    StrokeShape="RoundRectangle 22">
-
-                    <Grid ColumnDefinitions="*,*,*,*">
-
-                        <VerticalStackLayout Grid.Column="0" Spacing="3">
+                            </Image>
 
                             <Label
-                                Text="{Binding TodayText}"
-                                FontSize="12"
+                                Text="Logout"
+                                FontSize="14"
                                 TextColor="{StaticResource WtMutedText}"
-                                HorizontalTextAlignment="Center" />
+                                VerticalTextAlignment="Center" />
 
-                            <Label
-                                Text="{Binding AnsweredToday}"
-                                FontSize="19"
-                                FontAttributes="Bold"
-                                TextColor="{StaticResource WtForeground}"
-                                HorizontalTextAlignment="Center" />
-
-                        </VerticalStackLayout>
-
-                        <VerticalStackLayout Grid.Column="1" Spacing="3">
-
-                            <Label
-                                Text="{Binding CorrectText}"
-                                FontSize="12"
-                                TextColor="{StaticResource WtMutedText}"
-                                HorizontalTextAlignment="Center" />
-
-                            <Label
-                                Text="{Binding CorrectToday}"
-                                FontSize="19"
-                                FontAttributes="Bold"
-                                TextColor="{StaticResource WtForeground}"
-                                HorizontalTextAlignment="Center" />
-
-                        </VerticalStackLayout>
-
-                        <VerticalStackLayout Grid.Column="2" Spacing="3">
-
-                            <Label
-                                Text="{Binding NewText}"
-                                FontSize="12"
-                                TextColor="{StaticResource WtMutedText}"
-                                HorizontalTextAlignment="Center" />
-
-                            <Label
-                                Text="{Binding NewCorrectToday}"
-                                FontSize="19"
-                                FontAttributes="Bold"
-                                TextColor="{StaticResource WtForeground}"
-                                HorizontalTextAlignment="Center" />
-
-                        </VerticalStackLayout>
-
-                        <VerticalStackLayout Grid.Column="3" Spacing="3">
-
-                            <Label
-                                Text="{Binding LearnedText}"
-                                FontSize="12"
-                                TextColor="{StaticResource WtMutedText}"
-                                HorizontalTextAlignment="Center" />
-
-                            <Label
-                                Text="{Binding LearnedTotal}"
-                                FontSize="19"
-                                FontAttributes="Bold"
-                                TextColor="{StaticResource WtForeground}"
-                                HorizontalTextAlignment="Center" />
-
-                        </VerticalStackLayout>
+                        </HorizontalStackLayout>
 
                     </Grid>
 
-                </Border>
+                    <!-- Progress -->
+                    <Grid
+                        Margin="0,10,0,0"
+                        RowDefinitions="Auto,Auto"
+                        ColumnDefinitions="*,Auto"
+                        RowSpacing="7"
+                        HorizontalOptions="Fill">
 
-                <!-- MESSAGE -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="{Binding ProgressText}"
+                            FontSize="12"
+                            TextColor="{StaticResource WtMutedText}" />
 
-                <Label
-                    Text="{Binding Message}"
-                    FontSize="14"
-                    TextColor="{StaticResource WtMutedText}"
-                    HorizontalTextAlignment="Center"
-                    LineBreakMode="WordWrap"
-                    MaxLines="2" />
+                        <Grid
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="5"
+                            HorizontalOptions="Fill">
 
-                <!-- EMPTY STATE -->
+                            <BoxView
+                                Color="#E6EBF5"
+                                CornerRadius="3"
+                                HorizontalOptions="Fill" />
 
-                <VerticalStackLayout
-                    IsVisible="{Binding HasNoQuestion}"
-                    Spacing="12"
-                    Padding="0,36"
-                    VerticalOptions="Center">
+                            <ProgressBar
+                                Progress="{Binding TrainingProgress}"
+                                ProgressColor="{StaticResource WtPrimary}"
+                                BackgroundColor="Transparent"
+                                HeightRequest="5"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center" />
 
-                    <Label
-                        Text="🎉"
-                        FontSize="60"
-                        HorizontalTextAlignment="Center" />
+                        </Grid>
 
-                    <Label
-                        Text="{Binding TrainingCompleteText}"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="{StaticResource WtForeground}"
-                        HorizontalTextAlignment="Center" />
+                    </Grid>
 
-                    <Label
-                        Text="{Binding Message}"
-                        FontSize="16"
-                        TextColor="{StaticResource WtMutedText}"
-                        HorizontalTextAlignment="Center"
-                        LineBreakMode="WordWrap" />
-
-                </VerticalStackLayout>
-
-                <!-- QUESTION STATE -->
-
-                <VerticalStackLayout
-                    IsVisible="{Binding HasQuestion}"
-                    Spacing="14">
-
-                    <!-- WORD CARD -->
-
+                    <!-- Stats -->
                     <Border
+                        Margin="0,18,0,0"
+                        HorizontalOptions="Fill"
                         BackgroundColor="{StaticResource WtCard}"
                         Stroke="{StaticResource WtBorder}"
                         StrokeThickness="1"
-                        Padding="22,18"
-                        StrokeShape="RoundRectangle 26">
+                        Padding="10,12"
+                        StrokeShape="RoundRectangle 22">
 
-                        <VerticalStackLayout Spacing="4">
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="#10000000"
+                                Offset="0,3"
+                                Radius="7"
+                                Opacity="0.12" />
+                        </Border.Shadow>
 
-                            <Label
-                                Text="{Binding TranslateWordText}"
-                                FontSize="13"
-                                TextColor="{StaticResource WtMutedText}"
-                                HorizontalTextAlignment="Center" />
+                        <Grid
+                            ColumnDefinitions="*,*,*,*"
+                            HorizontalOptions="Fill">
 
-                            <Label
-                                Text="{Binding QuestionText}"
-                                FontSize="40"
-                                FontAttributes="Bold"
-                                TextColor="{StaticResource WtForeground}"
-                                HorizontalTextAlignment="Center" />
+                            <!-- Today -->
+                            <VerticalStackLayout
+                                Grid.Column="0"
+                                Spacing="3"
+                                HorizontalOptions="Center">
 
-                        </VerticalStackLayout>
+                                <Border
+                                    WidthRequest="36"
+                                    HeightRequest="36"
+                                    BackgroundColor="#EAF0FF"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 18">
+
+                                    <Label
+                                        Text="◎"
+                                        TextColor="{StaticResource WtPrimary}"
+                                        Style="{StaticResource StatIconLabelStyle}" />
+
+                                </Border>
+
+                                <Label
+                                    Text="{Binding AnsweredToday}"
+                                    Style="{StaticResource StatValueStyle}" />
+
+                                <Label
+                                    Text="Today"
+                                    Style="{StaticResource StatCaptionStyle}" />
+
+                            </VerticalStackLayout>
+
+                            <!-- Correct -->
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="3"
+                                HorizontalOptions="Center">
+
+                                <Border
+                                    WidthRequest="36"
+                                    HeightRequest="36"
+                                    BackgroundColor="#EAF9F0"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 18">
+
+                                    <Label
+                                        Text="✓"
+                                        TextColor="#16A45A"
+                                        Style="{StaticResource StatIconLabelStyle}" />
+
+                                </Border>
+
+                                <Label
+                                    Text="{Binding CorrectToday}"
+                                    Style="{StaticResource StatValueStyle}" />
+
+                                <Label
+                                    Text="Correct"
+                                    Style="{StaticResource StatCaptionStyle}" />
+
+                            </VerticalStackLayout>
+
+                            <!-- New -->
+                            <VerticalStackLayout
+                                Grid.Column="2"
+                                Spacing="3"
+                                HorizontalOptions="Center">
+
+                                <Border
+                                    WidthRequest="36"
+                                    HeightRequest="36"
+                                    BackgroundColor="#FFF3DF"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 18">
+
+                                    <Image
+                                        Source="book_open.svg"
+                                        WidthRequest="17"
+                                        HeightRequest="17"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="#F59E0B" />
+                                        </Image.Behaviors>
+
+                                    </Image>
+
+                                </Border>
+
+                                <Label
+                                    Text="{Binding NewCorrectToday}"
+                                    Style="{StaticResource StatValueStyle}" />
+
+                                <Label
+                                    Text="New"
+                                    Style="{StaticResource StatCaptionStyle}" />
+
+                            </VerticalStackLayout>
+
+                            <!-- Learned -->
+                            <VerticalStackLayout
+                                Grid.Column="3"
+                                Spacing="3"
+                                HorizontalOptions="Center">
+
+                                <Border
+                                    WidthRequest="36"
+                                    HeightRequest="36"
+                                    BackgroundColor="#FFF0E8"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 18">
+
+                                    <Image
+                                        Source="chart_column.svg"
+                                        WidthRequest="17"
+                                        HeightRequest="17"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="#F97316" />
+                                        </Image.Behaviors>
+
+                                    </Image>
+
+                                </Border>
+
+                                <Label
+                                    Text="{Binding LearnedTotal}"
+                                    Style="{StaticResource StatValueStyle}" />
+
+                                <Label
+                                    Text="Learned"
+                                    Style="{StaticResource StatCaptionStyle}" />
+
+                            </VerticalStackLayout>
+
+                        </Grid>
 
                     </Border>
 
-                    <!-- ANSWERS -->
+                    <!-- Empty state -->
+                    <VerticalStackLayout
+                        IsVisible="{Binding HasNoQuestion}"
+                        Spacing="12"
+                        Margin="0,36,0,0"
+                        HorizontalOptions="Fill">
 
-                    <CollectionView
-                        ItemsSource="{Binding Options}"
-                        SelectionMode="None">
+                        <Border
+                            WidthRequest="56"
+                            HeightRequest="56"
+                            BackgroundColor="#EAF9F0"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 28"
+                            HorizontalOptions="Center">
 
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
+                            <Label
+                                Text="✓"
+                                FontSize="27"
+                                FontAttributes="Bold"
+                                TextColor="#16A45A"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center" />
 
-                                <Button
-                                    Style="{StaticResource WtAnswerButton}"
-                                    HeightRequest="48"
-                                    CornerRadius="14"
-                                    FontSize="17"
-                                    Margin="0,4"
-                                    Text="{Binding Text}"
-                                    Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
-                                    CommandParameter="{Binding .}" />
+                        </Border>
 
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
+                        <Label
+                            Text="{Binding TrainingCompleteText}"
+                            FontSize="23"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource WtForeground}"
+                            HorizontalTextAlignment="Center" />
 
-                    </CollectionView>
+                        <Label
+                            Text="{Binding Message}"
+                            FontSize="15"
+                            TextColor="{StaticResource WtMutedText}"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="WordWrap" />
 
-                    <!-- EXPLANATION -->
+                    </VerticalStackLayout>
 
-                    <Button
-                        Text="{Binding DontKnowText}"
-                        Style="{StaticResource WtSecondaryButton}"
-                        HeightRequest="44"
-                        CornerRadius="14"
-                        FontSize="15"
-                        Command="{Binding ShowExplanationCommand}" />
+                    <!-- Question state -->
+                    <VerticalStackLayout
+                        IsVisible="{Binding HasQuestion}"
+                        Margin="0,26,0,0"
+                        Spacing="0"
+                        HorizontalOptions="Fill">
+
+                        <!-- Word card -->
+                        <Border
+                            HorizontalOptions="Fill"
+                            BackgroundColor="{StaticResource WtCard}"
+                            Stroke="{StaticResource WtBorder}"
+                            StrokeThickness="1"
+                            Padding="18,16"
+                            MinimumHeightRequest="132"
+                            StrokeShape="RoundRectangle 22">
+
+                            <Border.Shadow>
+                                <Shadow
+                                    Brush="#10000000"
+                                    Offset="0,3"
+                                    Radius="7"
+                                    Opacity="0.12" />
+                            </Border.Shadow>
+
+                            <VerticalStackLayout
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Spacing="12">
+
+                                <Border
+                                    BackgroundColor="#EAF0FF"
+                                    StrokeThickness="0"
+                                    Padding="11,4"
+                                    StrokeShape="RoundRectangle 13"
+                                    HorizontalOptions="Center">
+
+                                    <!-- Replace with Text="{Binding QuestionLevel}" when levels exist -->
+                                    <Label
+                                        Text="A1"
+                                        FontSize="13"
+                                        FontAttributes="Bold"
+                                        TextColor="{StaticResource WtPrimary}" />
+
+                                </Border>
+
+                                <Label
+                                    Text="{Binding QuestionText}"
+                                    FontSize="34"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource WtForeground}"
+                                    HorizontalTextAlignment="Center"
+                                    LineBreakMode="TailTruncation" />
+
+                            </VerticalStackLayout>
+
+                        </Border>
+
+                        <!-- Feedback: visible only after answer/explanation -->
+                        <Label
+                            Text="{Binding Message}"
+                            IsVisible="{Binding HasMessage}"
+                            FontSize="13"
+                            TextColor="{StaticResource WtMutedText}"
+                            HorizontalTextAlignment="Center"
+                            LineBreakMode="WordWrap"
+                            MaxLines="2"
+                            Margin="0,8,0,0" />
+
+                        <!-- Answers -->
+                        <VerticalStackLayout
+    Margin="0,18,0,0"
+    BindableLayout.ItemsSource="{Binding Options}"
+    Spacing="8"
+    HorizontalOptions="Fill">
+
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Button
+                HorizontalOptions="Fill"
+                Style="{StaticResource WtAnswerButton}"
+                HeightRequest="48"
+                CornerRadius="24"
+                FontSize="16"
+                Text="{Binding Text}"
+                Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                CommandParameter="{Binding .}" />
+
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </VerticalStackLayout>
+
+                        <!-- I don't know -->
+                        <HorizontalStackLayout
+                            Margin="0,6,0,0"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Spacing="7">
+
+                            <HorizontalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowExplanationCommand}" />
+                            </HorizontalStackLayout.GestureRecognizers>
+
+                            <Border
+                                WidthRequest="17"
+                                HeightRequest="17"
+                                BackgroundColor="Transparent"
+                                Stroke="{StaticResource WtMutedText}"
+                                StrokeThickness="1.2"
+                                StrokeShape="RoundRectangle 9">
+
+                                <Label
+                                    Text="?"
+                                    FontSize="11"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource WtMutedText}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" />
+
+                            </Border>
+
+                            <Label
+                                Text="I don't know this word"
+                                FontSize="14"
+                                TextColor="{StaticResource WtMutedText}"
+                                VerticalTextAlignment="Center" />
+
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
 
                 </VerticalStackLayout>
 
-            </VerticalStackLayout>
-        </ScrollView>
+            </ScrollView>
+
+        </Grid>
 
     </Grid>
 

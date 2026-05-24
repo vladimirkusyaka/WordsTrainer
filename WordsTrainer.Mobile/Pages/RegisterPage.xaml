@@ -9,230 +9,281 @@
     NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
-        <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="RegistrationFieldLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+            </Style>
+
+            <Style x:Key="RegistrationFieldBorderStyle" TargetType="Border">
+                <Setter Property="HeightRequest" Value="58" />
+                <Setter Property="BackgroundColor" Value="{StaticResource WtCard}" />
+                <Setter Property="Stroke" Value="{StaticResource WtBorder}" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Padding" Value="16,0" />
+                <Setter Property="StrokeShape" Value="RoundRectangle 29" />
+            </Style>
+
+            <Style x:Key="RegistrationEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource WtMutedText}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="ClearButtonVisibility" Value="Never" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="RegistrationIconStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="20" />
+                <Setter Property="HeightRequest" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="PasswordEyeStyle" TargetType="ImageButton">
+                <Setter Property="WidthRequest" Value="22" />
+                <Setter Property="HeightRequest" Value="22" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid Padding="28,26">
+    <Grid
+        Padding="24,24,24,28"
+        RowDefinitions="Auto,Auto,*,Auto"
+        RowSpacing="0">
 
-        <VerticalStackLayout
+        <!-- Top navigation -->
+        <Grid
+            Grid.Row="0"
             MaximumWidthRequest="430"
-            HorizontalOptions="Center"
-            VerticalOptions="Fill"
-            Spacing="0">
+            HorizontalOptions="Fill"
+            ColumnDefinitions="Auto,*,Auto"
+            HeightRequest="40">
 
-            <!-- Back -->
-            <HorizontalStackLayout Spacing="8">
+            <HorizontalStackLayout
+                Grid.Column="0"
+                Spacing="6"
+                VerticalOptions="Center">
+
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PreviousStepCommand}" />
+                </HorizontalStackLayout.GestureRecognizers>
+
                 <Image
-                        Source="arrow_left.svg"
-                        WidthRequest="24"
-                        HeightRequest="24"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center">
-
+                    Source="arrow_left.svg"
+                    WidthRequest="22"
+                    HeightRequest="22"
+                    VerticalOptions="Center">
                     <Image.Behaviors>
                         <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
                     </Image.Behaviors>
-
                 </Image>
-                <Button
-                    Text="Back"
-                    BackgroundColor="Transparent"
-                    TextColor="{StaticResource WtMutedText}"
-                    FontSize="15"
-                    Padding="0"
-                    HeightRequest="36"
-                    Command="{Binding PreviousStepCommand}" />
+
+                <Label
+                Text="Back"
+                FontSize="15"
+                TextColor="{StaticResource WtMutedText}"
+                VerticalTextAlignment="Center" />
             </HorizontalStackLayout>
 
-            <!-- Header -->
-            <VerticalStackLayout Spacing="8" Margin="0,34,0,0">
-                <Label
-                    Text="{Binding StepTitle}"
-                    FontSize="32"
-                    FontAttributes="Bold"
-                    TextColor="{StaticResource WtForeground}" />
+            <Label
+                Grid.Column="2"
+                Text="{Binding StepCounterText}"
+                FontSize="14"
+                TextColor="{StaticResource WtMutedText}"
+                VerticalTextAlignment="Center" />
 
-                <Label
-                    Text="{Binding StepSubtitle}"
-                    FontSize="17"
-                    TextColor="{StaticResource WtMutedText}" />
-            </VerticalStackLayout>
+        </Grid>
 
-            <!-- Progress -->
-            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8" Margin="0,28,0,0">
-                <BoxView Grid.Column="0" HeightRequest="5" CornerRadius="3" Color= "{Binding Step1Color}" />
-                <BoxView Grid.Column="1" HeightRequest="5" CornerRadius="3" Color= "{Binding Step2Color}" />
-                <BoxView Grid.Column="2" HeightRequest="5" CornerRadius="3" Color= "{Binding Step3Color}" />
+        <!-- Header and progress -->
+        <VerticalStackLayout
+            Grid.Row="1"
+            MaximumWidthRequest="430"
+            HorizontalOptions="Fill"
+            Margin="0,26,0,0"
+            Spacing="0">
+
+            <Label
+                Text="{Binding StepTitle}"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="{StaticResource WtForeground}" />
+
+            <Label
+                Text="{Binding StepSubtitle}"
+                Margin="0,8,0,0"
+                FontSize="17"
+                TextColor="{StaticResource WtMutedText}" />
+
+            <Grid
+                Margin="0,24,0,0"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="8">
+
+                <BoxView
+                    Grid.Column="0"
+                    HeightRequest="5"
+                    CornerRadius="3"
+                    Color="{Binding Step1Color}" />
+
+                <BoxView
+                    Grid.Column="1"
+                    HeightRequest="5"
+                    CornerRadius="3"
+                    Color="{Binding Step2Color}" />
+
+                <BoxView
+                    Grid.Column="2"
+                    HeightRequest="5"
+                    CornerRadius="3"
+                    Color="{Binding Step3Color}" />
+
             </Grid>
+
+        </VerticalStackLayout>
+
+        <!-- Step content -->
+        <Grid
+            Grid.Row="2"
+            MaximumWidthRequest="430"
+            HorizontalOptions="Fill"
+            Margin="0,40,0,0">
 
             <!-- STEP 1 -->
             <VerticalStackLayout
                 IsVisible="{Binding IsStep1}"
-                Spacing="8"
-                Margin="0,36,0,0">
+                Spacing="16">
 
                 <VerticalStackLayout Spacing="8">
+
                     <Label
                         Text="Email"
-                        FontSize="15"
-                        TextColor="{StaticResource WtForeground}" />
+                        Style="{StaticResource RegistrationFieldLabelStyle}" />
 
-                    <Border
-                        HeightRequest="58"
-                        BackgroundColor="{StaticResource WtCard}"
-                        Stroke="{StaticResource WtBorder}"
-                        StrokeThickness="1"
-                        Padding="16,0"
-                        StrokeShape="RoundRectangle 28">
+                    <Border Style="{StaticResource RegistrationFieldBorderStyle}">
 
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+
                             <Image
                                 Source="mail.svg"
-                                WidthRequest="20"
-                                HeightRequest="20"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
+                                Style="{StaticResource RegistrationIconStyle}">
 
                                 <Image.Behaviors>
                                     <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
                                 </Image.Behaviors>
+
                             </Image>
 
                             <Entry
                                 Grid.Column="1"
+                                Style="{StaticResource RegistrationEntryStyle}"
                                 Placeholder="your@email.com"
                                 Keyboard="Email"
-                                Text="{Binding Email}"
-                                FontSize="16"
-                                TextColor="{StaticResource WtForeground}"
-                                PlaceholderColor="{StaticResource WtMutedText}"
-                                VerticalOptions="Center" 
-                                BackgroundColor="Transparent"
-                                ClearButtonVisibility="Never"/>
+                                Text="{Binding Email}" />
+
                         </Grid>
+
                     </Border>
+
                 </VerticalStackLayout>
+
                 <VerticalStackLayout Spacing="8">
+
                     <Label
                         Text="Password"
-                        FontSize="15"
-                        TextColor="{StaticResource WtForeground}" />
+                        Style="{StaticResource RegistrationFieldLabelStyle}" />
 
-                    <Border
-                        HeightRequest="58"
-                        BackgroundColor="{StaticResource WtCard}"
-                        Stroke="{StaticResource WtBorder}"
-                        StrokeThickness="1"
-                        Padding="16,0"
-                        StrokeShape="RoundRectangle 28">
+                    <Border Style="{StaticResource RegistrationFieldBorderStyle}">
 
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
 
                             <Image
                                 Source="lock.svg"
-                                WidthRequest="20"
-                                HeightRequest="20"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
+                                Style="{StaticResource RegistrationIconStyle}">
 
                                 <Image.Behaviors>
                                     <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
                                 </Image.Behaviors>
+
                             </Image>
 
                             <Entry
                                 x:Name="PasswordEntry"
                                 Grid.Column="1"
+                                Style="{StaticResource RegistrationEntryStyle}"
                                 Placeholder="Enter your password"
                                 IsPassword="True"
-                                Text="{Binding Password}"
-                                FontSize="16"
-                                TextColor="{StaticResource WtForeground}"
-                                PlaceholderColor="{StaticResource WtMutedText}"
-                                BackgroundColor="Transparent"
-                                ClearButtonVisibility="Never"
-                                VerticalOptions="Center" />
+                                Text="{Binding Password}" />
 
                             <ImageButton
                                 Grid.Column="2"
+                                Style="{StaticResource PasswordEyeStyle}"
                                 Source="eye.svg"
-                                WidthRequest="22"
-                                HeightRequest="22"
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                Clicked="TogglePasswordClicked"
-                                VerticalOptions="Center" />
+                                Clicked="TogglePasswordClicked" />
 
                         </Grid>
 
                     </Border>
+
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="8">
-                    <Label
-                        Text="Password"
-                        FontSize="15"
-                        TextColor="{StaticResource WtForeground}" />
 
-                    <Border
-                        HeightRequest="58"
-                        BackgroundColor="{StaticResource WtCard}"
-                        Stroke="{StaticResource WtBorder}"
-                        StrokeThickness="1"
-                        Padding="16,0"
-                        StrokeShape="RoundRectangle 28">
+                    <Label
+                        Text="Confirm Password"
+                        Style="{StaticResource RegistrationFieldLabelStyle}" />
+
+                    <Border Style="{StaticResource RegistrationFieldBorderStyle}">
 
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
 
                             <Image
                                 Source="lock.svg"
-                                WidthRequest="20"
-                                HeightRequest="20"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
+                                Style="{StaticResource RegistrationIconStyle}">
 
                                 <Image.Behaviors>
                                     <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
                                 </Image.Behaviors>
+
                             </Image>
 
                             <Entry
                                 x:Name="ConfirmPasswordEntry"
                                 Grid.Column="1"
+                                Style="{StaticResource RegistrationEntryStyle}"
                                 Placeholder="Confirm password"
                                 IsPassword="True"
-                                Text="{Binding ConfirmPassword}"
-                                FontSize="16"
-                                TextColor="{StaticResource WtForeground}"
-                                PlaceholderColor="{StaticResource WtMutedText}"
-                                BackgroundColor="Transparent"
-                                ClearButtonVisibility="Never"
-                                VerticalOptions="Center" />
+                                Text="{Binding ConfirmPassword}" />
 
                             <ImageButton
                                 Grid.Column="2"
+                                Style="{StaticResource PasswordEyeStyle}"
                                 Source="eye.svg"
-                                WidthRequest="22"
-                                HeightRequest="22"
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                Clicked="ToggleConfirmPasswordClicked"
-                                VerticalOptions="Center" />
+                                Clicked="ToggleConfirmPasswordClicked" />
 
                         </Grid>
 
                     </Border>
+
                 </VerticalStackLayout>
+
             </VerticalStackLayout>
 
             <!-- STEP 2 -->
             <VerticalStackLayout
                 IsVisible="{Binding IsStep2}"
-                Spacing="22"
-                Margin="0,36,0,0">
+                Spacing="22">
 
                 <!-- Native language -->
-
                 <VerticalStackLayout Spacing="10">
 
                     <HorizontalStackLayout Spacing="8">
@@ -240,19 +291,27 @@
                         <Image
                             Source="globe.svg"
                             WidthRequest="18"
-                            HeightRequest="18" />
+                            HeightRequest="18"
+                            VerticalOptions="Center">
+
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                            </Image.Behaviors>
+
+                        </Image>
 
                         <Label
-                            Text="Native Language"
+                            Text="Native language"
                             Style="{StaticResource WtSectionLabelStyle}" />
 
                     </HorizontalStackLayout>
 
                     <Border Style="{StaticResource WtPickerBorderStyle}">
 
-                        <Grid ColumnDefinitions="*,Auto">
+                        <Grid ColumnDefinitions="*,42">
 
                             <Picker
+                                x:Name="NativeLanguagePicker"
                                 Grid.Column="0"
                                 Style="{StaticResource WtPickerStyle}"
                                 Title="Select your native language"
@@ -260,14 +319,30 @@
                                 ItemDisplayBinding="{Binding NativeName}"
                                 SelectedItem="{Binding SelectedNativeLanguage}" />
 
-                            <Image
+                            <Grid
                                 Grid.Column="1"
-                                Source="chevron_down.svg"
-                                WidthRequest="18"
-                                HeightRequest="18"
-                                Margin="0,0,6,0"
-                                VerticalOptions="Center"
-                                Opacity="0.6" />
+                                BackgroundColor="Transparent">
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OpenNativeLanguagePickerTapped" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    Source="chevron_down.svg"
+                                    WidthRequest="18"
+                                    HeightRequest="18"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    InputTransparent="True">
+
+                                    <Image.Behaviors>
+                                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                    </Image.Behaviors>
+
+                                </Image>
+
+                            </Grid>
 
                         </Grid>
 
@@ -276,7 +351,6 @@
                 </VerticalStackLayout>
 
                 <!-- Target language -->
-
                 <VerticalStackLayout Spacing="10">
 
                     <HorizontalStackLayout Spacing="8">
@@ -284,7 +358,14 @@
                         <Image
                             Source="globe.svg"
                             WidthRequest="18"
-                            HeightRequest="18" />
+                            HeightRequest="18"
+                            VerticalOptions="Center">
+
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                            </Image.Behaviors>
+
+                        </Image>
 
                         <Label
                             Text="I want to learn"
@@ -294,9 +375,10 @@
 
                     <Border Style="{StaticResource WtPickerBorderStyle}">
 
-                        <Grid ColumnDefinitions="*,Auto">
+                        <Grid ColumnDefinitions="*,42">
 
                             <Picker
+                                x:Name="TargetLanguagePicker"
                                 Grid.Column="0"
                                 Style="{StaticResource WtPickerStyle}"
                                 Title="Select language to learn"
@@ -304,14 +386,30 @@
                                 ItemDisplayBinding="{Binding NativeName}"
                                 SelectedItem="{Binding SelectedTargetLanguage}" />
 
-                            <Image
+                            <Grid
                                 Grid.Column="1"
-                                Source="chevron_down.svg"
-                                WidthRequest="18"
-                                HeightRequest="18"
-                                Margin="0,0,6,0"
-                                VerticalOptions="Center"
-                                Opacity="0.6" />
+                                BackgroundColor="Transparent">
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OpenTargetLanguagePickerTapped" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    Source="chevron_down.svg"
+                                    WidthRequest="18"
+                                    HeightRequest="18"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    InputTransparent="True">
+
+                                    <Image.Behaviors>
+                                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                    </Image.Behaviors>
+
+                                </Image>
+
+                            </Grid>
 
                         </Grid>
 
@@ -319,8 +417,7 @@
 
                 </VerticalStackLayout>
 
-                <!-- Level -->
-
+                <!-- Current level -->
                 <VerticalStackLayout Spacing="10">
 
                     <HorizontalStackLayout Spacing="8">
@@ -328,19 +425,27 @@
                         <Image
                             Source="chart_column.svg"
                             WidthRequest="18"
-                            HeightRequest="18" />
+                            HeightRequest="18"
+                            VerticalOptions="Center">
+
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                            </Image.Behaviors>
+
+                        </Image>
 
                         <Label
-                            Text="Current Level"
+                            Text="Your current level"
                             Style="{StaticResource WtSectionLabelStyle}" />
 
                     </HorizontalStackLayout>
 
                     <Border Style="{StaticResource WtPickerBorderStyle}">
 
-                        <Grid ColumnDefinitions="*,Auto">
+                        <Grid ColumnDefinitions="*,42">
 
                             <Picker
+                                x:Name="LevelPicker"
                                 Grid.Column="0"
                                 Style="{StaticResource WtPickerStyle}"
                                 Title="Select your level"
@@ -348,14 +453,30 @@
                                 ItemDisplayBinding="{Binding Code}"
                                 SelectedItem="{Binding SelectedLevel}" />
 
-                            <Image
+                            <Grid
                                 Grid.Column="1"
-                                Source="chevron_down.svg"
-                                WidthRequest="18"
-                                HeightRequest="18"
-                                Margin="0,0,6,0"
-                                VerticalOptions="Center"
-                                Opacity="0.6" />
+                                BackgroundColor="Transparent">
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OpenLevelPickerTapped" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    Source="chevron_down.svg"
+                                    WidthRequest="18"
+                                    HeightRequest="18"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    InputTransparent="True">
+
+                                    <Image.Behaviors>
+                                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                                    </Image.Behaviors>
+
+                                </Image>
+
+                            </Grid>
 
                         </Grid>
 
@@ -367,25 +488,130 @@
 
             <!-- STEP 3 -->
             <VerticalStackLayout
-                IsVisible="{Binding IsStep3}"
-                Spacing="8"
-                Margin="0,36,0,0">
+    IsVisible="{Binding IsStep3}"
+    Spacing="8">
 
                 <Border
-                    BackgroundColor="{StaticResource WtCard}"
-                    Stroke="{StaticResource WtBorder}"
-                    StrokeThickness="1"
-                    Padding="20"
-                    StrokeShape="RoundRectangle 24">
+        BackgroundColor="{StaticResource WtCard}"
+        Stroke="{StaticResource WtBorder}"
+        StrokeThickness="1"
+        Padding="20"
+        StrokeShape="RoundRectangle 24">
 
-                    <VerticalStackLayout Spacing="12">
+                    <VerticalStackLayout Spacing="18">
 
-                        <Label Text="Summary" FontSize="22" FontAttributes="Bold" />
+                        <Label
+                Text="Account summary"
+                FontSize="21"
+                FontAttributes="Bold"
+                TextColor="{StaticResource WtForeground}" />
 
-                        <Label Text="{Binding Email}" FontSize="16" />
-                        <Label Text="{Binding SelectedNativeLanguage.NativeName, StringFormat='Native: {0}'}" FontSize="16" />
-                        <Label Text="{Binding SelectedTargetLanguage.NativeName, StringFormat='Target: {0}'}" FontSize="16" />
-                        <Label Text="{Binding SelectedLevel.Code, StringFormat='Level: {0}'}" FontSize="16" />
+                        <!-- Account email -->
+                        <Grid ColumnDefinitions="42,*" ColumnSpacing="12">
+
+                            <Border
+                    WidthRequest="42"
+                    HeightRequest="42"
+                    BackgroundColor="#EEF2FF"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 21">
+
+                                <Image
+                        Source="mail.svg"
+                        WidthRequest="19"
+                        HeightRequest="19"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+
+                                    <Image.Behaviors>
+                                        <toolkit:IconTintColorBehavior TintColor="{StaticResource WtPrimary}" />
+                                    </Image.Behaviors>
+
+                                </Image>
+
+                            </Border>
+
+                            <VerticalStackLayout
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Spacing="2">
+
+                                <Label
+                        Text="Email"
+                        FontSize="13"
+                        TextColor="{StaticResource WtMutedText}" />
+
+                                <Label
+                        Text="{Binding Email}"
+                        FontSize="16"
+                        TextColor="{StaticResource WtForeground}"
+                        LineBreakMode="TailTruncation" />
+
+                            </VerticalStackLayout>
+
+                        </Grid>
+
+                        <BoxView
+                HeightRequest="1"
+                Color="{StaticResource WtBorder}" />
+
+                        <!-- Learning preferences -->
+                        <Grid
+                ColumnDefinitions="*,Auto"
+                RowDefinitions="Auto,Auto,Auto"
+                RowSpacing="14">
+
+                            <Label
+                    Grid.Row="0"
+                    Text="Native language"
+                    FontSize="15"
+                    TextColor="{StaticResource WtMutedText}" />
+
+                            <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding SelectedNativeLanguage.NativeName}"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource WtForeground}" />
+
+                            <Label
+                    Grid.Row="1"
+                    Text="Learning"
+                    FontSize="15"
+                    TextColor="{StaticResource WtMutedText}" />
+
+                            <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding SelectedTargetLanguage.NativeName}"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource WtForeground}" />
+
+                            <Label
+                    Grid.Row="2"
+                    Text="Current level"
+                    FontSize="15"
+                    TextColor="{StaticResource WtMutedText}" />
+
+                            <Border
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    BackgroundColor="#EEF2FF"
+                    StrokeThickness="0"
+                    Padding="10,4"
+                    StrokeShape="RoundRectangle 12">
+
+                                <Label
+                        Text="{Binding SelectedLevel.Code}"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource WtPrimary}" />
+
+                            </Border>
+
+                        </Grid>
 
                     </VerticalStackLayout>
 
@@ -395,49 +621,104 @@
 
             <Label
                 Text="{Binding ErrorMessage}"
+                IsVisible="{Binding HasError}"
                 FontSize="14"
                 TextColor="{StaticResource WtError}"
                 HorizontalTextAlignment="Center"
-                Margin="0,20,0,0" />
+                VerticalOptions="End"
+                Margin="0,0,0,8" />
 
-            <!-- Bottom actions -->
-            <VerticalStackLayout
-                Spacing="14"
-                VerticalOptions="EndAndExpand"
-                Margin="0,40,0,0">
+        </Grid>
 
-                <Button
-                    Text="Continue"
-                    IsVisible="{Binding IsStep1}"
-                    Style="{StaticResource WtPrimaryButton}"
-                    HeightRequest="58"
-                    CornerRadius="28"
-                    Command="{Binding NextStepCommand}" />
+        <!-- Bottom actions -->
+        <VerticalStackLayout
+            Grid.Row="3"
+            MaximumWidthRequest="430"
+            HorizontalOptions="Fill"
+            Spacing="10"
+            Margin="0,24,0,10">
 
-                <Button
-                    Text="Continue"
-                    IsVisible="{Binding IsStep2}"
-                    Style="{StaticResource WtPrimaryButton}"
-                    HeightRequest="58"
-                    CornerRadius="28"
-                    Command="{Binding NextStepCommand}" />
+            <Button
+                Text="Continue"
+                IsVisible="{Binding IsStep1}"
+                Style="{StaticResource WtPrimaryButton}"
+                HeightRequest="56"
+                CornerRadius="28"
+                FontSize="17"
 
-                <Button
-                    Text="Create account"
-                    IsVisible="{Binding IsStep3}"
-                    Style="{StaticResource WtPrimaryButton}"
-                    HeightRequest="58"
-                    CornerRadius="28"
-                    Command="{Binding RegisterCommand}" />
+                Command="{Binding NextStepCommand}">
 
-                <Button
-                    Text="I already have an account"
-                    BackgroundColor="Transparent"
-                    TextColor="{StaticResource WtMutedText}"
+                <Button.Shadow>
+                    <Shadow
+                        Brush="#200A54D9"
+                        Offset="0,6"
+                        Radius="10"
+                        Opacity="0.18" />
+                </Button.Shadow>
+
+            </Button>
+
+            <Button
+                Text="Continue"
+                IsVisible="{Binding IsStep2}"
+                Style="{StaticResource WtPrimaryButton}"
+                HeightRequest="56"
+                CornerRadius="28"
+                FontSize="17"
+                Command="{Binding NextStepCommand}">
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="#200A54D9"
+                        Offset="0,6"
+                        Radius="10"
+                        Opacity="0.18" />
+                </Button.Shadow>
+
+            </Button>
+
+            <Button
+                Text="Create account"
+                IsVisible="{Binding IsStep3}"
+                Style="{StaticResource WtPrimaryButton}"
+                HeightRequest="56"
+                CornerRadius="28"
+                FontSize="17"
+                Command="{Binding RegisterCommand}">
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="#200A54D9"
+                        Offset="0,6"
+                        Radius="10"
+                        Opacity="0.18" />
+                </Button.Shadow>
+
+            </Button>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="4">
+
+                <Label
+                    Text="Already have an account?"
                     FontSize="16"
-                    Command="{Binding GoToLoginCommand}" />
+                    TextColor="{StaticResource WtMutedText}"
+                    VerticalTextAlignment="Center" />
 
-            </VerticalStackLayout>
+                <Label
+                    Text="Sign in"
+                    FontSize="16"
+                    TextColor="{StaticResource WtPrimary}"
+                    VerticalTextAlignment="Center">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToLoginCommand}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
 

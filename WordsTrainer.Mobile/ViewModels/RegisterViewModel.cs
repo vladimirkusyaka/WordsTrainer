@@ -68,7 +68,11 @@ public class RegisterViewModel : INotifyPropertyChanged
     public string ErrorMessage
     {
         get => _errorMessage;
-        set => SetField(ref _errorMessage, value);
+        set
+        {
+            SetField(ref _errorMessage, value);
+            OnPropertyChanged(nameof(HasError));
+        }
     }
 
     public bool IsBusy
@@ -105,7 +109,7 @@ public class RegisterViewModel : INotifyPropertyChanged
 
     public string StepTitle => Step switch
     {
-        1 => "Create account",
+        1 => "Create your account",
         2 => "Your learning setup",
         3 => "Confirm details",
         _ => "Create account"
@@ -118,6 +122,17 @@ public class RegisterViewModel : INotifyPropertyChanged
         3 => "Review and start learning",
         _ => ""
     };
+
+    public string StepCounterText => $"Step {Step} of 3";
+
+    public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
+
+    public bool CanContinueStep =>
+            !string.IsNullOrWhiteSpace(Email) &&
+            Email.Contains('@') &&
+            !string.IsNullOrWhiteSpace(Password) &&
+            Password.Length >= 8 &&
+            Password == ConfirmPassword;
 
     public Color Step1Color => Step >= 1
         ? (Color)Application.Current!.Resources["WtPrimary"]
@@ -199,12 +214,13 @@ public class RegisterViewModel : INotifyPropertyChanged
             Step++;
     }
 
-    private void PreviousStep()
+    private async void PreviousStep()
     {
         ErrorMessage = "";
 
         if (Step > 1)
             Step--;
+        else await BackAsync();
     }
 
     private bool ValidateStep1()
@@ -335,6 +351,17 @@ public class RegisterViewModel : INotifyPropertyChanged
         await Task.CompletedTask;
     }
 
+    private async Task BackAsync()
+    {
+        var welcomePage = Application.Current!.Handler!.MauiContext!.Services
+            .GetRequiredService<WelcomePage>();
+
+        Application.Current.Windows[0].Page = new NavigationPage(welcomePage);
+
+        await Task.CompletedTask;
+
+    }
+
     private static bool IsValidEmail(string email)
     {
         try
@@ -355,6 +382,7 @@ public class RegisterViewModel : INotifyPropertyChanged
 
         field = value;
         OnPropertyChanged(name);
+        OnPropertyChanged(nameof(CanContinueStep));
         return true;
     }
 
@@ -366,6 +394,7 @@ public class RegisterViewModel : INotifyPropertyChanged
         OnPropertyChanged(nameof(IsStep3));
         OnPropertyChanged(nameof(StepTitle));
         OnPropertyChanged(nameof(StepSubtitle));
+        OnPropertyChanged(nameof(StepCounterText));
         OnPropertyChanged(nameof(Step1Color));
         OnPropertyChanged(nameof(Step2Color));
         OnPropertyChanged(nameof(Step3Color));

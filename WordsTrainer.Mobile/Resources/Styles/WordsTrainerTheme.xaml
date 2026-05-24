@@ -123,11 +123,10 @@
     </Style>
 
     <Style x:Key="WtSectionLabelStyle" TargetType="Label">
-
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="FontAttributes" Value="Bold" />
-        <Setter Property="TextColor" Value="{StaticResource WtForeground}" />
-
+        <Setter Property="TextColor" Value="#374151" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
     </Style>
 
 

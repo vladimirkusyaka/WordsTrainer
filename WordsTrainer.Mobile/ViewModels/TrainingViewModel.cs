@@ -68,7 +68,13 @@ public class TrainingViewModel : INotifyPropertyChanged
     public string Message
     {
         get => _message;
-        set => SetField(ref _message, value);
+        set
+        {
+            if (SetField(ref _message, value))
+            {
+                OnPropertyChanged(nameof(HasMessage));
+            }
+        }
     }
 
     public bool IsBusy
@@ -112,6 +118,28 @@ public class TrainingViewModel : INotifyPropertyChanged
 
     public List<TrainingOptionDto> Options { get; private set; } = [];
 
+    private string _progressText = string.Empty;
+    public string ProgressText
+    {
+        get => _progressText;
+        set => SetField(ref _progressText, value);
+    }
+
+    private double _trainingProgress;
+    public double TrainingProgress
+    {
+        get => _trainingProgress;
+        set => SetField(ref _trainingProgress, value);
+    }
+
+    private string _questionLevel = "A1";
+    public string QuestionLevel
+    {
+        get => _questionLevel;
+        set => SetField(ref _questionLevel, value);
+    }
+
+
     public int AnsweredToday
     {
         get => _answeredToday;
@@ -136,6 +164,8 @@ public class TrainingViewModel : INotifyPropertyChanged
         set => SetField(ref _learnedTotal, value);
     }
 
+    public bool HasMessage => !string.IsNullOrWhiteSpace(Message);
+
     public ICommand AnswerCommand { get; }
     public ICommand ShowExplanationCommand { get; }
     public ICommand LogoutCommand { get; }
@@ -147,6 +177,8 @@ public class TrainingViewModel : INotifyPropertyChanged
         await LoadNextAsync();
     }
 
+    private int currentQuestionIndex { get; set; } = 0;
+    private int totalQuestions { get; set; } = 10;
     private async Task LoadNextAsync()
     {
         if (IsBusy)
@@ -160,7 +192,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (next == null)
             {
-                ClearQuestion("Не удалось загрузить вопрос.");
+                ClearQuestion("Unable to load next question.");
                 return;
             }
 
@@ -174,6 +206,13 @@ public class TrainingViewModel : INotifyPropertyChanged
             QuestionText = next.Question.Question;
             Options = next.Question.Options;
             OnPropertyChanged(nameof(Options));
+
+            ProgressText = $"{currentQuestionIndex + 1} of {totalQuestions} words";
+            TrainingProgress = totalQuestions == 0
+                ? 0
+                : (double)(currentQuestionIndex + 1) / totalQuestions;
+
+            QuestionLevel = "A1";  // TEMPORARY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             HasQuestion = true;
             Message = "";

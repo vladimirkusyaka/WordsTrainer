@@ -55,4 +55,24 @@ public partial class RegisterPage : ContentPage
                 : "eye.svg";
         }
     }
+
+    private void OpenNativeLanguagePickerTapped(object? sender, TappedEventArgs e)
+    {
+        OpenPicker(NativeLanguagePicker);
+    }
+
+    private void OpenTargetLanguagePickerTapped(object? sender, TappedEventArgs e)
+    {
+        OpenPicker(TargetLanguagePicker);
+    }
+
+    private void OpenLevelPickerTapped(object? sender, TappedEventArgs e)
+    {
+        OpenPicker(LevelPicker);
+    }
+
+    private static void OpenPicker(Picker picker)
+    {
+        picker.Focus();
+    }
 }
