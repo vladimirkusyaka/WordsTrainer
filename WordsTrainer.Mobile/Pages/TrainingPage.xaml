@@ -248,7 +248,7 @@
                                 </Border>
 
                                 <Label
-                                    Text="{Binding NewCorrectToday}"
+                                    Text="{Binding NewConceptsToday}"
                                     Style="{StaticResource StatValueStyle}" />
 
                                 <Label
@@ -379,7 +379,7 @@
 
                                     <!-- Replace with Text="{Binding QuestionLevel}" when levels exist -->
                                     <Label
-                                        Text="A1"
+                                        Text="{Binding QuestionLevel}"
                                         FontSize="13"
                                         FontAttributes="Bold"
                                         TextColor="{StaticResource WtPrimary}" />
@@ -398,36 +398,29 @@
 
                         </Border>
 
-                        <!-- Feedback: visible only after answer/explanation -->
-                        <Label
-                            Text="{Binding Message}"
-                            IsVisible="{Binding HasMessage}"
-                            FontSize="13"
-                            TextColor="{StaticResource WtMutedText}"
-                            HorizontalTextAlignment="Center"
-                            LineBreakMode="WordWrap"
-                            MaxLines="2"
-                            Margin="0,8,0,0" />
-
                         <!-- Answers -->
                         <VerticalStackLayout
-    Margin="0,18,0,0"
-    BindableLayout.ItemsSource="{Binding Options}"
-    Spacing="8"
-    HorizontalOptions="Fill">
+                            Margin="0,18,0,0"
+                            BindableLayout.ItemsSource="{Binding Options}"
+                            Spacing="8"
+                            HorizontalOptions="Fill">
 
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
 
                                     <Button
-                HorizontalOptions="Fill"
-                Style="{StaticResource WtAnswerButton}"
-                HeightRequest="48"
-                CornerRadius="24"
-                FontSize="16"
-                Text="{Binding Text}"
-                Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
-                CommandParameter="{Binding .}" />
+                                        HorizontalOptions="Fill"
+                                        HeightRequest="52"
+                                        CornerRadius="26"
+                                        FontSize="16"
+                                        FontAttributes="None"
+                                        Text="{Binding DisplayText}"
+                                        BackgroundColor="{Binding BackgroundColor}"
+                                        TextColor="{Binding TextColor}"
+                                        BorderColor="{Binding BorderColor}"
+                                        BorderWidth="1"
+                                        Command="{Binding BindingContext.AnswerCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                        CommandParameter="{Binding .}" />
 
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>

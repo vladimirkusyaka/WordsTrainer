@@ -137,7 +137,7 @@ public class TrainingService
         if (concept == null || correctWord == null || questionWord == null)
             return null;
 
-        var isCorrect = selectedOption.IsCorrect;
+        var isCorrect = selectedOption.IsCorrect && !request.TranslationViewed;
 
         var userConcept = await _db.UserConcepts
             .FirstOrDefaultAsync(x =>
@@ -311,6 +311,7 @@ public class TrainingService
             return null;
 
         var concept = await _db.Concepts
+            .Include(x => x.LanguageLevel)
             .Include(x => x.ConceptWords)
                 .ThenInclude(x => x.Word)
                     .ThenInclude(x => x.Language)
@@ -340,10 +341,12 @@ public class TrainingService
         {
             AttemptId = attempt.Id,
             ConceptId = concept.Id,
+            CorrectWordId = attempt.CorrectWordId,
             TargetWord = targetWord.Text,
             NativeTranslation = nativeWord.Text,
             Explanation = explanation?.Text ?? concept.Description ?? string.Empty,
             TargetLanguageCode = user.TargetLanguage.Code,
+            TargetLevelCode = concept.LanguageLevel.Code,
             NativeLanguageCode = user.NativeLanguage.Code,
             AudioUrl = targetWord.AudioUrl
         };

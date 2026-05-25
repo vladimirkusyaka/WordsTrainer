@@ -46,9 +46,9 @@ public class TrainingViewModel : INotifyPropertyChanged
         _tokenStorage = tokenStorage;
         _texts = texts;
 
-        AnswerCommand = new Command<TrainingOptionDto>(
-            async option => await AnswerAsync(option),
-            _ => !IsBusy && HasQuestion);
+        AnswerCommand = new Command<TrainingOptionItem>(
+    async option => await AnswerAsync(option),
+    _ => !IsBusy && HasQuestion && CanAnswer);
 
         ShowExplanationCommand = new Command(
             async () => await ShowExplanationAsync(),
@@ -116,7 +116,21 @@ public class TrainingViewModel : INotifyPropertyChanged
         set => SetField(ref _hasNoQuestion, value);
     }
 
-    public List<TrainingOptionDto> Options { get; private set; } = [];
+    public List<TrainingOptionItem> Options { get; private set; } = [];
+
+    private bool _canAnswer = true;
+
+    public bool CanAnswer
+    {
+        get => _canAnswer;
+        set
+        {
+            if (SetField(ref _canAnswer, value))
+            {
+                RefreshCommands();
+            }
+        }
+    }
 
     private string _progressText = string.Empty;
     public string ProgressText
@@ -177,8 +191,14 @@ public class TrainingViewModel : INotifyPropertyChanged
         await LoadNextAsync();
     }
 
-    private int currentQuestionIndex { get; set; } = 0;
-    private int totalQuestions { get; set; } = 10;
+    private int _newConceptsToday;
+
+    public int NewConceptsToday
+    {
+        get => _newConceptsToday;
+        set => SetField(ref _newConceptsToday, value);
+    }
+
     private async Task LoadNextAsync()
     {
         if (IsBusy)
@@ -204,20 +224,23 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             _currentQuestion = next.Question;
             QuestionText = next.Question.Question;
-            Options = next.Question.Options;
-            OnPropertyChanged(nameof(Options));
+            Options = next.Question.Options
+                .Select(x => new TrainingOptionItem
+                {
+                    WordId = x.WordId,
+                    Text = x.Text
+                })
+                .ToList();
 
-            ProgressText = $"{currentQuestionIndex + 1} of {totalQuestions} words";
-            TrainingProgress = totalQuestions == 0
-                ? 0
-                : (double)(currentQuestionIndex + 1) / totalQuestions;
+            OnPropertyChanged(nameof(Options));
+            CanAnswer = true;
 
             QuestionLevel = _currentQuestion.TargetLevelCode;  
 
             HasQuestion = true;
             Message = "";
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             ClearQuestion($"⚠ Unable to load next question.");
         }
@@ -227,17 +250,16 @@ public class TrainingViewModel : INotifyPropertyChanged
         }
     }
 
-    private async Task AnswerAsync(TrainingOptionDto? option)
+    private async Task AnswerAsync(TrainingOptionItem? option)
     {
-        if (option == null || _currentQuestion == null || IsBusy)
-            return;
-
-        if (IsBusy)
+        if (option == null || _currentQuestion == null || IsBusy || !CanAnswer)
             return;
 
         try
         {
             IsBusy = true;
+            CanAnswer = false;
+            Message = "";
 
             var response = await _apiClient.SubmitAnswerAsync(new SubmitTrainingAnswerRequest
             {
@@ -249,19 +271,33 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (response == null)
             {
-                Message = "Answer not allowed.";
+                CanAnswer = true;
                 return;
             }
 
-            Message = response.IsCorrect
-                    ? _texts.T("correct.answer")
-                    : string.Format(_texts.T("wrong.answer"), response.CorrectAnswer);
+            if (response.IsCorrect)
+            {
+                option.State = TrainingAnswerState.Correct;
+            }
+            else
+            {
+                option.State = TrainingAnswerState.Incorrect;
+
+                var correctOption = Options
+                    .FirstOrDefault(x => x.WordId == response.CorrectWordId);
+
+                if (correctOption != null)
+                {
+                    correctOption.State = TrainingAnswerState.Correct;
+                }
+            }
 
             await LoadStatsAsync();
         }
         catch (Exception ex)
         {
-            Message = $"Answer error: {ex.Message}";
+            Message = $"Ошибка ответа: {ex.Message}";
+            CanAnswer = true;
             return;
         }
         finally
@@ -269,8 +305,7 @@ public class TrainingViewModel : INotifyPropertyChanged
             IsBusy = false;
         }
 
-        await Task.Delay(700);
-
+        await Task.Delay(850);
         await LoadNextAsync();
     }
 
@@ -283,6 +318,18 @@ public class TrainingViewModel : INotifyPropertyChanged
             .GetRequiredService<ExplanationPage>();
 
         await page.LoadAsync(_currentQuestion.AttemptId);
+
+        EventHandler? handler = null;
+
+        handler = async (_, _) =>
+        {
+            page.ContinueCompleted -= handler;
+
+            await LoadStatsAsync();
+            await LoadNextAsync();
+        };
+
+        page.ContinueCompleted += handler;
 
         await Application.Current.Windows[0].Page!.Navigation.PushAsync(page);
     }
@@ -309,8 +356,22 @@ public class TrainingViewModel : INotifyPropertyChanged
 
         AnsweredToday = stats.AnsweredToday;
         CorrectToday = stats.CorrectToday;
-        NewCorrectToday = stats.NewCorrectToday;
+        NewConceptsToday = stats.NewConceptsToday;
         LearnedTotal = stats.LearnedTotal;
+
+        UpdateDailyGoalProgress(stats);
+    }
+
+    private void UpdateDailyGoalProgress(TrainingStatsResponse stats)
+    {
+        var goal = Math.Max(1, stats.NewConceptLimit);
+        var completed = Math.Min(stats.NewConceptsToday, goal);
+
+        TrainingProgress = (double)completed / goal;
+
+        ProgressText = stats.NewConceptLimitReached
+            ? "Daily goal complete"
+            : $"{completed} of {goal} new words";
     }
 
     private void ClearQuestion(string message)
@@ -327,7 +388,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
     private void RefreshCommands()
     {
-        ((Command<TrainingOptionDto>)AnswerCommand).ChangeCanExecute();
+        ((Command<TrainingOptionItem>)AnswerCommand).ChangeCanExecute();
         ((Command)ShowExplanationCommand).ChangeCanExecute();
         ((Command)LogoutCommand).ChangeCanExecute();
     }

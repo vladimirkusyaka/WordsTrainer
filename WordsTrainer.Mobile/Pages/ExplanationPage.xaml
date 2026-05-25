@@ -78,16 +78,16 @@
 
                     <VerticalStackLayout Spacing="15">
 
-                        <!-- Replace with level binding when it becomes available -->
                         <Border
                             BackgroundColor="#EAF0FF"
                             StrokeThickness="0"
                             Padding="12,5"
                             StrokeShape="RoundRectangle 14"
-                            HorizontalOptions="Start">
+                            HorizontalOptions="Start"
+                            IsVisible="{Binding HasQuestionLevel}">
 
                             <Label
-                                Text="A1"
+                                Text="{Binding QuestionLevel}"
                                 FontSize="13"
                                 FontAttributes="Bold"
                                 TextColor="{StaticResource WtPrimary}" />
@@ -114,7 +114,8 @@
                                 HeightRequest="42"
                                 BackgroundColor="#EAF0FF"
                                 StrokeThickness="0"
-                                StrokeShape="RoundRectangle 21">
+                                StrokeShape="RoundRectangle 21"
+                                IsVisible="False">
 
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding PlayAudioCommand}" />
@@ -227,6 +228,7 @@
                 HeightRequest="56"
                 CornerRadius="28"
                 FontSize="17"
+                IsEnabled="{Binding IsNotBusy}"
                 Clicked="ContinueClicked">
 
                 <Button.Shadow>

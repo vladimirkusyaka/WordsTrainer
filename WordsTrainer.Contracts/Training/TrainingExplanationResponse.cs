@@ -10,6 +10,8 @@ namespace WordsTrainer.Contracts.Training
 
         public Guid AttemptId { get; set; }
 
+        public Guid CorrectWordId { get; set; }
+
         public string TargetWord { get; set; } = string.Empty;
 
         public string NativeTranslation { get; set; } = string.Empty;
@@ -17,6 +19,8 @@ namespace WordsTrainer.Contracts.Training
         public string Explanation { get; set; } = string.Empty;
 
         public string TargetLanguageCode { get; set; } = string.Empty;
+
+        public string TargetLevelCode { get; set; } = string.Empty;
 
         public string NativeLanguageCode { get; set; } = string.Empty;
 

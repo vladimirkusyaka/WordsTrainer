@@ -6,6 +6,8 @@ public partial class ExplanationPage : ContentPage
 {
     private readonly ExplanationViewModel _viewModel;
 
+    public event EventHandler? ContinueCompleted;
+
     public ExplanationPage(ExplanationViewModel viewModel)
     {
         InitializeComponent();
@@ -26,6 +28,13 @@ public partial class ExplanationPage : ContentPage
 
     private async void ContinueClicked(object? sender, EventArgs e)
     {
+        var saved = await _viewModel.ContinueAsync();
+
+        if (!saved)
+            return;
+
         await Navigation.PopAsync();
+
+        ContinueCompleted?.Invoke(this, EventArgs.Empty);
     }
 }
