@@ -10,6 +10,8 @@ public class TrainingService
 {
     private const int DailyNewConceptLimit = 10;
     private const int DailyReviewLimit = 40;
+    private const int MaxConsecutiveReviewsBeforeNew = 2;
+    private const int RecentlyShownConceptCount = 5;
 
     private readonly AppDbContext _db;
 
@@ -23,6 +25,7 @@ public class TrainingService
         var user = await _db.Users
             .Include(x => x.NativeLanguage)
             .Include(x => x.TargetLanguage)
+            .Include(x => x.LanguageLevel)
             .FirstOrDefaultAsync(x => x.Id == userId);
 
         if (user == null)
@@ -51,21 +54,24 @@ public class TrainingService
             await _db.SaveChangesAsync();
         }
 
-        if (IsSessionCompleted(session))
-        {
-            return new TrainingNextResponse
-            {
-                Status = TrainingNextStatus.SessionCompleted,
-                Message = "Training session limits reached."
-            };
-        }
-
         var now = DateTime.UtcNow;
+        var consecutiveReviews = await GetConsecutiveReviewsTodayAsync(userId);
 
-        var dueReviews = await GetDueReviewConceptsAsync(userId, user, now, session);
-        var newConcepts = await GetNewConceptsAsync(userId, user, session);
+        var dueReviews = await GetDueReviewConceptsAsync(
+            userId,
+            user,
+            now,
+            session);
 
-        var selected = SelectNextCandidate(dueReviews, newConcepts);
+        var newConcepts = await GetNewConceptsAsync(
+            userId,
+            user,
+            session);
+
+        var selected = SelectNextCandidate(
+            dueReviews,
+            newConcepts,
+            consecutiveReviews);
 
         if (selected == null)
         {
@@ -76,7 +82,11 @@ public class TrainingService
             };
         }
 
-        var question = await BuildQuestionAsync(user, session, selected.Concept, selected.UserConcept);
+        var question = await BuildQuestionAsync(
+            user,
+            session,
+            selected.Concept,
+            selected.UserConcept);
 
         return new TrainingNextResponse
         {
@@ -388,11 +398,6 @@ public class TrainingService
         DateTime now,
         TrainingSession session)
     {
-        var reviewsInSession = session.Answers.Count(x => !x.WasNewConcept);
-
-        if (reviewsInSession >= session.ReviewLimit)
-            return [];
-
         var items = await _db.UserConcepts
             .Include(x => x.Concept)
                 .ThenInclude(x => x.ConceptWords)
@@ -400,7 +405,6 @@ public class TrainingService
                         .ThenInclude(x => x.Language)
             .Where(x =>
                 x.UserId == userId &&
-                !x.IsLearned &&
                 x.NextReviewAtUtc != null &&
                 x.NextReviewAtUtc <= now)
             .ToListAsync();
@@ -418,37 +422,54 @@ public class TrainingService
     }
 
     private async Task<List<TrainingCandidate>> GetNewConceptsAsync(
-        Guid userId,
-        AppUser user,
-        TrainingSession session)
+    Guid userId,
+    AppUser user,
+    TrainingSession session)
     {
-        var newConceptsInSession = session.Answers
-            .Where(x => x.WasNewConcept)
+        var recentlyShownConceptIds = session.Attempts
+            .OrderByDescending(x => x.CreatedAtUtc)
+            .Take(RecentlyShownConceptCount)
             .Select(x => x.ConceptId)
-            .Distinct()
-            .Count();
+            .ToList();
 
-        if (newConceptsInSession >= session.NewConceptLimit)
-            return [];
-
-        var concepts = await _db.Concepts
+        var availableConceptsQuery = _db.Concepts
+            .Include(x => x.LanguageLevel)
             .Include(x => x.ConceptWords)
                 .ThenInclude(x => x.Word)
                     .ThenInclude(x => x.Language)
             .Where(concept =>
-                concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.TargetLanguageId) &&
-                concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.NativeLanguageId))
+                concept.LanguageLevel.IsActive &&
+                concept.LanguageLevel.Order >= user.LanguageLevel.Order)
+            .Where(concept =>
+                concept.ConceptWords.Any(cw =>
+                    cw.Word.LanguageId == user.TargetLanguageId) &&
+                concept.ConceptWords.Any(cw =>
+                    cw.Word.LanguageId == user.NativeLanguageId))
             .Where(concept =>
                 !_db.UserConcepts.Any(uc =>
                     uc.UserId == userId &&
                     uc.ConceptId == concept.Id))
+            .Where(concept =>
+                !recentlyShownConceptIds.Contains(concept.Id));
+
+        var nearestAvailableLevelOrder = await availableConceptsQuery
+            .Select(x => (int?)x.LanguageLevel.Order)
+            .MinAsync();
+
+        if (nearestAvailableLevelOrder == null)
+            return [];
+
+        var concepts = await availableConceptsQuery
+            .Where(x => x.LanguageLevel.Order == nearestAvailableLevelOrder.Value)
             .Take(100)
             .ToListAsync();
 
         return concepts
             .Where(x => HasUserLanguages(x, user))
-            .Where(x => !WasRecentlyShownInSession(session, x.Id))
-            .Select(x => new TrainingCandidate(x, null, 50))
+            .Select(x => new TrainingCandidate(
+                x,
+                null,
+                50))
             .ToList();
     }
 
@@ -570,24 +591,51 @@ public class TrainingService
             .FirstOrDefaultAsync();
     }
 
-    private static TrainingCandidate? SelectNextCandidate(
-        List<TrainingCandidate> dueReviews,
-        List<TrainingCandidate> newConcepts)
+    private async Task<int> GetConsecutiveReviewsTodayAsync(Guid userId)
     {
-        if (dueReviews.Count > 0 && newConcepts.Count > 0)
+        var (todayStart, todayEnd) = GetTodayRangeUtc();
+
+        var recentAnswers = await _db.TrainingAnswers
+            .Where(x =>
+                x.UserId == userId &&
+                x.AnsweredAtUtc >= todayStart &&
+                x.AnsweredAtUtc < todayEnd)
+            .OrderByDescending(x => x.AnsweredAtUtc)
+            .Select(x => x.WasNewConcept)
+            .Take(MaxConsecutiveReviewsBeforeNew)
+            .ToListAsync();
+
+        var consecutiveReviews = 0;
+
+        foreach (var wasNewConcept in recentAnswers)
         {
-            return Random.Shared.Next(100) < 70
-                ? PickWeighted(dueReviews)
-                : PickWeighted(newConcepts);
+            if (wasNewConcept)
+                break;
+
+            consecutiveReviews++;
         }
 
-        if (dueReviews.Count > 0)
-            return PickWeighted(dueReviews);
+        return consecutiveReviews;
+    }
 
-        if (newConcepts.Count > 0)
+    private static TrainingCandidate? SelectNextCandidate(
+    List<TrainingCandidate> dueReviews,
+    List<TrainingCandidate> newConcepts,
+    int consecutiveReviews)
+    {
+        if (dueReviews.Count == 0 && newConcepts.Count == 0)
+            return null;
+
+        if (dueReviews.Count == 0)
             return PickWeighted(newConcepts);
 
-        return null;
+        if (newConcepts.Count == 0)
+            return PickWeighted(dueReviews);
+
+        if (consecutiveReviews >= MaxConsecutiveReviewsBeforeNew)
+            return PickWeighted(newConcepts);
+
+        return PickWeighted(dueReviews);
     }
 
     private static TrainingCandidate PickWeighted(List<TrainingCandidate> items)
@@ -665,21 +713,6 @@ public class TrainingService
             <= 8 => now.AddDays(7),
             _ => now.AddDays(30)
         };
-    }
-
-    private static bool IsSessionCompleted(TrainingSession session)
-    {
-        var newConceptsCount = session.Answers
-            .Where(x => x.WasNewConcept)
-            .Select(x => x.ConceptId)
-            .Distinct()
-            .Count();
-
-        var reviewCount = session.Answers
-            .Count(x => !x.WasNewConcept);
-
-        return newConceptsCount >= session.NewConceptLimit &&
-               reviewCount >= session.ReviewLimit;
     }
 
     private static bool WasRecentlyShownInSession(
