@@ -327,7 +327,9 @@ public class RegisterViewModel : INotifyPropertyChanged
             await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
 
             var trainingPage = Application.Current!.Handler!.MauiContext!.Services
-                .GetRequiredService<TrainingPage>();
+    .GetRequiredService<TrainingPage>();
+
+            await trainingPage.InitializeAsync();
 
             Application.Current.Windows[0].Page = new NavigationPage(trainingPage);
         }

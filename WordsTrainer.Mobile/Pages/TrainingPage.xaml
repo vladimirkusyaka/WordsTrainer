@@ -45,7 +45,9 @@
             HorizontalOptions="Center"
             VerticalOptions="Fill">
 
-            <ScrollView>
+            <ScrollView
+    VerticalScrollBarVisibility="Never"
+    HorizontalScrollBarVisibility="Never">
 
                 <VerticalStackLayout
                     HorizontalOptions="Fill"

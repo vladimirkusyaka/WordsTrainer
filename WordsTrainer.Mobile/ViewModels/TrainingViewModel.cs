@@ -249,7 +249,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (response == null)
             {
-                Message = "Ответ не принят.";
+                Message = "Answer not allowed.";
                 return;
             }
 
@@ -261,7 +261,7 @@ public class TrainingViewModel : INotifyPropertyChanged
         }
         catch (Exception ex)
         {
-            Message = $"Ошибка ответа: {ex.Message}";
+            Message = $"Answer error: {ex.Message}";
             return;
         }
         finally

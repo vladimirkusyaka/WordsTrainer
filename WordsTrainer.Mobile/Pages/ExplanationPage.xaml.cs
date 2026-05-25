@@ -19,7 +19,12 @@ public partial class ExplanationPage : ContentPage
         await _viewModel.LoadAsync(attemptId);
     }
 
-    private async void BackClicked(object? sender, EventArgs e)
+    private async void BackTapped(object? sender, TappedEventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
+
+    private async void ContinueClicked(object? sender, EventArgs e)
     {
         await Navigation.PopAsync();
     }

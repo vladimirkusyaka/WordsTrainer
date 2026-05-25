@@ -27,7 +27,18 @@ namespace WordsTrainer.Mobile.ViewModels
         public string TargetWord { get => _targetWord; set => SetField(ref _targetWord, value); }
         public string NativeTranslation { get => _nativeTranslation; set => SetField(ref _nativeTranslation, value); }
         public string Explanation { get => _explanation; set => SetField(ref _explanation, value); }
-        public string Message { get => _message; set => SetField(ref _message, value); }
+        public string Message
+        {
+            get => _message;
+            set
+            {
+                if (SetField(ref _message, value))
+                {
+                    OnPropertyChanged(nameof(HasMessage));
+                }
+            }
+        }
+
         public bool IsBusy { get => _isBusy; set => SetField(ref _isBusy, value); }
 
         public string? AudioUrl { get; private set; }
@@ -64,15 +75,6 @@ namespace WordsTrainer.Mobile.ViewModels
             }
         }
 
-        private async Task PlayAudioAsync()
-        {
-            Message = string.IsNullOrWhiteSpace(AudioUrl)
-                ? "Аудио пока не подключено."
-                : $"AudioUrl: {AudioUrl}";
-
-            await Task.CompletedTask;
-        }
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private bool SetField<T>(ref T field, T value, [CallerMemberName] string? name = null)
@@ -83,6 +85,22 @@ namespace WordsTrainer.Mobile.ViewModels
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             return true;
+        }
+
+        public bool HasMessage => !string.IsNullOrWhiteSpace(Message);
+
+        private void OnPropertyChanged([CallerMemberName] string? name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private async Task PlayAudioAsync()
+        {
+            Message = string.IsNullOrWhiteSpace(AudioUrl)
+                ? "Audio is not available yet."
+                : "Audio playback will be available soon.";
+
+            await Task.CompletedTask;
         }
     }
 }

@@ -188,17 +188,6 @@
 
             </VerticalStackLayout>
 
-            <!-- Forgot password -->
-            <Button
-                Text="Forgot password?"
-                BackgroundColor="Transparent"
-                TextColor="{StaticResource WtPrimary}"
-                FontSize="15"
-                HorizontalOptions="End"
-                HeightRequest="36"
-                Padding="0"
-                Command="{Binding ForgotPasswordCommand}" />
-
             <!-- Error and loading -->
             <Label
                 Text="{Binding ErrorMessage}"

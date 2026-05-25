@@ -4,6 +4,7 @@
     x:Class="WordsTrainer.Mobile.Pages.ExplanationPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     BackgroundColor="#F5F7FA"
     NavigationPage.HasNavigationBar="False">
 
@@ -11,138 +12,240 @@
         <ResourceDictionary Source="/Resources/Styles/WordsTrainerTheme.xaml" />
     </ContentPage.Resources>
 
-    <Grid Padding="20">
+    <Grid
+        Padding="14,18,14,18"
+        RowDefinitions="Auto,*,Auto"
+        RowSpacing="0">
 
-        <ScrollView>
+        <!-- Back -->
+        <HorizontalStackLayout
+            Grid.Row="0"
+            Spacing="6"
+            HeightRequest="42"
+            VerticalOptions="Center">
+
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackTapped" />
+            </HorizontalStackLayout.GestureRecognizers>
+
+            <Image
+                Source="arrow_left.svg"
+                WidthRequest="22"
+                HeightRequest="22"
+                VerticalOptions="Center">
+
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource WtMutedText}" />
+                </Image.Behaviors>
+
+            </Image>
+
+            <Label
+                Text="Back"
+                FontSize="15"
+                TextColor="{StaticResource WtMutedText}"
+                VerticalTextAlignment="Center" />
+
+        </HorizontalStackLayout>
+
+        <!-- Content -->
+        <ScrollView
+            Grid.Row="1"
+            VerticalScrollBarVisibility="Never"
+            HorizontalScrollBarVisibility="Never">
+
             <VerticalStackLayout
-                MaximumWidthRequest="460"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Spacing="16">
+                MaximumWidthRequest="430"
+                HorizontalOptions="Fill"
+                Spacing="18"
+                Margin="0,10,0,18">
 
-                <!-- TOP BAR -->
-
-                <Grid ColumnDefinitions="Auto,*">
-
-                    <Button
-                        Grid.Column="0"
-                        Text="←"
-                        FontSize="20"
-                        HeightRequest="38"
-                        WidthRequest="46"
-                        CornerRadius="14"
-                        BackgroundColor="{StaticResource WtCard}"
-                        TextColor="{StaticResource WtForeground}"
-                        BorderColor="{StaticResource WtBorder}"
-                        BorderWidth="1"
-                        Clicked="BackClicked" />
-
-                    <Label
-                        Grid.Column="1"
-                        Text="Word explanation"
-                        FontSize="22"
-                        FontAttributes="Bold"
-                        TextColor="{StaticResource WtForeground}"
-                        VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="Center" />
-
-                </Grid>
-
-                <!-- WORD CARD -->
-
+                <!-- Word card -->
                 <Border
                     BackgroundColor="{StaticResource WtCard}"
                     Stroke="{StaticResource WtBorder}"
                     StrokeThickness="1"
-                    Padding="24"
-                    StrokeShape="RoundRectangle 28">
+                    Padding="24,22"
+                    StrokeShape="RoundRectangle 24">
 
-                    <VerticalStackLayout Spacing="12">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#10000000"
+                            Offset="0,3"
+                            Radius="7"
+                            Opacity="0.12" />
+                    </Border.Shadow>
+
+                    <VerticalStackLayout Spacing="15">
+
+                        <!-- Replace with level binding when it becomes available -->
+                        <Border
+                            BackgroundColor="#EAF0FF"
+                            StrokeThickness="0"
+                            Padding="12,5"
+                            StrokeShape="RoundRectangle 14"
+                            HorizontalOptions="Start">
+
+                            <Label
+                                Text="A1"
+                                FontSize="13"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource WtPrimary}" />
+
+                        </Border>
 
                         <Label
                             Text="{Binding TargetWord}"
-                            FontSize="42"
+                            FontSize="33"
                             FontAttributes="Bold"
                             TextColor="{StaticResource WtForeground}"
-                            HorizontalTextAlignment="Center" />
+                            LineBreakMode="TailTruncation" />
 
-                        <Button
-                            Text="🔊 Listen"
-                            HeightRequest="44"
-                            CornerRadius="14"
-                            BackgroundColor="{StaticResource WtPrimary}"
-                            TextColor="White"
-                            FontSize="16"
-                            Command="{Binding PlayAudioCommand}" />
+                        <HorizontalStackLayout Spacing="12">
 
-                    </VerticalStackLayout>
+                            <Label
+                                Text="{Binding NativeTranslation}"
+                                FontSize="21"
+                                TextColor="{StaticResource WtPrimary}"
+                                VerticalTextAlignment="Center" />
 
-                </Border>
+                            <Border
+                                WidthRequest="42"
+                                HeightRequest="42"
+                                BackgroundColor="#EAF0FF"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 21">
 
-                <!-- TRANSLATION CARD -->
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PlayAudioCommand}" />
+                                </Border.GestureRecognizers>
 
-                <Border
-                    BackgroundColor="{StaticResource WtCard}"
-                    Stroke="{StaticResource WtBorder}"
-                    StrokeThickness="1"
-                    Padding="18"
-                    StrokeShape="RoundRectangle 22">
+                                <Label
+                                    Text="◖))"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource WtPrimary}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    InputTransparent="True" />
 
-                    <VerticalStackLayout Spacing="6">
+                            </Border>
 
-                        <Label
-                            Text="Translation"
-                            FontSize="13"
-                            TextColor="{StaticResource WtMutedText}" />
-
-                        <Label
-                            Text="{Binding NativeTranslation}"
-                            FontSize="28"
-                            FontAttributes="Bold"
-                            TextColor="{StaticResource WtForeground}" />
+                        </HorizontalStackLayout>
 
                     </VerticalStackLayout>
 
                 </Border>
 
-                <!-- EXPLANATION CARD -->
-
+                <!-- Explanation card -->
                 <Border
                     BackgroundColor="{StaticResource WtCard}"
                     Stroke="{StaticResource WtBorder}"
                     StrokeThickness="1"
-                    Padding="18"
-                    StrokeShape="RoundRectangle 22">
+                    Padding="24,22"
+                    StrokeShape="RoundRectangle 24">
 
-                    <VerticalStackLayout Spacing="8">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#10000000"
+                            Offset="0,3"
+                            Radius="7"
+                            Opacity="0.12" />
+                    </Border.Shadow>
 
-                        <Label
-                            Text="Meaning"
-                            FontSize="13"
-                            TextColor="{StaticResource WtMutedText}" />
+                    <VerticalStackLayout Spacing="18">
+
+                        <HorizontalStackLayout Spacing="12">
+
+                            <Border
+                                WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="#FFF7E8"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 20">
+
+                                <Label
+                                    Text="!"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="#F59E0B"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" />
+
+                            </Border>
+
+                            <Label
+                                Text="Explanation"
+                                FontSize="19"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource WtForeground}"
+                                VerticalTextAlignment="Center" />
+
+                        </HorizontalStackLayout>
 
                         <Label
                             Text="{Binding Explanation}"
-                            FontSize="18"
+                            FontSize="17"
+                            LineHeight="1.35"
                             LineBreakMode="WordWrap"
-                            TextColor="{StaticResource WtForeground}" />
+                            TextColor="{StaticResource WtMutedText}" />
 
                     </VerticalStackLayout>
 
                 </Border>
 
+                <!-- Loading and message -->
                 <ActivityIndicator
                     IsRunning="{Binding IsBusy}"
-                    IsVisible="{Binding IsBusy}" />
+                    IsVisible="{Binding IsBusy}"
+                    Color="{StaticResource WtPrimary}"
+                    HorizontalOptions="Center" />
 
                 <Label
                     Text="{Binding Message}"
+                    IsVisible="{Binding HasMessage}"
                     FontSize="14"
                     TextColor="{StaticResource WtMutedText}"
-                    HorizontalTextAlignment="Center" />
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap" />
 
             </VerticalStackLayout>
+
         </ScrollView>
+
+        <!-- Bottom action -->
+        <VerticalStackLayout
+            Grid.Row="2"
+            MaximumWidthRequest="430"
+            HorizontalOptions="Fill"
+            Spacing="8"
+            Margin="0,12,0,0">
+
+            <Button
+                Text="Got it, continue"
+                Style="{StaticResource WtPrimaryButton}"
+                HeightRequest="56"
+                CornerRadius="28"
+                FontSize="17"
+                Clicked="ContinueClicked">
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="#200A54D9"
+                        Offset="0,6"
+                        Radius="10"
+                        Opacity="0.18" />
+                </Button.Shadow>
+
+            </Button>
+
+            <Label
+                Text="This word will be marked for review"
+                FontSize="13"
+                TextColor="{StaticResource WtMutedText}"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
 
     </Grid>
 

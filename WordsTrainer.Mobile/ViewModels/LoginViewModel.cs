@@ -46,8 +46,16 @@ namespace WordsTrainer.Mobile.ViewModels
         public string ErrorMessage
         {
             get => _errorMessage;
-            set => SetField(ref _errorMessage, value);
+            set
+            {
+                if (SetField(ref _errorMessage, value))
+                {
+                    OnPropertyChanged(nameof(HasError));
+                }
+            }
         }
+
+        public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
         public bool IsBusy
         {
@@ -98,7 +106,9 @@ namespace WordsTrainer.Mobile.ViewModels
                 await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
 
                 var trainingPage = Application.Current!.Handler!.MauiContext!.Services
-                    .GetRequiredService<TrainingPage>();
+    .GetRequiredService<TrainingPage>();
+
+                await trainingPage.InitializeAsync();
 
                 var window = Application.Current!.Windows[0];
                 window.Page = new NavigationPage(trainingPage);
@@ -114,6 +124,11 @@ namespace WordsTrainer.Mobile.ViewModels
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void OnPropertyChanged([CallerMemberName] string? name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         private bool SetField<T>(ref T field, T value, [CallerMemberName] string? name = null)
         {
