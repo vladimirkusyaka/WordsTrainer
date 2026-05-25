@@ -17,6 +17,7 @@ namespace WordsTrainer.Contracts.Training
         public List<TrainingOptionDto> Options { get; set; } = [];
 
         public string TargetLanguageCode { get; set; } = string.Empty;
+        public string TargetLevelCode { get; set; } = string.Empty;
 
         public string NativeLanguageCode { get; set; } = string.Empty;
 

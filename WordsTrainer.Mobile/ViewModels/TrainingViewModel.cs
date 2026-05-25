@@ -212,7 +212,7 @@ public class TrainingViewModel : INotifyPropertyChanged
                 ? 0
                 : (double)(currentQuestionIndex + 1) / totalQuestions;
 
-            QuestionLevel = "A1";  // TEMPORARY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            QuestionLevel = _currentQuestion.TargetLevelCode;  
 
             HasQuestion = true;
             Message = "";

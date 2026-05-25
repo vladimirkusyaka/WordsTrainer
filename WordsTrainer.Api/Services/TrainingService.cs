@@ -534,6 +534,7 @@ public class TrainingService
                 })
                 .ToList(),
             TargetLanguageCode = user.TargetLanguage.Code,
+            TargetLevelCode = concept.LanguageLevel.Code,
             NativeLanguageCode = user.NativeLanguage.Code,
             IsReview = userConcept != null,
             CurrentScore = userConcept?.Score,
