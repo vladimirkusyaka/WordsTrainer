@@ -354,7 +354,7 @@
                             Stroke="{StaticResource WtBorder}"
                             StrokeThickness="1"
                             Padding="18,16"
-                            MinimumHeightRequest="132"
+                            MinimumHeightRequest="148"
                             StrokeShape="RoundRectangle 22">
 
                             <Border.Shadow>
@@ -388,11 +388,13 @@
 
                                 <Label
                                     Text="{Binding QuestionText}"
-                                    FontSize="34"
+                                    FontSize="32"
                                     FontAttributes="Bold"
                                     TextColor="{StaticResource WtForeground}"
                                     HorizontalTextAlignment="Center"
-                                    LineBreakMode="TailTruncation" />
+                                    LineBreakMode="WordWrap"
+                                    MaxLines="3"
+                                    FontAutoScalingEnabled="False" />
 
                             </VerticalStackLayout>
 

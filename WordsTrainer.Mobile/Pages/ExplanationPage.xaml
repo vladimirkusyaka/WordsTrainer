@@ -96,20 +96,30 @@
 
                         <Label
                             Text="{Binding TargetWord}"
-                            FontSize="33"
+                            FontSize="31"
                             FontAttributes="Bold"
                             TextColor="{StaticResource WtForeground}"
-                            LineBreakMode="TailTruncation" />
+                            HorizontalTextAlignment="Start"
+                            LineBreakMode="WordWrap"
+                            MaxLines="3"
+                            FontAutoScalingEnabled="False" />
 
-                        <HorizontalStackLayout Spacing="12">
+                        <Grid
+                            ColumnDefinitions="*,Auto"
+                            ColumnSpacing="12">
 
                             <Label
+                                Grid.Column="0"
                                 Text="{Binding NativeTranslation}"
                                 FontSize="21"
                                 TextColor="{StaticResource WtPrimary}"
-                                VerticalTextAlignment="Center" />
+                                VerticalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
+                                MaxLines="2"
+                                FontAutoScalingEnabled="False" />
 
                             <Border
+                                Grid.Column="1"
                                 WidthRequest="42"
                                 HeightRequest="42"
                                 BackgroundColor="#EAF0FF"
@@ -132,7 +142,7 @@
 
                             </Border>
 
-                        </HorizontalStackLayout>
+                        </Grid>
 
                     </VerticalStackLayout>
 
