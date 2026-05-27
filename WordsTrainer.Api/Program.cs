@@ -107,12 +107,11 @@ using (var scope = app.Services.CreateScope())
 
     var importer = scope.ServiceProvider.GetRequiredService<SeedImportService>();
 
-    var seedPath = Path.Combine(
+    var seedDirectoryPath = Path.Combine(
         app.Environment.ContentRootPath,
-        "SeedData",
-        "a1.json");
+        "SeedData");
 
-    await importer.ImportAsync(seedPath);
+    await importer.ImportDirectoryAsync(seedDirectoryPath);
 }
 
 

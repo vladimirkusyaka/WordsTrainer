@@ -1,85 +1,69 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WordsTrainer.Core.Entities;
 
+namespace WordsTrainer.Infrastructure.Data;
 
-namespace WordsTrainer.Infrastructure.Data
+public static class DbSeeder
 {
-    public static class DbSeeder
+    public static async Task SeedAsync(AppDbContext db)
     {
-        public static async Task SeedAsync(AppDbContext db)
+        await SeedLanguagesAsync(db);
+        await SeedLanguageLevelsAsync(db);
+
+        await db.SaveChangesAsync();
+    }
+
+    private static async Task SeedLanguagesAsync(AppDbContext db)
+    {
+        var languages = new[]
         {
-            if (!await db.Languages.AnyAsync())
-            {
-                db.Languages.AddRange(
-                    new Language { Code = "ru", Name = "Russian", NativeName = "Русский" },
-                    new Language { Code = "en", Name = "English", NativeName = "English" },
-                    new Language { Code = "de", Name = "German", NativeName = "Deutsch" }
-                );
+            new Language { Code = "ru", Name = "Russian", NativeName = "Русский" },
+            new Language { Code = "en", Name = "English", NativeName = "English" },
+            new Language { Code = "de", Name = "German", NativeName = "Deutsch" }
+        };
 
-                await db.SaveChangesAsync();
+        foreach (var language in languages)
+        {
+            var existing = await db.Languages
+                .FirstOrDefaultAsync(x => x.Code == language.Code);
+
+            if (existing == null)
+            {
+                db.Languages.Add(language);
+                continue;
             }
 
-            if (!await db.LanguageLevels.AnyAsync())
-            {
-                db.LanguageLevels.AddRange(
-                    new LanguageLevel { Code = "A1", Name = "Beginner", Order = 1 },
-                    new LanguageLevel { Code = "A2", Name = "Elementary", Order = 2 },
-                    new LanguageLevel { Code = "B1", Name = "Intermediate", Order = 3 },
-                    new LanguageLevel { Code = "B2", Name = "Upper Intermediate", Order = 4 },
-                    new LanguageLevel { Code = "C1", Name = "Advanced", Order = 5 }
-                );
-
-                await db.SaveChangesAsync();
-            }
-
-            if (await db.Concepts.AnyAsync())
-                return;
-
-            var ru = await db.Languages.SingleAsync(x => x.Code == "ru");
-            var en = await db.Languages.SingleAsync(x => x.Code == "en");
-            var de = await db.Languages.SingleAsync(x => x.Code == "de");
-
-            await AddConcept(db, "eat_verb", "to eat", "есть", "eat", "essen", ru, en, de);
-            await AddConcept(db, "drink_verb", "to drink", "пить", "drink", "trinken", ru, en, de);
-            await AddConcept(db, "house_noun", "house", "дом", "house", "Haus", ru, en, de);
-            await AddConcept(db, "water_noun", "water", "вода", "water", "Wasser", ru, en, de);
-            await AddConcept(db, "book_noun", "book", "книга", "book", "Buch", ru, en, de);
-
-            await db.SaveChangesAsync();
+            existing.Name = language.Name;
+            existing.NativeName = language.NativeName;
         }
+    }
 
-        private static async Task AddConcept(
-            AppDbContext db,
-            string key,
-            string description,
-            string ruText,
-            string enText,
-            string deText,
-            Language ru,
-            Language en,
-            Language de)
+    private static async Task SeedLanguageLevelsAsync(AppDbContext db)
+    {
+        var levels = new[]
         {
-            var a1 = await db.LanguageLevels.SingleAsync(x => x.Code == "A1");
-            var concept = new Concept
+            new LanguageLevel { Code = "A1", Name = "Beginner", Order = 1 },
+            new LanguageLevel { Code = "A2", Name = "Elementary", Order = 2 },
+            new LanguageLevel { Code = "B1", Name = "Intermediate", Order = 3 },
+            new LanguageLevel { Code = "B2", Name = "Upper Intermediate", Order = 4 },
+            new LanguageLevel { Code = "C1", Name = "Advanced", Order = 5 },
+            new LanguageLevel { Code = "C2", Name = "Proficient", Order = 6 }
+        };
+
+        foreach (var level in levels)
+        {
+            var existing = await db.LanguageLevels
+                .FirstOrDefaultAsync(x => x.Code == level.Code);
+
+            if (existing == null)
             {
-                MeaningKey = key,
-                Description = description,
-                LanguageLevelId = a1.Id
-            };
+                db.LanguageLevels.Add(level);
+                continue;
+            }
 
-            var ruWord = new Word { Language = ru, Text = ruText, Difficulty = 1 };
-            var enWord = new Word { Language = en, Text = enText, Difficulty = 1 };
-            var deWord = new Word { Language = de, Text = deText, Difficulty = 1 };
-
-            db.Concepts.Add(concept);
-
-            db.ConceptWords.AddRange(
-                new ConceptWord { Concept = concept, Word = ruWord },
-                new ConceptWord { Concept = concept, Word = enWord },
-                new ConceptWord { Concept = concept, Word = deWord }
-            );
-
-            await Task.CompletedTask;
+            existing.Name = level.Name;
+            existing.Order = level.Order;
+            existing.IsActive = true;
         }
     }
 }

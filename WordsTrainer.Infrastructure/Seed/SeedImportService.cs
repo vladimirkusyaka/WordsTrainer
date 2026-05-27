@@ -1,101 +1,237 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using WordsTrainer.Core.Entities;
 using WordsTrainer.Infrastructure.Data;
 
-namespace WordsTrainer.Infrastructure.Seed
-{
-    public class SeedImportService
-    {
-        private readonly AppDbContext _db;
+namespace WordsTrainer.Infrastructure.Seed;
 
-        public SeedImportService(AppDbContext db)
+public class SeedImportService
+{
+    private static readonly string[] RequiredLanguageCodes = ["de", "ru", "en"];
+
+    private readonly AppDbContext _db;
+
+    public SeedImportService(AppDbContext db)
+    {
+        _db = db;
+    }
+
+    public async Task ImportDirectoryAsync(string directoryPath)
+    {
+        if (!Directory.Exists(directoryPath))
+            return;
+
+        var filePaths = Directory
+            .EnumerateFiles(directoryPath, "*.json")
+            .OrderBy(x => x)
+            .ToList();
+
+        if (filePaths.Count == 0)
+            return;
+
+        var items = new List<SeedConceptDto>();
+
+        foreach (var filePath in filePaths)
+            items.AddRange(await ReadFileAsync(filePath));
+
+        await ImportItemsAsync(items);
+    }
+
+    public async Task ImportAsync(string filePath)
+    {
+        if (!File.Exists(filePath))
+            return;
+
+        var items = await ReadFileAsync(filePath);
+
+        await ImportItemsAsync(items);
+    }
+
+    private static async Task<List<SeedConceptDto>> ReadFileAsync(string filePath)
+    {
+        var json = await File.ReadAllTextAsync(filePath);
+
+        return JsonSerializer.Deserialize<List<SeedConceptDto>>(
+            json,
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            }) ?? [];
+    }
+
+    private async Task ImportItemsAsync(List<SeedConceptDto> items)
+    {
+        if (items.Count == 0)
+            return;
+
+        var languages = await _db.Languages
+            .ToDictionaryAsync(x => x.Code, StringComparer.OrdinalIgnoreCase);
+
+        var levels = await _db.LanguageLevels
+            .ToDictionaryAsync(x => x.Code, StringComparer.OrdinalIgnoreCase);
+
+        Validate(items, languages, levels);
+
+        foreach (var item in items)
+            await UpsertConceptAsync(item, languages, levels);
+
+        await _db.SaveChangesAsync();
+    }
+
+    private static void Validate(
+        List<SeedConceptDto> items,
+        Dictionary<string, Language> languages,
+        Dictionary<string, LanguageLevel> levels)
+    {
+        var duplicatedKeys = items
+            .GroupBy(x => x.Key.Trim(), StringComparer.OrdinalIgnoreCase)
+            .Where(x => x.Count() > 1)
+            .Select(x => x.Key)
+            .ToList();
+
+        if (duplicatedKeys.Count > 0)
         {
-            _db = db;
+            throw new InvalidOperationException(
+                $"Duplicated seed concept keys: {string.Join(", ", duplicatedKeys)}.");
         }
 
-        public async Task ImportAsync(string filePath)
+        foreach (var requiredLanguageCode in RequiredLanguageCodes)
         {
-            if (!File.Exists(filePath))
-                return;
-
-            var json = await File.ReadAllTextAsync(filePath);
-
-            var items = JsonSerializer.Deserialize<List<SeedConceptDto>>(
-                json,
-                new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-            if (items == null || items.Count == 0)
-                return;
-
-            foreach (var item in items)
+            if (!languages.ContainsKey(requiredLanguageCode))
             {
-                await ImportConceptAsync(item);
+                throw new InvalidOperationException(
+                    $"Required language '{requiredLanguageCode}' is missing in database.");
+            }
+        }
+
+        foreach (var item in items)
+        {
+            if (string.IsNullOrWhiteSpace(item.Key))
+                throw new InvalidOperationException("Seed concept key is required.");
+
+            if (string.IsNullOrWhiteSpace(item.Level) ||
+                !levels.ContainsKey(item.Level))
+            {
+                throw new InvalidOperationException(
+                    $"Unknown language level '{item.Level}' for concept '{item.Key}'.");
             }
 
-            await _db.SaveChangesAsync();
+            if (string.IsNullOrWhiteSpace(item.PartOfSpeech))
+            {
+                throw new InvalidOperationException(
+                    $"Part of speech is required for concept '{item.Key}'.");
+            }
+
+            var duplicatedWordLanguages = item.Words
+                .GroupBy(x => x.LanguageCode, StringComparer.OrdinalIgnoreCase)
+                .Where(x => x.Count() > 1)
+                .Select(x => x.Key)
+                .ToList();
+
+            if (duplicatedWordLanguages.Count > 0)
+            {
+                throw new InvalidOperationException(
+                    $"Concept '{item.Key}' has duplicate word languages: " +
+                    $"{string.Join(", ", duplicatedWordLanguages)}.");
+            }
+
+            foreach (var requiredLanguageCode in RequiredLanguageCodes)
+            {
+                var word = item.Words.FirstOrDefault(x =>
+                    string.Equals(
+                        x.LanguageCode,
+                        requiredLanguageCode,
+                        StringComparison.OrdinalIgnoreCase));
+
+                if (word == null || string.IsNullOrWhiteSpace(word.Text))
+                {
+                    throw new InvalidOperationException(
+                        $"Concept '{item.Key}' must contain a '{requiredLanguageCode}' word.");
+                }
+            }
+
+            var duplicatedExplanationLanguages = item.Explanations
+                .GroupBy(x => x.LanguageCode, StringComparer.OrdinalIgnoreCase)
+                .Where(x => x.Count() > 1)
+                .Select(x => x.Key)
+                .ToList();
+
+            if (duplicatedExplanationLanguages.Count > 0)
+            {
+                throw new InvalidOperationException(
+                    $"Concept '{item.Key}' has duplicate explanation languages: " +
+                    $"{string.Join(", ", duplicatedExplanationLanguages)}.");
+            }
         }
+    }
 
-        private async Task ImportConceptAsync(SeedConceptDto item)
+    private async Task UpsertConceptAsync(
+        SeedConceptDto item,
+        Dictionary<string, Language> languages,
+        Dictionary<string, LanguageLevel> levels)
+    {
+        var key = item.Key.Trim();
+        var level = levels[item.Level];
+
+        var concept = await _db.Concepts
+            .Include(x => x.ConceptWords)
+                .ThenInclude(x => x.Word)
+            .Include(x => x.Explanations)
+            .FirstOrDefaultAsync(x => x.MeaningKey == key);
+
+        if (concept == null)
         {
-            var languageLevel = await _db.LanguageLevels.FirstOrDefaultAsync(x => x.Code == item.Level);
-
-            if (languageLevel == null)
-                return;
-
-            var existingConcept = await _db.Concepts
-                .Include(x => x.ConceptWords)
-                .Include(x => x.Explanations)
-                .FirstOrDefaultAsync(x => x.MeaningKey == item.Key);
-
-            if (existingConcept != null)
-                return;
-
-            var concept = new Concept
+            concept = new Concept
             {
                 Id = Guid.NewGuid(),
-                MeaningKey = item.Key,
-                Description = item.Description,
-                LanguageLevelId = languageLevel.Id
-
+                MeaningKey = key
             };
 
             _db.Concepts.Add(concept);
+        }
 
-            foreach (var seedWord in item.Words)
+        concept.Description = item.Description?.Trim();
+        concept.LanguageLevelId = level.Id;
+
+        foreach (var seedWord in item.Words)
+        {
+            if (!languages.TryGetValue(seedWord.LanguageCode, out var language))
+                continue;
+
+            var text = seedWord.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(text))
+                continue;
+
+            var word = await _db.Words.FirstOrDefaultAsync(x =>
+                x.LanguageId == language.Id &&
+                x.Text == text);
+
+            if (word == null)
             {
-                var language = await _db.Languages
-                    .FirstOrDefaultAsync(x => x.Code == seedWord.LanguageCode);
-
-                if (language == null)
-                    continue;
-
-                var word = await _db.Words
-                    .FirstOrDefaultAsync(x =>
-                        x.LanguageId == language.Id &&
-                        x.Text == seedWord.Text);
-
-                if (word == null)
+                word = new Word
                 {
-                    word = new Word
-                    {
-                        Id = Guid.NewGuid(),
-                        LanguageId = language.Id,
-                        Text = seedWord.Text,
-                        PartOfSpeech = item.PartOfSpeech,
-                        Difficulty = 1
-                    };
+                    Id = Guid.NewGuid(),
+                    LanguageId = language.Id,
+                    Text = text,
+                    PartOfSpeech = item.PartOfSpeech.Trim(),
+                    Difficulty = level.Order
+                };
 
-                    _db.Words.Add(word);
-                }
+                _db.Words.Add(word);
+            }
+            else
+            {
+                word.PartOfSpeech = item.PartOfSpeech.Trim();
+                word.Difficulty = level.Order;
+            }
 
-                _db.ConceptWords.Add(new ConceptWord
+            var conceptWord = concept.ConceptWords.FirstOrDefault(x =>
+                x.Word.LanguageId == language.Id);
+
+            if (conceptWord == null)
+            {
+                concept.ConceptWords.Add(new ConceptWord
                 {
                     Id = Guid.NewGuid(),
                     Concept = concept,
@@ -103,22 +239,40 @@ namespace WordsTrainer.Infrastructure.Seed
                     IsPrimary = true
                 });
             }
-
-            foreach (var seedExplanation in item.Explanations)
+            else
             {
-                var language = await _db.Languages
-                    .FirstOrDefaultAsync(x => x.Code == seedExplanation.LanguageCode);
+                conceptWord.Word = word;
+                conceptWord.WordId = word.Id;
+                conceptWord.IsPrimary = true;
+            }
+        }
 
-                if (language == null)
-                    continue;
+        foreach (var seedExplanation in item.Explanations)
+        {
+            if (!languages.TryGetValue(seedExplanation.LanguageCode, out var language))
+                continue;
 
-                _db.ConceptExplanations.Add(new ConceptExplanation
+            var text = seedExplanation.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(text))
+                continue;
+
+            var explanation = concept.Explanations.FirstOrDefault(x =>
+                x.LanguageId == language.Id);
+
+            if (explanation == null)
+            {
+                concept.Explanations.Add(new ConceptExplanation
                 {
                     Id = Guid.NewGuid(),
                     Concept = concept,
                     LanguageId = language.Id,
-                    Text = seedExplanation.Text
+                    Text = text
                 });
+            }
+            else
+            {
+                explanation.Text = text;
             }
         }
     }
