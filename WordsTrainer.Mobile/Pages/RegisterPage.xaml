@@ -590,24 +590,32 @@
                     TextColor="{StaticResource WtForeground}" />
 
                             <Label
-                    Grid.Row="2"
-                    Text="Current level"
-                    FontSize="15"
-                    TextColor="{StaticResource WtMutedText}" />
-
+                                Grid.Row="2"
+                                Text="Current level"
+                                FontSize="15"
+                                TextColor="{StaticResource WtMutedText}" 
+                                VerticalTextAlignment="Center" />
                             <Border
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    BackgroundColor="#EEF2FF"
-                    StrokeThickness="0"
-                    Padding="10,4"
-                    StrokeShape="RoundRectangle 12">
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                MinimumWidthRequest="44"
+                                HeightRequest="30"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                BackgroundColor="#EEF2FF"
+                                StrokeThickness="0"
+                                Padding="10,0"
+                                StrokeShape="RoundRectangle 15">
 
                                 <Label
-                        Text="{Binding SelectedLevel.Code}"
-                        FontSize="14"
-                        FontAttributes="Bold"
-                        TextColor="{StaticResource WtPrimary}" />
+                                    Text="{Binding SelectedLevel.Code}"
+                                    FontSize="14"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource WtPrimary}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" />
 
                             </Border>
 
