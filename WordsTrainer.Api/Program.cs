@@ -97,6 +97,27 @@ builder.Services
 
 var app = builder.Build();
 
+var startupLogger = app.Services.GetRequiredService<ILoggerFactory>()
+    .CreateLogger("Startup.Configuration");
+
+var smtpHost = app.Configuration["Smtp:Host"];
+var smtpPort = app.Configuration["Smtp:Port"];
+var smtpUseSsl = app.Configuration["Smtp:UseSsl"];
+var smtpFrom = app.Configuration["Smtp:FromEmail"];
+var smtpUsername = app.Configuration["Smtp:Username"];
+var smtpPassword = app.Configuration["Smtp:Password"];
+var resetUrl = app.Configuration["PasswordReset:ResetUrl"];
+
+startupLogger.LogInformation(
+    "Password reset config: ResetUrlConfigured={ResetUrlConfigured}; SMTP HostConfigured={HostConfigured}, FromConfigured={FromConfigured}, UsernameConfigured={UsernameConfigured}, PasswordConfigured={PasswordConfigured}, Port={Port}, UseSsl={UseSsl}",
+    !string.IsNullOrWhiteSpace(resetUrl),
+    !string.IsNullOrWhiteSpace(smtpHost),
+    !string.IsNullOrWhiteSpace(smtpFrom),
+    !string.IsNullOrWhiteSpace(smtpUsername),
+    !string.IsNullOrWhiteSpace(smtpPassword),
+    string.IsNullOrWhiteSpace(smtpPort) ? "(default)" : smtpPort,
+    string.IsNullOrWhiteSpace(smtpUseSsl) ? "(default true)" : smtpUseSsl);
+
 /**/
 using (var scope = app.Services.CreateScope())
 {
