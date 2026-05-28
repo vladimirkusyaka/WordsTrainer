@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -26,6 +28,7 @@ namespace WordsTrainer.Mobile.ViewModels
             _tokenStorage = tokenStorage;
 
             LoginCommand = new Command(async () => await LoginAsync(), () => !IsBusy);
+            ForgotPasswordCommand = new Command(async () => await ForgotPasswordAsync(), () => !IsBusy && CanSubmitForgotPassword);
             GoToRegisterCommand = new Command(async () => await GoToRegisterAsync(), () => !IsBusy);
             BackCommand = new Command(async () => await BackAsync(), () => !IsBusy);
         }
@@ -34,7 +37,14 @@ namespace WordsTrainer.Mobile.ViewModels
         public string Email
         {
             get => _email;
-            set => SetField(ref _email, value);
+            set
+            {
+                if (SetField(ref _email, value))
+                {
+                    OnPropertyChanged(nameof(CanSubmitForgotPassword));
+                    ((Command)ForgotPasswordCommand).ChangeCanExecute();
+                }
+            }
         }
 
         public string Password
@@ -57,6 +67,8 @@ namespace WordsTrainer.Mobile.ViewModels
 
         public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
+        public bool CanSubmitForgotPassword => IsValidEmail(Email);
+
         public bool IsBusy
         {
             get => _isBusy;
@@ -65,6 +77,7 @@ namespace WordsTrainer.Mobile.ViewModels
                 if (SetField(ref _isBusy, value))
                 {
                     ((Command)LoginCommand).ChangeCanExecute();
+                    ((Command)ForgotPasswordCommand).ChangeCanExecute();
                     ((Command)GoToRegisterCommand).ChangeCanExecute();
                 }
             }
@@ -72,6 +85,7 @@ namespace WordsTrainer.Mobile.ViewModels
 
         public ICommand GoToRegisterCommand { get; }
         public ICommand LoginCommand { get; }
+        public ICommand ForgotPasswordCommand { get; }
         public ICommand BackCommand { get; }
 
         private async Task LoginAsync()
@@ -123,6 +137,39 @@ namespace WordsTrainer.Mobile.ViewModels
             }
         }
 
+        private async Task ForgotPasswordAsync()
+        {
+            if (IsBusy || !CanSubmitForgotPassword)
+                return;
+
+            ErrorMessage = "";
+
+            try
+            {
+                IsBusy = true;
+
+                await _apiClient.ForgotPasswordAsync(new ForgotPasswordRequest
+                {
+                    Email = Email.Trim()
+                });
+            }
+            catch
+            {
+                // Keep response neutral for security and UX consistency.
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+            var toast = Toast.Make(
+                "If this email is registered, a password reset link has been sent.",
+                ToastDuration.Short,
+                14);
+
+            await toast.Show();
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string? name = null)
@@ -138,6 +185,22 @@ namespace WordsTrainer.Mobile.ViewModels
             field = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             return true;
+        }
+
+        private static bool IsValidEmail(string? email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email.Trim());
+                return string.Equals(addr.Address, email.Trim(), StringComparison.OrdinalIgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private async Task GoToRegisterAsync()

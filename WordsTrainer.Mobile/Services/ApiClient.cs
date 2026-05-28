@@ -41,6 +41,26 @@ namespace WordsTrainer.Mobile.Services
             return await response.Content.ReadFromJsonAsync<AuthResponse>();
         }
 
+        public async Task<AuthMessageResponse?> ForgotPasswordAsync(ForgotPasswordRequest request)
+        {
+            var response = await _http.PostAsJsonAsync("/api/auth/forgot-password", request);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            return await response.Content.ReadFromJsonAsync<AuthMessageResponse>();
+        }
+
+        public async Task<AuthMessageResponse?> ResetPasswordAsync(ResetPasswordRequest request)
+        {
+            var response = await _http.PostAsJsonAsync("/api/auth/reset-password", request);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            return await response.Content.ReadFromJsonAsync<AuthMessageResponse>();
+        }
+
         public async Task<CurrentUserResponse?> GetMeAsync()
         {
             await AddBearerAsync();

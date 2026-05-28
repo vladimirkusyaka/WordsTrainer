@@ -25,6 +25,7 @@ namespace WordsTrainer.Infrastructure.Data
         public DbSet<TrainingQuestionAttempt> TrainingQuestionAttempts => Set<TrainingQuestionAttempt>();
         public DbSet<TrainingQuestionAttemptOption> TrainingQuestionAttemptOptions => Set<TrainingQuestionAttemptOption>();
         public DbSet<LanguageLevel> LanguageLevels => Set<LanguageLevel>();
+        public DbSet<PasswordResetToken> PasswordResetTokens => Set<PasswordResetToken>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -160,6 +161,30 @@ namespace WordsTrainer.Infrastructure.Data
                 .WithMany()
                 .HasForeignKey(x => x.LanguageLevelId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .HasIndex(x => x.TokenHash)
+                .IsUnique();
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .HasIndex(x => x.UserId);
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .HasIndex(x => x.ExpiresAtUtc);
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .Property(x => x.TokenHash)
+                .HasMaxLength(128);
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .Property(x => x.CreatedIp)
+                .HasMaxLength(64);
+
+            modelBuilder.Entity<PasswordResetToken>()
+                .HasOne(x => x.User)
+                .WithMany()
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
