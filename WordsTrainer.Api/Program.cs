@@ -24,7 +24,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IJwtService, JwtService>();
-builder.Services.AddScoped<IPasswordResetEmailSender, SmtpPasswordResetEmailSender>();
+builder.Services.AddHttpClient<BrevoPasswordResetEmailSender>();
+builder.Services.AddScoped<IPasswordResetEmailSender, BrevoPasswordResetEmailSender>(); 
 builder.Services.AddScoped<TrainingService>();
 builder.Services.AddScoped<SeedImportService>();
 
