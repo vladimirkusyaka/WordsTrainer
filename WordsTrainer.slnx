@@ -4,4 +4,5 @@
   <Project Path="WordsTrainer.Core/WordsTrainer.Core.csproj" />
   <Project Path="WordsTrainer.Infrastructure/WordsTrainer.Infrastructure.csproj" />
   <Project Path="WordsTrainer.Mobile/WordsTrainer.Mobile.csproj" />
+  <Project Path="WordsTrainer.Web/WordsTrainer.Web.csproj" />
 </Solution>
