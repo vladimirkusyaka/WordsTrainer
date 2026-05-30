@@ -23,6 +23,7 @@ public class TrainingService
     public async Task<TrainingNextResponse> GetNextAsync(Guid userId)
     {
         var user = await _db.Users
+            .AsNoTracking()
             .Include(x => x.NativeLanguage)
             .Include(x => x.TargetLanguage)
             .Include(x => x.LanguageLevel)
@@ -37,7 +38,7 @@ public class TrainingService
             };
         }
 
-        var session = await GetActiveSessionAsync(userId);
+        var session = await GetActiveSessionAsync(userId, includeCollections: false);
 
         if (session == null)
         {
@@ -56,17 +57,18 @@ public class TrainingService
 
         var now = DateTime.UtcNow;
         var consecutiveReviews = await GetConsecutiveReviewsTodayAsync(userId);
+        var recentlyShownConceptIds = await GetRecentlyShownConceptIdsAsync(session.Id, RecentlyShownConceptCount);
 
         var dueReviews = await GetDueReviewConceptsAsync(
             userId,
             user,
             now,
-            session);
+            recentlyShownConceptIds);
 
         var newConcepts = await GetNewConceptsAsync(
             userId,
             user,
-            session);
+            recentlyShownConceptIds);
 
         var selected = SelectNextCandidate(
             dueReviews,
@@ -399,22 +401,24 @@ public class TrainingService
         Guid userId,
         AppUser user,
         DateTime now,
-        TrainingSession session)
+        HashSet<Guid> recentlyShownConceptIds)
     {
         var items = await _db.UserConcepts
+            .AsNoTracking()
             .Include(x => x.Concept)
                 .ThenInclude(x => x.ConceptWords)
                     .ThenInclude(x => x.Word)
-                        .ThenInclude(x => x.Language)
             .Where(x =>
                 x.UserId == userId &&
+                !x.IsLearned &&
                 x.NextReviewAtUtc != null &&
-                x.NextReviewAtUtc <= now)
+                x.NextReviewAtUtc <= now &&
+                x.Concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.TargetLanguageId) &&
+                x.Concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.NativeLanguageId) &&
+                !recentlyShownConceptIds.Contains(x.ConceptId))
             .ToListAsync();
 
         return items
-            .Where(x => HasUserLanguages(x.Concept, user))
-            .Where(x => !WasRecentlyShownInSession(session, x.ConceptId))
             .Select(x => new TrainingCandidate(
                 x.Concept,
                 x,
@@ -427,19 +431,13 @@ public class TrainingService
     private async Task<List<TrainingCandidate>> GetNewConceptsAsync(
     Guid userId,
     AppUser user,
-    TrainingSession session)
+    HashSet<Guid> recentlyShownConceptIds)
     {
-        var recentlyShownConceptIds = session.Attempts
-            .OrderByDescending(x => x.CreatedAtUtc)
-            .Take(RecentlyShownConceptCount)
-            .Select(x => x.ConceptId)
-            .ToList();
-
         var availableConceptsQuery = _db.Concepts
+            .AsNoTracking()
             .Include(x => x.LanguageLevel)
             .Include(x => x.ConceptWords)
                 .ThenInclude(x => x.Word)
-                    .ThenInclude(x => x.Language)
             .Where(concept =>
                 concept.LanguageLevel.IsActive &&
                 concept.LanguageLevel.Order >= user.LanguageLevel.Order)
@@ -464,11 +462,11 @@ public class TrainingService
 
         var concepts = await availableConceptsQuery
             .Where(x => x.LanguageLevel.Order == nearestAvailableLevelOrder.Value)
+            .OrderBy(x => x.Id)
             .Take(100)
             .ToListAsync();
 
         return concepts
-            .Where(x => HasUserLanguages(x, user))
             .Select(x => new TrainingCandidate(
                 x,
                 null,
@@ -551,7 +549,7 @@ public class TrainingService
         Guid nativeLanguageId)
     {
         var query = _db.Words
-            .Include(x => x.ConceptWords)
+            .AsNoTracking()
             .Where(x =>
                 x.LanguageId == nativeLanguageId &&
                 x.Id != correctAnswer.Id &&
@@ -561,17 +559,19 @@ public class TrainingService
             query = query.Where(x => x.PartOfSpeech == correctAnswer.PartOfSpeech);
 
         var candidates = await query
+            .OrderBy(x => x.Id)
             .Take(100)
             .ToListAsync();
 
         if (candidates.Count < 3)
         {
             candidates = await _db.Words
-                .Include(x => x.ConceptWords)
+                .AsNoTracking()
                 .Where(x =>
                     x.LanguageId == nativeLanguageId &&
                     x.Id != correctAnswer.Id &&
                     !x.ConceptWords.Any(cw => cw.ConceptId == conceptId))
+                .OrderBy(x => x.Id)
                 .Take(100)
                 .ToListAsync();
         }
@@ -585,14 +585,38 @@ public class TrainingService
                 .ToList();
     }
 
-    private async Task<TrainingSession?> GetActiveSessionAsync(Guid userId)
+    private async Task<TrainingSession?> GetActiveSessionAsync(
+        Guid userId,
+        bool includeCollections = true)
     {
-        return await _db.TrainingSessions
-            .Include(x => x.Answers)
-            .Include(x => x.Attempts)
-            .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+        IQueryable<TrainingSession> query = _db.TrainingSessions
+            .Where(x => x.UserId == userId && x.FinishedAtUtc == null);
+
+        if (includeCollections)
+        {
+            query = query
+                .Include(x => x.Answers)
+                .Include(x => x.Attempts);
+        }
+
+        return await query
             .OrderByDescending(x => x.StartedAtUtc)
             .FirstOrDefaultAsync();
+    }
+
+    private async Task<HashSet<Guid>> GetRecentlyShownConceptIdsAsync(
+        Guid sessionId,
+        int takeCount)
+    {
+        var conceptIds = await _db.TrainingQuestionAttempts
+            .AsNoTracking()
+            .Where(x => x.TrainingSessionId == sessionId)
+            .OrderByDescending(x => x.CreatedAtUtc)
+            .Take(takeCount)
+            .Select(x => x.ConceptId)
+            .ToListAsync();
+
+        return conceptIds.ToHashSet();
     }
 
     private async Task<int> GetConsecutiveReviewsTodayAsync(Guid userId)
