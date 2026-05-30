@@ -4,6 +4,15 @@
 @code {
     protected override void OnInitialized()
     {
-        Navigation.NavigateTo("/reset-password", replace: true);
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var query = uri.Query;
+
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            Navigation.NavigateTo("/reset-password", replace: true);
+            return;
+        }
+
+        Navigation.NavigateTo($"/reset-password{query}", replace: true);
     }
 }
