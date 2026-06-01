@@ -401,26 +401,36 @@ public class TrainingService
         DateTime now,
         TrainingSession session)
     {
+        var recentlyShownConceptIds = session.Attempts
+            .OrderByDescending(x => x.CreatedAtUtc)
+            .Take(RecentlyShownConceptCount)
+            .Select(x => x.ConceptId)
+            .ToList();
+
         var items = await _db.UserConcepts
+            .AsNoTracking()
             .Include(x => x.Concept)
                 .ThenInclude(x => x.ConceptWords)
                     .ThenInclude(x => x.Word)
-                        .ThenInclude(x => x.Language)
             .Where(x =>
                 x.UserId == userId &&
+                !x.IsLearned &&
                 x.NextReviewAtUtc != null &&
-                x.NextReviewAtUtc <= now)
+                x.NextReviewAtUtc <= now &&
+                !recentlyShownConceptIds.Contains(x.ConceptId) &&
+                x.Concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.TargetLanguageId) &&
+                x.Concept.ConceptWords.Any(cw => cw.Word.LanguageId == user.NativeLanguageId))
+            .OrderBy(x => x.NextReviewAtUtc)
+            .ThenBy(x => x.ConceptId)
+            .Take(10)
             .ToListAsync();
 
         return items
-            .Where(x => HasUserLanguages(x.Concept, user))
-            .Where(x => !WasRecentlyShownInSession(session, x.ConceptId))
             .Select(x => new TrainingCandidate(
                 x.Concept,
                 x,
                 CalculatePriority(x, now)))
             .OrderByDescending(x => x.Priority)
-            .Take(30)
             .ToList();
     }
 
@@ -429,17 +439,11 @@ public class TrainingService
     AppUser user,
     TrainingSession session)
     {
-        var recentlyShownConceptIds = session.Attempts
-            .OrderByDescending(x => x.CreatedAtUtc)
-            .Take(RecentlyShownConceptCount)
-            .Select(x => x.ConceptId)
-            .ToList();
-
-        var availableConceptsQuery = _db.Concepts
+        var concepts = await _db.Concepts
+            .AsNoTracking()
             .Include(x => x.LanguageLevel)
             .Include(x => x.ConceptWords)
                 .ThenInclude(x => x.Word)
-                    .ThenInclude(x => x.Language)
             .Where(concept =>
                 concept.LanguageLevel.IsActive &&
                 concept.LanguageLevel.Order >= user.LanguageLevel.Order)
@@ -452,23 +456,12 @@ public class TrainingService
                 !_db.UserConcepts.Any(uc =>
                     uc.UserId == userId &&
                     uc.ConceptId == concept.Id))
-            .Where(concept =>
-                !recentlyShownConceptIds.Contains(concept.Id));
-
-        var nearestAvailableLevelOrder = await availableConceptsQuery
-            .Select(x => (int?)x.LanguageLevel.Order)
-            .MinAsync();
-
-        if (nearestAvailableLevelOrder == null)
-            return [];
-
-        var concepts = await availableConceptsQuery
-            .Where(x => x.LanguageLevel.Order == nearestAvailableLevelOrder.Value)
-            .Take(100)
+            .OrderByDescending(x => x.LanguageLevel.Order)
+            .ThenBy(x => x.Id)
+            .Take(10)
             .ToListAsync();
 
         return concepts
-            .Where(x => HasUserLanguages(x, user))
             .Select(x => new TrainingCandidate(
                 x,
                 null,
@@ -590,7 +583,7 @@ public class TrainingService
         return await _db.TrainingSessions
             .Include(x => x.Answers)
             .Include(x => x.Attempts)
-            .Where(x => x.UserId == userId && x.FinishedAtUtc == null)
+            .Where(x => x.UserId == userId && x.FinishedAtUtc == null && x.StartedAtUtc.Date == DateTime.UtcNow.Date)
             .OrderByDescending(x => x.StartedAtUtc)
             .FirstOrDefaultAsync();
     }
@@ -719,27 +712,10 @@ public class TrainingService
         };
     }
 
-    private static bool WasRecentlyShownInSession(
-        TrainingSession session,
-        Guid conceptId,
-        int lastItemsCount = 5)
-    {
-        return session.Attempts
-            .OrderByDescending(x => x.CreatedAtUtc)
-            .Take(lastItemsCount)
-            .Any(x => x.ConceptId == conceptId);
-    }
-
     private static (DateTime Start, DateTime End) GetTodayRangeUtc()
     {
         var start = DateTime.UtcNow.Date;
         return (start, start.AddDays(1));
-    }
-
-    private static bool HasUserLanguages(Concept concept, AppUser user)
-    {
-        return concept.ConceptWords.Any(x => x.Word.LanguageId == user.TargetLanguageId) &&
-               concept.ConceptWords.Any(x => x.Word.LanguageId == user.NativeLanguageId);
     }
 
     private static Word GetWordForLanguage(Concept concept, Guid languageId)

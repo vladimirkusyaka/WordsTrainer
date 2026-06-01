@@ -76,6 +76,9 @@ namespace WordsTrainer.Infrastructure.Data
                 .HasIndex(x => new { x.UserId, x.ConceptId })
                 .IsUnique();
 
+            modelBuilder.Entity<UserConcept>()
+                .HasIndex(x => new { x.UserId, x.NextReviewAtUtc });
+
             modelBuilder.Entity<AppUser>()
                 .HasOne(x => x.NativeLanguage)
                 .WithMany()
@@ -101,6 +104,10 @@ namespace WordsTrainer.Infrastructure.Data
 
             modelBuilder.Entity<TrainingAnswer>()
                 .HasIndex(x => new { x.UserId, x.AnsweredAtUtc });
+
+            modelBuilder.Entity<TrainingAnswer>()
+                .HasIndex(x => x.AnsweredAtUtc)
+                .IsDescending();
 
             modelBuilder.Entity<TrainingAnswer>()
                 .HasIndex(x => new { x.UserId, x.ConceptId, x.AnsweredAtUtc });
