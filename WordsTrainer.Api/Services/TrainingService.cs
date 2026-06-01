@@ -458,7 +458,7 @@ public class TrainingService
                 !_db.UserConcepts.Any(uc =>
                     uc.UserId == userId &&
                     uc.ConceptId == concept.Id))
-            .OrderByDescending(x => x.LanguageLevel.Order)
+            .OrderBy(x => x.LanguageLevel.Order)
             .ThenBy(x => x.Id)
             .Take(10)
             .ToListAsync();
