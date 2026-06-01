@@ -410,6 +410,8 @@ public class TrainingService
         var items = await _db.UserConcepts
             .AsNoTracking()
             .Include(x => x.Concept)
+                .ThenInclude(x => x.LanguageLevel)
+            .Include(x => x.Concept)
                 .ThenInclude(x => x.ConceptWords)
                     .ThenInclude(x => x.Word)
             .Where(x =>
@@ -530,7 +532,7 @@ public class TrainingService
                 })
                 .ToList(),
             TargetLanguageCode = user.TargetLanguage.Code,
-            TargetLevelCode = concept.LanguageLevel.Code,
+            TargetLevelCode = concept.LanguageLevel?.Code ?? user.LanguageLevel.Code,
             NativeLanguageCode = user.NativeLanguage.Code,
             IsReview = userConcept != null,
             CurrentScore = userConcept?.Score,
