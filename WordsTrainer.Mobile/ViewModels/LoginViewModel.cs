@@ -127,9 +127,9 @@ namespace WordsTrainer.Mobile.ViewModels
                 var window = Application.Current!.Windows[0];
                 window.Page = new NavigationPage(trainingPage);
             }
-            catch (Exception ex)
+            catch
             {
-                ErrorMessage = $"Ошибка входа: {ex.Message}";
+                ErrorMessage = "Не удалось войти. Проверьте подключение и попробуйте ещё раз.";
             }
             finally
             {
@@ -143,15 +143,18 @@ namespace WordsTrainer.Mobile.ViewModels
                 return;
 
             ErrorMessage = "";
-
+            var resultMessage = "If this email is registered, a password reset link has been sent.";
             try
             {
                 IsBusy = true;
 
-                await _apiClient.ForgotPasswordAsync(new ForgotPasswordRequest
+                var result = await _apiClient.ForgotPasswordAsync(new ForgotPasswordRequest
                 {
                     Email = Email.Trim()
                 });
+
+                if(!string.IsNullOrEmpty(result?.Message))
+                    resultMessage = result.Message;
             }
             catch
             {
@@ -162,10 +165,7 @@ namespace WordsTrainer.Mobile.ViewModels
                 IsBusy = false;
             }
 
-            var toast = Toast.Make(
-                "If this email is registered, a password reset link has been sent.",
-                ToastDuration.Short,
-                14);
+            var toast = Toast.Make(resultMessage, ToastDuration.Short, 14);
 
             await toast.Show();
         }

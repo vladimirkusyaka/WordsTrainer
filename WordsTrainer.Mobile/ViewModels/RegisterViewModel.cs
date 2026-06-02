@@ -190,9 +190,9 @@ public class RegisterViewModel : INotifyPropertyChanged
                 Levels.FirstOrDefault(x => x.Code == "A1") ??
                 Levels.FirstOrDefault();
         }
-        catch (Exception ex)
+        catch
         {
-            ErrorMessage = $"Не удалось загрузить данные регистрации: {ex.Message}";
+            ErrorMessage = "Не удалось загрузить данные регистрации. Проверьте подключение и попробуйте ещё раз.";
         }
         finally
         {
@@ -333,9 +333,9 @@ public class RegisterViewModel : INotifyPropertyChanged
 
             Application.Current.Windows[0].Page = new NavigationPage(trainingPage);
         }
-        catch (Exception ex)
+        catch
         {
-            ErrorMessage = $"Ошибка регистрации: {ex.Message}";
+            ErrorMessage = "Не удалось зарегистрироваться. Проверьте данные и попробуйте ещё раз.";
         }
         finally
         {

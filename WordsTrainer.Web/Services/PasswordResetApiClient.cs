@@ -16,16 +16,23 @@ public sealed class PasswordResetApiClient
         ResetPasswordRequest request,
         CancellationToken cancellationToken = default)
     {
-        using var response = await _httpClient.PostAsJsonAsync(
-            "api/auth/reset-password",
-            request,
-            cancellationToken);
+        try
+        {
+            using var response = await _httpClient.PostAsJsonAsync(
+                "api/auth/reset-password",
+                request,
+                cancellationToken);
 
-        var content = await response.Content.ReadFromJsonAsync<AuthMessageResponse>(cancellationToken);
+            var content = await response.Content.ReadFromJsonAsync<AuthMessageResponse>(cancellationToken);
 
-        if (response.IsSuccessStatusCode)
-            return (true, content?.Message ?? "Password changed successfully.");
+            if (response.IsSuccessStatusCode)
+                return (true, content?.Message ?? "Password changed successfully.");
 
-        return (false, content?.Message ?? "Failed to reset password.");
+            return (false, content?.Message ?? "Unable to reset password. Please try again.");
+        }
+        catch
+        {
+            return (false, "Unable to reset password. Please check your connection and try again.");
+        }
     }
 }

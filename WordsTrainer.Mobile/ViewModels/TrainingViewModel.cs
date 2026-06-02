@@ -212,7 +212,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (next == null)
             {
-                ClearQuestion("Unable to load next question.");
+                ClearQuestion("Не удалось загрузить следующее слово. Попробуйте обновить экран.");
                 return;
             }
 
@@ -240,9 +240,9 @@ public class TrainingViewModel : INotifyPropertyChanged
             HasQuestion = true;
             Message = "";
         }
-        catch (Exception)
+        catch
         {
-            ClearQuestion($"⚠ Unable to load next question.");
+            ClearQuestion("Не удалось загрузить следующее слово. Проверьте подключение и попробуйте ещё раз.");
         }
         finally
         {
@@ -294,9 +294,9 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             await LoadStatsAsync();
         }
-        catch (Exception ex)
+        catch
         {
-            Message = $"Ошибка ответа: {ex.Message}";
+            Message = "Не удалось сохранить ответ. Попробуйте ещё раз.";
             CanAnswer = true;
             return;
         }

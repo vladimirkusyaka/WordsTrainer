@@ -116,9 +116,9 @@ public class ExplanationViewModel : INotifyPropertyChanged
             QuestionLevel = response.TargetLevelCode;
             AudioUrl = response.AudioUrl;
         }
-        catch (Exception ex)
+        catch
         {
-            Message = $"Unable to load explanation: {ex.Message}";
+            Message = "Unable to load explanation. Please check your connection and try again.";
         }
         finally
         {
@@ -136,7 +136,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
 
         if (_attemptId == Guid.Empty || _correctWordId == Guid.Empty)
         {
-            Message = "Unable to continue: refresh the API and reload this word.";
+            Message = "Unable to continue. Please return to training and try again.";
             return false;
         }
 
@@ -162,9 +162,9 @@ public class ExplanationViewModel : INotifyPropertyChanged
             _wasSubmitted = true;
             return true;
         }
-        catch (Exception ex)
+        catch
         {
-            Message = $"Unable to continue: {ex.Message}";
+            Message = "Unable to continue. Please check your connection and try again.";
             return false;
         }
         finally
