@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
@@ -44,6 +45,12 @@ namespace WordsTrainer.Mobile.Services
         public async Task<AuthMessageResponse?> ForgotPasswordAsync(ForgotPasswordRequest request)
         {
             var response = await _http.PostAsJsonAsync("/api/auth/forgot-password", request);
+
+            if (response.StatusCode == HttpStatusCode.TooManyRequests)
+                return new AuthMessageResponse()
+                {
+                    Message = "Too many requests. Please try again later."
+                };
 
             if (!response.IsSuccessStatusCode)
                 return null;

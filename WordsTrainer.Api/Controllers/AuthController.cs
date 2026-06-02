@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.RateLimiting;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -116,11 +117,12 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("forgot-password")]
+    [EnableRateLimiting("forgot-password")]
     public async Task<ActionResult<AuthMessageResponse>> ForgotPassword(ForgotPasswordRequest request)
     {
         var response = new AuthMessageResponse
         {
-            Message = "If this email is registered, a password reset link has been sent."
+            Message = "If an account exists for this email, a password reset link has been sent."
         };
 
         var normalizedEmail = NormalizeEmail(request.Email);
