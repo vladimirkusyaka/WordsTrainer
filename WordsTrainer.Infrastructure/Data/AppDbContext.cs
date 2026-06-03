@@ -26,6 +26,7 @@ namespace WordsTrainer.Infrastructure.Data
         public DbSet<TrainingQuestionAttemptOption> TrainingQuestionAttemptOptions => Set<TrainingQuestionAttemptOption>();
         public DbSet<LanguageLevel> LanguageLevels => Set<LanguageLevel>();
         public DbSet<PasswordResetToken> PasswordResetTokens => Set<PasswordResetToken>();
+        public DbSet<ErrorLog> ErrorLogs => Set<ErrorLog>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -192,6 +193,53 @@ namespace WordsTrainer.Infrastructure.Data
                 .WithMany()
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ErrorLog>()
+                .HasIndex(x => x.CreatedAtUtc)
+                .IsDescending();
+
+            modelBuilder.Entity<ErrorLog>()
+                .HasIndex(x => x.UserId);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.Level)
+                .HasMaxLength(32);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.Message)
+                .HasMaxLength(2000);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.ExceptionType)
+                .HasMaxLength(512);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.RequestMethod)
+                .HasMaxLength(16);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.RequestPath)
+                .HasMaxLength(1000);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.QueryString)
+                .HasMaxLength(2000);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.UserId)
+                .HasMaxLength(64);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.RemoteIp)
+                .HasMaxLength(64);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.UserAgent)
+                .HasMaxLength(1000);
+
+            modelBuilder.Entity<ErrorLog>()
+                .Property(x => x.TraceId)
+                .HasMaxLength(128);
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using WordsTrainer.Api.Abstractions;
+using WordsTrainer.Api.Middleware;
 using WordsTrainer.Api.Security;
 using WordsTrainer.Api.Services;
 using WordsTrainer.Infrastructure.Data;
@@ -162,6 +163,8 @@ app.UseHttpsRedirection();
 app.UseRateLimiter();
 
 app.UseCors();
+
+app.UseMiddleware<ErrorLoggingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
