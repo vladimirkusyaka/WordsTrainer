@@ -167,8 +167,8 @@ namespace WordsTrainer.Mobile.ViewModels
                     Email = Email.Trim()
                 });
 
-                if(!string.IsNullOrEmpty(result?.Message))
-                    resultMessage = result.Message;
+                if (result?.Message == "forgot.too.many")
+                    resultMessage = _texts.T(result.Message);
             }
             catch
             {

@@ -4,7 +4,6 @@ using System.Windows.Input;
 using WordsTrainer.Contracts.Training;
 using WordsTrainer.Mobile.Pages;
 using WordsTrainer.Mobile.Services;
-using static System.Net.Mime.MediaTypeNames;
 using Application = Microsoft.Maui.Controls.Application;
 
 namespace WordsTrainer.Mobile.ViewModels;
@@ -219,7 +218,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (next.Status != TrainingNextStatus.Available || next.Question == null)
             {
-                ClearQuestion(GetFriendlyMessage(next.Status, next.Message));
+                ClearQuestion(GetFriendlyMessage(next.Status));
                 return;
             }
 
@@ -436,13 +435,13 @@ public class TrainingViewModel : INotifyPropertyChanged
         OnPropertyChanged(nameof(TrainingCompleteText));
     }
 
-    private string GetFriendlyMessage(TrainingNextStatus status, string? backendMessage)
+    private string GetFriendlyMessage(TrainingNextStatus status)
     {
         return status switch
         {
             TrainingNextStatus.SessionCompleted => _texts.T("session.complete"),
             TrainingNextStatus.NoWordsAvailable => _texts.T("no.words"),
-            _ => backendMessage ?? _texts.T("no.words")
+            _ => _texts.T("load.next.failed")
         };
     }
 }

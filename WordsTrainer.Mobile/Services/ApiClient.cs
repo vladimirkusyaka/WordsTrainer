@@ -49,7 +49,7 @@ namespace WordsTrainer.Mobile.Services
             if (response.StatusCode == HttpStatusCode.TooManyRequests)
                 return new AuthMessageResponse()
                 {
-                    Message = "Too many requests. Please try again later."
+                    Message = "forgot.too.many"
                 };
 
             if (!response.IsSuccessStatusCode)
