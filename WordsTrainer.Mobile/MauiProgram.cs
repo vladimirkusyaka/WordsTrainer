@@ -45,6 +45,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<StartupService>();
 
         builder.Services.AddSingleton<UiTextService>();
+        builder.Services.AddSingleton<TrainingReminderService>();
 
         builder.Services.AddTransient<WelcomePage>();
         builder.Services.AddTransient<WelcomeViewModel>();

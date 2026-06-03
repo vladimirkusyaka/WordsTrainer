@@ -13,6 +13,7 @@ public class TrainingViewModel : INotifyPropertyChanged
     private readonly ApiClient _apiClient;
     private readonly TokenStorage _tokenStorage;
     private readonly UiTextService _texts;
+    private readonly TrainingReminderService _trainingReminderService;
 
     private TrainingQuestionResponse? _currentQuestion;
 
@@ -39,12 +40,16 @@ public class TrainingViewModel : INotifyPropertyChanged
     public string DontKnowText => _texts.T("dont.know");
     public string TrainingCompleteText => _texts.T("training.complete");
 
-    public TrainingViewModel(ApiClient apiClient, TokenStorage tokenStorage,
-    UiTextService texts)
+    public TrainingViewModel(
+        ApiClient apiClient,
+        TokenStorage tokenStorage,
+        UiTextService texts,
+        TrainingReminderService trainingReminderService)
     {
         _apiClient = apiClient;
         _tokenStorage = tokenStorage;
         _texts = texts;
+        _trainingReminderService = trainingReminderService;
 
         AnswerCommand = new Command<TrainingOptionItem>(
     async option => await AnswerAsync(option),
@@ -360,6 +365,9 @@ public class TrainingViewModel : INotifyPropertyChanged
         LearnedTotal = stats.LearnedTotal;
 
         UpdateDailyGoalProgress(stats);
+
+        if (stats.NewConceptLimitReached)
+            await _trainingReminderService.MarkDailyGoalCompletedAsync();
     }
 
     private void UpdateDailyGoalProgress(TrainingStatsResponse stats)

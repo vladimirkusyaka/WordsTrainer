@@ -15,6 +15,7 @@ public class RegisterViewModel : INotifyPropertyChanged
     private readonly ApiClient _apiClient;
     private readonly TokenStorage _tokenStorage;
     private readonly UiTextService _texts;
+    private readonly TrainingReminderService _trainingReminderService;
 
     private int _step = 1;
     private string _email = "";
@@ -27,11 +28,16 @@ public class RegisterViewModel : INotifyPropertyChanged
     private LanguageResponse? _selectedTargetLanguage;
     private LanguageLevelResponse? _selectedLevel;
 
-    public RegisterViewModel(ApiClient apiClient, TokenStorage tokenStorage, UiTextService texts)
+    public RegisterViewModel(
+        ApiClient apiClient,
+        TokenStorage tokenStorage,
+        UiTextService texts,
+        TrainingReminderService trainingReminderService)
     {
         _apiClient = apiClient;
         _tokenStorage = tokenStorage;
         _texts = texts;
+        _trainingReminderService = trainingReminderService;
 
         NextStepCommand = new Command(NextStep, () => !IsBusy);
         PreviousStepCommand = new Command(PreviousStep, () => !IsBusy);
@@ -351,6 +357,7 @@ public class RegisterViewModel : INotifyPropertyChanged
             }
 
             await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
+            await _trainingReminderService.ScheduleDailyReminderAsync(skipToday: true);
 
             var trainingPage = Application.Current!.Handler!.MauiContext!.Services
     .GetRequiredService<TrainingPage>();

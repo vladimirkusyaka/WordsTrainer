@@ -57,7 +57,7 @@
   "register.email.required": "Введите адрес электронной почты.",
   "register.email.invalid": "Введите корректный адрес электронной почты.",
   "register.password.required": "Введите пароль.",
-  "register.password.short": "Пароль должен содержать минимум 6 символов.",
+  "register.password.short": "Пароль должен содержать минимум 8 символов.",
   "register.confirm.required": "Повторите пароль.",
   "register.passwords.mismatch": "Пароли не совпадают.",
   "register.languages.required": "Выберите родной и изучаемый язык.",
@@ -79,5 +79,7 @@
   "welcome.languages": "8 языков",
   "welcome.practice": "Ежедневная практика",
   "get.started": "Начать",
-  "already.have.account": "У меня уже есть аккаунт"
+  "already.have.account": "У меня уже есть аккаунт",
+  "notification.training.title": "Пора потренироваться",
+  "notification.training.message": "Повторите несколько слов сегодня."
 }

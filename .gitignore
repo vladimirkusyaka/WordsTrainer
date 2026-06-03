@@ -1,3 +1,10 @@
+/bin/
+/obj/
+/.vs/
+**/bin/
+**/obj/
+**/.vs/
+
 /WordsTrainer.Mobile/obj/Debug/net10.0-windows10.0.19041.0/win-x64/resizetizer/r/appiconWideTile.scale-200.png
 /WordsTrainer.Mobile/obj/Debug/net10.0-windows10.0.19041.0/win-x64/resizetizer/r/appiconWideTile.scale-400.png
 /WordsTrainer.Mobile/obj/Debug/net10.0-windows10.0.19041.0/win-x64/resizetizer/r/dotnet_bot.scale-100.png

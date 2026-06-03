@@ -17,17 +17,23 @@ namespace WordsTrainer.Mobile.ViewModels
         private readonly ApiClient _apiClient;
         private readonly TokenStorage _tokenStorage;
         private readonly UiTextService _texts;
+        private readonly TrainingReminderService _trainingReminderService;
 
         private string _email = "";
         private string _password = "";
         private string _errorMessage = "";
         private bool _isBusy;
 
-        public LoginViewModel(ApiClient apiClient, TokenStorage tokenStorage, UiTextService texts)
+        public LoginViewModel(
+            ApiClient apiClient,
+            TokenStorage tokenStorage,
+            UiTextService texts,
+            TrainingReminderService trainingReminderService)
         {
             _apiClient = apiClient;
             _tokenStorage = tokenStorage;
             _texts = texts;
+            _trainingReminderService = trainingReminderService;
 
             LoginCommand = new Command(async () => await LoginAsync(), () => !IsBusy);
             ForgotPasswordCommand = new Command(async () => await ForgotPasswordAsync(), () => !IsBusy && CanSubmitForgotPassword);
@@ -132,6 +138,7 @@ namespace WordsTrainer.Mobile.ViewModels
                 }
 
                 await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
+                await _trainingReminderService.ScheduleDailyReminderAsync(skipToday: true);
 
                 var trainingPage = Application.Current!.Handler!.MauiContext!.Services
     .GetRequiredService<TrainingPage>();

@@ -57,7 +57,7 @@
   "register.email.required": "Enter your email address.",
   "register.email.invalid": "Enter a valid email address.",
   "register.password.required": "Enter a password.",
-  "register.password.short": "Password must be at least 6 characters.",
+  "register.password.short": "Password must be at least 8 characters.",
   "register.confirm.required": "Confirm your password.",
   "register.passwords.mismatch": "Passwords do not match.",
   "register.languages.required": "Choose your native and learning languages.",
@@ -79,5 +79,7 @@
   "welcome.languages": "8 Languages",
   "welcome.practice": "Daily Practice",
   "get.started": "Get Started",
-  "already.have.account": "I already have an account"
+  "already.have.account": "I already have an account",
+  "notification.training.title": "Time to train",
+  "notification.training.message": "Practice a few words today."
 }

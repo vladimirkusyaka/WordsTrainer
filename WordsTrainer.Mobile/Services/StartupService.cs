@@ -9,6 +9,7 @@ namespace WordsTrainer.Mobile.Services
     {
         private readonly TokenStorage _tokenStorage;
         private readonly ApiClient _apiClient;
+        private readonly TrainingReminderService _trainingReminderService;
 
         private readonly WelcomePage _welcomePage;
         private readonly LoginPage _loginPage;
@@ -17,12 +18,14 @@ namespace WordsTrainer.Mobile.Services
         public StartupService(
             TokenStorage tokenStorage,
             ApiClient apiClient,
+            TrainingReminderService trainingReminderService,
             WelcomePage welcomePage,
             LoginPage loginPage,
             TrainingPage trainingPage)
         {
             _tokenStorage = tokenStorage;
             _apiClient = apiClient;
+            _trainingReminderService = trainingReminderService;
 
             _welcomePage = welcomePage;
             _loginPage = loginPage;
@@ -46,6 +49,7 @@ namespace WordsTrainer.Mobile.Services
                 return new NavigationPage(_loginPage);
             }
 
+            await _trainingReminderService.ScheduleDailyReminderAsync(skipToday: true);
             await _trainingPage.InitializeAsync();
             return new NavigationPage(_trainingPage);
         }
