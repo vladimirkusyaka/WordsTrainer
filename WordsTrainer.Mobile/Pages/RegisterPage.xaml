@@ -89,7 +89,7 @@
                 </Image>
 
                 <Label
-                Text="Back"
+                Text="{Binding BackText}"
                 FontSize="15"
                 TextColor="{StaticResource WtMutedText}"
                 VerticalTextAlignment="Center" />
@@ -166,7 +166,7 @@
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Email"
+                        Text="{Binding EmailText}"
                         Style="{StaticResource RegistrationFieldLabelStyle}" />
 
                     <Border Style="{StaticResource RegistrationFieldBorderStyle}">
@@ -186,7 +186,7 @@
                             <Entry
                                 Grid.Column="1"
                                 Style="{StaticResource RegistrationEntryStyle}"
-                                Placeholder="your@email.com"
+                                Placeholder="{Binding EmailPlaceholderText}"
                                 Keyboard="Email"
                                 Text="{Binding Email}" />
 
@@ -199,7 +199,7 @@
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Password"
+                        Text="{Binding PasswordText}"
                         Style="{StaticResource RegistrationFieldLabelStyle}" />
 
                     <Border Style="{StaticResource RegistrationFieldBorderStyle}">
@@ -220,7 +220,7 @@
                                 x:Name="PasswordEntry"
                                 Grid.Column="1"
                                 Style="{StaticResource RegistrationEntryStyle}"
-                                Placeholder="Enter your password"
+                                Placeholder="{Binding PasswordPlaceholderText}"
                                 IsPassword="True"
                                 Text="{Binding Password}" />
 
@@ -239,7 +239,7 @@
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        Text="Confirm Password"
+                        Text="{Binding ConfirmPasswordText}"
                         Style="{StaticResource RegistrationFieldLabelStyle}" />
 
                     <Border Style="{StaticResource RegistrationFieldBorderStyle}">
@@ -260,7 +260,7 @@
                                 x:Name="ConfirmPasswordEntry"
                                 Grid.Column="1"
                                 Style="{StaticResource RegistrationEntryStyle}"
-                                Placeholder="Confirm password"
+                                Placeholder="{Binding ConfirmPasswordPlaceholderText}"
                                 IsPassword="True"
                                 Text="{Binding ConfirmPassword}" />
 
@@ -301,7 +301,7 @@
                         </Image>
 
                         <Label
-                            Text="Native language"
+                            Text="{Binding NativeLanguageText}"
                             Style="{StaticResource WtSectionLabelStyle}" />
 
                     </HorizontalStackLayout>
@@ -368,7 +368,7 @@
                         </Image>
 
                         <Label
-                            Text="I want to learn"
+                            Text="{Binding TargetLanguageText}"
                             Style="{StaticResource WtSectionLabelStyle}" />
 
                     </HorizontalStackLayout>
@@ -435,7 +435,7 @@
                         </Image>
 
                         <Label
-                            Text="Your current level"
+                            Text="{Binding CurrentLevelText}"
                             Style="{StaticResource WtSectionLabelStyle}" />
 
                     </HorizontalStackLayout>
@@ -501,7 +501,7 @@
                     <VerticalStackLayout Spacing="18">
 
                         <Label
-                Text="Account summary"
+                Text="{Binding AccountSummaryText}"
                 FontSize="21"
                 FontAttributes="Bold"
                 TextColor="{StaticResource WtForeground}" />
@@ -537,7 +537,7 @@
                     Spacing="2">
 
                                 <Label
-                        Text="Email"
+                        Text="{Binding EmailText}"
                         FontSize="13"
                         TextColor="{StaticResource WtMutedText}" />
 
@@ -563,7 +563,7 @@
 
                             <Label
                     Grid.Row="0"
-                    Text="Native language"
+                    Text="{Binding NativeLanguageText}"
                     FontSize="15"
                     TextColor="{StaticResource WtMutedText}" />
 
@@ -577,7 +577,7 @@
 
                             <Label
                     Grid.Row="1"
-                    Text="Learning"
+                    Text="{Binding LearningText}"
                     FontSize="15"
                     TextColor="{StaticResource WtMutedText}" />
 
@@ -591,7 +591,7 @@
 
                             <Label
                                 Grid.Row="2"
-                                Text="Current level"
+                                Text="{Binding CurrentLevelText}"
                                 FontSize="15"
                                 TextColor="{StaticResource WtMutedText}" 
                                 VerticalTextAlignment="Center" />
@@ -647,7 +647,7 @@
             Margin="0,24,0,10">
 
             <Button
-                Text="Continue"
+                Text="{Binding ContinueText}"
                 IsVisible="{Binding IsStep1}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
@@ -667,7 +667,7 @@
             </Button>
 
             <Button
-                Text="Continue"
+                Text="{Binding ContinueText}"
                 IsVisible="{Binding IsStep2}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
@@ -686,7 +686,7 @@
             </Button>
 
             <Button
-                Text="Create account"
+                Text="{Binding CreateAccountText}"
                 IsVisible="{Binding IsStep3}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
@@ -709,13 +709,13 @@
                 Spacing="4">
 
                 <Label
-                    Text="Already have an account?"
+                    Text="{Binding AlreadyHaveAccountText}"
                     FontSize="16"
                     TextColor="{StaticResource WtMutedText}"
                     VerticalTextAlignment="Center" />
 
                 <Label
-                    Text="Sign in"
+                    Text="{Binding SignInText}"
                     FontSize="16"
                     TextColor="{StaticResource WtPrimary}"
                     VerticalTextAlignment="Center">

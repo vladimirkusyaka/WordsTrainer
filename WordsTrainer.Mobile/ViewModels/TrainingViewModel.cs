@@ -36,6 +36,7 @@ public class TrainingViewModel : INotifyPropertyChanged
     public string NewText => _texts.T("new");
     public string LearnedText => _texts.T("learned");
     public string TranslateWordText => _texts.T("translate.word");
+    public string TrainingTitleText => _texts.T("training.title");
     public string DontKnowText => _texts.T("dont.know");
     public string TrainingCompleteText => _texts.T("training.complete");
 
@@ -212,7 +213,7 @@ public class TrainingViewModel : INotifyPropertyChanged
 
             if (next == null)
             {
-                ClearQuestion("Не удалось загрузить следующее слово. Попробуйте обновить экран.");
+                ClearQuestion(_texts.T("load.next.failed"));
                 return;
             }
 
@@ -242,7 +243,7 @@ public class TrainingViewModel : INotifyPropertyChanged
         }
         catch
         {
-            ClearQuestion("Не удалось загрузить следующее слово. Проверьте подключение и попробуйте ещё раз.");
+            ClearQuestion(_texts.T("load.next.connection.failed"));
         }
         finally
         {
@@ -296,7 +297,7 @@ public class TrainingViewModel : INotifyPropertyChanged
         }
         catch
         {
-            Message = "Не удалось сохранить ответ. Попробуйте ещё раз.";
+            Message = _texts.T("answer.save.failed");
             CanAnswer = true;
             return;
         }
@@ -370,8 +371,8 @@ public class TrainingViewModel : INotifyPropertyChanged
         TrainingProgress = (double)completed / goal;
 
         ProgressText = stats.NewConceptLimitReached
-            ? "Daily goal complete"
-            : $"{completed} of {goal} new words";
+            ? _texts.T("daily.goal.complete")
+            : _texts.Format("daily.goal.progress", completed, goal);
     }
 
     private void ClearQuestion(string message)
@@ -430,6 +431,7 @@ public class TrainingViewModel : INotifyPropertyChanged
         OnPropertyChanged(nameof(NewText));
         OnPropertyChanged(nameof(LearnedText));
         OnPropertyChanged(nameof(TranslateWordText));
+        OnPropertyChanged(nameof(TrainingTitleText));
         OnPropertyChanged(nameof(DontKnowText));
         OnPropertyChanged(nameof(TrainingCompleteText));
     }

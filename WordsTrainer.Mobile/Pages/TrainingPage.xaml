@@ -60,7 +60,7 @@
 
                         <Label
                             Grid.Column="0"
-                            Text="Training"
+                            Text="{Binding TrainingTitleText}"
                             FontSize="24"
                             FontAttributes="Bold"
                             TextColor="{StaticResource WtForeground}"
@@ -90,7 +90,7 @@
                             </Image>
 
                             <Label
-                                Text="Logout"
+                                Text="{Binding LogoutText}"
                                 FontSize="14"
                                 TextColor="{StaticResource WtMutedText}"
                                 VerticalTextAlignment="Center" />
@@ -184,7 +184,7 @@
                                     Style="{StaticResource StatValueStyle}" />
 
                                 <Label
-                                    Text="Today"
+                                    Text="{Binding TodayText}"
                                     Style="{StaticResource StatCaptionStyle}" />
 
                             </VerticalStackLayout>
@@ -214,7 +214,7 @@
                                     Style="{StaticResource StatValueStyle}" />
 
                                 <Label
-                                    Text="Correct"
+                                    Text="{Binding CorrectText}"
                                     Style="{StaticResource StatCaptionStyle}" />
 
                             </VerticalStackLayout>
@@ -252,7 +252,7 @@
                                     Style="{StaticResource StatValueStyle}" />
 
                                 <Label
-                                    Text="New"
+                                    Text="{Binding NewText}"
                                     Style="{StaticResource StatCaptionStyle}" />
 
                             </VerticalStackLayout>
@@ -290,7 +290,7 @@
                                     Style="{StaticResource StatValueStyle}" />
 
                                 <Label
-                                    Text="Learned"
+                                    Text="{Binding LearnedText}"
                                     Style="{StaticResource StatCaptionStyle}" />
 
                             </VerticalStackLayout>
@@ -460,7 +460,7 @@
                             </Border>
 
                             <Label
-                                Text="I don't know this word"
+                                Text="{Binding DontKnowText}"
                                 FontSize="14"
                                 TextColor="{StaticResource WtMutedText}"
                                 VerticalTextAlignment="Center" />

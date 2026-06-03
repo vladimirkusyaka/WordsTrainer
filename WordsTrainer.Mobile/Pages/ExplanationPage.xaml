@@ -41,7 +41,7 @@
             </Image>
 
             <Label
-                Text="Back"
+                Text="{Binding BackText}"
                 FontSize="15"
                 TextColor="{StaticResource WtMutedText}"
                 VerticalTextAlignment="Center" />
@@ -186,7 +186,7 @@
                             </Border>
 
                             <Label
-                                Text="Explanation"
+                                Text="{Binding ExplanationTitleText}"
                                 FontSize="19"
                                 FontAttributes="Bold"
                                 TextColor="{StaticResource WtForeground}"
@@ -233,7 +233,7 @@
             Margin="0,12,0,0">
 
             <Button
-                Text="Got it, continue"
+                Text="{Binding GotItContinueText}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
                 CornerRadius="28"
@@ -252,7 +252,7 @@
             </Button>
 
             <Label
-                Text="This word will be marked for review"
+                Text="{Binding MarkedForReviewText}"
                 FontSize="13"
                 TextColor="{StaticResource WtMutedText}"
                 HorizontalTextAlignment="Center" />

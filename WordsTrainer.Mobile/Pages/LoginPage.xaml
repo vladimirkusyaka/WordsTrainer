@@ -43,7 +43,7 @@
             </Image>
 
             <Label
-                Text="Back"
+                Text="{Binding BackText}"
                 FontSize="15"
                 TextColor="{StaticResource WtMutedText}"
                 VerticalTextAlignment="Center" />
@@ -59,13 +59,13 @@
             Spacing="8">
 
             <Label
-                Text="Welcome back"
+                Text="{Binding WelcomeBackText}"
                 FontSize="30"
                 FontAttributes="Bold"
                 TextColor="{StaticResource WtForeground}" />
 
             <Label
-                Text="Sign in to continue your learning journey"
+                Text="{Binding LoginSubtitleText}"
                 FontSize="17"
                 TextColor="{StaticResource WtMutedText}" />
 
@@ -83,7 +83,7 @@
             <VerticalStackLayout Spacing="8">
 
                 <Label
-                    Text="Email"
+                    Text="{Binding EmailText}"
                     FontSize="15"
                     TextColor="{StaticResource WtForeground}" />
 
@@ -112,7 +112,7 @@
 
                         <Entry
                             Grid.Column="1"
-                            Placeholder="your@email.com"
+                            Placeholder="{Binding EmailPlaceholderText}"
                             Keyboard="Email"
                             Text="{Binding Email}"
                             FontSize="16"
@@ -132,7 +132,7 @@
             <VerticalStackLayout Spacing="8">
 
                 <Label
-                    Text="Password"
+                    Text="{Binding PasswordText}"
                     FontSize="15"
                     TextColor="{StaticResource WtForeground}" />
 
@@ -162,7 +162,7 @@
                         <Entry
                             x:Name="PasswordEntry"
                             Grid.Column="1"
-                            Placeholder="Enter your password"
+                            Placeholder="{Binding PasswordPlaceholderText}"
                             IsPassword="True"
                             Text="{Binding Password}"
                             FontSize="16"
@@ -189,7 +189,7 @@
             </VerticalStackLayout>
 
             <Button
-                Text="Forgot password?"
+                Text="{Binding ForgotPasswordText}"
                 BackgroundColor="Transparent"
                 TextColor="{StaticResource WtPrimary}"
                 FontSize="15"
@@ -225,7 +225,7 @@
             Margin="0,24,0,0">
 
             <Button
-                Text="Sign In"
+                Text="{Binding SignInText}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
                 CornerRadius="28"
@@ -247,13 +247,13 @@
                 Spacing="4">
 
                 <Label
-                    Text="Don't have an account?"
+                    Text="{Binding NoAccountText}"
                     FontSize="16"
                     TextColor="{StaticResource WtMutedText}"
                     VerticalTextAlignment="Center" />
 
                 <Label
-                    Text="Sign up"
+                    Text="{Binding SignUpText}"
                     FontSize="16"
                     FontAttributes="Bold"
                     TextColor="{StaticResource WtPrimary}"

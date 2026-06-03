@@ -65,20 +65,20 @@
                 Spacing="10">
 
                 <Label
-                    Text="WordsTrainer"
+                    Text="{Binding TitleText}"
                     FontSize="32"
                     FontAttributes="Bold"
                     TextColor="{StaticResource WtForeground}"
                     HorizontalTextAlignment="Center" />
 
                 <Label
-                    Text="Master new words every day."
+                    Text="{Binding SubtitleText}"
                     FontSize="18"
                     TextColor="{StaticResource WtMutedText}"
                     HorizontalTextAlignment="Center" />
 
                 <Label
-                    Text="Build your vocabulary, one word at a time."
+                    Text="{Binding DescriptionText}"
                     FontSize="18"
                     TextColor="{StaticResource WtMutedText}"
                     HorizontalTextAlignment="Center" />
@@ -111,7 +111,7 @@
                         </GraphicsView>
 
                         <Label
-                            Text="8 Languages"
+                            Text="{Binding LanguagesText}"
                             FontSize="14"
                             TextColor="{StaticResource WtPrimary}"
                             VerticalTextAlignment="Center" />
@@ -137,7 +137,7 @@
                             Margin="0,-2,0,0" />
 
                         <Label
-                            Text="Daily Practice"
+                            Text="{Binding PracticeText}"
                             FontSize="14"
                             TextColor="{StaticResource WtPrimary}"
                             VerticalTextAlignment="Center" />
@@ -260,7 +260,7 @@
             Spacing="12">
 
             <Button
-                Text="Get Started"
+                Text="{Binding GetStartedText}"
                 Style="{StaticResource WtPrimaryButton}"
                 HeightRequest="56"
                 CornerRadius="28"
@@ -278,7 +278,7 @@
             </Button>
 
             <Button
-                Text="I already have an account"
+                Text="{Binding AlreadyHaveAccountText}"
                 BackgroundColor="Transparent"
                 TextColor="{StaticResource WtMutedText}"
                 FontSize="16"

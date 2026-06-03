@@ -14,6 +14,7 @@ public class RegisterViewModel : INotifyPropertyChanged
 {
     private readonly ApiClient _apiClient;
     private readonly TokenStorage _tokenStorage;
+    private readonly UiTextService _texts;
 
     private int _step = 1;
     private string _email = "";
@@ -26,10 +27,11 @@ public class RegisterViewModel : INotifyPropertyChanged
     private LanguageResponse? _selectedTargetLanguage;
     private LanguageLevelResponse? _selectedLevel;
 
-    public RegisterViewModel(ApiClient apiClient, TokenStorage tokenStorage)
+    public RegisterViewModel(ApiClient apiClient, TokenStorage tokenStorage, UiTextService texts)
     {
         _apiClient = apiClient;
         _tokenStorage = tokenStorage;
+        _texts = texts;
 
         NextStepCommand = new Command(NextStep, () => !IsBusy);
         PreviousStepCommand = new Command(PreviousStep, () => !IsBusy);
@@ -109,21 +111,38 @@ public class RegisterViewModel : INotifyPropertyChanged
 
     public string StepTitle => Step switch
     {
-        1 => "Create your account",
-        2 => "Your learning setup",
-        3 => "Confirm details",
-        _ => "Create account"
+        1 => _texts.T("register.title.1"),
+        2 => _texts.T("register.title.2"),
+        3 => _texts.T("register.title.3"),
+        _ => _texts.T("create.account")
     };
 
     public string StepSubtitle => Step switch
     {
-        1 => "Enter your login details",
-        2 => "Choose your languages and level",
-        3 => "Review and start learning",
+        1 => _texts.T("register.subtitle.1"),
+        2 => _texts.T("register.subtitle.2"),
+        3 => _texts.T("register.subtitle.3"),
         _ => ""
     };
 
-    public string StepCounterText => $"Step {Step} of 3";
+    public string StepCounterText => _texts.Format("register.step", Step);
+
+    public string BackText => _texts.T("back");
+    public string EmailText => _texts.T("email");
+    public string EmailPlaceholderText => _texts.T("email.placeholder");
+    public string PasswordText => _texts.T("password");
+    public string PasswordPlaceholderText => _texts.T("password.placeholder");
+    public string ConfirmPasswordText => _texts.T("confirm.password");
+    public string ConfirmPasswordPlaceholderText => _texts.T("confirm.password.placeholder");
+    public string NativeLanguageText => _texts.T("native.language");
+    public string TargetLanguageText => _texts.T("target.language");
+    public string CurrentLevelText => _texts.T("current.level");
+    public string AccountSummaryText => _texts.T("account.summary");
+    public string LearningText => _texts.T("learning");
+    public string ContinueText => _texts.T("continue");
+    public string CreateAccountText => _texts.T("create.account");
+    public string AlreadyHaveAccountText => _texts.T("already.account");
+    public string SignInText => _texts.T("sign.in");
 
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
@@ -149,7 +168,14 @@ public class RegisterViewModel : INotifyPropertyChanged
     public LanguageResponse? SelectedNativeLanguage
     {
         get => _selectedNativeLanguage;
-        set => SetField(ref _selectedNativeLanguage, value);
+        set
+        {
+            if (SetField(ref _selectedNativeLanguage, value))
+            {
+                _texts.SetLanguage(value?.Code);
+                NotifyLocalizedProperties();
+            }
+        }
     }
 
     public LanguageResponse? SelectedTargetLanguage
@@ -192,7 +218,7 @@ public class RegisterViewModel : INotifyPropertyChanged
         }
         catch
         {
-            ErrorMessage = "Не удалось загрузить данные регистрации. Проверьте подключение и попробуйте ещё раз.";
+            ErrorMessage = _texts.T("register.load.failed");
         }
         finally
         {
@@ -229,37 +255,37 @@ public class RegisterViewModel : INotifyPropertyChanged
 
         if (string.IsNullOrWhiteSpace(email))
         {
-            ErrorMessage = "Введите адрес электронной почты.";
+            ErrorMessage = _texts.T("register.email.required");
             return false;
         }
 
         if (!IsValidEmail(email))
         {
-            ErrorMessage = "Введите корректный адрес электронной почты.";
+            ErrorMessage = _texts.T("register.email.invalid");
             return false;
         }
 
         if (string.IsNullOrWhiteSpace(Password))
         {
-            ErrorMessage = "Введите пароль.";
+            ErrorMessage = _texts.T("register.password.required");
             return false;
         }
 
         if (Password.Length < 6)
         {
-            ErrorMessage = "Пароль должен содержать минимум 6 символов.";
+            ErrorMessage = _texts.T("register.password.short");
             return false;
         }
 
         if (string.IsNullOrWhiteSpace(ConfirmPassword))
         {
-            ErrorMessage = "Повторите пароль.";
+            ErrorMessage = _texts.T("register.confirm.required");
             return false;
         }
 
         if (Password != ConfirmPassword)
         {
-            ErrorMessage = "Пароли не совпадают.";
+            ErrorMessage = _texts.T("register.passwords.mismatch");
             return false;
         }
 
@@ -270,19 +296,19 @@ public class RegisterViewModel : INotifyPropertyChanged
     {
         if (SelectedNativeLanguage == null || SelectedTargetLanguage == null)
         {
-            ErrorMessage = "Выберите родной и изучаемый язык.";
+            ErrorMessage = _texts.T("register.languages.required");
             return false;
         }
 
         if (SelectedNativeLanguage.Id == SelectedTargetLanguage.Id)
         {
-            ErrorMessage = "Родной и изучаемый язык должны отличаться.";
+            ErrorMessage = _texts.T("register.languages.same");
             return false;
         }
 
         if (SelectedLevel == null)
         {
-            ErrorMessage = "Выберите уровень.";
+            ErrorMessage = _texts.T("register.level.required");
             return false;
         }
 
@@ -320,7 +346,7 @@ public class RegisterViewModel : INotifyPropertyChanged
 
             if (response == null || string.IsNullOrWhiteSpace(response.AccessToken))
             {
-                ErrorMessage = "Не удалось зарегистрироваться.";
+                ErrorMessage = _texts.T("register.failed");
                 return;
             }
 
@@ -335,7 +361,7 @@ public class RegisterViewModel : INotifyPropertyChanged
         }
         catch
         {
-            ErrorMessage = "Не удалось зарегистрироваться. Проверьте данные и попробуйте ещё раз.";
+            ErrorMessage = _texts.T("register.failed");
         }
         finally
         {
@@ -400,6 +426,27 @@ public class RegisterViewModel : INotifyPropertyChanged
         OnPropertyChanged(nameof(Step1Color));
         OnPropertyChanged(nameof(Step2Color));
         OnPropertyChanged(nameof(Step3Color));
+    }
+
+    private void NotifyLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(BackText));
+        OnPropertyChanged(nameof(EmailText));
+        OnPropertyChanged(nameof(EmailPlaceholderText));
+        OnPropertyChanged(nameof(PasswordText));
+        OnPropertyChanged(nameof(PasswordPlaceholderText));
+        OnPropertyChanged(nameof(ConfirmPasswordText));
+        OnPropertyChanged(nameof(ConfirmPasswordPlaceholderText));
+        OnPropertyChanged(nameof(NativeLanguageText));
+        OnPropertyChanged(nameof(TargetLanguageText));
+        OnPropertyChanged(nameof(CurrentLevelText));
+        OnPropertyChanged(nameof(AccountSummaryText));
+        OnPropertyChanged(nameof(LearningText));
+        OnPropertyChanged(nameof(ContinueText));
+        OnPropertyChanged(nameof(CreateAccountText));
+        OnPropertyChanged(nameof(AlreadyHaveAccountText));
+        OnPropertyChanged(nameof(SignInText));
+        StepPropertyChanged();
     }
 
     private void OnPropertyChanged([CallerMemberName] string? name = null)

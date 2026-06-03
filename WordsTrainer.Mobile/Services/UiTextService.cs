@@ -1,82 +1,96 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Globalization;
+using System.Reflection;
+using System.Text.Json;
 
 namespace WordsTrainer.Mobile.Services
 {
     public class UiTextService
     {
-        private string _languageCode = "en";
+        private readonly Dictionary<string, Dictionary<string, string>> _localizations;
+        private string _languageCode;
+
+        public UiTextService()
+        {
+            _localizations = LoadLocalizations();
+            _languageCode = ResolveLanguageCode(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
+        }
 
         public void SetLanguage(string? languageCode)
         {
-            _languageCode = string.IsNullOrWhiteSpace(languageCode)
-                ? "en"
-                : languageCode.ToLowerInvariant();
+            _languageCode = ResolveLanguageCode(languageCode);
         }
 
         public string T(string key)
         {
-            return _languageCode switch
+            if (_localizations.TryGetValue(_languageCode, out var current) &&
+                current.TryGetValue(key, out var value))
             {
-                "ru" => Ru.TryGetValue(key, out var ru) ? ru : En.GetValueOrDefault(key, key),
-                "de" => De.TryGetValue(key, out var de) ? de : En.GetValueOrDefault(key, key),
-                _ => En.GetValueOrDefault(key, key)
-            };
+                return value;
+            }
+
+            if (_localizations.TryGetValue("en", out var fallback) &&
+                fallback.TryGetValue(key, out var fallbackValue))
+            {
+                return fallbackValue;
+            }
+
+            return key;
         }
 
-        private static readonly Dictionary<string, string> En = new()
+        public string Format(string key, params object[] args)
         {
-            ["app.title"] = "WordsTrainer",
-            ["app.subtitle"] = "Daily vocabulary practice",
-            ["logout"] = "Logout",
-            ["today"] = "Today",
-            ["correct"] = "Correct",
-            ["new"] = "New",
-            ["learned"] = "Learned",
-            ["translate.word"] = "Translate this word",
-            ["dont.know"] = "I don't know this word",
-            ["training.complete"] = "Training complete",
-            ["correct.answer"] = "Correct!",
-            ["wrong.answer"] = "Correct answer: {0}",
-            ["no.words"] = "No words available for training.",
-            ["session.complete"] = "Great job! You completed today's training."
-        };
+            return string.Format(T(key), args);
+        }
 
-        private static readonly Dictionary<string, string> Ru = new()
+        private string ResolveLanguageCode(string? languageCode)
         {
-            ["app.title"] = "WordsTrainer",
-            ["app.subtitle"] = "Ежедневная тренировка слов",
-            ["logout"] = "Выйти",
-            ["today"] = "Сегодня",
-            ["correct"] = "Верно",
-            ["new"] = "Новые",
-            ["learned"] = "Выучено",
-            ["translate.word"] = "Переведи слово",
-            ["dont.know"] = "Я не знаю это слово",
-            ["training.complete"] = "Тренировка завершена",
-            ["correct.answer"] = "Правильно!",
-            ["wrong.answer"] = "Правильный ответ: {0}",
-            ["no.words"] = "Нет слов для тренировки.",
-            ["session.complete"] = "Отлично! Сегодняшняя тренировка завершена."
-        };
+            if (string.IsNullOrWhiteSpace(languageCode))
+                return "en";
 
-        private static readonly Dictionary<string, string> De = new()
+            var normalized = languageCode.Trim().ToLowerInvariant();
+
+            if (_localizations.ContainsKey(normalized))
+                return normalized;
+
+            var shortCode = normalized.Split('-', '_')[0];
+
+            return _localizations.ContainsKey(shortCode)
+                ? shortCode
+                : "en";
+        }
+
+        private static Dictionary<string, Dictionary<string, string>> LoadLocalizations()
         {
-            ["app.title"] = "WordsTrainer",
-            ["app.subtitle"] = "Tägliches Worttraining",
-            ["logout"] = "Abmelden",
-            ["today"] = "Heute",
-            ["correct"] = "Richtig",
-            ["new"] = "Neu",
-            ["learned"] = "Gelernt",
-            ["translate.word"] = "Übersetze dieses Wort",
-            ["dont.know"] = "Ich kenne dieses Wort nicht",
-            ["training.complete"] = "Training abgeschlossen",
-            ["correct.answer"] = "Richtig!",
-            ["wrong.answer"] = "Richtige Antwort: {0}",
-            ["no.words"] = "Keine Wörter zum Trainieren verfügbar.",
-            ["session.complete"] = "Sehr gut! Dein heutiges Training ist abgeschlossen."
-        };
+            var assembly = Assembly.GetExecutingAssembly();
+            var resources = assembly
+                .GetManifestResourceNames()
+                .Where(x =>
+                    x.Contains(".Resources.Localization.", StringComparison.Ordinal) &&
+                    x.EndsWith(".json", StringComparison.OrdinalIgnoreCase));
+
+            var result = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (var resourceName in resources)
+            {
+                using var stream = assembly.GetManifestResourceStream(resourceName);
+                if (stream == null)
+                    continue;
+
+                var values = JsonSerializer.Deserialize<Dictionary<string, string>>(stream);
+                if (values == null)
+                    continue;
+
+                var languageCode = GetLanguageCodeFromResourceName(resourceName);
+                result[languageCode] = values;
+            }
+
+            return result;
+        }
+
+        private static string GetLanguageCodeFromResourceName(string resourceName)
+        {
+            var fileName = resourceName.Split('.').TakeLast(2).First();
+            return fileName.Trim().ToLowerInvariant();
+        }
     }
 }

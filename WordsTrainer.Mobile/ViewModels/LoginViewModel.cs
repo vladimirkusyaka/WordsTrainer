@@ -16,16 +16,18 @@ namespace WordsTrainer.Mobile.ViewModels
     {
         private readonly ApiClient _apiClient;
         private readonly TokenStorage _tokenStorage;
+        private readonly UiTextService _texts;
 
         private string _email = "";
         private string _password = "";
         private string _errorMessage = "";
         private bool _isBusy;
 
-        public LoginViewModel(ApiClient apiClient, TokenStorage tokenStorage)
+        public LoginViewModel(ApiClient apiClient, TokenStorage tokenStorage, UiTextService texts)
         {
             _apiClient = apiClient;
             _tokenStorage = tokenStorage;
+            _texts = texts;
 
             LoginCommand = new Command(async () => await LoginAsync(), () => !IsBusy);
             ForgotPasswordCommand = new Command(async () => await ForgotPasswordAsync(), () => !IsBusy && CanSubmitForgotPassword);
@@ -88,6 +90,18 @@ namespace WordsTrainer.Mobile.ViewModels
         public ICommand ForgotPasswordCommand { get; }
         public ICommand BackCommand { get; }
 
+        public string BackText => _texts.T("back");
+        public string WelcomeBackText => _texts.T("welcome.back");
+        public string LoginSubtitleText => _texts.T("login.subtitle");
+        public string EmailText => _texts.T("email");
+        public string EmailPlaceholderText => _texts.T("email.placeholder");
+        public string PasswordText => _texts.T("password");
+        public string PasswordPlaceholderText => _texts.T("password.placeholder");
+        public string ForgotPasswordText => _texts.T("forgot.password");
+        public string SignInText => _texts.T("sign.in");
+        public string NoAccountText => _texts.T("no.account");
+        public string SignUpText => _texts.T("sign.up");
+
         private async Task LoginAsync()
         {
             if (IsBusy)
@@ -97,7 +111,7 @@ namespace WordsTrainer.Mobile.ViewModels
 
             if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                ErrorMessage = "Введите email и пароль.";
+                ErrorMessage = _texts.T("login.required");
                 return;
             }
 
@@ -113,7 +127,7 @@ namespace WordsTrainer.Mobile.ViewModels
 
                 if (response == null || string.IsNullOrWhiteSpace(response.AccessToken))
                 {
-                    ErrorMessage = "Неверный email или пароль.";
+                    ErrorMessage = _texts.T("login.failed");
                     return;
                 }
 
@@ -129,7 +143,7 @@ namespace WordsTrainer.Mobile.ViewModels
             }
             catch
             {
-                ErrorMessage = "Не удалось войти. Проверьте подключение и попробуйте ещё раз.";
+                ErrorMessage = _texts.T("login.connection.failed");
             }
             finally
             {
@@ -143,7 +157,7 @@ namespace WordsTrainer.Mobile.ViewModels
                 return;
 
             ErrorMessage = "";
-            var resultMessage = "If this email is registered, a password reset link has been sent.";
+            var resultMessage = _texts.T("forgot.sent");
             try
             {
                 IsBusy = true;

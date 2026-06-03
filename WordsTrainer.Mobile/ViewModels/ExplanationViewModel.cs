@@ -9,6 +9,7 @@ namespace WordsTrainer.Mobile.ViewModels;
 public class ExplanationViewModel : INotifyPropertyChanged
 {
     private readonly ApiClient _apiClient;
+    private readonly UiTextService _texts;
 
     private Guid _attemptId;
     private Guid _correctWordId;
@@ -20,11 +21,17 @@ public class ExplanationViewModel : INotifyPropertyChanged
     private bool _isBusy;
     private bool _wasSubmitted;
 
-    public ExplanationViewModel(ApiClient apiClient)
+    public ExplanationViewModel(ApiClient apiClient, UiTextService texts)
     {
         _apiClient = apiClient;
+        _texts = texts;
         PlayAudioCommand = new Command(async () => await PlayAudioAsync());
     }
+
+    public string BackText => _texts.T("back");
+    public string ExplanationTitleText => _texts.T("explanation.title");
+    public string GotItContinueText => _texts.T("got.it.continue");
+    public string MarkedForReviewText => _texts.T("marked.for.review");
 
     public string TargetWord
     {
@@ -103,7 +110,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
 
             if (response == null)
             {
-                Message = "Explanation not found.";
+                Message = _texts.T("explanation.not.found");
                 return;
             }
 
@@ -118,7 +125,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
         }
         catch
         {
-            Message = "Unable to load explanation. Please check your connection and try again.";
+            Message = _texts.T("explanation.load.failed");
         }
         finally
         {
@@ -136,7 +143,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
 
         if (_attemptId == Guid.Empty || _correctWordId == Guid.Empty)
         {
-            Message = "Unable to continue. Please return to training and try again.";
+            Message = _texts.T("explanation.continue.reload");
             return false;
         }
 
@@ -155,7 +162,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
 
             if (response == null)
             {
-                Message = "Unable to save this word for review.";
+                Message = _texts.T("explanation.save.failed");
                 return false;
             }
 
@@ -164,7 +171,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
         }
         catch
         {
-            Message = "Unable to continue. Please check your connection and try again.";
+            Message = _texts.T("explanation.continue.failed");
             return false;
         }
         finally
@@ -176,8 +183,8 @@ public class ExplanationViewModel : INotifyPropertyChanged
     private async Task PlayAudioAsync()
     {
         Message = string.IsNullOrWhiteSpace(AudioUrl)
-            ? "Audio is not available yet."
-            : "Audio playback will be available soon.";
+            ? _texts.T("audio.not.available")
+            : _texts.T("audio.coming.soon");
 
         await Task.CompletedTask;
     }
