@@ -441,11 +441,8 @@ public class TrainingService
     AppUser user,
     TrainingSession session)
     {
-        var concepts = await _db.Concepts
+        var eligibleConcepts = _db.Concepts
             .AsNoTracking()
-            .Include(x => x.LanguageLevel)
-            .Include(x => x.ConceptWords)
-                .ThenInclude(x => x.Word)
             .Where(concept =>
                 concept.LanguageLevel.IsActive &&
                 concept.LanguageLevel.Order >= user.LanguageLevel.Order)
@@ -457,9 +454,22 @@ public class TrainingService
             .Where(concept =>
                 !_db.UserConcepts.Any(uc =>
                     uc.UserId == userId &&
-                    uc.ConceptId == concept.Id))
-            .OrderBy(x => x.LanguageLevel.Order)
-            .ThenBy(x => x.Id)
+                    uc.ConceptId == concept.Id));
+
+        var nextLevelOrder = await eligibleConcepts
+            .Select(x => (int?)x.LanguageLevel.Order)
+            .OrderBy(x => x)
+            .FirstOrDefaultAsync();
+
+        if (nextLevelOrder == null)
+            return [];
+
+        var concepts = await eligibleConcepts
+            .Include(x => x.LanguageLevel)
+            .Include(x => x.ConceptWords)
+                .ThenInclude(x => x.Word)
+            .Where(x => x.LanguageLevel.Order == nextLevelOrder.Value)
+            .OrderBy(x => x.Id)
             .Take(10)
             .ToListAsync();
 

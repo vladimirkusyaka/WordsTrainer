@@ -9,6 +9,35 @@ namespace WordsTrainer.Tests;
 public class TrainingServiceTests
 {
     [Fact]
+    public async Task GetNextAsync_WhenUserDoesNotExist_ReturnsNoWordsAvailable()
+    {
+        await using var db = CreateDb();
+        var service = new TrainingService(db);
+
+        var result = await service.GetNextAsync(Guid.NewGuid());
+
+        Assert.Equal(TrainingNextStatus.NoWordsAvailable, result.Status);
+        Assert.Equal("User not found.", result.Message);
+        Assert.Null(result.Question);
+    }
+
+    [Fact]
+    public async Task GetNextAsync_WhenNoMatchingConcepts_ReturnsNoWordsAvailable()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+
+        var result = await service.GetNextAsync(seed.User.Id);
+
+        Assert.Equal(TrainingNextStatus.NoWordsAvailable, result.Status);
+        Assert.Equal("No words available for training.", result.Message);
+        Assert.Null(result.Question);
+    }
+
+    [Fact]
     public async Task GetNextAsync_ForB1User_StartsWithB1NewConcept()
     {
         await using var db = CreateDb();
@@ -86,7 +115,7 @@ public class TrainingServiceTests
         await using var db = CreateDb();
         var seed = SeedBaseData(db, userLevelCode: "A1");
 
-        var concept = AddConcept(db, seed, "a1_today", "A1", "heute", "segodnya");
+        AddConcept(db, seed, "a1_today", "A1", "heute", "segodnya");
 
         await db.SaveChangesAsync();
 
@@ -115,11 +144,173 @@ public class TrainingServiceTests
         Assert.Equal(-2, response.ScoreDelta);
 
         var userConcept = await db.UserConcepts
-            .SingleAsync(x => x.UserId == seed.User.Id && x.ConceptId == concept.Id);
+            .SingleAsync(x => x.UserId == seed.User.Id && x.ConceptId == attempt.ConceptId);
 
         Assert.Equal(1, userConcept.TranslationViewCount);
         Assert.Equal(1, userConcept.WrongCount);
         Assert.Equal(0, userConcept.CorrectCount);
+    }
+
+    [Fact]
+    public async Task SubmitAnswerAsync_WhenWrongOptionSelected_StoresWrongAnswerAndSchedulesSoonReview()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+
+        var concept = AddConcept(db, seed, "a1_today", "A1", "heute", "segodnya");
+        AddConcept(db, seed, "a1_store", "A1", "Laden", "magazin");
+        AddConcept(db, seed, "a1_child", "A1", "Kind", "rebenok");
+        AddConcept(db, seed, "a1_big", "A1", "gross", "bolshoy");
+
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+        var next = await service.GetNextAsync(seed.User.Id);
+
+        Assert.NotNull(next.Question);
+
+        var attempt = await db.TrainingQuestionAttempts
+            .Include(x => x.Options)
+            .SingleAsync(x => x.Id == next.Question.AttemptId);
+
+        var wrongOption = attempt.Options.First(x => !x.IsCorrect);
+
+        var response = await service.SubmitAnswerAsync(
+            seed.User.Id,
+            new SubmitTrainingAnswerRequest
+            {
+                AttemptId = attempt.Id,
+                SelectedWordId = wrongOption.WordId,
+                TranslationViewed = false,
+                DurationMs = 3000
+            });
+
+        Assert.NotNull(response);
+        Assert.False(response.IsCorrect);
+        Assert.Equal(-2, response.ScoreDelta);
+        Assert.True(response.NextReviewAtUtc <= DateTime.UtcNow.AddMinutes(11));
+
+        var userConcept = await db.UserConcepts
+            .SingleAsync(x => x.UserId == seed.User.Id && x.ConceptId == attempt.ConceptId);
+
+        Assert.Equal(1, userConcept.WrongCount);
+        Assert.Equal(0, userConcept.CorrectCount);
+        Assert.Equal(0, userConcept.CorrectStreak);
+
+        var answer = await db.TrainingAnswers.SingleAsync();
+        Assert.False(answer.IsCorrect);
+        Assert.True(answer.WasNewConcept);
+        Assert.Equal(wrongOption.TextSnapshot, answer.SelectedAnswer);
+    }
+
+    [Fact]
+    public async Task GetStatsAsync_CountsTodayAnswersAndLearnedConcepts()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+
+        var newConcept = AddConcept(db, seed, "a1_today", "A1", "heute", "segodnya");
+        var reviewConcept = AddConcept(db, seed, "a1_store", "A1", "Laden", "magazin");
+        var learnedConcept = AddConcept(db, seed, "a1_child", "A1", "Kind", "rebenok");
+
+        db.TrainingAnswers.AddRange(
+            new TrainingAnswer
+            {
+                Id = Guid.NewGuid(),
+                UserId = seed.User.Id,
+                ConceptId = newConcept.Id,
+                WasNewConcept = true,
+                IsCorrect = true,
+                AnsweredAtUtc = DateTime.UtcNow.AddMinutes(-10),
+                QuestionText = "q",
+                CorrectAnswer = "a",
+                SelectedAnswer = "a"
+            },
+            new TrainingAnswer
+            {
+                Id = Guid.NewGuid(),
+                UserId = seed.User.Id,
+                ConceptId = reviewConcept.Id,
+                WasNewConcept = false,
+                IsCorrect = false,
+                AnsweredAtUtc = DateTime.UtcNow.AddMinutes(-5),
+                QuestionText = "q",
+                CorrectAnswer = "a",
+                SelectedAnswer = "b"
+            },
+            new TrainingAnswer
+            {
+                Id = Guid.NewGuid(),
+                UserId = seed.User.Id,
+                ConceptId = reviewConcept.Id,
+                WasNewConcept = false,
+                IsCorrect = true,
+                AnsweredAtUtc = DateTime.UtcNow.Date.AddDays(-1).AddHours(12),
+                QuestionText = "old",
+                CorrectAnswer = "a",
+                SelectedAnswer = "a"
+            });
+
+        AddUserConcept(db, seed.User.Id, learnedConcept.Id, nextReviewAtUtc: DateTime.UtcNow.AddDays(30), isLearned: true);
+
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+
+        var stats = await service.GetStatsAsync(seed.User.Id);
+
+        Assert.Equal(2, stats.AnsweredToday);
+        Assert.Equal(1, stats.CorrectToday);
+        Assert.Equal(1, stats.NewCorrectToday);
+        Assert.Equal(1, stats.NewConceptsToday);
+        Assert.Equal(1, stats.ReviewsToday);
+        Assert.Equal(1, stats.LearnedTotal);
+        Assert.Equal(10, stats.NewConceptLimit);
+        Assert.Equal(40, stats.ReviewLimit);
+    }
+
+    [Fact]
+    public async Task GetExplanationByAttemptAsync_ReturnsNativeExplanationAndTargetLevel()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+
+        var concept = AddConcept(db, seed, "a1_house", "A1", "Haus", "dom");
+        var targetWord = concept.ConceptWords
+            .Select(x => x.Word)
+            .Single(x => x.LanguageId == seed.TargetLanguage.Id);
+        targetWord.AudioUrl = "https://example.com/haus.mp3";
+
+        db.ConceptExplanations.Add(new ConceptExplanation
+        {
+            Id = Guid.NewGuid(),
+            ConceptId = concept.Id,
+            Concept = concept,
+            LanguageId = seed.NativeLanguage.Id,
+            Language = seed.NativeLanguage,
+            Text = "A building where people live."
+        });
+
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+        var next = await service.GetNextAsync(seed.User.Id);
+
+        Assert.NotNull(next.Question);
+
+        var explanation = await service.GetExplanationByAttemptAsync(
+            seed.User.Id,
+            next.Question.AttemptId);
+
+        Assert.NotNull(explanation);
+        Assert.Equal(concept.Id, explanation.ConceptId);
+        Assert.Equal("Haus", explanation.TargetWord);
+        Assert.Equal("dom", explanation.NativeTranslation);
+        Assert.Equal("A building where people live.", explanation.Explanation);
+        Assert.Equal("de", explanation.TargetLanguageCode);
+        Assert.Equal("ru", explanation.NativeLanguageCode);
+        Assert.Equal("A1", explanation.TargetLevelCode);
+        Assert.Equal("https://example.com/haus.mp3", explanation.AudioUrl);
     }
 
     private static AppDbContext CreateDb()
@@ -249,7 +440,8 @@ public class TrainingServiceTests
         AppDbContext db,
         Guid userId,
         Guid conceptId,
-        DateTime? nextReviewAtUtc)
+        DateTime? nextReviewAtUtc,
+        bool isLearned = false)
     {
         db.UserConcepts.Add(new UserConcept
         {
@@ -259,7 +451,9 @@ public class TrainingServiceTests
             FirstShownAtUtc = DateTime.UtcNow.AddDays(-1),
             LastShownAtUtc = DateTime.UtcNow.AddDays(-1),
             NextReviewAtUtc = nextReviewAtUtc,
-            Score = 1
+            Score = isLearned ? 10 : 1,
+            IsLearned = isLearned,
+            LearnedAtUtc = isLearned ? DateTime.UtcNow.AddDays(-1) : null
         });
     }
 
