@@ -313,6 +313,61 @@ public class TrainingServiceTests
         Assert.Equal("https://example.com/haus.mp3", explanation.AudioUrl);
     }
 
+    [Fact]
+    public async Task StartSessionAsync_WhenNoActiveSession_CreatesSession()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+
+        var session = await service.StartSessionAsync(seed.User.Id);
+
+        Assert.NotEqual(Guid.Empty, session.Id);
+        Assert.Null(session.FinishedAtUtc);
+        Assert.Equal(10, session.NewConceptLimit);
+        Assert.Equal(40, session.ReviewLimit);
+        Assert.Equal(0, session.AnsweredCount);
+        Assert.Equal(0, session.CorrectCount);
+        Assert.Equal(1, await db.TrainingSessions.CountAsync(x => x.UserId == seed.User.Id));
+    }
+
+    [Fact]
+    public async Task StartSessionAsync_WhenActiveSessionExists_ReusesIt()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+
+        var first = await service.StartSessionAsync(seed.User.Id);
+        var second = await service.StartSessionAsync(seed.User.Id);
+
+        Assert.Equal(first.Id, second.Id);
+        Assert.Equal(1, await db.TrainingSessions.CountAsync(x => x.UserId == seed.User.Id));
+    }
+
+    [Fact]
+    public async Task FinishSessionAsync_MarksActiveSessionFinished_AndCurrentSessionBecomesNull()
+    {
+        await using var db = CreateDb();
+        var seed = SeedBaseData(db, userLevelCode: "A1");
+        await db.SaveChangesAsync();
+
+        var service = new TrainingService(db);
+        var started = await service.StartSessionAsync(seed.User.Id);
+
+        var finished = await service.FinishSessionAsync(seed.User.Id);
+        var current = await service.GetCurrentSessionAsync(seed.User.Id);
+
+        Assert.NotNull(finished);
+        Assert.Equal(started.Id, finished.Id);
+        Assert.NotNull(finished.FinishedAtUtc);
+        Assert.Null(current);
+    }
+
     private static AppDbContext CreateDb()
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
