@@ -1,0 +1,238 @@
+@page "/admin/errors"
+@attribute [Authorize]
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@inject AdminApiClient AdminApi
+
+<PageTitle>Error logs</PageTitle>
+
+<main class="admin-page">
+    <header class="admin-header">
+        <div>
+            <p class="eyebrow">WordsTrainer Admin</p>
+            <h1>Error logs</h1>
+        </div>
+
+        <a class="logout-link" href="/admin/logout">Logout</a>
+    </header>
+
+    <section class="toolbar">
+        <input
+            value="@_search"
+            @oninput="OnSearchChanged"
+            placeholder="Search message, path, user, trace..." />
+        <button type="button" @onclick="SearchAsync">Search</button>
+        <button type="button" class="secondary" @onclick="ClearSearchAsync">Clear</button>
+    </section>
+
+    @if (!string.IsNullOrWhiteSpace(_error))
+    {
+        <div class="error-message">@_error</div>
+    }
+
+    <section class="content-grid">
+        <div class="table-card">
+            <div class="table-summary">
+                <span>@GetSummaryText()</span>
+                @if (_isBusy)
+                {
+                    <span>Loading...</span>
+                }
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Created UTC</th>
+                            <th>Level</th>
+                            <th>Path</th>
+                            <th>Exception</th>
+                            <th>Message</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (_result?.Items.Count > 0)
+                        {
+                            @foreach (var item in _result.Items)
+                            {
+                                <tr class="@GetRowClass(item.Id)">
+                                    <td>@item.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                    <td><span class="level">@item.Level</span></td>
+                                    <td>@(item.RequestPath ?? "-")</td>
+                                    <td>@Shorten(item.ExceptionType, 34)</td>
+                                    <td>@Shorten(item.Message, 72)</td>
+                                    <td>
+                                        <button type="button" class="link-button" @onclick="() => SelectAsync(item.Id)">Details</button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="empty-cell">No errors found.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pager">
+                <button type="button" class="secondary" disabled="@(_page <= 1 || _isBusy)" @onclick="PreviousPageAsync">Previous</button>
+                <span>Page @_page of @TotalPages</span>
+                <button type="button" class="secondary" disabled="@(_page >= TotalPages || _isBusy)" @onclick="NextPageAsync">Next</button>
+            </div>
+        </div>
+
+        <aside class="detail-card">
+            @if (_selected == null)
+            {
+                <div class="empty-detail">
+                    <h2>Select an error</h2>
+                    <p>Open details to inspect request metadata and stack trace.</p>
+                </div>
+            }
+            else
+            {
+                <div class="detail-header">
+                    <h2>@_selected.ExceptionType</h2>
+                    <span>@_selected.CreatedAtUtc.ToString("yyyy-MM-dd HH:mm:ss") UTC</span>
+                </div>
+
+                <dl>
+                    <dt>Message</dt>
+                    <dd>@_selected.Message</dd>
+
+                    <dt>Request</dt>
+                    <dd>@_selected.RequestMethod @_selected.RequestPath@_selected.QueryString</dd>
+
+                    <dt>User</dt>
+                    <dd>@(_selected.UserId ?? "-")</dd>
+
+                    <dt>Remote IP</dt>
+                    <dd>@(_selected.RemoteIp ?? "-")</dd>
+
+                    <dt>Trace</dt>
+                    <dd>@(_selected.TraceId ?? "-")</dd>
+
+                    <dt>User agent</dt>
+                    <dd>@(_selected.UserAgent ?? "-")</dd>
+                </dl>
+
+                <h3>Stack trace</h3>
+                <pre>@(_selected.StackTrace ?? "-")</pre>
+            }
+        </aside>
+    </section>
+</main>
+
+@code {
+    private const int PageSize = 25;
+
+    private ErrorLogListResponse? _result;
+    private ErrorLogDetailResponse? _selected;
+    private bool _isBusy;
+    private string? _error;
+    private string? _search;
+    private int _page = 1;
+
+    private int TotalPages => Math.Max(1, (int)Math.Ceiling((_result?.TotalCount ?? 0) / (double)PageSize));
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+    }
+
+    private async Task LoadAsync()
+    {
+        _isBusy = true;
+        _error = null;
+
+        try
+        {
+            _result = await AdminApi.GetErrorsAsync(_page, PageSize, _search);
+
+            if (_result == null)
+                _error = "Unable to load error logs. Check Admin__ApiKey on Web and API services.";
+        }
+        catch (Exception ex)
+        {
+            _error = ex.Message;
+        }
+        finally
+        {
+            _isBusy = false;
+        }
+    }
+
+    private async Task SelectAsync(Guid id)
+    {
+        _error = null;
+        _selected = await AdminApi.GetErrorAsync(id);
+
+        if (_selected == null)
+            _error = "Unable to load error details.";
+    }
+
+    private void OnSearchChanged(ChangeEventArgs args)
+    {
+        _search = args.Value?.ToString();
+    }
+
+    private async Task SearchAsync()
+    {
+        _page = 1;
+        _selected = null;
+        await LoadAsync();
+    }
+
+    private async Task ClearSearchAsync()
+    {
+        _search = null;
+        _page = 1;
+        _selected = null;
+        await LoadAsync();
+    }
+
+    private async Task PreviousPageAsync()
+    {
+        if (_page <= 1)
+            return;
+
+        _page--;
+        _selected = null;
+        await LoadAsync();
+    }
+
+    private async Task NextPageAsync()
+    {
+        if (_page >= TotalPages)
+            return;
+
+        _page++;
+        _selected = null;
+        await LoadAsync();
+    }
+
+    private string GetSummaryText()
+    {
+        var total = _result?.TotalCount ?? 0;
+        return $"{total} errors";
+    }
+
+    private string GetRowClass(Guid id)
+    {
+        return _selected?.Id == id ? "selected-row" : string.Empty;
+    }
+
+    private static string Shorten(string? text, int maxLength)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return "-";
+
+        return text.Length <= maxLength
+            ? text
+            : text[..maxLength] + "...";
+    }
+}

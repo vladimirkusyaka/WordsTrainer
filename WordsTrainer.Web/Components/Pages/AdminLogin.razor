@@ -1,0 +1,49 @@
+@page "/admin/login"
+@layout EmptyLayout
+
+<PageTitle>Admin login</PageTitle>
+
+<main class="admin-login-page">
+    <section class="login-card">
+        <div class="logo-box">WT</div>
+        <h1>Admin panel</h1>
+        <p>Sign in to view WordsTrainer diagnostics.</p>
+
+        @if (!string.IsNullOrWhiteSpace(Error))
+        {
+            <div class="error-message">@GetErrorText(Error)</div>
+        }
+
+        <form method="post" action="/admin/login">
+            <input type="hidden" name="returnUrl" value="@ReturnUrl" />
+
+            <label for="password">Admin password</label>
+            <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter admin password"
+                autofocus />
+
+            <button type="submit">Sign in</button>
+        </form>
+    </section>
+</main>
+
+@code {
+    [SupplyParameterFromQuery]
+    public string? Error { get; set; }
+
+    [SupplyParameterFromQuery]
+    public string? ReturnUrl { get; set; }
+
+    private static string GetErrorText(string error)
+    {
+        return error switch
+        {
+            "not-configured" => "Admin password is not configured.",
+            _ => "Invalid admin password."
+        };
+    }
+}
