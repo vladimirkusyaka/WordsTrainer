@@ -14,8 +14,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.Cookie.Name = "WordsTrainer.Admin";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.LoginPath = "/admin/login";
         options.AccessDeniedPath = "/admin/login";
+        options.SlidingExpiration = true;
     });
 
 builder.Services.AddAuthorization();
@@ -59,32 +63,55 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseAntiforgery();
 
-app.MapPost("/admin/login", async (HttpContext context, IConfiguration configuration) =>
+app.MapPost("/admin/login", async (
+    HttpContext context,
+    IConfiguration configuration,
+    ILoggerFactory loggerFactory) =>
 {
-    var configuredPassword = configuration["Admin:Password"];
+    var logger = loggerFactory.CreateLogger("AdminLogin");
+    var returnUrl = string.Empty;
 
-    if (string.IsNullOrWhiteSpace(configuredPassword))
-        return Results.Redirect("/admin/login?error=not-configured");
-
-    var form = await context.Request.ReadFormAsync();
-    var password = form["password"].ToString();
-    var returnUrl = form["returnUrl"].ToString();
-
-    if (!string.Equals(password, configuredPassword, StringComparison.Ordinal))
-        return Results.Redirect(BuildLoginUrl(returnUrl, "invalid"));
-
-    var claims = new[]
+    try
     {
-        new Claim(ClaimTypes.Name, "admin"),
-        new Claim(ClaimTypes.Role, "Admin")
-    };
+        var configuredPassword = configuration["Admin:Password"];
 
-    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-    var principal = new ClaimsPrincipal(identity);
+        if (string.IsNullOrWhiteSpace(configuredPassword))
+            return Results.Redirect("/admin/login?error=not-configured");
 
-    await context.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+        var form = await context.Request.ReadFormAsync();
+        var password = form["password"].ToString();
+        returnUrl = form["returnUrl"].ToString();
 
-    return Results.Redirect(GetLocalReturnUrl(returnUrl) ?? "/admin/errors");
+        if (!string.Equals(password, configuredPassword, StringComparison.Ordinal))
+            return Results.Redirect(BuildLoginUrl(returnUrl, "invalid"));
+
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.Name, "admin"),
+            new Claim(ClaimTypes.Role, "Admin")
+        };
+
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+        var properties = new AuthenticationProperties
+        {
+            IsPersistent = true,
+            IssuedUtc = DateTimeOffset.UtcNow,
+            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(8)
+        };
+
+        await context.SignInAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme,
+            principal,
+            properties);
+
+        return Results.Redirect(GetLocalReturnUrl(returnUrl) ?? "/admin/errors");
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Admin login failed.");
+        return Results.Redirect(BuildLoginUrl(returnUrl, "server"));
+    }
 }).DisableAntiforgery();
 
 app.MapGet("/admin/logout", async (HttpContext context) =>

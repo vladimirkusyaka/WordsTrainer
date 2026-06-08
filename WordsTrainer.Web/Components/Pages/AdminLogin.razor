@@ -43,6 +43,7 @@
         return error switch
         {
             "not-configured" => "Admin password is not configured.",
+            "server" => "Unable to sign in. Please check the web service logs.",
             _ => "Invalid admin password."
         };
     }
