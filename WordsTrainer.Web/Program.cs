@@ -61,7 +61,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapPost("/admin/login", async (
+app.MapPost("/admin/sign-in", async (
     HttpContext context,
     IConfiguration configuration,
     ILoggerFactory loggerFactory) =>
