@@ -1,0 +1,3810 @@
+[
+  {
+    "key": "yt_verb_rufen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"rufen\" means \"call\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "rufen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "звать"
+      },
+      {
+        "languageCode": "en",
+        "text": "call"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «rufen» означает «звать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"rufen\" means \"call\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"rufen\" beschreibt diese Handlung oder diesen Zustand: \"call\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_heissen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"heißen\" means \"be called\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heißen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "называться"
+      },
+      {
+        "languageCode": "en",
+        "text": "be called"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «heißen» означает «называться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"heißen\" means \"be called\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"heißen\" beschreibt diese Handlung oder diesen Zustand: \"be called\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_halten",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"halten\" means \"hold\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "halten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "держать"
+      },
+      {
+        "languageCode": "en",
+        "text": "hold"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «halten» означает «держать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"halten\" means \"hold\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"halten\" beschreibt diese Handlung oder diesen Zustand: \"hold\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_lassen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"lassen\" means \"leave; let\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "lassen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "оставлять; позволять"
+      },
+      {
+        "languageCode": "en",
+        "text": "leave; let"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «lassen» означает «оставлять; позволять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"lassen\" means \"leave; let\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"lassen\" beschreibt diese Handlung oder diesen Zustand: \"leave; let\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_gefallen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gefallen\" means \"please; be liked\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gefallen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "нравиться"
+      },
+      {
+        "languageCode": "en",
+        "text": "please; be liked"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gefallen» означает «нравиться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gefallen\" means \"please; be liked\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gefallen\" beschreibt diese Handlung oder diesen Zustand: \"please; be liked\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fallen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fallen\" means \"fall\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fallen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "падать"
+      },
+      {
+        "languageCode": "en",
+        "text": "fall"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fallen» означает «падать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fallen\" means \"fall\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fallen\" beschreibt diese Handlung oder diesen Zustand: \"fall\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_kennen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"kennen\" means \"know; be familiar with\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kennen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "знать"
+      },
+      {
+        "languageCode": "en",
+        "text": "know; be familiar with"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «kennen» означает «знать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"kennen\" means \"know; be familiar with\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"kennen\" beschreibt diese Handlung oder diesen Zustand: \"know; be familiar with\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_ziehen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"ziehen\" means \"pull; move\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "ziehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "тянуть"
+      },
+      {
+        "languageCode": "en",
+        "text": "pull; move"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «ziehen» означает «тянуть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"ziehen\" means \"pull; move\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"ziehen\" beschreibt diese Handlung oder diesen Zustand: \"pull; move\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_denken",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"denken\" means \"think\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "denken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "думать"
+      },
+      {
+        "languageCode": "en",
+        "text": "think"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «denken» означает «думать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"denken\" means \"think\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"denken\" beschreibt diese Handlung oder diesen Zustand: \"think\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_steigen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"steigen\" means \"climb; rise\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "steigen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "подниматься"
+      },
+      {
+        "languageCode": "en",
+        "text": "climb; rise"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «steigen» означает «подниматься». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"steigen\" means \"climb; rise\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"steigen\" beschreibt diese Handlung oder diesen Zustand: \"climb; rise\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_tun",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"tun\" means \"do\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "tun"
+      },
+      {
+        "languageCode": "ru",
+        "text": "делать"
+      },
+      {
+        "languageCode": "en",
+        "text": "do"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «tun» означает «делать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"tun\" means \"do\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"tun\" beschreibt diese Handlung oder diesen Zustand: \"do\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_sterben",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"sterben\" means \"die\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "sterben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "умирать"
+      },
+      {
+        "languageCode": "en",
+        "text": "die"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «sterben» означает «умирать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"sterben\" means \"die\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"sterben\" beschreibt diese Handlung oder diesen Zustand: \"die\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_haengen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"hängen\" means \"hang\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "hängen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "висеть"
+      },
+      {
+        "languageCode": "en",
+        "text": "hang"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «hängen» означает «висеть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"hängen\" means \"hang\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"hängen\" beschreibt diese Handlung oder diesen Zustand: \"hang\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_werden",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"werden\" means \"become\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "werden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "становиться"
+      },
+      {
+        "languageCode": "en",
+        "text": "become"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «werden» означает «становиться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"werden\" means \"become\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"werden\" beschreibt diese Handlung oder diesen Zustand: \"become\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_springen",
+    "level": "A1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"springen\" means \"jump\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "springen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "прыгать"
+      },
+      {
+        "languageCode": "en",
+        "text": "jump"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «springen» означает «прыгать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"springen\" means \"jump\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"springen\" beschreibt diese Handlung oder diesen Zustand: \"jump\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_treten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"treten\" means \"step; kick\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "treten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "наступать; шагать"
+      },
+      {
+        "languageCode": "en",
+        "text": "step; kick"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «treten» означает «наступать; шагать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"treten\" means \"step; kick\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"treten\" beschreibt diese Handlung oder diesen Zustand: \"step; kick\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_laden",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"laden\" means \"load; invite\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "laden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "загружать; накрывать стол"
+      },
+      {
+        "languageCode": "en",
+        "text": "load; invite"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «laden» означает «загружать; накрывать стол». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"laden\" means \"load; invite\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"laden\" beschreibt diese Handlung oder diesen Zustand: \"load; invite\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_raten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"raten\" means \"advise; guess\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "raten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "советовать; угадывать"
+      },
+      {
+        "languageCode": "en",
+        "text": "advise; guess"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «raten» означает «советовать; угадывать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"raten\" means \"advise; guess\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"raten\" beschreibt diese Handlung oder diesen Zustand: \"advise; guess\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_braten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"braten\" means \"fry; roast\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "braten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "жарить"
+      },
+      {
+        "languageCode": "en",
+        "text": "fry; roast"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «braten» означает «жарить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"braten\" means \"fry; roast\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"braten\" beschreibt diese Handlung oder diesen Zustand: \"fry; roast\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_bekommen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"bekommen\" means \"receive; get\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bekommen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "получать"
+      },
+      {
+        "languageCode": "en",
+        "text": "receive; get"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «bekommen» означает «получать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"bekommen\" means \"receive; get\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"bekommen\" beschreibt diese Handlung oder diesen Zustand: \"receive; get\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_brennen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"brennen\" means \"burn\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "brennen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "гореть"
+      },
+      {
+        "languageCode": "en",
+        "text": "burn"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «brennen» означает «гореть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"brennen\" means \"burn\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"brennen\" beschreibt diese Handlung oder diesen Zustand: \"burn\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_luegen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"lügen\" means \"lie\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "lügen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "лгать"
+      },
+      {
+        "languageCode": "en",
+        "text": "lie"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «lügen» означает «лгать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"lügen\" means \"lie\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"lügen\" beschreibt diese Handlung oder diesen Zustand: \"lie\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_reiten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"reiten\" means \"ride a horse\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "reiten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ездить верхом"
+      },
+      {
+        "languageCode": "en",
+        "text": "ride a horse"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «reiten» означает «ездить верхом». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"reiten\" means \"ride a horse\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"reiten\" beschreibt diese Handlung oder diesen Zustand: \"ride a horse\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_bieten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"bieten\" means \"offer\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bieten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "предлагать"
+      },
+      {
+        "languageCode": "en",
+        "text": "offer"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «bieten» означает «предлагать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"bieten\" means \"offer\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"bieten\" beschreibt diese Handlung oder diesen Zustand: \"offer\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_riechen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"riechen\" means \"smell\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "riechen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "пахнуть; чувствовать запах"
+      },
+      {
+        "languageCode": "en",
+        "text": "smell"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «riechen» означает «пахнуть; чувствовать запах». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"riechen\" means \"smell\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"riechen\" beschreibt diese Handlung oder diesen Zustand: \"smell\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schweigen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schweigen\" means \"be silent\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schweigen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "молчать"
+      },
+      {
+        "languageCode": "en",
+        "text": "be silent"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schweigen» означает «молчать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schweigen\" means \"be silent\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schweigen\" beschreibt diese Handlung oder diesen Zustand: \"be silent\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schneiden",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schneiden\" means \"cut\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schneiden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "резать"
+      },
+      {
+        "languageCode": "en",
+        "text": "cut"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schneiden» означает «резать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schneiden\" means \"cut\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schneiden\" beschreibt diese Handlung oder diesen Zustand: \"cut\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_verbringen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"verbringen\" means \"spend time\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "verbringen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "проводить время"
+      },
+      {
+        "languageCode": "en",
+        "text": "spend time"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «verbringen» означает «проводить время». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"verbringen\" means \"spend time\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"verbringen\" beschreibt diese Handlung oder diesen Zustand: \"spend time\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_verzeihen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"verzeihen\" means \"forgive\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "verzeihen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "прощать"
+      },
+      {
+        "languageCode": "en",
+        "text": "forgive"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «verzeihen» означает «прощать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"verzeihen\" means \"forgive\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"verzeihen\" beschreibt diese Handlung oder diesen Zustand: \"forgive\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_rennen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"rennen\" means \"run\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "rennen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бегать"
+      },
+      {
+        "languageCode": "en",
+        "text": "run"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «rennen» означает «бегать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"rennen\" means \"run\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"rennen\" beschreibt diese Handlung oder diesen Zustand: \"run\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_streiten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"streiten\" means \"argue; quarrel\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "streiten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "спорить; ссориться"
+      },
+      {
+        "languageCode": "en",
+        "text": "argue; quarrel"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «streiten» означает «спорить; ссориться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"streiten\" means \"argue; quarrel\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"streiten\" beschreibt diese Handlung oder diesen Zustand: \"argue; quarrel\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_nennen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"nennen\" means \"name; call\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "nennen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "называть"
+      },
+      {
+        "languageCode": "en",
+        "text": "name; call"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «nennen» означает «называть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"nennen\" means \"name; call\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"nennen\" beschreibt diese Handlung oder diesen Zustand: \"name; call\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_klingen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"klingen\" means \"sound\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "klingen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "звучать"
+      },
+      {
+        "languageCode": "en",
+        "text": "sound"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «klingen» означает «звучать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"klingen\" means \"sound\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"klingen\" beschreibt diese Handlung oder diesen Zustand: \"sound\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_bitten",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"bitten\" means \"ask; request\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bitten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "просить"
+      },
+      {
+        "languageCode": "en",
+        "text": "ask; request"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «bitten» означает «просить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"bitten\" means \"ask; request\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"bitten\" beschreibt diese Handlung oder diesen Zustand: \"ask; request\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_brechen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"brechen\" means \"break\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "brechen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ломать"
+      },
+      {
+        "languageCode": "en",
+        "text": "break"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «brechen» означает «ломать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"brechen\" means \"break\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"brechen\" beschreibt diese Handlung oder diesen Zustand: \"break\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_werfen",
+    "level": "A2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"werfen\" means \"throw\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "werfen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бросать"
+      },
+      {
+        "languageCode": "en",
+        "text": "throw"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «werfen» означает «бросать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"werfen\" means \"throw\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"werfen\" beschreibt diese Handlung oder diesen Zustand: \"throw\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_geschehen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"geschehen\" means \"happen; occur\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "geschehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "происходить"
+      },
+      {
+        "languageCode": "en",
+        "text": "happen; occur"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «geschehen» означает «происходить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"geschehen\" means \"happen; occur\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"geschehen\" beschreibt diese Handlung oder diesen Zustand: \"happen; occur\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_blasen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"blasen\" means \"blow\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "blasen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "дуть"
+      },
+      {
+        "languageCode": "en",
+        "text": "blow"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «blasen» означает «дуть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"blasen\" means \"blow\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"blasen\" beschreibt diese Handlung oder diesen Zustand: \"blow\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_stossen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"stoßen\" means \"push; bump\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "stoßen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "толкать; сталкиваться"
+      },
+      {
+        "languageCode": "en",
+        "text": "push; bump"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «stoßen» означает «толкать; сталкиваться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"stoßen\" means \"push; bump\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"stoßen\" beschreibt diese Handlung oder diesen Zustand: \"push; bump\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fressen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fressen\" means \"eat; feed\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fressen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "есть (о животных)"
+      },
+      {
+        "languageCode": "en",
+        "text": "eat; feed"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fressen» означает «есть (о животных)». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fressen\" means \"eat; feed\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fressen\" beschreibt diese Handlung oder diesen Zustand: \"eat; feed\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schlagen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schlagen\" means \"hit; beat\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schlagen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бить; ударять"
+      },
+      {
+        "languageCode": "en",
+        "text": "hit; beat"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schlagen» означает «бить; ударять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schlagen\" means \"hit; beat\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schlagen\" beschreibt diese Handlung oder diesen Zustand: \"hit; beat\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_empfangen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"empfangen\" means \"receive; welcome\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "empfangen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "получать; принимать"
+      },
+      {
+        "languageCode": "en",
+        "text": "receive; welcome"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «empfangen» означает «получать; принимать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"empfangen\" means \"receive; welcome\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"empfangen\" beschreibt diese Handlung oder diesen Zustand: \"receive; welcome\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fangen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fangen\" means \"catch\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fangen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ловить"
+      },
+      {
+        "languageCode": "en",
+        "text": "catch"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fangen» означает «ловить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fangen\" means \"catch\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fangen\" beschreibt diese Handlung oder diesen Zustand: \"catch\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_backen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"backen\" means \"bake\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "backen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "печь"
+      },
+      {
+        "languageCode": "en",
+        "text": "bake"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «backen» означает «печь». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"backen\" means \"bake\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"backen\" beschreibt diese Handlung oder diesen Zustand: \"bake\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fliessen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fließen\" means \"flow\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fließen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "течь"
+      },
+      {
+        "languageCode": "en",
+        "text": "flow"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fließen» означает «течь». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fließen\" means \"flow\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fließen\" beschreibt diese Handlung oder diesen Zustand: \"flow\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schiessen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schießen\" means \"shoot\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schießen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стрелять"
+      },
+      {
+        "languageCode": "en",
+        "text": "shoot"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schießen» означает «стрелять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schießen\" means \"shoot\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schießen\" beschreibt diese Handlung oder diesen Zustand: \"shoot\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_beissen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"beißen\" means \"bite\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "beißen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "кусать"
+      },
+      {
+        "languageCode": "en",
+        "text": "bite"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «beißen» означает «кусать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"beißen\" means \"bite\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"beißen\" beschreibt diese Handlung oder diesen Zustand: \"bite\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_greifen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"greifen\" means \"grab; reach\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "greifen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "хватать"
+      },
+      {
+        "languageCode": "en",
+        "text": "grab; reach"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «greifen» означает «хватать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"greifen\" means \"grab; reach\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"greifen\" beschreibt diese Handlung oder diesen Zustand: \"grab; reach\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_bewegen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"bewegen\" means \"move; affect emotionally\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bewegen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "двигать; трогать эмоционально"
+      },
+      {
+        "languageCode": "en",
+        "text": "move; affect emotionally"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «bewegen» означает «двигать; трогать эмоционально». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"bewegen\" means \"move; affect emotionally\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"bewegen\" beschreibt diese Handlung oder diesen Zustand: \"move; affect emotionally\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_betruegen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"betrügen\" means \"deceive; cheat\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "betrügen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "обманывать"
+      },
+      {
+        "languageCode": "en",
+        "text": "deceive; cheat"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «betrügen» означает «обманывать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"betrügen\" means \"deceive; cheat\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"betrügen\" beschreibt diese Handlung oder diesen Zustand: \"deceive; cheat\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fliehen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fliehen\" means \"flee\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fliehen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бежать; спасаться бегством"
+      },
+      {
+        "languageCode": "en",
+        "text": "flee"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fliehen» означает «бежать; спасаться бегством». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fliehen\" means \"flee\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fliehen\" beschreibt diese Handlung oder diesen Zustand: \"flee\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_treiben",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"treiben\" means \"drive; propel\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "treiben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "гнать; приводить в движение"
+      },
+      {
+        "languageCode": "en",
+        "text": "drive; propel"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «treiben» означает «гнать; приводить в движение». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"treiben\" means \"drive; propel\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"treiben\" beschreibt diese Handlung oder diesen Zustand: \"drive; propel\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_scheinen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"scheinen\" means \"shine; seem\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "scheinen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "светить; казаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "shine; seem"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «scheinen» означает «светить; казаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"scheinen\" means \"shine; seem\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"scheinen\" beschreibt diese Handlung oder diesen Zustand: \"shine; seem\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_heben",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"heben\" means \"lift; raise\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "heben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "поднимать"
+      },
+      {
+        "languageCode": "en",
+        "text": "lift; raise"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «heben» означает «поднимать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"heben\" means \"lift; raise\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"heben\" beschreibt diese Handlung oder diesen Zustand: \"lift; raise\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_giessen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gießen\" means \"pour; water\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gießen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "лить; поливать"
+      },
+      {
+        "languageCode": "en",
+        "text": "pour; water"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gießen» означает «лить; поливать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gießen\" means \"pour; water\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gießen\" beschreibt diese Handlung oder diesen Zustand: \"pour; water\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_wiegen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"wiegen\" means \"weigh\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "wiegen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "взвешивать"
+      },
+      {
+        "languageCode": "en",
+        "text": "weigh"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «wiegen» означает «взвешивать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"wiegen\" means \"weigh\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"wiegen\" beschreibt diese Handlung oder diesen Zustand: \"weigh\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_senden",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"senden\" means \"send\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "senden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "отправлять"
+      },
+      {
+        "languageCode": "en",
+        "text": "send"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «senden» означает «отправлять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"senden\" means \"send\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"senden\" beschreibt diese Handlung oder diesen Zustand: \"send\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schieben",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schieben\" means \"push; shove\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schieben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "толкать"
+      },
+      {
+        "languageCode": "en",
+        "text": "push; shove"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schieben» означает «толкать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schieben\" means \"push; shove\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schieben\" beschreibt diese Handlung oder diesen Zustand: \"push; shove\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_biegen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"biegen\" means \"bend\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "biegen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "гнуть"
+      },
+      {
+        "languageCode": "en",
+        "text": "bend"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «biegen» означает «гнуть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"biegen\" means \"bend\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"biegen\" beschreibt diese Handlung oder diesen Zustand: \"bend\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schreien",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schreien\" means \"shout; scream\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schreien"
+      },
+      {
+        "languageCode": "ru",
+        "text": "кричать"
+      },
+      {
+        "languageCode": "en",
+        "text": "shout; scream"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schreien» означает «кричать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schreien\" means \"shout; scream\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schreien\" beschreibt diese Handlung oder diesen Zustand: \"shout; scream\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_geniessen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"genießen\" means \"enjoy\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "genießen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "наслаждаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "enjoy"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «genießen» означает «наслаждаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"genießen\" means \"enjoy\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"genießen\" beschreibt diese Handlung oder diesen Zustand: \"enjoy\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_frieren",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"frieren\" means \"freeze; feel cold\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "frieren"
+      },
+      {
+        "languageCode": "ru",
+        "text": "мёрзнуть; замерзать"
+      },
+      {
+        "languageCode": "en",
+        "text": "freeze; feel cold"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «frieren» означает «мёрзнуть; замерзать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"frieren\" means \"freeze; feel cold\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"frieren\" beschreibt diese Handlung oder diesen Zustand: \"freeze; feel cold\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_leiden",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"leiden\" means \"suffer\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "leiden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "страдать"
+      },
+      {
+        "languageCode": "en",
+        "text": "suffer"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «leiden» означает «страдать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"leiden\" means \"suffer\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"leiden\" beschreibt diese Handlung oder diesen Zustand: \"suffer\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_sinken",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"sinken\" means \"sink\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "sinken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "тонуть; снижаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "sink"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «sinken» означает «тонуть; снижаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"sinken\" means \"sink\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"sinken\" beschreibt diese Handlung oder diesen Zustand: \"sink\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_gelten",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gelten\" means \"apply; be valid\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gelten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "считаться; иметь силу"
+      },
+      {
+        "languageCode": "en",
+        "text": "apply; be valid"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gelten» означает «считаться; иметь силу». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gelten\" means \"apply; be valid\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gelten\" beschreibt diese Handlung oder diesen Zustand: \"apply; be valid\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_stechen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"stechen\" means \"sting; prick\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "stechen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "жалить; колоть"
+      },
+      {
+        "languageCode": "en",
+        "text": "sting; prick"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «stechen» означает «жалить; колоть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"stechen\" means \"sting; prick\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"stechen\" beschreibt diese Handlung oder diesen Zustand: \"sting; prick\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_erschrecken",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"erschrecken\" means \"be startled; frighten\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "erschrecken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "испугаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "be startled; frighten"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «erschrecken» означает «испугаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"erschrecken\" means \"be startled; frighten\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"erschrecken\" beschreibt diese Handlung oder diesen Zustand: \"be startled; frighten\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_empfinden",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"empfinden\" means \"feel; perceive\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "empfinden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ощущать; чувствовать"
+      },
+      {
+        "languageCode": "en",
+        "text": "feel; perceive"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «empfinden» означает «ощущать; чувствовать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"empfinden\" means \"feel; perceive\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"empfinden\" beschreibt diese Handlung oder diesen Zustand: \"feel; perceive\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_verschwinden",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"verschwinden\" means \"disappear\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "verschwinden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "исчезать"
+      },
+      {
+        "languageCode": "en",
+        "text": "disappear"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «verschwinden» означает «исчезать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"verschwinden\" means \"disappear\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"verschwinden\" beschreibt diese Handlung oder diesen Zustand: \"disappear\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_stinken",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"stinken\" means \"stink\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "stinken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "вонять"
+      },
+      {
+        "languageCode": "en",
+        "text": "stink"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «stinken» означает «вонять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"stinken\" means \"stink\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"stinken\" beschreibt diese Handlung oder diesen Zustand: \"stink\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_zwingen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"zwingen\" means \"force; compel\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "zwingen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "заставлять"
+      },
+      {
+        "languageCode": "en",
+        "text": "force; compel"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «zwingen» означает «заставлять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"zwingen\" means \"force; compel\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"zwingen\" beschreibt diese Handlung oder diesen Zustand: \"force; compel\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_stehlen",
+    "level": "B1",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"stehlen\" means \"steal\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "stehlen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "красть"
+      },
+      {
+        "languageCode": "en",
+        "text": "steal"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «stehlen» означает «красть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"stehlen\" means \"steal\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"stehlen\" beschreibt diese Handlung oder diesen Zustand: \"steal\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_hauen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"hauen\" means \"hit; strike\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "hauen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бить; ударять"
+      },
+      {
+        "languageCode": "en",
+        "text": "hit; strike"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «hauen» означает «бить; ударять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"hauen\" means \"hit; strike\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"hauen\" beschreibt diese Handlung oder diesen Zustand: \"hit; strike\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_genesen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"genesen\" means \"recover; heal\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "genesen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "выздоравливать"
+      },
+      {
+        "languageCode": "en",
+        "text": "recover; heal"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «genesen» означает «выздоравливать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"genesen\" means \"recover; heal\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"genesen\" beschreibt diese Handlung oder diesen Zustand: \"recover; heal\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_graben",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"graben\" means \"dig\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "graben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "копать"
+      },
+      {
+        "languageCode": "en",
+        "text": "dig"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «graben» означает «копать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"graben\" means \"dig\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"graben\" beschreibt diese Handlung oder diesen Zustand: \"dig\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_geraten",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"geraten\" means \"get into; end up\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "geraten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "попадать; оказываться"
+      },
+      {
+        "languageCode": "en",
+        "text": "get into; end up"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «geraten» означает «попадать; оказываться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"geraten\" means \"get into; end up\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"geraten\" beschreibt diese Handlung oder diesen Zustand: \"get into; end up\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schleichen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schleichen\" means \"sneak; creep\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schleichen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "красться"
+      },
+      {
+        "languageCode": "en",
+        "text": "sneak; creep"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schleichen» означает «красться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schleichen\" means \"sneak; creep\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schleichen\" beschreibt diese Handlung oder diesen Zustand: \"sneak; creep\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_gleichen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gleichen\" means \"resemble; be like\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gleichen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "быть похожим"
+      },
+      {
+        "languageCode": "en",
+        "text": "resemble; be like"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gleichen» означает «быть похожим». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gleichen\" means \"resemble; be like\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gleichen\" beschreibt diese Handlung oder diesen Zustand: \"resemble; be like\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_kneifen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"kneifen\" means \"pinch\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kneifen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "щипать; сжимать"
+      },
+      {
+        "languageCode": "en",
+        "text": "pinch"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «kneifen» означает «щипать; сжимать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"kneifen\" means \"pinch\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"kneifen\" beschreibt diese Handlung oder diesen Zustand: \"pinch\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_pfeifen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"pfeifen\" means \"whistle\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "pfeifen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "свистеть"
+      },
+      {
+        "languageCode": "en",
+        "text": "whistle"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «pfeifen» означает «свистеть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"pfeifen\" means \"whistle\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"pfeifen\" beschreibt diese Handlung oder diesen Zustand: \"whistle\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_saufen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"saufen\" means \"booze; drink heavily\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "saufen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "пить (грубо или о животных)"
+      },
+      {
+        "languageCode": "en",
+        "text": "booze; drink heavily"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «saufen» означает «пить (грубо или о животных)». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"saufen\" means \"booze; drink heavily\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"saufen\" beschreibt diese Handlung oder diesen Zustand: \"booze; drink heavily\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_gleiten",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gleiten\" means \"glide; slide\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gleiten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "скользить"
+      },
+      {
+        "languageCode": "en",
+        "text": "glide; slide"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gleiten» означает «скользить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gleiten\" means \"glide; slide\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gleiten\" beschreibt diese Handlung oder diesen Zustand: \"glide; slide\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schleifen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schleifen\" means \"grind; drag\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schleifen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "шлифовать; тащить"
+      },
+      {
+        "languageCode": "en",
+        "text": "grind; drag"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schleifen» означает «шлифовать; тащить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schleifen\" means \"grind; drag\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schleifen\" beschreibt diese Handlung oder diesen Zustand: \"grind; drag\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_kriechen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"kriechen\" means \"crawl; creep\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "kriechen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "ползти"
+      },
+      {
+        "languageCode": "en",
+        "text": "crawl; creep"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «kriechen» означает «ползти». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"kriechen\" means \"crawl; creep\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"kriechen\" beschreibt diese Handlung oder diesen Zustand: \"crawl; creep\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_erloeschen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"erlöschen\" means \"go out; expire\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "erlöschen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "гаснуть"
+      },
+      {
+        "languageCode": "en",
+        "text": "go out; expire"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «erlöschen» означает «гаснуть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"erlöschen\" means \"go out; expire\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"erlöschen\" beschreibt diese Handlung oder diesen Zustand: \"go out; expire\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_saugen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"saugen\" means \"suck; vacuum\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "saugen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "всасывать; пылесосить"
+      },
+      {
+        "languageCode": "en",
+        "text": "suck; vacuum"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «saugen» означает «всасывать; пылесосить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"saugen\" means \"suck; vacuum\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"saugen\" beschreibt diese Handlung oder diesen Zustand: \"suck; vacuum\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_melken",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"melken\" means \"milk\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "melken"
+      },
+      {
+        "languageCode": "ru",
+        "text": "доить"
+      },
+      {
+        "languageCode": "en",
+        "text": "milk"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «melken» означает «доить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"melken\" means \"milk\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"melken\" beschreibt diese Handlung oder diesen Zustand: \"milk\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_weisen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"weisen\" means \"point; indicate\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "weisen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "показывать; указывать"
+      },
+      {
+        "languageCode": "en",
+        "text": "point; indicate"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «weisen» означает «показывать; указывать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"weisen\" means \"point; indicate\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"weisen\" beschreibt diese Handlung oder diesen Zustand: \"point; indicate\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_fechten",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"fechten\" means \"fence\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "fechten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "фехтовать"
+      },
+      {
+        "languageCode": "en",
+        "text": "fence"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «fechten» означает «фехтовать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"fechten\" means \"fence\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"fechten\" beschreibt diese Handlung oder diesen Zustand: \"fence\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schwoeren",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schwören\" means \"swear; vow\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schwören"
+      },
+      {
+        "languageCode": "ru",
+        "text": "клясться"
+      },
+      {
+        "languageCode": "en",
+        "text": "swear; vow"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schwören» означает «клясться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schwören\" means \"swear; vow\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schwören\" beschreibt diese Handlung oder diesen Zustand: \"swear; vow\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_streichen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"streichen\" means \"paint; spread\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "streichen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "красить; намазывать"
+      },
+      {
+        "languageCode": "en",
+        "text": "paint; spread"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «streichen» означает «красить; намазывать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"streichen\" means \"paint; spread\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"streichen\" beschreibt diese Handlung oder diesen Zustand: \"paint; spread\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_flechten",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"flechten\" means \"braid; weave\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "flechten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "плести"
+      },
+      {
+        "languageCode": "en",
+        "text": "braid; weave"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «flechten» означает «плести». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"flechten\" means \"braid; weave\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"flechten\" beschreibt diese Handlung oder diesen Zustand: \"braid; weave\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_klimmen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"klimmen\" means \"climb\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "klimmen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "карабкаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "climb"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «klimmen» означает «карабкаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"klimmen\" means \"climb\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"klimmen\" beschreibt diese Handlung oder diesen Zustand: \"climb\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_weichen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"weichen\" means \"yield; retreat\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "weichen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "отступать"
+      },
+      {
+        "languageCode": "en",
+        "text": "yield; retreat"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «weichen» означает «отступать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"weichen\" means \"yield; retreat\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"weichen\" beschreibt diese Handlung oder diesen Zustand: \"yield; retreat\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_scheiden",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"scheiden\" means \"divorce; separate\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "scheiden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "разводиться; разделять"
+      },
+      {
+        "languageCode": "en",
+        "text": "divorce; separate"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «scheiden» означает «разводиться; разделять». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"scheiden\" means \"divorce; separate\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"scheiden\" beschreibt diese Handlung oder diesen Zustand: \"divorce; separate\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_erwaegen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"erwägen\" means \"consider; weigh\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "erwägen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "обдумывать; рассматривать"
+      },
+      {
+        "languageCode": "en",
+        "text": "consider; weigh"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «erwägen» означает «обдумывать; рассматривать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"erwägen\" means \"consider; weigh\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"erwägen\" beschreibt diese Handlung oder diesen Zustand: \"consider; weigh\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schreiten",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schreiten\" means \"stride; proceed\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schreiten"
+      },
+      {
+        "languageCode": "ru",
+        "text": "шагать; продвигаться"
+      },
+      {
+        "languageCode": "en",
+        "text": "stride; proceed"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schreiten» означает «шагать; продвигаться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schreiten\" means \"stride; proceed\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schreiten\" beschreibt diese Handlung oder diesen Zustand: \"stride; proceed\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_reiben",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"reiben\" means \"rub\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "reiben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "тереть"
+      },
+      {
+        "languageCode": "en",
+        "text": "rub"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «reiben» означает «тереть». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"reiben\" means \"rub\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"reiben\" beschreibt diese Handlung oder diesen Zustand: \"rub\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_reissen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"reißen\" means \"tear; rip\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "reißen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "рвать"
+      },
+      {
+        "languageCode": "en",
+        "text": "tear; rip"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «reißen» означает «рвать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"reißen\" means \"tear; rip\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"reißen\" beschreibt diese Handlung oder diesen Zustand: \"tear; rip\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_scheren",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"scheren\" means \"shear; clip\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "scheren"
+      },
+      {
+        "languageCode": "ru",
+        "text": "стричь"
+      },
+      {
+        "languageCode": "en",
+        "text": "shear; clip"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «scheren» означает «стричь». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"scheren\" means \"shear; clip\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"scheren\" beschreibt diese Handlung oder diesen Zustand: \"shear; clip\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schmelzen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schmelzen\" means \"melt\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schmelzen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "таять; плавить"
+      },
+      {
+        "languageCode": "en",
+        "text": "melt"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schmelzen» означает «таять; плавить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schmelzen\" means \"melt\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schmelzen\" beschreibt diese Handlung oder diesen Zustand: \"melt\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_schmeissen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"schmeißen\" means \"throw; chuck\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "schmeißen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бросать"
+      },
+      {
+        "languageCode": "en",
+        "text": "throw; chuck"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «schmeißen» означает «бросать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"schmeißen\" means \"throw; chuck\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"schmeißen\" beschreibt diese Handlung oder diesen Zustand: \"throw; chuck\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_meiden",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"meiden\" means \"avoid\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "meiden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "избегать"
+      },
+      {
+        "languageCode": "en",
+        "text": "avoid"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «meiden» означает «избегать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"meiden\" means \"avoid\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"meiden\" beschreibt diese Handlung oder diesen Zustand: \"avoid\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_misslingen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"misslingen\" means \"fail; go wrong\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "misslingen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "не удаваться"
+      },
+      {
+        "languageCode": "en",
+        "text": "fail; go wrong"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «misslingen» означает «не удаваться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"misslingen\" means \"fail; go wrong\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"misslingen\" beschreibt diese Handlung oder diesen Zustand: \"fail; go wrong\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_verderben",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"verderben\" means \"spoil; ruin\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "verderben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "портиться; портить"
+      },
+      {
+        "languageCode": "en",
+        "text": "spoil; ruin"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «verderben» означает «портиться; портить». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"verderben\" means \"spoil; ruin\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"verderben\" beschreibt diese Handlung oder diesen Zustand: \"spoil; ruin\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_binden",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"binden\" means \"tie; bind\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "binden"
+      },
+      {
+        "languageCode": "ru",
+        "text": "завязывать; связывать"
+      },
+      {
+        "languageCode": "en",
+        "text": "tie; bind"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «binden» означает «завязывать; связывать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"binden\" means \"tie; bind\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"binden\" beschreibt diese Handlung oder diesen Zustand: \"tie; bind\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_wringen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"wringen\" means \"wring\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "wringen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "выжимать"
+      },
+      {
+        "languageCode": "en",
+        "text": "wring"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «wringen» означает «выжимать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"wringen\" means \"wring\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"wringen\" beschreibt diese Handlung oder diesen Zustand: \"wring\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_bergen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"bergen\" means \"rescue; recover\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "bergen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "спасать; извлекать"
+      },
+      {
+        "languageCode": "en",
+        "text": "rescue; recover"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «bergen» означает «спасать; извлекать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"bergen\" means \"rescue; recover\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"bergen\" beschreibt diese Handlung oder diesen Zustand: \"rescue; recover\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_werben",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"werben\" means \"advertise; recruit\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "werben"
+      },
+      {
+        "languageCode": "ru",
+        "text": "рекламировать; вербовать"
+      },
+      {
+        "languageCode": "en",
+        "text": "advertise; recruit"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «werben» означает «рекламировать; вербовать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"werben\" means \"advertise; recruit\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"werben\" beschreibt diese Handlung oder diesen Zustand: \"advertise; recruit\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_ringen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"ringen\" means \"wrestle; struggle\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "ringen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "бороться"
+      },
+      {
+        "languageCode": "en",
+        "text": "wrestle; struggle"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «ringen» означает «бороться». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"ringen\" means \"wrestle; struggle\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"ringen\" beschreibt diese Handlung oder diesen Zustand: \"wrestle; struggle\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_dringen",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"dringen\" means \"penetrate; press\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "dringen"
+      },
+      {
+        "languageCode": "ru",
+        "text": "проникать"
+      },
+      {
+        "languageCode": "en",
+        "text": "penetrate; press"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «dringen» означает «проникать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"dringen\" means \"penetrate; press\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"dringen\" beschreibt diese Handlung oder diesen Zustand: \"penetrate; press\"."
+      }
+    ]
+  },
+  {
+    "key": "yt_verb_gebaeren",
+    "level": "B2",
+    "partOfSpeech": "verb",
+    "description": "The German verb \"gebären\" means \"give birth\".",
+    "words": [
+      {
+        "languageCode": "de",
+        "text": "gebären"
+      },
+      {
+        "languageCode": "ru",
+        "text": "рожать"
+      },
+      {
+        "languageCode": "en",
+        "text": "give birth"
+      }
+    ],
+    "explanations": [
+      {
+        "languageCode": "ru",
+        "text": "Глагол «gebären» означает «рожать». Используется, когда нужно назвать это действие или состояние в немецком предложении."
+      },
+      {
+        "languageCode": "en",
+        "text": "The German verb \"gebären\" means \"give birth\". Use it to express this action or state in a German sentence."
+      },
+      {
+        "languageCode": "de",
+        "text": "Das Verb \"gebären\" beschreibt diese Handlung oder diesen Zustand: \"give birth\"."
+      }
+    ]
+  }
+]

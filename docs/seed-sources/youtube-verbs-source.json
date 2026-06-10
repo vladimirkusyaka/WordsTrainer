@@ -1,0 +1,706 @@
+{
+  "note": "Source checklist for additional German verbs. Only verb lemmas and short Russian glosses were taken from public YouTube descriptions; seed explanations and English translations are original project content.",
+  "playlist": "https://www.youtube.com/playlist?list=PLywfncPrnzIEEAr6imV_CUrXb2hE9pd9y",
+  "videos": [
+    {
+      "level": "A1",
+      "id": "lRp4-ltx1D8",
+      "url": "https://www.youtube.com/watch?v=lRp4-ltx1D8",
+      "title": "Неправильные глаголы немецкого A1"
+    },
+    {
+      "level": "A2",
+      "id": "GxdriU5GFB8",
+      "url": "https://www.youtube.com/watch?v=GxdriU5GFB8",
+      "title": "Неправильные глаголы A2"
+    },
+    {
+      "level": "B1",
+      "id": "Qe8vMASlKC0",
+      "url": "https://www.youtube.com/watch?v=Qe8vMASlKC0",
+      "title": "Неправильные глаголы B1"
+    },
+    {
+      "level": "B2",
+      "id": "scFutQA28GQ",
+      "url": "https://www.youtube.com/watch?v=scFutQA28GQ",
+      "title": "Все неправильные глаголы немецкого: с нуля до B2"
+    }
+  ],
+  "extractedCount": 112,
+  "addedCount": 112,
+  "items": [
+    {
+      "level": "A1",
+      "de": "rufen",
+      "ru": "звать",
+      "en": "call"
+    },
+    {
+      "level": "A1",
+      "de": "heißen",
+      "ru": "называться",
+      "en": "be called"
+    },
+    {
+      "level": "A1",
+      "de": "halten",
+      "ru": "держать",
+      "en": "hold"
+    },
+    {
+      "level": "A1",
+      "de": "lassen",
+      "ru": "оставлять; позволять",
+      "en": "leave; let"
+    },
+    {
+      "level": "A1",
+      "de": "gefallen",
+      "ru": "нравиться",
+      "en": "please; be liked"
+    },
+    {
+      "level": "A1",
+      "de": "fallen",
+      "ru": "падать",
+      "en": "fall"
+    },
+    {
+      "level": "A1",
+      "de": "kennen",
+      "ru": "знать",
+      "en": "know; be familiar with"
+    },
+    {
+      "level": "A1",
+      "de": "ziehen",
+      "ru": "тянуть",
+      "en": "pull; move"
+    },
+    {
+      "level": "A1",
+      "de": "denken",
+      "ru": "думать",
+      "en": "think"
+    },
+    {
+      "level": "A1",
+      "de": "steigen",
+      "ru": "подниматься",
+      "en": "climb; rise"
+    },
+    {
+      "level": "A1",
+      "de": "tun",
+      "ru": "делать",
+      "en": "do"
+    },
+    {
+      "level": "A1",
+      "de": "sterben",
+      "ru": "умирать",
+      "en": "die"
+    },
+    {
+      "level": "A1",
+      "de": "hängen",
+      "ru": "висеть",
+      "en": "hang"
+    },
+    {
+      "level": "A1",
+      "de": "werden",
+      "ru": "становиться",
+      "en": "become"
+    },
+    {
+      "level": "A1",
+      "de": "springen",
+      "ru": "прыгать",
+      "en": "jump"
+    },
+    {
+      "level": "A2",
+      "de": "treten",
+      "ru": "наступать; шагать",
+      "en": "step; kick"
+    },
+    {
+      "level": "A2",
+      "de": "laden",
+      "ru": "загружать; накрывать стол",
+      "en": "load; invite"
+    },
+    {
+      "level": "A2",
+      "de": "raten",
+      "ru": "советовать; угадывать",
+      "en": "advise; guess"
+    },
+    {
+      "level": "A2",
+      "de": "braten",
+      "ru": "жарить",
+      "en": "fry; roast"
+    },
+    {
+      "level": "A2",
+      "de": "bekommen",
+      "ru": "получать",
+      "en": "receive; get"
+    },
+    {
+      "level": "A2",
+      "de": "brennen",
+      "ru": "гореть",
+      "en": "burn"
+    },
+    {
+      "level": "A2",
+      "de": "lügen",
+      "ru": "лгать",
+      "en": "lie"
+    },
+    {
+      "level": "A2",
+      "de": "reiten",
+      "ru": "ездить верхом",
+      "en": "ride a horse"
+    },
+    {
+      "level": "A2",
+      "de": "bieten",
+      "ru": "предлагать",
+      "en": "offer"
+    },
+    {
+      "level": "A2",
+      "de": "riechen",
+      "ru": "пахнуть; чувствовать запах",
+      "en": "smell"
+    },
+    {
+      "level": "A2",
+      "de": "schweigen",
+      "ru": "молчать",
+      "en": "be silent"
+    },
+    {
+      "level": "A2",
+      "de": "schneiden",
+      "ru": "резать",
+      "en": "cut"
+    },
+    {
+      "level": "A2",
+      "de": "verbringen",
+      "ru": "проводить время",
+      "en": "spend time"
+    },
+    {
+      "level": "A2",
+      "de": "verzeihen",
+      "ru": "прощать",
+      "en": "forgive"
+    },
+    {
+      "level": "A2",
+      "de": "rennen",
+      "ru": "бегать",
+      "en": "run"
+    },
+    {
+      "level": "A2",
+      "de": "streiten",
+      "ru": "спорить; ссориться",
+      "en": "argue; quarrel"
+    },
+    {
+      "level": "A2",
+      "de": "nennen",
+      "ru": "называть",
+      "en": "name; call"
+    },
+    {
+      "level": "A2",
+      "de": "klingen",
+      "ru": "звучать",
+      "en": "sound"
+    },
+    {
+      "level": "A2",
+      "de": "bitten",
+      "ru": "просить",
+      "en": "ask; request"
+    },
+    {
+      "level": "A2",
+      "de": "brechen",
+      "ru": "ломать",
+      "en": "break"
+    },
+    {
+      "level": "A2",
+      "de": "werfen",
+      "ru": "бросать",
+      "en": "throw"
+    },
+    {
+      "level": "B1",
+      "de": "geschehen",
+      "ru": "происходить",
+      "en": "happen; occur"
+    },
+    {
+      "level": "B1",
+      "de": "blasen",
+      "ru": "дуть",
+      "en": "blow"
+    },
+    {
+      "level": "B1",
+      "de": "stoßen",
+      "ru": "толкать; сталкиваться",
+      "en": "push; bump"
+    },
+    {
+      "level": "B1",
+      "de": "fressen",
+      "ru": "есть (о животных)",
+      "en": "eat; feed"
+    },
+    {
+      "level": "B1",
+      "de": "schlagen",
+      "ru": "бить; ударять",
+      "en": "hit; beat"
+    },
+    {
+      "level": "B1",
+      "de": "empfangen",
+      "ru": "получать; принимать",
+      "en": "receive; welcome"
+    },
+    {
+      "level": "B1",
+      "de": "fangen",
+      "ru": "ловить",
+      "en": "catch"
+    },
+    {
+      "level": "B1",
+      "de": "backen",
+      "ru": "печь",
+      "en": "bake"
+    },
+    {
+      "level": "B1",
+      "de": "fließen",
+      "ru": "течь",
+      "en": "flow"
+    },
+    {
+      "level": "B1",
+      "de": "schießen",
+      "ru": "стрелять",
+      "en": "shoot"
+    },
+    {
+      "level": "B1",
+      "de": "beißen",
+      "ru": "кусать",
+      "en": "bite"
+    },
+    {
+      "level": "B1",
+      "de": "greifen",
+      "ru": "хватать",
+      "en": "grab; reach"
+    },
+    {
+      "level": "B1",
+      "de": "bewegen",
+      "ru": "двигать; трогать эмоционально",
+      "en": "move; affect emotionally"
+    },
+    {
+      "level": "B1",
+      "de": "betrügen",
+      "ru": "обманывать",
+      "en": "deceive; cheat"
+    },
+    {
+      "level": "B1",
+      "de": "fliehen",
+      "ru": "бежать; спасаться бегством",
+      "en": "flee"
+    },
+    {
+      "level": "B1",
+      "de": "treiben",
+      "ru": "гнать; приводить в движение",
+      "en": "drive; propel"
+    },
+    {
+      "level": "B1",
+      "de": "scheinen",
+      "ru": "светить; казаться",
+      "en": "shine; seem"
+    },
+    {
+      "level": "B1",
+      "de": "heben",
+      "ru": "поднимать",
+      "en": "lift; raise"
+    },
+    {
+      "level": "B1",
+      "de": "gießen",
+      "ru": "лить; поливать",
+      "en": "pour; water"
+    },
+    {
+      "level": "B1",
+      "de": "wiegen",
+      "ru": "взвешивать",
+      "en": "weigh"
+    },
+    {
+      "level": "B1",
+      "de": "senden",
+      "ru": "отправлять",
+      "en": "send"
+    },
+    {
+      "level": "B1",
+      "de": "schieben",
+      "ru": "толкать",
+      "en": "push; shove"
+    },
+    {
+      "level": "B1",
+      "de": "biegen",
+      "ru": "гнуть",
+      "en": "bend"
+    },
+    {
+      "level": "B1",
+      "de": "schreien",
+      "ru": "кричать",
+      "en": "shout; scream"
+    },
+    {
+      "level": "B1",
+      "de": "genießen",
+      "ru": "наслаждаться",
+      "en": "enjoy"
+    },
+    {
+      "level": "B1",
+      "de": "frieren",
+      "ru": "мёрзнуть; замерзать",
+      "en": "freeze; feel cold"
+    },
+    {
+      "level": "B1",
+      "de": "leiden",
+      "ru": "страдать",
+      "en": "suffer"
+    },
+    {
+      "level": "B1",
+      "de": "sinken",
+      "ru": "тонуть; снижаться",
+      "en": "sink"
+    },
+    {
+      "level": "B1",
+      "de": "gelten",
+      "ru": "считаться; иметь силу",
+      "en": "apply; be valid"
+    },
+    {
+      "level": "B1",
+      "de": "stechen",
+      "ru": "жалить; колоть",
+      "en": "sting; prick"
+    },
+    {
+      "level": "B1",
+      "de": "erschrecken",
+      "ru": "испугаться",
+      "en": "be startled; frighten"
+    },
+    {
+      "level": "B1",
+      "de": "empfinden",
+      "ru": "ощущать; чувствовать",
+      "en": "feel; perceive"
+    },
+    {
+      "level": "B1",
+      "de": "verschwinden",
+      "ru": "исчезать",
+      "en": "disappear"
+    },
+    {
+      "level": "B1",
+      "de": "stinken",
+      "ru": "вонять",
+      "en": "stink"
+    },
+    {
+      "level": "B1",
+      "de": "zwingen",
+      "ru": "заставлять",
+      "en": "force; compel"
+    },
+    {
+      "level": "B1",
+      "de": "stehlen",
+      "ru": "красть",
+      "en": "steal"
+    },
+    {
+      "level": "B2",
+      "de": "hauen",
+      "ru": "бить; ударять",
+      "en": "hit; strike"
+    },
+    {
+      "level": "B2",
+      "de": "genesen",
+      "ru": "выздоравливать",
+      "en": "recover; heal"
+    },
+    {
+      "level": "B2",
+      "de": "graben",
+      "ru": "копать",
+      "en": "dig"
+    },
+    {
+      "level": "B2",
+      "de": "geraten",
+      "ru": "попадать; оказываться",
+      "en": "get into; end up"
+    },
+    {
+      "level": "B2",
+      "de": "schleichen",
+      "ru": "красться",
+      "en": "sneak; creep"
+    },
+    {
+      "level": "B2",
+      "de": "gleichen",
+      "ru": "быть похожим",
+      "en": "resemble; be like"
+    },
+    {
+      "level": "B2",
+      "de": "kneifen",
+      "ru": "щипать; сжимать",
+      "en": "pinch"
+    },
+    {
+      "level": "B2",
+      "de": "pfeifen",
+      "ru": "свистеть",
+      "en": "whistle"
+    },
+    {
+      "level": "B2",
+      "de": "saufen",
+      "ru": "пить (грубо или о животных)",
+      "en": "booze; drink heavily"
+    },
+    {
+      "level": "B2",
+      "de": "gleiten",
+      "ru": "скользить",
+      "en": "glide; slide"
+    },
+    {
+      "level": "B2",
+      "de": "schleifen",
+      "ru": "шлифовать; тащить",
+      "en": "grind; drag"
+    },
+    {
+      "level": "B2",
+      "de": "kriechen",
+      "ru": "ползти",
+      "en": "crawl; creep"
+    },
+    {
+      "level": "B2",
+      "de": "erlöschen",
+      "ru": "гаснуть",
+      "en": "go out; expire"
+    },
+    {
+      "level": "B2",
+      "de": "saugen",
+      "ru": "всасывать; пылесосить",
+      "en": "suck; vacuum"
+    },
+    {
+      "level": "B2",
+      "de": "melken",
+      "ru": "доить",
+      "en": "milk"
+    },
+    {
+      "level": "B2",
+      "de": "weisen",
+      "ru": "показывать; указывать",
+      "en": "point; indicate"
+    },
+    {
+      "level": "B2",
+      "de": "fechten",
+      "ru": "фехтовать",
+      "en": "fence"
+    },
+    {
+      "level": "B2",
+      "de": "schwören",
+      "ru": "клясться",
+      "en": "swear; vow"
+    },
+    {
+      "level": "B2",
+      "de": "streichen",
+      "ru": "красить; намазывать",
+      "en": "paint; spread"
+    },
+    {
+      "level": "B2",
+      "de": "flechten",
+      "ru": "плести",
+      "en": "braid; weave"
+    },
+    {
+      "level": "B2",
+      "de": "klimmen",
+      "ru": "карабкаться",
+      "en": "climb"
+    },
+    {
+      "level": "B2",
+      "de": "weichen",
+      "ru": "отступать",
+      "en": "yield; retreat"
+    },
+    {
+      "level": "B2",
+      "de": "scheiden",
+      "ru": "разводиться; разделять",
+      "en": "divorce; separate"
+    },
+    {
+      "level": "B2",
+      "de": "erwägen",
+      "ru": "обдумывать; рассматривать",
+      "en": "consider; weigh"
+    },
+    {
+      "level": "B2",
+      "de": "schreiten",
+      "ru": "шагать; продвигаться",
+      "en": "stride; proceed"
+    },
+    {
+      "level": "B2",
+      "de": "reiben",
+      "ru": "тереть",
+      "en": "rub"
+    },
+    {
+      "level": "B2",
+      "de": "reißen",
+      "ru": "рвать",
+      "en": "tear; rip"
+    },
+    {
+      "level": "B2",
+      "de": "scheren",
+      "ru": "стричь",
+      "en": "shear; clip"
+    },
+    {
+      "level": "B2",
+      "de": "schmelzen",
+      "ru": "таять; плавить",
+      "en": "melt"
+    },
+    {
+      "level": "B2",
+      "de": "schmeißen",
+      "ru": "бросать",
+      "en": "throw; chuck"
+    },
+    {
+      "level": "B2",
+      "de": "meiden",
+      "ru": "избегать",
+      "en": "avoid"
+    },
+    {
+      "level": "B2",
+      "de": "misslingen",
+      "ru": "не удаваться",
+      "en": "fail; go wrong"
+    },
+    {
+      "level": "B2",
+      "de": "verderben",
+      "ru": "портиться; портить",
+      "en": "spoil; ruin"
+    },
+    {
+      "level": "B2",
+      "de": "binden",
+      "ru": "завязывать; связывать",
+      "en": "tie; bind"
+    },
+    {
+      "level": "B2",
+      "de": "wringen",
+      "ru": "выжимать",
+      "en": "wring"
+    },
+    {
+      "level": "B2",
+      "de": "bergen",
+      "ru": "спасать; извлекать",
+      "en": "rescue; recover"
+    },
+    {
+      "level": "B2",
+      "de": "werben",
+      "ru": "рекламировать; вербовать",
+      "en": "advertise; recruit"
+    },
+    {
+      "level": "B2",
+      "de": "ringen",
+      "ru": "бороться",
+      "en": "wrestle; struggle"
+    },
+    {
+      "level": "B2",
+      "de": "dringen",
+      "ru": "проникать",
+      "en": "penetrate; press"
+    },
+    {
+      "level": "B2",
+      "de": "gebären",
+      "ru": "рожать",
+      "en": "give birth"
+    }
+  ]
+}
