@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using WordsTrainer.Contracts.Auth;
+using WordsTrainer.Contracts.Common;
 using WordsTrainer.Contracts.LanguageLevels;
 using WordsTrainer.Contracts.Languages;
 using WordsTrainer.Contracts.Training;
@@ -22,73 +23,56 @@ namespace WordsTrainer.Mobile.Services
             _tokenStorage = tokenStorage;
         }
 
-        public async Task<AuthResponse?> RegisterAsync(RegisterRequest request)
+        public async Task<ApiResult<AuthResponse>> RegisterAsync(RegisterRequest request)
         {
             var response = await _http.PostAsJsonAsync("/api/auth/register", request);
 
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<AuthResponse>();
+            return await ReadResultAsync<AuthResponse>(response);
         }
 
-        public async Task<AuthResponse?> LoginAsync(LoginRequest request)
+        public async Task<ApiResult<AuthResponse>> LoginAsync(LoginRequest request)
         {
             var response = await _http.PostAsJsonAsync("/api/auth/login", request);
 
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<AuthResponse>();
+            return await ReadResultAsync<AuthResponse>(response);
         }
 
-        public async Task<AuthMessageResponse?> ForgotPasswordAsync(ForgotPasswordRequest request)
+        public async Task<ApiResult<AuthMessageResponse>> ForgotPasswordAsync(ForgotPasswordRequest request)
         {
             var response = await _http.PostAsJsonAsync("/api/auth/forgot-password", request);
 
-            if (response.StatusCode == HttpStatusCode.TooManyRequests)
-                return new AuthMessageResponse()
-                {
-                    Message = "forgot.too.many"
-                };
-
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<AuthMessageResponse>();
+            return await ReadResultAsync<AuthMessageResponse>(
+                response,
+                tooManyRequestsCode: "forgot.too.many",
+                tooManyRequestsMessage: "Too many password reset requests. Please try again later.");
         }
 
-        public async Task<AuthMessageResponse?> ResetPasswordAsync(ResetPasswordRequest request)
+        public async Task<ApiResult<AuthMessageResponse>> ResetPasswordAsync(ResetPasswordRequest request)
         {
             var response = await _http.PostAsJsonAsync("/api/auth/reset-password", request);
 
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<AuthMessageResponse>();
+            return await ReadResultAsync<AuthMessageResponse>(response);
         }
 
-        public async Task<CurrentUserResponse?> GetMeAsync()
+        public async Task<ApiResult<CurrentUserResponse>> GetMeAsync()
         {
             await AddBearerAsync();
 
             var response = await _http.GetAsync("/api/auth/me");
 
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<CurrentUserResponse>();
+            return await ReadResultAsync<CurrentUserResponse>(response);
         }
 
-        public async Task<TrainingNextResponse?> GetNextAsync()
+        public async Task<ApiResult<TrainingNextResponse>> GetNextAsync()
         {
             await AddBearerAsync();
 
-            return await _http.GetFromJsonAsync<TrainingNextResponse>(
-                "/api/training/next");
+            var response = await _http.GetAsync("/api/training/next");
+
+            return await ReadResultAsync<TrainingNextResponse>(response);
         }
 
-        public async Task<SubmitTrainingAnswerResponse?> SubmitAnswerAsync(
+        public async Task<ApiResult<SubmitTrainingAnswerResponse>> SubmitAnswerAsync(
             SubmitTrainingAnswerRequest request)
         {
             await AddBearerAsync();
@@ -97,49 +81,39 @@ namespace WordsTrainer.Mobile.Services
                 "/api/training/answer",
                 request);
 
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            return await response.Content.ReadFromJsonAsync<SubmitTrainingAnswerResponse>();
+            return await ReadResultAsync<SubmitTrainingAnswerResponse>(response);
         }
 
-        public async Task<TrainingStatsResponse?> GetStatsAsync()
+        public async Task<ApiResult<TrainingStatsResponse>> GetStatsAsync()
         {
             await AddBearerAsync();
 
-            return await _http.GetFromJsonAsync<TrainingStatsResponse>(
-                "/api/training/stats");
+            var response = await _http.GetAsync("/api/training/stats");
+
+            return await ReadResultAsync<TrainingStatsResponse>(response);
         }
 
-        public async Task<TrainingExplanationResponse?> GetExplanationAsync(Guid attemptId)
+        public async Task<ApiResult<TrainingExplanationResponse>> GetExplanationAsync(Guid attemptId)
         {
             await AddBearerAsync();
 
-            return await _http.GetFromJsonAsync<TrainingExplanationResponse>(
-                $"/api/training/explanation/attempt/{attemptId}");
+            var response = await _http.GetAsync($"/api/training/explanation/attempt/{attemptId}");
+
+            return await ReadResultAsync<TrainingExplanationResponse>(response);
         }
 
-        public async Task<List<LanguageResponse>> GetLanguagesAsync()
+        public async Task<ApiResult<List<LanguageResponse>>> GetLanguagesAsync()
         {
             var response = await _http.GetAsync("/api/languages");
 
-            if (!response.IsSuccessStatusCode)
-                return [];
-
-            var languages = await response.Content.ReadFromJsonAsync<List<LanguageResponse>>();
-
-            return languages ?? [];
+            return await ReadResultAsync<List<LanguageResponse>>(response);
         }
 
-        public async Task<List<LanguageLevelResponse>> GetLanguageLevelsAsync()
+        public async Task<ApiResult<List<LanguageLevelResponse>>> GetLanguageLevelsAsync()
         {
             var response = await _http.GetAsync("/api/language-levels");
 
-            if (!response.IsSuccessStatusCode)
-                return [];
-
-            return await response.Content
-                .ReadFromJsonAsync<List<LanguageLevelResponse>>() ?? [];
+            return await ReadResultAsync<List<LanguageLevelResponse>>(response);
         }
 
         private async Task AddBearerAsync()
@@ -149,6 +123,55 @@ namespace WordsTrainer.Mobile.Services
             _http.DefaultRequestHeaders.Authorization = string.IsNullOrWhiteSpace(token)
                 ? null
                 : new AuthenticationHeaderValue("Bearer", token);
+        }
+
+        private static async Task<ApiResult<T>> ReadResultAsync<T>(
+            HttpResponseMessage response,
+            string? tooManyRequestsCode = null,
+            string? tooManyRequestsMessage = null)
+        {
+            if (response.IsSuccessStatusCode)
+            {
+                var value = await response.Content.ReadFromJsonAsync<T>();
+                return ApiResult<T>.Success(value);
+            }
+
+            if (response.StatusCode == HttpStatusCode.TooManyRequests)
+            {
+                return ApiResult<T>.Failure(
+                    tooManyRequestsCode ?? "too.many.requests",
+                    tooManyRequestsMessage ?? "Too many requests. Please try again later.",
+                    response.StatusCode);
+            }
+
+            var error = await ReadErrorAsync(response);
+
+            return ApiResult<T>.Failure(
+                error?.Code ?? GetDefaultErrorCode(response.StatusCode),
+                error?.Message ?? response.ReasonPhrase ?? "Request failed.",
+                response.StatusCode);
+        }
+
+        private static async Task<ApiErrorResponse?> ReadErrorAsync(HttpResponseMessage response)
+        {
+            try
+            {
+                return await response.Content.ReadFromJsonAsync<ApiErrorResponse>();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static string GetDefaultErrorCode(HttpStatusCode statusCode)
+        {
+            return statusCode switch
+            {
+                HttpStatusCode.Unauthorized => "auth.unauthorized",
+                HttpStatusCode.NotFound => "not.found",
+                _ => "api.request.failed"
+            };
         }
     }
 }

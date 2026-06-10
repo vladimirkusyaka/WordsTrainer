@@ -106,13 +106,15 @@ public class ExplanationViewModel : INotifyPropertyChanged
             _wasSubmitted = false;
             QuestionLevel = "";
 
-            var response = await _apiClient.GetExplanationAsync(attemptId);
+            var result = await _apiClient.GetExplanationAsync(attemptId);
 
-            if (response == null)
+            if (!result.IsSuccess || result.Value == null)
             {
-                Message = _texts.T("explanation.not.found");
+                Message = result.ToDisplayMessage(_texts, "explanation.not.found");
                 return;
             }
+
+            var response = result.Value;
 
             _attemptId = response.AttemptId;
             _correctWordId = response.CorrectWordId;
@@ -152,7 +154,7 @@ public class ExplanationViewModel : INotifyPropertyChanged
             IsBusy = true;
             Message = "";
 
-            var response = await _apiClient.SubmitAnswerAsync(new SubmitTrainingAnswerRequest
+            var result = await _apiClient.SubmitAnswerAsync(new SubmitTrainingAnswerRequest
             {
                 AttemptId = _attemptId,
                 SelectedWordId = _correctWordId,
@@ -160,9 +162,9 @@ public class ExplanationViewModel : INotifyPropertyChanged
                 DurationMs = 0
             });
 
-            if (response == null)
+            if (!result.IsSuccess || result.Value == null)
             {
-                Message = _texts.T("explanation.save.failed");
+                Message = result.ToDisplayMessage(_texts, "explanation.save.failed");
                 return false;
             }
 

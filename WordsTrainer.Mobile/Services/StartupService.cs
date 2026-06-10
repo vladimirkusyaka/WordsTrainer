@@ -43,7 +43,7 @@ namespace WordsTrainer.Mobile.Services
 
             var me = await _apiClient.GetMeAsync();
 
-            if (me == null)
+            if (!me.IsSuccess || me.Value == null)
             {
                 _tokenStorage.Clear();
                 return new NavigationPage(_loginPage);

@@ -81,5 +81,20 @@
   "get.started": "Get Started",
   "already.have.account": "I already have an account",
   "notification.training.title": "Time to train",
-  "notification.training.message": "Practice a few words today."
+  "notification.training.message": "Practice a few words today.",
+  "register.email.exists": "An account with this email already exists.",
+  "auth.unauthorized": "Your session has expired. Please sign in again.",
+  "reset.token.required": "Reset token is required.",
+  "reset.password.required": "Password and confirmation are required.",
+  "reset.passwords.mismatch": "Password confirmation does not match.",
+  "reset.password.short": "Password must be at least 8 characters.",
+  "reset.token.invalid": "This reset link is invalid or expired. Request a new one.",
+  "reset.success": "Password changed successfully. You can now sign in with your new password.",
+  "training.answer.invalid": "Unable to save your answer. Please try again.",
+  "training.session.not.found": "No active training session.",
+  "admin.unauthorized": "Admin API key is missing or invalid.",
+  "admin.error.not.found": "Error log entry was not found.",
+  "too.many.requests": "Too many requests. Please try again later.",
+  "not.found": "Not found.",
+  "api.request.failed": "Request failed. Please try again."
 }

@@ -213,13 +213,15 @@ public class TrainingViewModel : INotifyPropertyChanged
         {
             IsBusy = true;
 
-            var next = await _apiClient.GetNextAsync();
+            var nextResult = await _apiClient.GetNextAsync();
 
-            if (next == null)
+            if (!nextResult.IsSuccess || nextResult.Value == null)
             {
-                ClearQuestion(_texts.T("load.next.failed"));
+                ClearQuestion(nextResult.ToDisplayMessage(_texts, "load.next.failed"));
                 return;
             }
+
+            var next = nextResult.Value;
 
             if (next.Status != TrainingNextStatus.Available || next.Question == null)
             {
@@ -266,7 +268,7 @@ public class TrainingViewModel : INotifyPropertyChanged
             CanAnswer = false;
             Message = "";
 
-            var response = await _apiClient.SubmitAnswerAsync(new SubmitTrainingAnswerRequest
+            var answerResult = await _apiClient.SubmitAnswerAsync(new SubmitTrainingAnswerRequest
             {
                 AttemptId = _currentQuestion.AttemptId,
                 SelectedWordId = option.WordId,
@@ -274,11 +276,14 @@ public class TrainingViewModel : INotifyPropertyChanged
                 DurationMs = 3000
             });
 
-            if (response == null)
+            if (!answerResult.IsSuccess || answerResult.Value == null)
             {
+                Message = answerResult.ToDisplayMessage(_texts, "answer.save.failed");
                 CanAnswer = true;
                 return;
             }
+
+            var response = answerResult.Value;
 
             if (response.IsCorrect)
             {
@@ -354,10 +359,12 @@ public class TrainingViewModel : INotifyPropertyChanged
 
     private async Task LoadStatsAsync()
     {
-        var stats = await _apiClient.GetStatsAsync();
+        var statsResult = await _apiClient.GetStatsAsync();
 
-        if (stats == null)
+        if (!statsResult.IsSuccess || statsResult.Value == null)
             return;
+
+        var stats = statsResult.Value;
 
         AnsweredToday = stats.AnsweredToday;
         CorrectToday = stats.CorrectToday;
@@ -423,10 +430,12 @@ public class TrainingViewModel : INotifyPropertyChanged
 
     private async Task LoadCurrentUserAsync()
     {
-        var me = await _apiClient.GetMeAsync();
+        var meResult = await _apiClient.GetMeAsync();
 
-        if (me == null)
+        if (!meResult.IsSuccess || meResult.Value == null)
             return;
+
+        var me = meResult.Value;
 
         _texts.SetLanguage(me.NativeLanguageCode);
 

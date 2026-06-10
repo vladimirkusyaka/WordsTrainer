@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using WordsTrainer.Contracts.Auth;
+using WordsTrainer.Contracts.Common;
 
 namespace WordsTrainer.Web.Services;
 
@@ -23,12 +24,15 @@ public sealed class PasswordResetApiClient
                 request,
                 cancellationToken);
 
-            var content = await response.Content.ReadFromJsonAsync<AuthMessageResponse>(cancellationToken);
-
             if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadFromJsonAsync<AuthMessageResponse>(cancellationToken);
                 return (true, content?.Message ?? "Password changed successfully.");
+            }
 
-            return (false, content?.Message ?? "Unable to reset password. Please try again.");
+            var error = await response.Content.ReadFromJsonAsync<ApiErrorResponse>(cancellationToken);
+
+            return (false, error?.Message ?? "Unable to reset password. Please try again.");
         }
         catch
         {

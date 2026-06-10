@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WordsTrainer.Api.Extensions;
 using WordsTrainer.Api.Services;
+using WordsTrainer.Contracts.Common;
 using WordsTrainer.Contracts.Training;
 
 namespace WordsTrainer.Api.Controllers
@@ -38,7 +39,9 @@ namespace WordsTrainer.Api.Controllers
             var result = await _trainingService.SubmitAnswerAsync(userId, request);
 
             if (result == null)
-                return BadRequest("Invalid training answer.");
+                return BadRequest(Error(
+                    "training.answer.invalid",
+                    "Invalid training answer."));
 
             return Ok(result);
         }
@@ -53,7 +56,9 @@ namespace WordsTrainer.Api.Controllers
                 attemptId);
 
             if (result == null)
-                return NotFound("Explanation not found.");
+                return NotFound(Error(
+                    "explanation.not.found",
+                    "Explanation not found."));
 
             return Ok(result);
         }
@@ -86,7 +91,9 @@ namespace WordsTrainer.Api.Controllers
             var result = await _trainingService.GetCurrentSessionAsync(userId);
 
             if (result == null)
-                return NotFound("No active training session.");
+                return NotFound(Error(
+                    "training.session.not.found",
+                    "No active training session."));
 
             return Ok(result);
         }
@@ -99,9 +106,20 @@ namespace WordsTrainer.Api.Controllers
             var result = await _trainingService.FinishSessionAsync(userId);
 
             if (result == null)
-                return NotFound("No active training session.");
+                return NotFound(Error(
+                    "training.session.not.found",
+                    "No active training session."));
 
             return Ok(result);
+        }
+
+        private static ApiErrorResponse Error(string code, string message)
+        {
+            return new ApiErrorResponse
+            {
+                Code = code,
+                Message = message
+            };
         }
     }
 }

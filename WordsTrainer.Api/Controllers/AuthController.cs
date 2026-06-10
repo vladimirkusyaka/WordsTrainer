@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using WordsTrainer.Api.Abstractions;
 using WordsTrainer.Contracts.Auth;
+using WordsTrainer.Contracts.Common;
 using WordsTrainer.Core.Entities;
 using WordsTrainer.Infrastructure.Data;
 using LoginRequest = WordsTrainer.Contracts.Auth.LoginRequest;
@@ -47,8 +48,15 @@ public class AuthController : ControllerBase
     {
         var normalizedEmail = NormalizeEmail(req.Email);
 
+        if (req.NativeLanguageId == req.TargetLanguageId)
+            return BadRequest(Error(
+                "register.languages.same",
+                "Native and target languages must be different."));
+
         if (await _db.Users.AnyAsync(x => x.Email == normalizedEmail))
-            return BadRequest("User already exists");
+            return BadRequest(Error(
+                "register.email.exists",
+                "User already exists."));
 
         var user = new AppUser
         {
@@ -77,7 +85,9 @@ public class AuthController : ControllerBase
             .FirstOrDefaultAsync(x => x.Email == normalizedEmail);
 
         if (user == null || !_passwordHasher.Verify(req.Password, user.PasswordHash))
-            return Unauthorized();
+            return Unauthorized(Error(
+                "login.failed",
+                "Invalid email or password."));
 
         var token = _jwt.Generate(user);
 
@@ -91,7 +101,9 @@ public class AuthController : ControllerBase
         var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         if (userIdClaim == null)
-            return Unauthorized();
+            return Unauthorized(Error(
+                "auth.unauthorized",
+                "Unauthorized."));
 
         var userId = Guid.Parse(userIdClaim);
 
@@ -102,7 +114,9 @@ public class AuthController : ControllerBase
             .FirstOrDefaultAsync(x => x.Id == userId);
 
         if (user == null)
-            return Unauthorized();
+            return Unauthorized(Error(
+                "auth.unauthorized",
+                "Unauthorized."));
 
         return Ok(new CurrentUserResponse
         {
@@ -122,6 +136,7 @@ public class AuthController : ControllerBase
     {
         var response = new AuthMessageResponse
         {
+            Code = "forgot.sent",
             Message = "If an account exists for this email, a password reset link has been sent."
         };
 
@@ -206,16 +221,24 @@ public class AuthController : ControllerBase
     public async Task<ActionResult<AuthMessageResponse>> ResetPassword(ResetPasswordRequest request)
     {
         if (string.IsNullOrWhiteSpace(request.Token))
-            return BadRequest(new AuthMessageResponse { Message = "Reset token is required." });
+            return BadRequest(Error(
+                "reset.token.required",
+                "Reset token is required."));
 
         if (string.IsNullOrWhiteSpace(request.Password) || string.IsNullOrWhiteSpace(request.ConfirmPassword))
-            return BadRequest(new AuthMessageResponse { Message = "Password and confirmation are required." });
+            return BadRequest(Error(
+                "reset.password.required",
+                "Password and confirmation are required."));
 
         if (!string.Equals(request.Password, request.ConfirmPassword, StringComparison.Ordinal))
-            return BadRequest(new AuthMessageResponse { Message = "Password confirmation does not match." });
+            return BadRequest(Error(
+                "reset.passwords.mismatch",
+                "Password confirmation does not match."));
 
         if (request.Password.Length < 8)
-            return BadRequest(new AuthMessageResponse { Message = "Password must be at least 8 characters." });
+            return BadRequest(Error(
+                "reset.password.short",
+                "Password must be at least 8 characters."));
 
         var tokenHash = HashToken(request.Token);
         var now = DateTime.UtcNow;
@@ -229,10 +252,9 @@ public class AuthController : ControllerBase
 
         if (token == null)
         {
-            return BadRequest(new AuthMessageResponse
-            {
-                Message = "This reset link is invalid or expired. Request a new one."
-            });
+            return BadRequest(Error(
+                "reset.token.invalid",
+                "This reset link is invalid or expired. Request a new one."));
         }
 
         token.User.PasswordHash = _passwordHasher.Hash(request.Password);
@@ -251,8 +273,18 @@ public class AuthController : ControllerBase
 
         return Ok(new AuthMessageResponse
         {
+            Code = "reset.success",
             Message = "Password changed successfully. You can now sign in with your new password."
         });
+    }
+
+    private static ApiErrorResponse Error(string code, string message)
+    {
+        return new ApiErrorResponse
+        {
+            Code = code,
+            Message = message
+        };
     }
 
     private static string NormalizeEmail(string? email)

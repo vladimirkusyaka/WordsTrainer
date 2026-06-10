@@ -125,19 +125,19 @@ namespace WordsTrainer.Mobile.ViewModels
             {
                 IsBusy = true;
 
-                var response = await _apiClient.LoginAsync(new LoginRequest
+                var result = await _apiClient.LoginAsync(new LoginRequest
                 {
                     Email = Email.Trim(),
                     Password = Password
                 });
 
-                if (response == null || string.IsNullOrWhiteSpace(response.AccessToken))
+                if (!result.IsSuccess || result.Value == null || string.IsNullOrWhiteSpace(result.Value.AccessToken))
                 {
-                    ErrorMessage = _texts.T("login.failed");
+                    ErrorMessage = result.ToDisplayMessage(_texts, "login.failed");
                     return;
                 }
 
-                await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
+                await _tokenStorage.SaveAccessTokenAsync(result.Value.AccessToken);
                 await _trainingReminderService.ScheduleDailyReminderAsync(skipToday: true);
 
                 var trainingPage = Application.Current!.Handler!.MauiContext!.Services
@@ -174,8 +174,10 @@ namespace WordsTrainer.Mobile.ViewModels
                     Email = Email.Trim()
                 });
 
-                if (result?.Message == "forgot.too.many")
-                    resultMessage = _texts.T(result.Message);
+                if (!result.IsSuccess)
+                    resultMessage = result.ToDisplayMessage(_texts, "forgot.sent");
+                else if (!string.IsNullOrWhiteSpace(result.Value?.Code))
+                    resultMessage = _texts.T(result.Value.Code);
             }
             catch
             {

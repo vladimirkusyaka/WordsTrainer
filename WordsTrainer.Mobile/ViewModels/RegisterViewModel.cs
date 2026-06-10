@@ -203,7 +203,14 @@ public class RegisterViewModel : INotifyPropertyChanged
             IsBusy = true;
             ErrorMessage = "";
 
-            Languages = await _apiClient.GetLanguagesAsync();
+            var languagesResult = await _apiClient.GetLanguagesAsync();
+            if (!languagesResult.IsSuccess || languagesResult.Value == null)
+            {
+                ErrorMessage = languagesResult.ToDisplayMessage(_texts, "register.load.failed");
+                return;
+            }
+
+            Languages = languagesResult.Value;
             OnPropertyChanged(nameof(Languages));
 
             SelectedNativeLanguage =
@@ -215,7 +222,14 @@ public class RegisterViewModel : INotifyPropertyChanged
                 Languages.Skip(1).FirstOrDefault() ??
                 Languages.FirstOrDefault();
 
-            Levels = await _apiClient.GetLanguageLevelsAsync();
+            var levelsResult = await _apiClient.GetLanguageLevelsAsync();
+            if (!levelsResult.IsSuccess || levelsResult.Value == null)
+            {
+                ErrorMessage = levelsResult.ToDisplayMessage(_texts, "register.load.failed");
+                return;
+            }
+
+            Levels = levelsResult.Value;
             OnPropertyChanged(nameof(Levels));
 
             SelectedLevel =
@@ -341,7 +355,7 @@ public class RegisterViewModel : INotifyPropertyChanged
         {
             IsBusy = true;
 
-            var response = await _apiClient.RegisterAsync(new RegisterRequest
+            var result = await _apiClient.RegisterAsync(new RegisterRequest
             {
                 Email = Email.Trim(),
                 Password = Password,
@@ -350,13 +364,13 @@ public class RegisterViewModel : INotifyPropertyChanged
                 LanguageLevelId = SelectedLevel!.Id
             });
 
-            if (response == null || string.IsNullOrWhiteSpace(response.AccessToken))
+            if (!result.IsSuccess || result.Value == null || string.IsNullOrWhiteSpace(result.Value.AccessToken))
             {
-                ErrorMessage = _texts.T("register.failed");
+                ErrorMessage = result.ToDisplayMessage(_texts, "register.failed");
                 return;
             }
 
-            await _tokenStorage.SaveAccessTokenAsync(response.AccessToken);
+            await _tokenStorage.SaveAccessTokenAsync(result.Value.AccessToken);
             await _trainingReminderService.ScheduleDailyReminderAsync(skipToday: true);
 
             var trainingPage = Application.Current!.Handler!.MauiContext!.Services

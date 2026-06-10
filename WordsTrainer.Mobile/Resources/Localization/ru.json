@@ -81,5 +81,20 @@
   "get.started": "Начать",
   "already.have.account": "У меня уже есть аккаунт",
   "notification.training.title": "Пора потренироваться",
-  "notification.training.message": "Повторите несколько слов сегодня."
+  "notification.training.message": "Повторите несколько слов сегодня.",
+  "register.email.exists": "Аккаунт с таким email уже существует.",
+  "auth.unauthorized": "Сессия истекла. Войдите снова.",
+  "reset.token.required": "Токен сброса пароля обязателен.",
+  "reset.password.required": "Введите пароль и подтверждение.",
+  "reset.passwords.mismatch": "Подтверждение пароля не совпадает.",
+  "reset.password.short": "Пароль должен содержать минимум 8 символов.",
+  "reset.token.invalid": "Ссылка для сброса пароля недействительна или устарела. Запросите новую.",
+  "reset.success": "Пароль успешно изменён. Теперь можно войти с новым паролем.",
+  "training.answer.invalid": "Не удалось сохранить ответ. Попробуйте ещё раз.",
+  "training.session.not.found": "Активная тренировка не найдена.",
+  "admin.unauthorized": "Admin API key отсутствует или неверный.",
+  "admin.error.not.found": "Запись ошибки не найдена.",
+  "too.many.requests": "Слишком много запросов. Попробуйте позже.",
+  "not.found": "Не найдено.",
+  "api.request.failed": "Запрос не выполнен. Попробуйте ещё раз."
 }

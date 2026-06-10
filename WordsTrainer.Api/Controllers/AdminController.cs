@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WordsTrainer.Contracts.Admin;
+using WordsTrainer.Contracts.Common;
 using WordsTrainer.Infrastructure.Data;
 
 namespace WordsTrainer.Api.Controllers
@@ -27,7 +28,9 @@ namespace WordsTrainer.Api.Controllers
             [FromQuery] string? search = null)
         {
             if (!IsAuthorized())
-                return Unauthorized();
+                return Unauthorized(Error(
+                    "admin.unauthorized",
+                    "Admin API key is missing or invalid."));
 
             page = Math.Max(1, page);
             pageSize = Math.Clamp(pageSize, 1, MaxPageSize);
@@ -78,7 +81,9 @@ namespace WordsTrainer.Api.Controllers
         public async Task<ActionResult<ErrorLogDetailResponse>> GetError(Guid id)
         {
             if (!IsAuthorized())
-                return Unauthorized();
+                return Unauthorized(Error(
+                    "admin.unauthorized",
+                    "Admin API key is missing or invalid."));
 
             var item = await _db.ErrorLogs
                 .AsNoTracking()
@@ -101,7 +106,20 @@ namespace WordsTrainer.Api.Controllers
                 })
                 .FirstOrDefaultAsync();
 
-            return item == null ? NotFound() : Ok(item);
+            return item == null
+                ? NotFound(Error(
+                    "admin.error.not.found",
+                    "Error log entry was not found."))
+                : Ok(item);
+        }
+
+        private static ApiErrorResponse Error(string code, string message)
+        {
+            return new ApiErrorResponse
+            {
+                Code = code,
+                Message = message
+            };
         }
 
         private bool IsAuthorized()

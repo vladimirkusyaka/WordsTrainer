@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging.Abstractions;
 using WordsTrainer.Api.Abstractions;
 using WordsTrainer.Contracts.Auth;
+using WordsTrainer.Contracts.Common;
 using WordsTrainer.Core.Entities;
 using WordsTrainer.Infrastructure.Data;
 
@@ -64,8 +65,33 @@ public class AuthControllerTests
             LanguageLevelId = seed.Level.Id
         });
 
-        Assert.IsType<BadRequestObjectResult>(result.Result);
+        var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
+        var error = Assert.IsType<ApiErrorResponse>(badRequest.Value);
+        Assert.Equal("register.email.exists", error.Code);
         Assert.Equal(1, await db.Users.CountAsync());
+    }
+
+    [Fact]
+    public async Task Register_WhenNativeAndTargetLanguagesAreSame_ReturnsBadRequest()
+    {
+        await using var db = CreateDb();
+        var seed = SeedReferenceData(db);
+        var controller = CreateController(db);
+
+        var result = await controller.Register(new RegisterRequest
+        {
+            Email = "user@example.com",
+            Password = "Password123",
+            NativeLanguageId = seed.NativeLanguage.Id,
+            TargetLanguageId = seed.NativeLanguage.Id,
+            LanguageLevelId = seed.Level.Id
+        });
+
+        var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
+        var error = Assert.IsType<ApiErrorResponse>(badRequest.Value);
+        Assert.Equal("register.languages.same", error.Code);
+        Assert.Equal("Native and target languages must be different.", error.Message);
+        Assert.Equal(0, await db.Users.CountAsync());
     }
 
     [Fact]
@@ -120,7 +146,9 @@ public class AuthControllerTests
             Password = "wrong"
         });
 
-        Assert.IsType<UnauthorizedResult>(result.Result);
+        var unauthorized = Assert.IsType<UnauthorizedObjectResult>(result.Result);
+        var error = Assert.IsType<ApiErrorResponse>(unauthorized.Value);
+        Assert.Equal("login.failed", error.Code);
     }
 
     [Fact]
@@ -136,6 +164,7 @@ public class AuthControllerTests
         });
 
         var response = AssertOk<AuthMessageResponse>(result);
+        Assert.Equal("forgot.sent", response.Code);
         Assert.Contains("If an account exists", response.Message);
         Assert.Empty(emailSender.SentLinks);
         Assert.Equal(0, await db.PasswordResetTokens.CountAsync());
@@ -258,7 +287,9 @@ public class AuthControllerTests
             ConfirmPassword = "NewPassword123"
         });
 
-        Assert.IsType<BadRequestObjectResult>(result.Result);
+        var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
+        var error = Assert.IsType<ApiErrorResponse>(badRequest.Value);
+        Assert.Equal("reset.token.invalid", error.Code);
 
         var reloadedUser = await db.Users.SingleAsync(x => x.Id == user.Id);
         Assert.Equal("hashed:Password123", reloadedUser.PasswordHash);
